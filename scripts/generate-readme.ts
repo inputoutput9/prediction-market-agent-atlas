@@ -128,13 +128,15 @@ function rankedList(venue: RepoEntry["venue"]): string {
       caveats.push(`**⚠️ commits since safety review (\`${r.entry.reviewed_sha.slice(0, 7)}\`).**`);
     }
     const why = [...caveats, r.entry.notes ?? ""].filter(Boolean).join(" ");
-    const axes = `<sub>provenance ${s.provenance} · capability ${s.capability} · safety ${s.safety} · agent-fit ${s.agent_fit}${v.capped ? " · ⚠️ idle-capped to B" : ""} · category: ${r.entry.category}</sub>`;
-    // Line 1: tier · score · repo (scannable). Line 2: caveats + why + axes.
-    // Line 3: health badge strip. Two trailing spaces = markdown line break;
-    // continuation lines indented 2 spaces so GitHub keeps them in the bullet.
+    const axes = `<sub>\`${r.entry.category}\` · provenance ${s.provenance} · capability ${s.capability} · safety ${s.safety} · agent-fit ${s.agent_fit}${v.capped ? " · ⚠️ idle-capped to B" : ""}</sub>`;
+    // Four lines, each its own markdown line-break (two trailing spaces), all
+    // continuation lines indented 2 spaces so GitHub keeps them in the bullet:
+    // 1) tier · score · repo (scannable)  2) caveats + why  3) axes caption
+    // 4) live health badge strip.
     entries.push(
       `${tierBadge[v.tier]} · **${v.score} / ${MAX_SCORE}** · ${link(r.entry)}  \n` +
-        `  ${why} ${axes}  \n` +
+        `  ${why}  \n` +
+        `  ${axes}  \n` +
         `  ${healthBadges(r.entry, r.live)}`,
     );
   }
@@ -205,7 +207,12 @@ const end = readme.indexOf(END);
 if (start === -1 || end === -1) throw new Error("README markers missing");
 const next = readme.slice(0, start) + generated + readme.slice(end + END.length);
 
-if (process.argv.includes("--check")) {
+if (process.argv.includes("--stdout")) {
+  // Emit the assembled README WITHOUT writing — lets the determinism test
+  // compare runs without clobbering the tracked file (which would let the gate
+  // self-heal committed drift and never fail --check).
+  process.stdout.write(next);
+} else if (process.argv.includes("--check")) {
   if (next !== readme) {
     console.error("README rankings out of date — run: bun scripts/generate-readme.ts");
     process.exit(1);
