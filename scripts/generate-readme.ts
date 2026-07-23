@@ -77,13 +77,33 @@ const link = (e: RepoEntry): string => {
 
 const tierBadge = { S: "🟢 **S**", A: "🟡 **A**", B: "🔵 **B**", C: "⚪ **C**" } as const;
 
-function activity(l: LiveEntry): string {
-  if (l.removed) return "⚠️ removed";
-  const parts: string[] = [];
-  if (l.pushed_at) parts.push(`pushed ${l.pushed_at}`);
-  if (l.latest_version) parts.push(`v${l.latest_version}`);
-  if (l.stale) parts.push("(stale scan)");
-  return parts.join(" · ") || "—";
+// Live shields.io badge strip (benchmark style: flat-square, 2b2b2b/6b6b6b) —
+// renders current last-commit/stars/license on every page view, no scan needed
+// for DISPLAY. Tiering still computes from the committed scan (deterministic).
+const SHIELD = "style=flat-square&labelColor=2b2b2b&color=6b6b6b";
+function healthBadges(e: RepoEntry, l: LiveEntry): string {
+  if (l.removed) return "🪦 removed from GitHub";
+  const imgs: string[] = [];
+  if (e.url?.startsWith("https://github.com/")) {
+    const slug = e.url.replace("https://github.com/", "");
+    imgs.push(
+      `<img src="https://img.shields.io/github/last-commit/${slug}?${SHIELD}" alt="last-commit">`,
+      `<img src="https://img.shields.io/github/stars/${slug}?${SHIELD}" alt="stars">`,
+      `<img src="https://img.shields.io/github/license/${slug}?${SHIELD}" alt="license">`,
+    );
+  }
+  if (e.packages?.pypi) {
+    imgs.push(
+      `<img src="https://img.shields.io/pypi/v/${e.packages.pypi}?${SHIELD}&label=pypi" alt="pypi">`,
+    );
+  }
+  if (e.packages?.npm) {
+    imgs.push(
+      `<img src="https://img.shields.io/npm/v/${encodeURIComponent(e.packages.npm)}?${SHIELD}&label=npm" alt="npm">`,
+    );
+  }
+  const strip = imgs.join(" ");
+  return l.stale ? `${strip} ⚠️ stale scan` : strip || "—";
 }
 
 function rankedTable(venue: RepoEntry["venue"]): string {
@@ -91,8 +111,8 @@ function rankedTable(venue: RepoEntry["venue"]): string {
     .filter((r) => r.entry.venue === venue && r.verdict.state === "ranked")
     .sort(sortRanked);
   const lines = [
-    "| Tier | Repo | Category | Score | Stars | Activity | Why / caveats |",
-    "|---|---|---|---|---|---|---|",
+    "| Tier | Repo | Category | Score | Health | Why / caveats |",
+    "|---|---|---|---|---|---|",
   ];
   for (const r of ranked) {
     const v = r.verdict as Extract<Verdict, { state: "ranked" }>;
@@ -109,7 +129,7 @@ function rankedTable(venue: RepoEntry["venue"]): string {
     }
     const why = [...caveats, r.entry.notes ?? ""].filter(Boolean).join(" · ");
     lines.push(
-      `| ${tierBadge[v.tier]} | ${link(r.entry)} | ${r.entry.category} | ${scoreCell} | ${r.live.stars ?? "—"} | ${activity(r.live)} | ${why} |`,
+      `| ${tierBadge[v.tier]} | ${link(r.entry)} | ${r.entry.category} | ${scoreCell} | ${healthBadges(r.entry, r.live)} | ${why} |`,
     );
   }
   return lines.join("\n");
@@ -145,7 +165,7 @@ function flaggedTable(): string {
 
 const generated = `${BEGIN}
 
-> Curated scores last human-reviewed **${CURATED_AS_OF}** · liveness data as of **${AS_OF}** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Score cell shows weighted total, then per-axis: **P**rovenance **C**apability **S**afety **F** agent-fit (each 0–5; maintenance is computed from activity, see [methodology](docs/methodology.md)).
+> **${rows.length} entries** · curated scores last human-reviewed **${CURATED_AS_OF}** · liveness data as of **${AS_OF}** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Score cell shows weighted total, then per-axis: **P**rovenance **C**apability **S**afety **F** agent-fit (each 0–5; maintenance is computed from activity, see [methodology](docs/methodology.md)).
 
 ### Kalshi
 
