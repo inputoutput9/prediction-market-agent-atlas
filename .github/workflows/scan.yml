@@ -46,8 +46,8 @@ jobs:
           if git diff --cached --quiet -- data/live.json && [ "$README_SUBSTANTIVE" -eq 0 ]; then
             echo "Only the as-of date line moved — skipping commit"
           else
-            git config user.name "atlas-scan[bot]"
-            git config user.email "actions@github.com"
+            git config user.name "inputoutput9"
+            git config user.email "parkjames87@gmail.com"
             git commit -m "chore(scan): weekly refresh $(date -u +%F)"
             git push
           fi
