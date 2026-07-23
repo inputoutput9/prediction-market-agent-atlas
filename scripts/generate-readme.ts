@@ -64,6 +64,7 @@ function sortRanked(a: Row, b: Row): number {
   return (
     tierOrder[va.tier] - tierOrder[vb.tier] ||
     vb.score - va.score ||
+    (b.live.stars ?? 0) - (a.live.stars ?? 0) ||
     a.entry.id.localeCompare(b.entry.id)
   );
 }
@@ -76,6 +77,31 @@ const link = (e: RepoEntry): string => {
 };
 
 const tierBadge = { S: "🟢 **S**", A: "🟡 **A**", B: "🔵 **B**", C: "⚪ **C**" } as const;
+const gradeLabel = { S: "🟢 S-tier", A: "🟡 A-tier", B: "🔵 B-tier", C: "⚪ C-tier" } as const;
+
+// Per-axis circle: 🟢 strong (≥4) · 🟡 middling (3) · 🔴 weak (≤2).
+const axisCircle = (v: number): string => (v >= 4 ? "🟢" : v === 3 ? "🟡" : "🔴");
+
+// Canonical link target for an entry: GitHub url if present, else the registry.
+const entryUrl = (e: RepoEntry): string | undefined =>
+  e.url ??
+  (e.packages?.pypi
+    ? `https://pypi.org/project/${e.packages.pypi}/`
+    : e.packages?.npm
+      ? `https://www.npmjs.com/package/${e.packages.npm}`
+      : undefined);
+
+// Identity cell: `[repo-name](url) by [owner](gh)` for GitHub entries (id =
+// `owner/repo`); registry-only entries (no `/`) link the whole id, no owner.
+function identityCell(e: RepoEntry): string {
+  const url = entryUrl(e);
+  const slash = e.id.indexOf("/");
+  if (slash === -1) return url ? `[${e.id}](${url})` : e.id;
+  const owner = e.id.slice(0, slash);
+  const name = e.id.slice(slash + 1);
+  const repo = url ? `[${name}](${url})` : name;
+  return `${repo} by [${owner}](https://github.com/${owner})`;
+}
 
 // Live shields.io badge strip (benchmark style: flat-square, 2b2b2b/6b6b6b) —
 // renders current last-commit/stars/license on every page view, no scan needed
@@ -106,15 +132,16 @@ function healthBadges(e: RepoEntry, l: LiveEntry): string {
   return l.stale ? `${strip} ⚠️ stale scan` : strip || "—";
 }
 
-// Benchmark-style list (not a 6-column table): each entry leads with the
-// scannable tier + score + repo, gives the caveats full page width, and drops
-// the health badge strip onto its own line beneath — so nothing wraps into a
-// cramped column.
+// Per-entry mini-tables (standalone blocks, NOT list bullets — GitHub renders
+// tables inside `- ` bullets unreliably). Each entry is: an identity table
+// (repo · grade · weighted score), a description line (caveats + notes), a
+// per-axis table (one column each, colored marker by value), then the live
+// health badge strip. Entries separated by a horizontal rule.
 function rankedList(venue: RepoEntry["venue"]): string {
   const ranked = rows
     .filter((r) => r.entry.venue === venue && r.verdict.state === "ranked")
     .sort(sortRanked);
-  const entries: string[] = [];
+  const blocks: string[] = [];
   for (const r of ranked) {
     const v = r.verdict as Extract<Verdict, { state: "ranked" }>;
     const s = r.entry.scores!;
@@ -127,20 +154,20 @@ function rankedList(venue: RepoEntry["venue"]): string {
     ) {
       caveats.push(`**⚠️ commits since safety review (\`${r.entry.reviewed_sha.slice(0, 7)}\`).**`);
     }
-    const why = [...caveats, r.entry.notes ?? ""].filter(Boolean).join(" ");
-    const axes = `<sub>\`${r.entry.category}\` · provenance ${s.provenance} · capability ${s.capability} · safety ${s.safety} · agent-fit ${s.agent_fit}${v.capped ? " · ⚠️ idle-capped to B" : ""}</sub>`;
-    // Four lines, each its own markdown line-break (two trailing spaces), all
-    // continuation lines indented 2 spaces so GitHub keeps them in the bullet:
-    // 1) tier · score · repo (scannable)  2) caveats + why  3) axes caption
-    // 4) live health badge strip.
-    entries.push(
-      `${tierBadge[v.tier]} · **${v.score} / ${MAX_SCORE}** · ${link(r.entry)}  \n` +
-        `  ${why}  \n` +
-        `  ${axes}  \n` +
-        `  ${healthBadges(r.entry, r.live)}`,
+    if (v.capped) caveats.push("**⚠️ idle-capped to B.**");
+    const desc = [...caveats, r.entry.notes ?? ""].filter(Boolean).join(" ");
+    const ax = (name: string, val: number) => `${name}: ${axisCircle(val)} ${val}/5`;
+    blocks.push(
+      `| Repo | Grade | Score |\n` +
+        `|---|---|---|\n` +
+        `| ${identityCell(r.entry)} | ${gradeLabel[v.tier]} | ${v.score}/${MAX_SCORE} |\n\n` +
+        `${desc}\n\n` +
+        `| ${ax("provenance", s.provenance)} | ${ax("capability", s.capability)} | ${ax("safety", s.safety)} | ${ax("agent-fit", s.agent_fit)} | category: \`${r.entry.category}\` |\n` +
+        `|---|---|---|---|---|\n\n` +
+        `${healthBadges(r.entry, r.live)}`,
     );
   }
-  return entries.map((e) => `- ${e}`).join("\n\n");
+  return blocks.join("\n\n---\n\n");
 }
 
 function deprecatedTable(): string {
@@ -173,7 +200,7 @@ function flaggedTable(): string {
 
 const generated = `${BEGIN}
 
-> **${rows.length} entries** · curated scores last human-reviewed **${CURATED_AS_OF}** · liveness data as of **${AS_OF}** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry leads with **tier · weighted score / ${MAX_SCORE}**; the sub-line gives the per-axis breakdown (0–5 each; maintenance is computed from activity, see [methodology](docs/methodology.md)); the badge strip is live GitHub/registry health.
+> **${rows.length} entries** · curated scores last human-reviewed **${CURATED_AS_OF}** · liveness data as of **${AS_OF}** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / ${MAX_SCORE}), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health.
 
 ### Kalshi
 
