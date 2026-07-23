@@ -122,12 +122,18 @@ describe("data files", () => {
 });
 
 describe("generator determinism", () => {
-  it("generate twice → README byte-identical, --check green", () => {
-    const readme = () => readFileSync(`${import.meta.dir}/../README.md`);
-    execSync("bun scripts/generate-readme.ts", { cwd: `${import.meta.dir}/..` });
-    const first = readme();
-    execSync("bun scripts/generate-readme.ts", { cwd: `${import.meta.dir}/..` });
-    expect(Buffer.compare(first, readme())).toBe(0);
-    execSync("bun scripts/generate-readme.ts --check", { cwd: `${import.meta.dir}/..` });
+  // Use --stdout, NEVER writing README.md — a test that regenerates the tracked
+  // file would let `bun test` self-heal committed drift, silently neutering the
+  // gate's --check (the gate runs --check anyway; keep it read-only here).
+  const gen = () =>
+    execSync("bun scripts/generate-readme.ts --stdout", { cwd: `${import.meta.dir}/..` });
+
+  it("generate twice → byte-identical output", () => {
+    expect(Buffer.compare(gen(), gen())).toBe(0);
+  });
+
+  it("committed README.md matches generated output (drift check)", () => {
+    const committed = readFileSync(`${import.meta.dir}/../README.md`);
+    expect(Buffer.compare(committed, gen())).toBe(0);
   });
 });

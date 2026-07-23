@@ -5,7 +5,7 @@
   "scripts": {
     "scan": "bun scripts/scan.ts",
     "generate": "bun scripts/generate-readme.ts",
-    "gate": "bun test && bun scripts/generate-readme.ts --check"
+    "gate": "bun scripts/generate-readme.ts --check && bun test"
   },
   "devDependencies": {
     "@types/bun": "latest"
