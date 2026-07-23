@@ -65,6 +65,12 @@ for (const entry of entries) {
         next.stars = Number(body.stargazers_count ?? prev.stars ?? 0);
         next.pushed_at = day(body.pushed_at) ?? prev.pushed_at;
         next.archived = Boolean(body.archived);
+        // head sha of the default branch — powers commits-since-review drift
+        const branch = String(body.default_branch ?? "main");
+        const head = await getJson(
+          `https://api.github.com/repos/${slug}/commits/${encodeURIComponent(branch)}`,
+        );
+        if (head.body) next.head_sha = String(head.body.sha).slice(0, 12);
       } else {
         next.stale = true;
         failures++;
@@ -75,6 +81,8 @@ for (const entry of entries) {
     }
   }
 
+  // Package errors are NOT silent (reflect finding): a 404'd package would
+  // otherwise present frozen version data as fresh forever.
   try {
     if (entry.packages?.pypi) {
       const { body } = await getJson(`https://pypi.org/pypi/${entry.packages.pypi}/json`);
@@ -84,6 +92,9 @@ for (const entry of entries) {
         next.latest_version = version;
         const files = (body.releases as Record<string, Array<{ upload_time?: string }>>)[version];
         next.released_at = day(files?.[0]?.upload_time) ?? next.released_at;
+      } else {
+        next.stale = true;
+        failures++;
       }
     } else if (entry.packages?.npm) {
       const { body } = await getJson(
@@ -93,6 +104,9 @@ for (const entry of entries) {
         const version = String((body["dist-tags"] as Record<string, string>).latest);
         next.latest_version = version;
         next.released_at = day((body.time as Record<string, string>)[version]) ?? next.released_at;
+      } else {
+        next.stale = true;
+        failures++;
       }
     }
   } catch {
@@ -109,4 +123,9 @@ const sorted = Object.fromEntries(
 );
 writeFileSync(LIVE_PATH, `${JSON.stringify(sorted, null, 2)}\n`);
 console.log(`scanned ${entries.length} entries, ${failures} fetch failure(s)`);
-process.exit(0);
+// A majority-failure run (dead token, registry outage) must go RED so the
+// workflow never commits a fully-stale scan as if healthy.
+if (failures > entries.length / 2) {
+  console.error("more than half of all fetches failed — aborting as unhealthy");
+  process.exit(1);
+}

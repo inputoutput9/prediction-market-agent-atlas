@@ -22,4 +22,6 @@ Rankings are dated opinions, and 🚩 flags are dated pattern-match claims. If y
 
 ## Weekly scan
 
-`.github/workflows/scan.yml` refreshes `data/live.json`, bumps `data/as-of.txt` to the scan date, regenerates the README, and commits only when something actually changed. Tier moves caused purely by decay are expected and correct — that's the feature.
+`.github/workflows/scan.yml` refreshes `data/live.json`, bumps `data/as-of.txt` (the liveness/decay date — never `data/curated-as-of.txt`, which is human-only), regenerates the README, and commits only when something substantive changed (a run that only moves the date line is skipped). Tier moves caused purely by decay are expected and correct — that's the feature.
+
+When you re-review an entry's curated scores: update its evidence dates, set `reviewed_sha` to the current `head_sha` from `data/live.json`, and bump `data/curated-as-of.txt`.

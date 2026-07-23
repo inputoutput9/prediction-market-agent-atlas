@@ -64,13 +64,20 @@ describe("tiers and caps", () => {
   });
 });
 
-describe("hard-flag precedence: scam > key_exfil > archived", () => {
+describe("hard-flag precedence: scam > key_exfil > archived > removed", () => {
   it("scam wins over archived", () => {
     const entry = { ...base, hard_flags: ["archived" as const, "scam" as const] };
     expect(computeVerdict(entry, {}, NOW)).toEqual({ state: "blacklist", reason: "scam" });
   });
   it("archived (flag or live) = deprecated, not blacklist", () => {
-    expect(computeVerdict(base, { archived: true }, NOW)).toEqual({ state: "deprecated" });
+    expect(computeVerdict(base, { archived: true }, NOW)).toEqual({
+      state: "deprecated",
+      reason: "archived",
+    });
+  });
+  it("a repo removed from GitHub can never stay ranked", () => {
+    const v = computeVerdict(base, { pushed_at: "2026-07-20", removed: true }, NOW);
+    expect(v).toEqual({ state: "deprecated", reason: "removed" });
   });
 });
 

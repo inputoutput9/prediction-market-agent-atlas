@@ -62,6 +62,10 @@ export interface RepoEntry {
   packages?: { pypi?: string; npm?: string };
   scores?: { provenance: number; capability: number; safety: number; agent_fit: number };
   hard_flags?: HardFlag[];
+  /** default-branch HEAD sha at the time the safety review was done —
+   * the weekly scan records the current head in live.json, and the README
+   * flags commits-since-review drift. */
+  reviewed_sha?: string;
   evidence: string[];
   notes?: string;
 }
@@ -72,6 +76,7 @@ export interface LiveEntry {
   archived?: boolean;
   latest_version?: string;
   released_at?: string;
+  head_sha?: string;
   removed?: boolean;
   stale?: boolean;
 }
@@ -100,19 +105,22 @@ export function maintenanceScore(live: LiveEntry, now: Date): number {
 
 export type Verdict =
   | { state: "blacklist"; reason: "scam" | "key_exfil" }
-  | { state: "deprecated" }
+  | { state: "deprecated"; reason: "archived" | "removed" }
   | { state: "ranked"; tier: Tier; score: number; pct: number; capped: boolean };
 
 /**
- * Hard-flag precedence (staff-review S6): scam > key_exfil > archived > idle-cap.
- * Blacklist (dangerous) and Deprecated (dead but possibly instructive) are
- * distinct terminal states, never mixed into the ranked tiers.
+ * Hard-flag precedence (staff-review S6): scam > key_exfil > archived/removed
+ * > idle-cap. Blacklist (dangerous) and Deprecated (dead but possibly
+ * instructive) are distinct terminal states, never mixed into the ranked
+ * tiers. A repo deleted from GitHub (`removed`) can never stay ranked —
+ * takedowns are the strongest possible liveness signal.
  */
 export function computeVerdict(entry: RepoEntry, live: LiveEntry, now: Date): Verdict {
   const flags = entry.hard_flags ?? [];
   if (flags.includes("scam")) return { state: "blacklist", reason: "scam" };
   if (flags.includes("key_exfil")) return { state: "blacklist", reason: "key_exfil" };
-  if (flags.includes("archived") || live.archived) return { state: "deprecated" };
+  if (flags.includes("archived") || live.archived) return { state: "deprecated", reason: "archived" };
+  if (live.removed) return { state: "deprecated", reason: "removed" };
 
   if (!entry.scores) throw new Error(`${entry.id}: ranked entry missing scores`);
   const maintenance = maintenanceScore(live, now);
