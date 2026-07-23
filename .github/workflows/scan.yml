@@ -1,0 +1,45 @@
+# Weekly liveness scan: refresh live.json + as-of date, regenerate README,
+# commit only on real changes (live.json carries no timestamp, so an unchanged
+# ecosystem produces an empty diff and no commit).
+#
+# Notes:
+# - Pushes use the built-in GITHUB_TOKEN; GitHub suppresses workflow
+#   re-triggering on GITHUB_TOKEN pushes, so this cannot loop.
+# - If branch protection is ever enabled on main, this push will start failing
+#   silently-red — switch to a PR-creating flow at that point.
+name: scan
+on:
+  schedule:
+    - cron: "0 6 * * 1" # Mondays 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - name: Scan registries
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          bun scripts/scan.ts
+          date -u +%F > data/as-of.txt
+          bun scripts/generate-readme.ts
+      - name: Gate
+        run: bun test && bun scripts/generate-readme.ts --check
+      - name: Commit if changed
+        run: |
+          git add data/live.json data/as-of.txt README.md
+          if git diff --cached --quiet -- data/live.json README.md; then
+            echo "No liveness changes — skipping commit"
+          else
+            git config user.name "atlas-scan[bot]"
+            git config user.email "actions@github.com"
+            git commit -m "chore(scan): weekly refresh $(date -u +%F)"
+            git push
+          fi

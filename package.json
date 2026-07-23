@@ -1,0 +1,19 @@
+{
+  "name": "prediction-market-agent-atlas",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "scan": "bun scripts/scan.ts",
+    "generate": "bun scripts/generate-readme.ts",
+    "gate": "bun test && bun scripts/generate-readme.ts --check"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "yaml": "^2.9.0"
+  }
+}
