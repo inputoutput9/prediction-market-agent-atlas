@@ -1,0 +1,1011 @@
+{
+  "id": "machina-sports/sports-skills",
+  "head_sha": "3759150e5dc5",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 100,
+    "severity": "CRITICAL",
+    "recommendation": "DO_NOT_INSTALL"
+  },
+  "counts": {
+    "critical": 1,
+    "high": 21,
+    "medium": 49,
+    "low": 5
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "AGENTS.md",
+        "start_line": 8,
+        "end_line": 0
+      },
+      "finding": "Never ask the user",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "SC2",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "location": {
+        "file": "AGENTS.md",
+        "start_line": 22,
+        "end_line": 0
+      },
+      "finding": "curl | bash",
+      "explanation": "Remote code is downloaded and executed. This bypasses code review and could introduce malicious code."
+    },
+    {
+      "id": "SC2",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "location": {
+        "file": "CHANGELOG.md",
+        "start_line": 21,
+        "end_line": 0
+      },
+      "finding": "curl | bash",
+      "explanation": "Remote code is downloaded and executed. This bypasses code review and could introduce malicious code."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "CHANGELOG.md",
+        "start_line": 152,
+        "end_line": 0
+      },
+      "finding": "skills/metadata/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "CHANGELOG.md",
+        "start_line": 155,
+        "end_line": 0
+      },
+      "finding": "skills/machina/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "EA3",
+      "category": "Excessive Agency",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "LICENSE",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "NOT LIMITED TO",
+      "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 29,
+        "end_line": 0
+      },
+      "finding": "feedparser",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "pandas",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "pandas",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "pandas",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": "pytest",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 46,
+        "end_line": 0
+      },
+      "finding": "jinja2",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 46,
+        "end_line": 0
+      },
+      "finding": "pyyaml",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 30,
+        "end_line": 0
+      },
+      "finding": "Never ask user",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "reports/health/2026-02-18.json",
+        "start_line": 204,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "reports/health/2026-02-19.json",
+        "start_line": 249,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "reports/health/2026-02-20.json",
+        "start_line": 303,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "scripts/nightly_health_check.py",
+        "start_line": 66,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "scripts/nightly_improve.py",
+        "start_line": 48,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "scripts/nightly_improve.py",
+        "start_line": 77,
+        "end_line": 77
+      },
+      "finding": "        result = subprocess.run(cmd, capture_output=True, text=True, cwd=cwd or REPO_ROOT)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "OH1",
+      "category": "Output Handling",
+      "severity": "HIGH",
+      "confidence": 0.95,
+      "location": {
+        "file": "scripts/nightly_improve.py",
+        "start_line": 77,
+        "end_line": 0
+      },
+      "finding": "subprocess.run(cmd, capture_output",
+      "explanation": "Model output is used without validation or sanitization. Unvalidated output injected into downstream contexts (SQL, shell, HTML) enables injection attacks and arbitrary code execution."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "site/templates/base.html",
+        "start_line": 28,
+        "end_line": 0
+      },
+      "finding": "<!-- NAV -->\n  <nav>\n    <a href=\"/\" class=\"nav-brand\" style=\"text-decoration:none;\">\n      <span class=\"dot\">$</span> sports-skills<span class=\"dot\">.sh</span>\n    </a>\n    <div class=\"nav-links\">\n  ",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "site/templates/index.html",
+        "start_line": 41,
+        "end_line": 0
+      },
+      "finding": "<!-- HERO -->\n<section class=\"hero\">\n  <div class=\"container\">\n    <div class=\"fade-in\">\n      <pre class=\"ascii-art\">\n███████╗██████╗  ██████╗ ██████╗ ████████╗███████╗\n██╔════╝██╔══██╗██╔═══██╗██╔══",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "site/templates/skill.html",
+        "start_line": 39,
+        "end_line": 0
+      },
+      "finding": "<!-- BREADCRUMB -->\n<div class=\"breadcrumb\">\n  <div class=\"container\">\n    <a href=\"/\">sports-skills.sh</a> &rarr; {{ skill.name }}\n  </div>\n</div>\n\n<!-- SKILL HEADER -->\n<section class=\"skill-header\"",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "site/templates/skill.html",
+        "start_line": 92,
+        "end_line": 0
+      },
+      "finding": "<!-- COMMANDS -->\n<section class=\"commands-section\">\n  <div class=\"container\">\n    <h2>Commands</h2>\n    <table class=\"commands-table\">\n      <thead>\n        <tr>\n          <th>Command</th>\n          ",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 23,
+        "end_line": 0
+      },
+      "finding": "skills/betting/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 34,
+        "end_line": 0
+      },
+      "finding": "skills/cbb-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": "skills/cfb-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 56,
+        "end_line": 0
+      },
+      "finding": "skills/cricket-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 67,
+        "end_line": 0
+      },
+      "finding": "skills/esports/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 78,
+        "end_line": 0
+      },
+      "finding": "skills/fastf1/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 89,
+        "end_line": 0
+      },
+      "finding": "skills/football-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 100,
+        "end_line": 0
+      },
+      "finding": "skills/golf-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 111,
+        "end_line": 0
+      },
+      "finding": "skills/kalshi/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 122,
+        "end_line": 0
+      },
+      "finding": "skills/machina/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 133,
+        "end_line": 0
+      },
+      "finding": "skills/markets/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 144,
+        "end_line": 0
+      },
+      "finding": "skills/metadata/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 155,
+        "end_line": 0
+      },
+      "finding": "skills/mlb-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 166,
+        "end_line": 0
+      },
+      "finding": "skills/nba-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 177,
+        "end_line": 0
+      },
+      "finding": "skills/nfl-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 188,
+        "end_line": 0
+      },
+      "finding": "skills/nhl-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 199,
+        "end_line": 0
+      },
+      "finding": "skills/polymarket/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 210,
+        "end_line": 0
+      },
+      "finding": "skills/polymarket-trading/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 221,
+        "end_line": 0
+      },
+      "finding": "skills/sports-news/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 232,
+        "end_line": 0
+      },
+      "finding": "skills/sports-reporter/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 243,
+        "end_line": 0
+      },
+      "finding": "skills/tennis-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 254,
+        "end_line": 0
+      },
+      "finding": "skills/volleyball-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 265,
+        "end_line": 0
+      },
+      "finding": "skills/wnba-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 276,
+        "end_line": 0
+      },
+      "finding": "skills/world-cup/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 287,
+        "end_line": 0
+      },
+      "finding": "skills/xctf-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "YR1",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.425,
+      "location": {
+        "file": "skills/football-data/SKILL.md",
+        "start_line": 26,
+        "end_line": 0
+      },
+      "finding": "pip install git+https://; pip install git+https://",
+      "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer)."
+    },
+    {
+      "id": "YR1",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.425,
+      "location": {
+        "file": "skills/nfl-data/SKILL.md",
+        "start_line": 26,
+        "end_line": 0
+      },
+      "finding": "pip install git+https://; pip install git+https://",
+      "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer)."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/polymarket-trading/SKILL.md",
+        "start_line": 6,
+        "end_line": 0
+      },
+      "finding": "Do not ask the user",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/polymarket-trading/SKILL.md",
+        "start_line": 30,
+        "end_line": 0
+      },
+      "finding": "Never ask the user",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "YR1",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "skills/sports-reporter/SKILL.md",
+        "start_line": 384,
+        "end_line": 0
+      },
+      "finding": "pip install git+https://",
+      "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer)."
+    },
+    {
+      "id": "YR1",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.425,
+      "location": {
+        "file": "skills/volleyball-data/SKILL.md",
+        "start_line": 26,
+        "end_line": 0
+      },
+      "finding": "pip install git+https://; pip install git+https://",
+      "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer)."
+    },
+    {
+      "id": "YR1",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.425,
+      "location": {
+        "file": "skills/xctf-data/SKILL.md",
+        "start_line": 27,
+        "end_line": 0
+      },
+      "finding": "pip install git+https://",
+      "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer)."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "src/sports_skills/_premium.py",
+        "start_line": 108,
+        "end_line": 111
+      },
+      "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "src/sports_skills/cli.py",
+        "start_line": 814,
+        "end_line": 814
+      },
+      "finding": "            func = getattr(module, cmd_name, None)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "src/sports_skills/cli.py",
+        "start_line": 880,
+        "end_line": 883
+      },
+      "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "src/sports_skills/cli.py",
+        "start_line": 1081,
+        "end_line": 1081
+      },
+      "finding": "    func = getattr(module, command_name, None)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/sports_skills/esports/_connector.py",
+        "start_line": 5,
+        "end_line": 0
+      },
+      "finding": "https://api.opendota.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/sports_skills/esports/_connector.py",
+        "start_line": 24,
+        "end_line": 0
+      },
+      "finding": "https://api.opendota.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/football/_connector.py",
+        "start_line": 851,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/football/_connector.py",
+        "start_line": 1844,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/sports_skills/football/_connector.py",
+        "start_line": 3074,
+        "end_line": 0
+      },
+      "finding": "http://api.clubelo.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/sports_skills/football/_connector.py",
+        "start_line": 3228,
+        "end_line": 0
+      },
+      "finding": "http://api.clubelo.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/football/_connector.py",
+        "start_line": 3581,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/sports_skills/kalshi/_connector.py",
+        "start_line": 19,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/nfl/_connector.py",
+        "start_line": 474,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "src/sports_skills/polymarket/_cli.py",
+        "start_line": 126,
+        "end_line": 0
+      },
+      "finding": "os.environ.get(\"POLYMARKET_PRIVATE_KEY",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "YR4",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "src/sports_skills/volleyball/_nevobo.py",
+        "start_line": 301,
+        "end_line": 0
+      },
+      "finding": "Hydra / JSON-L",
+      "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_cricket.py",
+        "start_line": 616,
+        "end_line": 616
+      },
+      "finding": "            assert callable(getattr(cricket, fn))",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_imports.py",
+        "start_line": 50,
+        "end_line": 55
+      },
+      "finding": "    result = subprocess.run(\n        [sys.executable, \"-m\", \"sports_skills.cli\", \"--help\"],\n        capture_output=True,\n        text=True,\n        timeout=10,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "OH1",
+      "category": "Output Handling",
+      "severity": "HIGH",
+      "confidence": 0.95,
+      "location": {
+        "file": "tests/test_imports.py",
+        "start_line": 50,
+        "end_line": 0
+      },
+      "finding": "subprocess.run(\n        [sys.executable, \"-m\", \"sports_skills.cli\", \"--help\"],\n        capture_output",
+      "explanation": "Model output is used without validation or sanitization. Unvalidated output injected into downstream contexts (SQL, shell, HTML) enables injection attacks and arbitrary code execution."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_imports.py",
+        "start_line": 80,
+        "end_line": 80
+      },
+      "finding": "            fn = getattr(mod, command_name, None)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}

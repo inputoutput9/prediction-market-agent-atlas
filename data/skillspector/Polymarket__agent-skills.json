@@ -1,0 +1,62 @@
+{
+  "id": "Polymarket/agent-skills",
+  "head_sha": "91ee44ae113e",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 38,
+    "severity": "MEDIUM",
+    "recommendation": "CAUTION"
+  },
+  "counts": {
+    "critical": 0,
+    "high": 2,
+    "medium": 1,
+    "low": 0
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "location": {
+        "file": "authentication.md",
+        "start_line": 111,
+        "end_line": 0
+      },
+      "finding": "auto-deploy",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "authentication.md",
+        "start_line": 160,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLY_BUILDER_API_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "authentication.md",
+        "start_line": 161,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLY_BUILDER_SECRET\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}

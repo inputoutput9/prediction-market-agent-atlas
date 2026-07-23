@@ -1,0 +1,192 @@
+{
+  "id": "JamesANZ/prediction-market-mcp",
+  "head_sha": "b534ffa621b4",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 100,
+    "severity": "CRITICAL",
+    "recommendation": "DO_NOT_INSTALL"
+  },
+  "counts": {
+    "critical": 0,
+    "high": 3,
+    "medium": 3,
+    "low": 7
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "EA3",
+      "category": "Excessive Agency",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "LICENSE",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "NOT LIMITED TO",
+      "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "package-lock.json",
+        "start_line": 999,
+        "end_line": 0
+      },
+      "finding": "RmkhL8CAyCRPXCE28MMH0z2PNWQBNk2Q09ZdxM9IOOXwxwZbN+qbWaatPkdkWIKL2ZVDImrN/",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "package.json",
+        "start_line": 9,
+        "end_line": 0
+      },
+      "finding": "chmod 755",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": "\"@modelcontextprotocol/sdk\": \"^1.15.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "package.json",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": "@modelcontextprotocol/sdk==1.15.0",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 46,
+        "end_line": 0
+      },
+      "finding": "\"superagent\": \"^10.2.2\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 47,
+        "end_line": 0
+      },
+      "finding": "\"zod\": \"^3.25.75\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 50,
+        "end_line": 0
+      },
+      "finding": "\"@types/node\": \"^24.0.10\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 51,
+        "end_line": 0
+      },
+      "finding": "\"@types/superagent\": \"^8.1.9\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 52,
+        "end_line": 0
+      },
+      "finding": "\"typescript\": \"^5.8.3\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "YR4",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 46,
+        "end_line": 0
+      },
+      "finding": "Parameters:; lnbc1pjhhsqepp5mjgwnvg0z53shm22hfe9us289lnaqkwv8rn2s0rtekg5vvj56xnqdqqcqzzsxqyz5vqsp5gu6vh9hyp94c7t3tkpqrp2r059t4vrw7ps78a4n0a2u52678c7yq9qyyssq7zcferywka50wcy75skjfrdrk930cuyx24rg55cwfuz",
+      "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "src/utils/utils.ts",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "src/utils/utils.ts",
+        "start_line": 18,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}

@@ -1,0 +1,79 @@
+# SkillSpector static-scan sweep. Clones + statically scans every in-scope repo
+# (mcp-server / agent-framework / skill, non-terminal, GitHub-hosted), writes a
+# normalized timestamp-free artifact per repo, regenerates docs/skillspector/,
+# and commits diff-only — same "commit only on real change" discipline as
+# scan.yml. Artifacts carry NO timestamp (scan date lives in the commit
+# message) so unchanged repos produce byte-identical files and no commit.
+#
+# Trigger: workflow_run AFTER the `scan` workflow succeeds — NOT a bare cron —
+# because the sha-gate reads live.json's head_shas to decide what changed, and
+# scan.yml is what refreshes them. Chaining off scan guarantees the head_shas
+# are fresh regardless of cron drift, and only proceeds when scan succeeded.
+# (GITHUB_TOKEN pushes don't re-trigger workflows, and scan.yml doesn't trigger
+# on push, so this cannot loop.)
+name: skillspector
+
+on:
+  workflow_run:
+    workflows: ["scan"]
+    types: [completed]
+  workflow_dispatch:
+  # Fallback cron, 1h after scan.yml's Monday 06:00 UTC. workflow_run chains off
+  # scan, but GitHub auto-disables schedules after ~60 days of repo inactivity —
+  # a disabled scan would silently kill this chain, so the own-cron keeps the
+  # sweep alive. The sha-gate makes a double-fire harmless: a run that follows a
+  # fresh scan finds nothing changed, scans nothing, and commits nothing.
+  schedule:
+    - cron: "0 7 * * 1" # Mondays 07:00 UTC
+
+permissions:
+  contents: write
+
+# Pin SkillSpector to a commit — the repo publishes no release tags, so a SHA is
+# the only reproducible ref (this is the v2.3.7-era HEAD of main).
+env:
+  SKILLSPECTOR_REF: a54947c307fe19a24a43db55f6148e181a987a67
+  ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+jobs:
+  skillspector:
+    # Skip if the upstream scan failed; always run on manual dispatch or the
+    # fallback cron (which self-gates via the sha-gate, scanning nothing when
+    # nothing moved).
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: 1.3.8
+      - uses: astral-sh/setup-uv@v6
+      - run: bun install --frozen-lockfile
+      - name: Install SkillSpector (pinned)
+        run: |
+          uv tool install "git+https://github.com/NVIDIA/SkillSpector.git@${SKILLSPECTOR_REF}"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+      - name: Static scan sweep
+        run: bun scripts/skillspector-scan.ts
+      - name: LLM delta pass (repos whose static counts rose)
+        # Degrades to static-only when the secret is absent (the driver also
+        # self-guards and exits 0); never fails the run for a missing key.
+        if: success() && env.ANTHROPIC_API_KEY != ''
+        env:
+          SKILLSPECTOR_PROVIDER: anthropic
+        run: bun scripts/skillspector-scan.ts --llm-delta
+      - name: Commit if changed
+        # Runs even when the sweep exited nonzero (one dead repo must not
+        # block persisting the other repos' fresh artifacts; the red run still
+        # surfaces the error).
+        if: ${{ !cancelled() }}
+        run: |
+          git add data/skillspector docs/skillspector
+          if git diff --cached --quiet; then
+            echo "No skillspector changes — skipping commit"
+          else
+            git config user.name "inputoutput9"
+            git config user.email "parkjames87@gmail.com"
+            git commit -m "chore(skillspector): weekly scan $(date -u +%F)"
+            git push
+          fi

@@ -1,0 +1,75 @@
+{
+  "id": "berlinbra/polymarket-mcp",
+  "head_sha": "0b36c7169c85",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 78,
+    "severity": "HIGH",
+    "recommendation": "DO_NOT_INSTALL"
+  },
+  "counts": {
+    "critical": 1,
+    "high": 1,
+    "medium": 1,
+    "low": 1
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "EA3",
+      "category": "Excessive Agency",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "LICENSE",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "NOT LIMITED TO",
+      "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 11,
+        "end_line": 0
+      },
+      "finding": "mcp",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 12,
+        "end_line": 0
+      },
+      "finding": "httpx",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 13,
+        "end_line": 0
+      },
+      "finding": "python-dotenv",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}

@@ -1,0 +1,2571 @@
+{
+  "id": "caiovicentino/polymarket-mcp-server",
+  "head_sha": "b96412357750",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 100,
+    "severity": "CRITICAL",
+    "recommendation": "DO_NOT_INSTALL"
+  },
+  "counts": {
+    "critical": 3,
+    "high": 107,
+    "medium": 84,
+    "low": 2
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "DASHBOARD_SUMMARY.md",
+        "start_line": 506,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "demo_mcp_tools.py",
+        "start_line": 242,
+        "end_line": 0
+      },
+      "finding": "                                                                      ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "demo_mcp_tools.py",
+        "start_line": 244,
+        "end_line": 0
+      },
+      "finding": "                                                                      ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "demo_mcp_tools.py",
+        "start_line": 246,
+        "end_line": 0
+      },
+      "finding": "                                                                      ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "demo_mcp_tools.py",
+        "start_line": 266,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "DOCKER_FILES.txt",
+        "start_line": 25,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "DOCKER_INFRASTRUCTURE_COMPLETE.md",
+        "start_line": 44,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "DOCKER_INFRASTRUCTURE_COMPLETE.md",
+        "start_line": 225,
+        "end_line": 0
+      },
+      "finding": "                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "DOCKER_SUMMARY.md",
+        "start_line": 32,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "DOCKER_SUMMARY.md",
+        "start_line": 69,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "DOCKER_SUMMARY.md",
+        "start_line": 69,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "DOCKER_SUMMARY.md",
+        "start_line": 324,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "docker-start.sh",
+        "start_line": 18,
+        "end_line": 0
+      },
+      "finding": "                                                  ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "docker-start.sh",
+        "start_line": 20,
+        "end_line": 0
+      },
+      "finding": "                                                  ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "docker-start.sh",
+        "start_line": 58,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "docker-start.sh",
+        "start_line": 59,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "docker-start.sh",
+        "start_line": 60,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "docker-start.sh",
+        "start_line": 90,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "docker-start.sh",
+        "start_line": 93,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "docker-start.sh",
+        "start_line": 94,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "DOCKER.md",
+        "start_line": 215,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "FAQ.md",
+        "start_line": 324,
+        "end_line": 0
+      },
+      "finding": "without confirmation",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "FAQ.md",
+        "start_line": 445,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "install.bat",
+        "start_line": 112,
+        "end_line": 0
+      },
+      "finding": "rmdir /s /",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.bat",
+        "start_line": 218,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.bat",
+        "start_line": 239,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.bat",
+        "start_line": 241,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.bat",
+        "start_line": 248,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.bat",
+        "start_line": 262,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.bat",
+        "start_line": 284,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.bat",
+        "start_line": 285,
+        "end_line": 0
+      },
+      "finding": ".env'",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.bat",
+        "start_line": 286,
+        "end_line": 0
+      },
+      "finding": ".env'",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.bat",
+        "start_line": 357,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "install.sh",
+        "start_line": 118,
+        "end_line": 0
+      },
+      "finding": "sudo ",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 203,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 289,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 290,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 312,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 345,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 346,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 347,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 423,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 463,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 464,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 465,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 466,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "INSTALLATION_COMPARISON.md",
+        "start_line": 15,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "INSTALLATION_COMPARISON.md",
+        "start_line": 97,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "INSTALLATION_COMPARISON.md",
+        "start_line": 208,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "INSTALLATION_COMPARISON.md",
+        "start_line": 212,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "INSTALLATION_COMPARISON.md",
+        "start_line": 216,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "INSTALLATION_COMPARISON.md",
+        "start_line": 220,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "INSTALLATION.md",
+        "start_line": 101,
+        "end_line": 0
+      },
+      "finding": "Create virtual environment\npython -m venv venv\nsource venv/bin/activate  # Windows: venv\\Scripts\\activate\n\n# 3. Install dependencies\npip install -e .\n\n# 4. Configure environment\ncp .env.example .env\nn",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "INSTALLATION.md",
+        "start_line": 163,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "INSTALLATION.md",
+        "start_line": 359,
+        "end_line": 0
+      },
+      "finding": "sudo ",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "INSTALLATION.md",
+        "start_line": 360,
+        "end_line": 0
+      },
+      "finding": "sudo ",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "INSTALLATION.md",
+        "start_line": 422,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA3",
+      "category": "Excessive Agency",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "LICENSE",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "NOT LIMITED TO",
+      "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "Makefile",
+        "start_line": 127,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "YR4",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.4,
+      "location": {
+        "file": "PROJECT_COMPLETE.md",
+        "start_line": 114,
+        "end_line": 0
+      },
+      "finding": "Tools:; ‍",
+      "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "PROJECT_COMPLETE.md",
+        "start_line": 380,
+        "end_line": 0
+      },
+      "finding": "‍",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 12,
+        "end_line": 0
+      },
+      "finding": "mcp",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 14,
+        "end_line": 0
+      },
+      "finding": "websockets",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 14,
+        "end_line": 0
+      },
+      "finding": "websockets",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 15,
+        "end_line": 0
+      },
+      "finding": "eth-account",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "python-dotenv",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 17,
+        "end_line": 0
+      },
+      "finding": "httpx",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 17,
+        "end_line": 0
+      },
+      "finding": "httpx",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 18,
+        "end_line": 0
+      },
+      "finding": "pydantic",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 19,
+        "end_line": 0
+      },
+      "finding": "pydantic-settings",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 20,
+        "end_line": 0
+      },
+      "finding": "fastapi",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 21,
+        "end_line": 0
+      },
+      "finding": "uvicorn",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC6",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 21,
+        "end_line": 0
+      },
+      "finding": "uvicorn",
+      "explanation": "Package name closely resembles a popular package, suggesting possible typosquatting. Attackers publish malicious packages with similar names to trick developers into installing them."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 22,
+        "end_line": 0
+      },
+      "finding": "jinja2",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 28,
+        "end_line": 0
+      },
+      "finding": "pytest",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 36,
+        "end_line": 0
+      },
+      "finding": "black",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 43,
+        "end_line": 0
+      },
+      "finding": "safety",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 47,
+        "end_line": 0
+      },
+      "finding": "psutil",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "QUICK_REFERENCE.md",
+        "start_line": 46,
+        "end_line": 0
+      },
+      "finding": "No confirmation",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "TM2",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "quickstart.sh",
+        "start_line": 9,
+        "end_line": 0
+      },
+      "finding": "| bash",
+      "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "README.md",
+        "start_line": 14,
+        "end_line": 0
+      },
+      "finding": "‍",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 316,
+        "end_line": 0
+      },
+      "finding": "                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 322,
+        "end_line": 0
+      },
+      "finding": "                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "run_trading_tests.py",
+        "start_line": 189,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "SETUP_IMPROVEMENTS_SUMMARY.md",
+        "start_line": 407,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "setup_wizard.py",
+        "start_line": 766,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "setup_wizard.py",
+        "start_line": 787,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "setup_wizard.py",
+        "start_line": 789,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "smoke_test.py",
+        "start_line": 124,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/polymarket_mcp/config.py",
+        "start_line": 18,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "src/polymarket_mcp/config.py",
+        "start_line": 83,
+        "end_line": 0
+      },
+      "finding": "without confirmation",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/polymarket_mcp/server.py",
+        "start_line": 367,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "src/polymarket_mcp/utils/websocket_manager.py",
+        "start_line": 757,
+        "end_line": 0
+      },
+      "finding": "Start background task",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "AS2",
+      "category": "Agent Snooping",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "location": {
+        "file": "src/polymarket_mcp/web/app.py",
+        "start_line": 98,
+        "end_line": 0
+      },
+      "finding": "Load MCP configuration",
+      "explanation": "Skill accesses MCP server configuration files (mcp.json). MCP configs contain server URLs, authentication tokens, and tool definitions — reading them allows the skill to discover and potentially abuse other tool integrations."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/polymarket_mcp/web/app.py",
+        "start_line": 379,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/polymarket_mcp/web/app.py",
+        "start_line": 384,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/polymarket_mcp/web/app.py",
+        "start_line": 388,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/polymarket_mcp/web/app.py",
+        "start_line": 390,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/polymarket_mcp/web/templates/config.html",
+        "start_line": 149,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "src/polymarket_mcp/web/templates/index.html",
+        "start_line": 32,
+        "end_line": 0
+      },
+      "finding": "<!-- Status Overview -->\n        <section class=\"card-grid\">\n            <div class=\"card\">\n                <div class=\"card-header\">\n                    <h3>MCP Status</h3>\n                </div>\n   ",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/polymarket_mcp/web/templates/markets.html",
+        "start_line": 201,
+        "end_line": 0
+      },
+      "finding": "                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/polymarket_mcp/web/templates/markets.html",
+        "start_line": 202,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/polymarket_mcp/web/templates/markets.html",
+        "start_line": 203,
+        "end_line": 0
+      },
+      "finding": "                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/polymarket_mcp/web/templates/markets.html",
+        "start_line": 204,
+        "end_line": 0
+      },
+      "finding": "                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/polymarket_mcp/web/templates/markets.html",
+        "start_line": 205,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/polymarket_mcp/web/templates/markets.html",
+        "start_line": 206,
+        "end_line": 0
+      },
+      "finding": "                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "src/polymarket_mcp/web/templates/monitoring.html",
+        "start_line": 28,
+        "end_line": 0
+      },
+      "finding": "<!-- System Information -->",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "start_web_dashboard.sh",
+        "start_line": 31,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "start_web_dashboard.sh",
+        "start_line": 32,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "start_web_dashboard.sh",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "start_web_dashboard.sh",
+        "start_line": 34,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "TEST_EXAMPLES.py",
+        "start_line": 5,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "TEST_INSTALLATION.md",
+        "start_line": 96,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "TEST_INSTALLATION.md",
+        "start_line": 139,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "TEST_INSTALLATION.md",
+        "start_line": 152,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "TEST_INSTALLATION.md",
+        "start_line": 215,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "test_mcp_connection.py",
+        "start_line": 40,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST3",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "test_web_dashboard.py",
+        "start_line": 99,
+        "end_line": 99
+      },
+      "finding": "            __import__(module)",
+      "explanation": "Dynamic __import__() can load arbitrary modules at runtime, bypassing static analysis and potentially importing malicious code."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "test-docker.sh",
+        "start_line": 123,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "test-docker.sh",
+        "start_line": 123,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.95,
+      "location": {
+        "file": "test-docker.sh",
+        "start_line": 161,
+        "end_line": 0
+      },
+      "finding": "rmi polymarket-mcp:test > /dev/",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "test-docker.sh",
+        "start_line": 176,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "TESTING.md",
+        "start_line": 297,
+        "end_line": 0
+      },
+      "finding": "https://api.polymarket.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/conftest.py",
+        "start_line": 36,
+        "end_line": 0
+      },
+      "finding": "os.environ.get(key",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/conftest.py",
+        "start_line": 39,
+        "end_line": 0
+      },
+      "finding": "os.environ.get(\"POLYGON_PRIVATE_KEY",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/conftest.py",
+        "start_line": 40,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_e2e.py",
+        "start_line": 59,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_e2e.py",
+        "start_line": 200,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_e2e.py",
+        "start_line": 228,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_e2e.py",
+        "start_line": 300,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_e2e.py",
+        "start_line": 458,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_integration.py",
+        "start_line": 293,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_issue_fixes.py",
+        "start_line": 100,
+        "end_line": 106
+      },
+      "finding": "        result = subprocess.run(\n            [sys.executable, \"-m\", \"pip\", \"install\", \"--dry-run\", \".\"],\n            cwd=project_root,\n            capture_output=True,\n            text=True,\n         ",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "OH1",
+      "category": "Output Handling",
+      "severity": "HIGH",
+      "confidence": 0.95,
+      "location": {
+        "file": "tests/test_issue_fixes.py",
+        "start_line": 100,
+        "end_line": 0
+      },
+      "finding": "subprocess.run(\n            [sys.executable, \"-m\", \"pip\", \"install\", \"--dry-run\", \".\"],\n            cwd=project_root,\n            capture_output",
+      "explanation": "Model output is used without validation or sanitization. Unvalidated output injected into downstream contexts (SQL, shell, HTML) enables injection attacks and arbitrary code execution."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_trading_tools.py",
+        "start_line": 469,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_websocket.py",
+        "start_line": 340,
+        "end_line": 0
+      },
+      "finding": "Start background task",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_websocket.py",
+        "start_line": 505,
+        "end_line": 0
+      },
+      "finding": "Start background task",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 25,
+        "end_line": 0
+      },
+      "finding": "                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 56,
+        "end_line": 0
+      },
+      "finding": "                                                    ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 57,
+        "end_line": 0
+      },
+      "finding": "                                                    ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 58,
+        "end_line": 0
+      },
+      "finding": "                                                    ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 86,
+        "end_line": 0
+      },
+      "finding": "                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 127,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 128,
+        "end_line": 0
+      },
+      "finding": "                                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 129,
+        "end_line": 0
+      },
+      "finding": "                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 191,
+        "end_line": 0
+      },
+      "finding": "                                                  ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 193,
+        "end_line": 0
+      },
+      "finding": "                                                  ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 198,
+        "end_line": 0
+      },
+      "finding": "                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 208,
+        "end_line": 0
+      },
+      "finding": "                                                        ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 213,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 221,
+        "end_line": 0
+      },
+      "finding": "                                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 222,
+        "end_line": 0
+      },
+      "finding": "                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 226,
+        "end_line": 0
+      },
+      "finding": "                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 241,
+        "end_line": 0
+      },
+      "finding": "                                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 244,
+        "end_line": 0
+      },
+      "finding": "                                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 247,
+        "end_line": 0
+      },
+      "finding": "                                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 250,
+        "end_line": 0
+      },
+      "finding": "                                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 270,
+        "end_line": 0
+      },
+      "finding": "                                                        ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 280,
+        "end_line": 0
+      },
+      "finding": "                                                                  ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "TRADING_ARCHITECTURE.md",
+        "start_line": 281,
+        "end_line": 0
+      },
+      "finding": "                                                        ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "uninstall.sh",
+        "start_line": 10,
+        "end_line": 0
+      },
+      "finding": "without confirmation",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "uninstall.sh",
+        "start_line": 121,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "uninstall.sh",
+        "start_line": 123,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "uninstall.sh",
+        "start_line": 128,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.95,
+      "location": {
+        "file": "uninstall.sh",
+        "start_line": 173,
+        "end_line": 0
+      },
+      "finding": "rm -rf {} + 2>/dev/",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.95,
+      "location": {
+        "file": "uninstall.sh",
+        "start_line": 176,
+        "end_line": 0
+      },
+      "finding": "rm -rf {} + 2>/dev/",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "TM2",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.75,
+      "location": {
+        "file": "uninstall.sh",
+        "start_line": 218,
+        "end_line": 0
+      },
+      "finding": "&& rm -",
+      "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 30,
+        "end_line": 0
+      },
+      "finding": "                                                        ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "                                                        ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 36,
+        "end_line": 0
+      },
+      "finding": "                                                        ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 39,
+        "end_line": 0
+      },
+      "finding": "                                                        ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 62,
+        "end_line": 0
+      },
+      "finding": "                                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 65,
+        "end_line": 0
+      },
+      "finding": "                                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 68,
+        "end_line": 0
+      },
+      "finding": "                                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 69,
+        "end_line": 0
+      },
+      "finding": "                                                  ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 71,
+        "end_line": 0
+      },
+      "finding": "                                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 236,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 351,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 354,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 356,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 362,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 365,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 370,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 392,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 397,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 508,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 550,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 679,
+        "end_line": 0
+      },
+      "finding": "Create wallet first\n\n    │\n    ▼\nAre you comfortable with terminal?\n    │\n    ├─ Yes ──────────► Use automated script\n    │\n    └─ No ───────────► Use GUI wizard\n\n    │\n    ▼\nInstallation complete!\n``",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 724,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 729,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "VISUAL_INSTALL_GUIDE.md",
+        "start_line": 733,
+        "end_line": 0
+      },
+      "finding": "                                                ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "WEB_DASHBOARD.md",
+        "start_line": 503,
+        "end_line": 0
+      },
+      "finding": "                                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "WEB_DASHBOARD.md",
+        "start_line": 509,
+        "end_line": 0
+      },
+      "finding": "                                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "WEB_DASHBOARD.md",
+        "start_line": 511,
+        "end_line": 0
+      },
+      "finding": "                                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "WEB_DASHBOARD.md",
+        "start_line": 512,
+        "end_line": 0
+      },
+      "finding": "                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "WEBSOCKET_INTEGRATION.md",
+        "start_line": 206,
+        "end_line": 0
+      },
+      "finding": "start background task",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}

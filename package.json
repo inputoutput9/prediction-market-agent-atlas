@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "scan": "bun scripts/scan.ts",
+    "scan:skillspector": "bun scripts/skillspector-scan.ts",
     "generate": "bun scripts/generate-readme.ts",
-    "gate": "bun scripts/generate-readme.ts --check && bun test"
+    "gate": "bun scripts/generate-readme.ts --check && bun scripts/skillspector-docs.ts --check && bun test"
   },
   "devDependencies": {
     "@types/bun": "latest"

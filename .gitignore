@@ -6,6 +6,10 @@ out
 dist
 *.tgz
 
+# skillspector raw scan temp (carries wall-clock timestamps — never commit;
+# the driver deletes it, this is a crash-safety net)
+data/skillspector/.raw-*.json
+
 # code coverage
 coverage
 *.lcov

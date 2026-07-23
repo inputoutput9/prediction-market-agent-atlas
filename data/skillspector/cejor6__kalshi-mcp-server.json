@@ -1,0 +1,22 @@
+{
+  "id": "cejor6/kalshi-mcp-server",
+  "head_sha": "fb1ee788d980",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 0,
+    "severity": "LOW",
+    "recommendation": "SAFE"
+  },
+  "counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "suppressed_count": 71,
+  "issues": [],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}
