@@ -12,11 +12,18 @@ _A verified, continuously-rescanned map of the best — and safest — open-sour
 
 <br>
 
+<div align="center">
+
+<img src="assets/overview.svg" alt="What the atlas does: an LLM agent harness, the atlas ranking 40+ repos into tiers with scam flags, connecting safely to Kalshi and Polymarket" width="100%">
+
+</div>
+
+<br>
+
 # Table of Contents
 
 - [Why this exists](#why-this-exists)
 - [How the ranking works](#how-the-ranking-works)
-- [Choosing your stack](#choosing-your-stack)
 - [The Rankings](#the-rankings)
   - [Kalshi](#kalshi)
   - [Polymarket](#polymarket)
@@ -24,6 +31,7 @@ _A verified, continuously-rescanned map of the best — and safest — open-sour
   - [Deprecated / reference-only](#deprecated--reference-only)
   - [🚩 Flagged — do not run](#-flagged--do-not-run)
 - [Safety essentials](#safety-essentials)
+- [Diagrams](#diagrams)
 - [Adding a venue or repo](#adding-a-venue-or-repo)
 - [Honesty notes](#honesty-notes)
 - [License](#license)
@@ -50,59 +58,7 @@ Each entry is scored 0–5 on four **curated** axes (with dated evidence in [`da
 | **Agent fit** | ×2 | MCP/skill-native quality, tool schemas, structured output, agent docs |
 | **Maintenance** | ×2 | **Computed** from `max(last push, last release)` — never hand-assigned |
 
-Weighted total → tier: **S** (≥80%) · **A** (≥65%) · **B** (≥45%) · **C**. Hard overrides beat scores: scam/key-exfil flags → 🚩 Flagged; archived → Deprecated; idle >180 days caps the tier at B (unless an official surface is deliberately accepted as dormant). Full rubric with per-level anchors: [docs/methodology.md](docs/methodology.md).
-
-```mermaid
-flowchart LR
-    Y["repos.yaml<br/>curated scores + dated evidence"] --> E["scoring engine<br/>safety-weighted rubric"]
-    A["GitHub Action<br/>(weekly cron)"] --> S["scan.ts<br/>GitHub · PyPI · npm"]
-    S --> L["live.json<br/>stars · pushed · versions · archived"]
-    L --> E
-    E --> HF{"hard flags?"}
-    HF -->|"scam / key-exfil"| F["🚩 Flagged table"]
-    HF -->|"archived"| D["Deprecated table"]
-    HF -->|"none"| T["tier tables S/A/B/C<br/>+ idle-decay cap"]
-```
-
-## Choosing your stack
-
-```mermaid
-flowchart TD
-    Q{"What does your<br/>agent need?"} -->|"interactive tools<br/>(chat / agent harness)"| MCP["MCP server or skill"]
-    Q -->|"pipelines & strategy code"| SDK["SDK / client"]
-    Q -->|"testing before real keys"| SIM["paper trading / backtest"]
-
-    MCP --> KM["Kalshi: safety-railed MCP<br/>(demo-default, spend caps)"]
-    MCP --> PM["Polymarket: official agent skill<br/>+ community MCPs"]
-    SDK --> KS["Kalshi: spec-first SDK over<br/>official registry SDKs"]
-    SDK --> PS["Polymarket: official v2 /<br/>unified SDKs or CLI (-o json)"]
-    SDK --> XV["Cross-venue: unified API layer<br/>(self-host for real keys)"]
-    SIM --> PT["paper-trading simulators &<br/>replay benchmarks — no keys needed"]
-
-    KM -.-> RULE["Universal rule: demo env first,<br/>explicit opt-in for real money,<br/>caps on every write path"]
-    PM -.-> RULE
-```
-
-A layered reference architecture (venue-agnostic):
-
-```mermaid
-flowchart TB
-    subgraph L4["Agent harness (Claude Code, Cursor, custom loop)"]
-        H["LLM + tool calling"]
-    end
-    subgraph L3["Agent interface layer"]
-        M["MCP servers · agent skills · JSON-output CLIs"]
-    end
-    subgraph L2["Client layer"]
-        C["official SDKs (ground truth) · spec-first community SDKs · cross-venue abstractions"]
-    end
-    subgraph L1["Venue APIs"]
-        V["REST · WebSocket · on-chain (CLOB/CTF)"]
-    end
-    H --> M --> C --> V
-    P["Safety envelope: demo-default,<br/>write gating, spend caps,<br/>keys in env — never in code"] -.-> M
-    P -.-> C
-```
+Weighted total → tier: **S** (≥80%) · **A** (≥65%) · **B** (≥45%) · **C**. Hard overrides beat scores: scam/key-exfil flags → 🚩 Flagged; archived → Deprecated; idle >180 days caps the tier at B (unless an official surface is deliberately accepted as dormant). Full rubric with per-level anchors: [docs/methodology.md](docs/methodology.md); the pipeline as a diagram: [scoring-pipeline](diagrams/scoring-pipeline.md).
 
 # The Rankings
 
@@ -196,6 +152,16 @@ The five rules that survive every venue and every repo (full checklist + scam-si
 3. **Write paths need explicit gates.** Separate read/write tools; require confirm-first order tools or an explicit trading-enable flag; cap order size and daily spend *below* the client if the tool supports it.
 4. **Never grant an LLM more than the sub-account it trades can lose.** Venue-side sub-accounts/limits beat any in-repo cap.
 5. **Stars are not diligence.** Scam repos buy them. Check contributor history, commit cadence, and whether the code the README describes actually exists.
+
+## Diagrams
+
+Kept in [`diagrams/`](diagrams/) so this page stays scannable — all render on GitHub:
+
+| Diagram | Shows |
+|---|---|
+| [Scoring pipeline](diagrams/scoring-pipeline.md) | How a repo becomes a tier: scan → score → sort / flag |
+| [Choosing your stack](diagrams/choosing-your-stack.md) | Which kind of tool for which need |
+| [Reference architecture](diagrams/reference-architecture.md) | The venue-agnostic layers an agent stacks |
 
 ## Adding a venue or repo
 
