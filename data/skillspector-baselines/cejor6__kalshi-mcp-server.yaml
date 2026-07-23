@@ -1,0 +1,289 @@
+# SkillSpector baseline — findings listed here are suppressed on future scans.
+# Edit 'reason' fields and add glob 'rules' as needed. See docs/SUPPRESSION.md.
+version: 1
+rules: []
+fingerprints:
+- hash: sha256:44da2c3dff32bba4
+  rule_id: AST7
+  file: src/kalshi_mcp_server/cli.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:7bccd156c32345ec
+  rule_id: AST7
+  file: src/kalshi_mcp_server/safety.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:39246b098947568c
+  rule_id: AST7
+  file: src/kalshi_mcp_server/safety.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:9e9cdff9bcee4438
+  rule_id: AST7
+  file: src/kalshi_mcp_server/safety.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:4e9fe5ff63bf187e
+  rule_id: AST7
+  file: src/kalshi_mcp_server/safety.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:79dc697e7396db60
+  rule_id: AST7
+  file: src/kalshi_mcp_server/safety.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:79dc697e7396db60
+  rule_id: AST7
+  file: src/kalshi_mcp_server/safety.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:9acac9bf075fc018
+  rule_id: AS1
+  file: README.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:0e3cacc8061c6647
+  rule_id: AS2
+  file: README.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:3c795d0c88b98d8c
+  rule_id: E1
+  file: DEPLOY.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:d6a5aba2ef75f5f6
+  rule_id: E1
+  file: src/kalshi_mcp_server/config.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:0ba66a54f91f32ab
+  rule_id: E2
+  file: src/kalshi_mcp_server/config.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:fd97996006fa7b2f
+  rule_id: E2
+  file: src/kalshi_mcp_server/config.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:fbc333ef617628cd
+  rule_id: E2
+  file: src/kalshi_mcp_server/config.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:3eae7876ee86eef4
+  rule_id: E2
+  file: src/kalshi_mcp_server/oauth.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:e82725edb6a7ae01
+  rule_id: E2
+  file: src/kalshi_mcp_server/oauth.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:eec28e4c478957a6
+  rule_id: E1
+  file: tests/test_auth.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:0a5b189aea76a499
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:8e2814ee5d1958d9
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:8e2814ee5d1958d9
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:eccfe080dd0fb26a
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:7bfd9391ac5a4115
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:84f29d1ecbfe9e44
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:745fe462087e189b
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:3a15a0c511d80807
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:85a504e081b2ee66
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:fbc412d190acda01
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:85891055c8a98c65
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:575930764f63ede9
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:cb75fefe78d9ad6b
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:12a1309ad84bb235
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:31b4407af0b0d7a7
+  rule_id: E1
+  file: tests/test_external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:e440ee088f620d88
+  rule_id: EA2
+  file: DEPLOY.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:b005dbf46eb689f0
+  rule_id: EA3
+  file: DISCLAIMER.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:20cd92fec32ac9d9
+  rule_id: EA3
+  file: DISCLAIMER.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:005fae9fc53a3b0b
+  rule_id: EA3
+  file: LICENSE
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:99f1e817cb8e2e41
+  rule_id: EA4
+  file: tests/test_discovery.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:fa8f69e22701e830
+  rule_id: PE3
+  file: DEPLOY.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:a2bef1921a33c425
+  rule_id: PE3
+  file: README.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:6325977d3330d7d6
+  rule_id: PE3
+  file: README.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:4b251a5cc08738fb
+  rule_id: PE3
+  file: README.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:c5a55edf4e1cadb1
+  rule_id: PE3
+  file: src/kalshi_mcp_server/auth.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:dfe76992370fbfb3
+  rule_id: PE3
+  file: src/kalshi_mcp_server/cli.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:b16fa852c20a5fef
+  rule_id: PE3
+  file: src/kalshi_mcp_server/cli.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:a29fd93b90d974f4
+  rule_id: PE3
+  file: src/kalshi_mcp_server/cli.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:0e3881fa111fd5fc
+  rule_id: PE3
+  file: src/kalshi_mcp_server/cli.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:12e69e4d5034b4f7
+  rule_id: PE3
+  file: src/kalshi_mcp_server/cli.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:0e1a967d31c10525
+  rule_id: PE3
+  file: src/kalshi_mcp_server/cli.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:8fc0e5d13221b0ae
+  rule_id: PE3
+  file: src/kalshi_mcp_server/tools/external_data.py
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:a7bcd0643b180343
+  rule_id: PE3
+  file: uv.lock
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:5152d87fdf46cb28
+  rule_id: PE3
+  file: uv.lock
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:8fc855c65dee72e8
+  rule_id: PE3
+  file: uv.lock
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:5cb828beb87f45c5
+  rule_id: PE3
+  file: uv.lock
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:392ffa4aa97d79a5
+  rule_id: PE3
+  file: uv.lock
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:7d4c62c2b1e222a6
+  rule_id: PE3
+  file: uv.lock
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:dd12590c6ba6ac9e
+  rule_id: PE3
+  file: uv.lock
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:84de484287281156
+  rule_id: P2
+  file: .github/PULL_REQUEST_TEMPLATE.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:62b31e14d795e07f
+  rule_id: RA2
+  file: DEPLOY.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:86c454e497177b52
+  rule_id: RA2
+  file: README.md
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:9b4215a85e15d47f
+  rule_id: SC4
+  file: pyproject.toml
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:eeb51c2814233fea
+  rule_id: SC4
+  file: pyproject.toml
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:41867c1e490f7ab3
+  rule_id: SC4
+  file: pyproject.toml
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:ae285f7e4202ffc5
+  rule_id: SC4
+  file: pyproject.toml
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:20a6e2e3d9869a82
+  rule_id: SC4
+  file: pyproject.toml
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:d283ed1e928b84d2
+  rule_id: SC4
+  file: pyproject.toml
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:5083dad1cc9e7fda
+  rule_id: SC4
+  file: pyproject.toml
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:58c39bce9fd947a6
+  rule_id: SC4
+  file: pyproject.toml
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:5083dad1cc9e7fda
+  rule_id: SC4
+  file: pyproject.toml
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:f454747c0f026ada
+  rule_id: TM1
+  file: .claude/settings.json
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:879eac07ab8cf655
+  rule_id: TM1
+  file: .claude/settings.json
+  reason: Accepted finding (auto-generated baseline)
+- hash: sha256:d1d2843ce0d11396
+  rule_id: TM1
+  file: .github/workflows/secret-scan.yml
+  reason: Accepted finding (auto-generated baseline)

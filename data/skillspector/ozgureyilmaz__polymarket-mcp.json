@@ -1,0 +1,127 @@
+{
+  "id": "ozgureyilmaz/polymarket-mcp",
+  "head_sha": "966055688d5e",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 100,
+    "severity": "CRITICAL",
+    "recommendation": "DO_NOT_INSTALL"
+  },
+  "counts": {
+    "critical": 0,
+    "high": 5,
+    "medium": 2,
+    "low": 1
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "TM2",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.75,
+      "location": {
+        "file": ".github/workflows/release.yml",
+        "start_line": 71,
+        "end_line": 0
+      },
+      "finding": "|\n          sudo ",
+      "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": ".github/workflows/release.yml",
+        "start_line": 72,
+        "end_line": 0
+      },
+      "finding": "sudo ",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": ".github/workflows/release.yml",
+        "start_line": 73,
+        "end_line": 0
+      },
+      "finding": "sudo ",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "Cargo.toml",
+        "start_line": 12,
+        "end_line": 0
+      },
+      "finding": "rmcp = { git = \"https://github.com/modelcontextprotocol/",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "Dockerfile",
+        "start_line": 22,
+        "end_line": 0
+      },
+      "finding": "rm -rf src target/release/deps/",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "TM2",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.75,
+      "location": {
+        "file": "Dockerfile",
+        "start_line": 22,
+        "end_line": 0
+      },
+      "finding": "&& rm -",
+      "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow."
+    },
+    {
+      "id": "EA3",
+      "category": "Excessive Agency",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "LICENSE",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "NOT LIMITED TO",
+      "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-mcp.service",
+        "start_line": 23,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}

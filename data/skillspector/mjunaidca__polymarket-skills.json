@@ -1,0 +1,478 @@
+{
+  "id": "mjunaidca/polymarket-skills",
+  "head_sha": "ffed17f13bc5",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 100,
+    "severity": "CRITICAL",
+    "recommendation": "DO_NOT_INSTALL"
+  },
+  "counts": {
+    "critical": 0,
+    "high": 23,
+    "medium": 12,
+    "low": 0
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "location": {
+        "file": "CLAUDE.md",
+        "start_line": 17,
+        "end_line": 0
+      },
+      "finding": "auto-confirm",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/check_positions.py",
+        "start_line": 32,
+        "end_line": 0
+      },
+      "finding": "Create an L2-authenticated ClobClient.\"\"\"\n    key = os.environ.get(\"POLYMARKET_PRIVATE_KEY\", \"\")\n    if not key:\n        print(\n            \"POLYMARKET_PRIVATE_KEY not set.\\n\"\n            \"Set it to y",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "polymarket-live-executor/scripts/check_positions.py",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "os.environ.get(\"POLYMARKET_PRIVATE_KEY",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "polymarket-live-executor/scripts/execute_live.py",
+        "start_line": 41,
+        "end_line": 0
+      },
+      "finding": "os.environ.get(\"POLYMARKET_PRIVATE_KEY",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "polymarket-live-executor/scripts/execute_live.py",
+        "start_line": 104,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"POLYMARKET_PRIVATE_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 54,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 57,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 62,
+        "end_line": 0
+      },
+      "finding": "chmod 600",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 77,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 91,
+        "end_line": 0
+      },
+      "finding": "os.environ.get(\"POLYMARKET_PRIVATE_KEY",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 130,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 131,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 135,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 137,
+        "end_line": 0
+      },
+      "finding": "chmod 600",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 137,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 139,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 139,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 145,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 146,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 148,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 173,
+        "end_line": 0
+      },
+      "finding": "os.environ.get(\"POLYMARKET_PRIVATE_KEY",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.7999999999999999,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 204,
+        "end_line": 0
+      },
+      "finding": "requests.post(POLYGON_RPC, json=",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.7999999999999999,
+      "location": {
+        "file": "polymarket-live-executor/scripts/setup_wallet.py",
+        "start_line": 226,
+        "end_line": 0
+      },
+      "finding": "requests.post(POLYGON_RPC, json=",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "location": {
+        "file": "polymarket-live-executor/SKILL.md",
+        "start_line": 26,
+        "end_line": 0
+      },
+      "finding": "auto-confirm",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/SKILL.md",
+        "start_line": 44,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "polymarket-live-executor/SKILL.md",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": "chmod 600",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/SKILL.md",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/SKILL.md",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "polymarket-live-executor/SKILL.md",
+        "start_line": 46,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "polymarket-strategy-advisor/scripts/backtest.py",
+        "start_line": 261,
+        "end_line": 0
+      },
+      "finding": "                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "polymarket-strategy-advisor/scripts/backtest.py",
+        "start_line": 262,
+        "end_line": 0
+      },
+      "finding": "                                            ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "polymarket-strategy-advisor/scripts/backtest.py",
+        "start_line": 263,
+        "end_line": 0
+      },
+      "finding": "                                          ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "README.md",
+        "start_line": 233,
+        "end_line": 0
+      },
+      "finding": "chmod 600",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "YR4",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "SECURITY-AUDIT.md",
+        "start_line": 6,
+        "end_line": 0
+      },
+      "finding": "model; LLM; AI agent; LLM; model; LLM; IGNORE ALL PREVIOUS INSTRUCTIONS",
+      "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "SECURITY-AUDIT.md",
+        "start_line": 573,
+        "end_line": 0
+      },
+      "finding": "rm -r --cached */",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}

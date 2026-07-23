@@ -1,0 +1,1427 @@
+{
+  "id": "newyorkcompute/kalshi",
+  "head_sha": "52371ce04d16",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 100,
+    "severity": "CRITICAL",
+    "recommendation": "DO_NOT_INSTALL"
+  },
+  "counts": {
+    "critical": 5,
+    "high": 16,
+    "medium": 18,
+    "low": 69
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "\"@hono/node-server\": \"^1.14.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "@hono/node-server==1.14.1",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 34,
+        "end_line": 0
+      },
+      "finding": "\"@newyorkcompute/kalshi-core\": \"*\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 35,
+        "end_line": 0
+      },
+      "finding": "\"@newyorkcompute/kalshi-weather\": \"*\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 36,
+        "end_line": 0
+      },
+      "finding": "\"hono\": \"^4.7.10\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 36,
+        "end_line": 0
+      },
+      "finding": "hono==4.7.10",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 37,
+        "end_line": 0
+      },
+      "finding": "\"ink\": \"^5.2.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 38,
+        "end_line": 0
+      },
+      "finding": "\"js-yaml\": \"^4.1.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 38,
+        "end_line": 0
+      },
+      "finding": "js-yaml==4.1.0",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 39,
+        "end_line": 0
+      },
+      "finding": "\"kalshi-typescript\": \"^3.3.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 40,
+        "end_line": 0
+      },
+      "finding": "\"react\": \"^18.3.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 41,
+        "end_line": 0
+      },
+      "finding": "\"zod\": \"^3.25.36\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 44,
+        "end_line": 0
+      },
+      "finding": "\"@eslint/js\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": "\"@types/js-yaml\": \"^4.0.9\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 46,
+        "end_line": 0
+      },
+      "finding": "\"@types/node\": \"^22.15.29\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 47,
+        "end_line": 0
+      },
+      "finding": "\"@types/react\": \"^18.3.12\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 48,
+        "end_line": 0
+      },
+      "finding": "\"@vitest/coverage-v8\": \"^3.2.4\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 49,
+        "end_line": 0
+      },
+      "finding": "\"eslint\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 50,
+        "end_line": 0
+      },
+      "finding": "\"tsx\": \"^4.19.2\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 51,
+        "end_line": 0
+      },
+      "finding": "\"typescript-eslint\": \"^8.33.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 52,
+        "end_line": 0
+      },
+      "finding": "\"vitest\": \"^3.2.3\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "apps/mm/package.json",
+        "start_line": 52,
+        "end_line": 0
+      },
+      "finding": "vitest==3.2.3",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "OH3",
+      "category": "Output Handling",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "apps/mm/scripts/analyze-performance.ts",
+        "start_line": 2,
+        "end_line": 0
+      },
+      "finding": "fill log",
+      "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "apps/mm/src/api/server.ts",
+        "start_line": 173,
+        "end_line": 0
+      },
+      "finding": "DELETE /markets/:ticker",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "OH3",
+      "category": "Output Handling",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "apps/mm/src/compliance/audit-logger.ts",
+        "start_line": 8,
+        "end_line": 0
+      },
+      "finding": "fill log",
+      "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+    },
+    {
+      "id": "OH3",
+      "category": "Output Handling",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "apps/mm/src/daemon/bot.ts",
+        "start_line": 202,
+        "end_line": 0
+      },
+      "finding": "fill log",
+      "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+    },
+    {
+      "id": "OH3",
+      "category": "Output Handling",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "apps/mm/src/daemon/bot.ts",
+        "start_line": 838,
+        "end_line": 0
+      },
+      "finding": "fill channel",
+      "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+    },
+    {
+      "id": "OH3",
+      "category": "Output Handling",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "apps/mm/src/daemon/bot.ts",
+        "start_line": 1291,
+        "end_line": 0
+      },
+      "finding": "fill log",
+      "explanation": "Output size or generation rate is not bounded. Unbounded output enables denial-of-service through resource exhaustion, log flooding, or context-window stuffing."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "apps/mm/src/dashboard/components.tsx",
+        "start_line": 344,
+        "end_line": 0
+      },
+      "finding": ".env.local ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA3",
+      "category": "Excessive Agency",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "LICENSE",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "NOT LIMITED TO",
+      "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 31,
+        "end_line": 0
+      },
+      "finding": "\"@changesets/changelog-github\": \"^0.5.2\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 32,
+        "end_line": 0
+      },
+      "finding": "\"@changesets/cli\": \"^2.29.8\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "\"dotenv-cli\": \"^11.0.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 34,
+        "end_line": 0
+      },
+      "finding": "\"ink\": \"^5.2.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 35,
+        "end_line": 0
+      },
+      "finding": "\"nx\": \"^21.0.3\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 36,
+        "end_line": 0
+      },
+      "finding": "\"react\": \"^18.3.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 37,
+        "end_line": 0
+      },
+      "finding": "\"typescript\": \"^5.7.2\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 46,
+        "end_line": 0
+      },
+      "finding": "\"axios\": \"^1.18.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 47,
+        "end_line": 0
+      },
+      "finding": "\"kalshi-typescript\": \"^3.3.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 48,
+        "end_line": 0
+      },
+      "finding": "\"ws\": \"^8.18.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 48,
+        "end_line": 0
+      },
+      "finding": "ws==8.18.0",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 51,
+        "end_line": 0
+      },
+      "finding": "\"@eslint/js\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 52,
+        "end_line": 0
+      },
+      "finding": "\"@types/node\": \"^22.15.29\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 53,
+        "end_line": 0
+      },
+      "finding": "\"@types/ws\": \"^8.5.13\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 54,
+        "end_line": 0
+      },
+      "finding": "\"@vitest/coverage-v8\": \"^3.2.4\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 55,
+        "end_line": 0
+      },
+      "finding": "\"eslint\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 56,
+        "end_line": 0
+      },
+      "finding": "\"typescript-eslint\": \"^8.33.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 57,
+        "end_line": 0
+      },
+      "finding": "\"vitest\": \"^3.2.3\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "packages/core/package.json",
+        "start_line": 57,
+        "end_line": 0
+      },
+      "finding": "vitest==3.2.3",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "packages/core/src/config.test.ts",
+        "start_line": 28,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "packages/core/src/config.test.ts",
+        "start_line": 41,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "packages/core/src/config.ts",
+        "start_line": 31,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "packages/core/src/websocket/client.ts",
+        "start_line": 29,
+        "end_line": 0
+      },
+      "finding": "Retry forever",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA1",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "location": {
+        "file": "packages/mcp/CHANGELOG.md",
+        "start_line": 25,
+        "end_line": 0
+      },
+      "finding": "tools:*",
+      "explanation": "Skill grants unrestricted tool access without appropriate constraints. An agent with unfettered tool access can perform arbitrary actions including file modification, network requests, and code execution."
+    },
+    {
+      "id": "EA1",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "location": {
+        "file": "packages/mcp/CHANGELOG.md",
+        "start_line": 30,
+        "end_line": 0
+      },
+      "finding": "tools:*",
+      "explanation": "Skill grants unrestricted tool access without appropriate constraints. An agent with unfettered tool access can perform arbitrary actions including file modification, network requests, and code execution."
+    },
+    {
+      "id": "EA1",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "location": {
+        "file": "packages/mcp/CHANGELOG.md",
+        "start_line": 35,
+        "end_line": 0
+      },
+      "finding": "tools:*",
+      "explanation": "Skill grants unrestricted tool access without appropriate constraints. An agent with unfettered tool access can perform arbitrary actions including file modification, network requests, and code execution."
+    },
+    {
+      "id": "EA1",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "location": {
+        "file": "packages/mcp/CHANGELOG.md",
+        "start_line": 39,
+        "end_line": 0
+      },
+      "finding": "tools:*",
+      "explanation": "Skill grants unrestricted tool access without appropriate constraints. An agent with unfettered tool access can perform arbitrary actions including file modification, network requests, and code execution."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 53,
+        "end_line": 0
+      },
+      "finding": "\"@modelcontextprotocol/sdk\": \"^1.12.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 53,
+        "end_line": 0
+      },
+      "finding": "@modelcontextprotocol/sdk==1.12.1",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 54,
+        "end_line": 0
+      },
+      "finding": "\"@newyorkcompute/kalshi-core\": \"*\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 55,
+        "end_line": 0
+      },
+      "finding": "\"zod\": \"^3.24.4\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 58,
+        "end_line": 0
+      },
+      "finding": "\"@eslint/js\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 59,
+        "end_line": 0
+      },
+      "finding": "\"@types/node\": \"^22.15.29\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 60,
+        "end_line": 0
+      },
+      "finding": "\"@vitest/coverage-v8\": \"^3.2.4\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 61,
+        "end_line": 0
+      },
+      "finding": "\"dotenv\": \"^16.6.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 62,
+        "end_line": 0
+      },
+      "finding": "\"eslint\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 63,
+        "end_line": 0
+      },
+      "finding": "\"tsx\": \"^4.20.3\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 64,
+        "end_line": 0
+      },
+      "finding": "\"typescript-eslint\": \"^8.33.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 65,
+        "end_line": 0
+      },
+      "finding": "\"vitest\": \"^3.2.3\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "packages/mcp/package.json",
+        "start_line": 65,
+        "end_line": 0
+      },
+      "finding": "vitest==3.2.3",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "packages/mcp/scripts/test-connection.ts",
+        "start_line": 14,
+        "end_line": 0
+      },
+      "finding": ".env.local ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "packages/mcp/scripts/test-connection.ts",
+        "start_line": 24,
+        "end_line": 0
+      },
+      "finding": ".env.local\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "packages/mcp/scripts/test-connection.ts",
+        "start_line": 30,
+        "end_line": 0
+      },
+      "finding": ".env.local\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "packages/mcp/scripts/test-connection.ts",
+        "start_line": 40,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "packages/mcp/scripts/test-mcp.ts",
+        "start_line": 15,
+        "end_line": 0
+      },
+      "finding": ".env.local ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "packages/mcp/scripts/test-mcp.ts",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": ".env.local\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "packages/mcp/src/config.test.ts",
+        "start_line": 9,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "packages/mcp/src/config.test.ts",
+        "start_line": 13,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "packages/mcp/src/config.test.ts",
+        "start_line": 26,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "packages/mcp/src/index.ts",
+        "start_line": 81,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 47,
+        "end_line": 0
+      },
+      "finding": "\"@newyorkcompute/kalshi-core\": \"*\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 48,
+        "end_line": 0
+      },
+      "finding": "\"asciichart\": \"^1.5.25\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 49,
+        "end_line": 0
+      },
+      "finding": "\"ink\": \"^5.2.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 50,
+        "end_line": 0
+      },
+      "finding": "\"kalshi-typescript\": \"^3.3.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 51,
+        "end_line": 0
+      },
+      "finding": "\"react\": \"^18.3.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 54,
+        "end_line": 0
+      },
+      "finding": "\"@eslint/js\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 55,
+        "end_line": 0
+      },
+      "finding": "\"@types/asciichart\": \"^1.5.8\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 56,
+        "end_line": 0
+      },
+      "finding": "\"@types/node\": \"^22.15.29\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 57,
+        "end_line": 0
+      },
+      "finding": "\"@types/react\": \"^18.3.12\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 58,
+        "end_line": 0
+      },
+      "finding": "\"@vitest/coverage-v8\": \"^3.2.4\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 59,
+        "end_line": 0
+      },
+      "finding": "\"eslint\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 60,
+        "end_line": 0
+      },
+      "finding": "\"eslint-plugin-react\": \"^7.37.2\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 61,
+        "end_line": 0
+      },
+      "finding": "\"eslint-plugin-react-hooks\": \"^5.1.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 62,
+        "end_line": 0
+      },
+      "finding": "\"ink-testing-library\": \"^4.0.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 63,
+        "end_line": 0
+      },
+      "finding": "\"typescript-eslint\": \"^8.33.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 64,
+        "end_line": 0
+      },
+      "finding": "\"vitest\": \"^3.2.3\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "packages/tui/package.json",
+        "start_line": 64,
+        "end_line": 0
+      },
+      "finding": "vitest==3.2.3",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/weather/package.json",
+        "start_line": 47,
+        "end_line": 0
+      },
+      "finding": "\"@eslint/js\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/weather/package.json",
+        "start_line": 48,
+        "end_line": 0
+      },
+      "finding": "\"@types/node\": \"^22.15.29\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/weather/package.json",
+        "start_line": 49,
+        "end_line": 0
+      },
+      "finding": "\"@vitest/coverage-v8\": \"^3.2.4\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/weather/package.json",
+        "start_line": 50,
+        "end_line": 0
+      },
+      "finding": "\"eslint\": \"^9.28.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/weather/package.json",
+        "start_line": 51,
+        "end_line": 0
+      },
+      "finding": "\"typescript-eslint\": \"^8.33.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "packages/weather/package.json",
+        "start_line": 52,
+        "end_line": 0
+      },
+      "finding": "\"vitest\": \"^3.2.3\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "packages/weather/package.json",
+        "start_line": 52,
+        "end_line": 0
+      },
+      "finding": "vitest==3.2.3",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "packages/weather/src/smoke-test.ts",
+        "start_line": 12,
+        "end_line": 0
+      },
+      "finding": ".env.local ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "README.md",
+        "start_line": 136,
+        "end_line": 0
+      },
+      "finding": "write and execute code directly against the Kalshi API — no MCP server needed.\n\n### Claude Code\n\n```bash\n# Personal (available in all projects)\ncp -r skills/kalshi-trading ~/.claude",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "skills/kalshi-trading/AUTHENTICATION.md",
+        "start_line": 114,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "skills/kalshi-trading/scripts/kalshi-client.ts",
+        "start_line": 114,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}

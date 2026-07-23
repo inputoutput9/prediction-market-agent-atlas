@@ -1,0 +1,49 @@
+{
+  "id": "austron24/kalshi-trader-plugin",
+  "head_sha": "79e2b3ae75a6",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 24,
+    "severity": "MEDIUM",
+    "recommendation": "CAUTION"
+  },
+  "counts": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 1
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "E4",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "commands/finalize.md",
+        "start_line": 423,
+        "end_line": 0
+      },
+      "finding": "Log the session ",
+      "explanation": "Code or instructions that leak agent conversation context to external services, potentially exposing sensitive user interactions."
+    },
+    {
+      "id": "EA3",
+      "category": "Excessive Agency",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "LICENSE",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "NOT LIMITED TO",
+      "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}

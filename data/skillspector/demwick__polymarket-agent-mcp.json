@@ -1,0 +1,387 @@
+{
+  "id": "demwick/polymarket-agent-mcp",
+  "head_sha": "6057a0b1b498",
+  "skillspector_version": "2.3.7",
+  "risk_assessment": {
+    "score": 100,
+    "severity": "CRITICAL",
+    "recommendation": "DO_NOT_INSTALL"
+  },
+  "counts": {
+    "critical": 0,
+    "high": 10,
+    "medium": 3,
+    "low": 15
+  },
+  "suppressed_count": 0,
+  "issues": [
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": ".well-known/mcp/server-card.json",
+        "start_line": 1487,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "assets/icon-v3c.svg",
+        "start_line": 9,
+        "end_line": 0
+      },
+      "finding": "<!-- Hexagon frame -->\n  <polygon points=\"256,60 430,160 430,352 256,452 82,352 82,160\"\n    stroke=\"url(#glow3c)\" stroke-width=\"3\" fill=\"none\" opacity=\"0.3\"/>\n  <!-- Inner hexagon -->\n  <polygon point",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "docker-compose.yml",
+        "start_line": 11,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "SSRF2",
+      "category": "Server-Side Request Forgery",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "Dockerfile",
+        "start_line": 27,
+        "end_line": 0
+      },
+      "finding": "fetch('http://localhost",
+      "explanation": "Code issues a request to a loopback, link-local, or private-range host. This can reach internal services not meant to be exposed and is a common SSRF pivot."
+    },
+    {
+      "id": "EA3",
+      "category": "Excessive Agency",
+      "severity": "LOW",
+      "confidence": 0.7,
+      "location": {
+        "file": "LICENSE",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "NOT LIMITED TO",
+      "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 65,
+        "end_line": 0
+      },
+      "finding": "\"@ethersproject/wallet\": \"^5.8.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 66,
+        "end_line": 0
+      },
+      "finding": "\"@modelcontextprotocol/sdk\": \"^1.29.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 67,
+        "end_line": 0
+      },
+      "finding": "\"@polymarket/clob-client\": \"^5.8.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 68,
+        "end_line": 0
+      },
+      "finding": "\"better-sqlite3\": \"^12.8.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 69,
+        "end_line": 0
+      },
+      "finding": "\"dotenv\": \"^17.4.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 70,
+        "end_line": 0
+      },
+      "finding": "\"ws\": \"^8.20.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "package.json",
+        "start_line": 70,
+        "end_line": 0
+      },
+      "finding": "ws==8.20.0",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 71,
+        "end_line": 0
+      },
+      "finding": "\"zod\": \"^4.3.6\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 74,
+        "end_line": 0
+      },
+      "finding": "\"@types/better-sqlite3\": \"^7.6.13\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 75,
+        "end_line": 0
+      },
+      "finding": "\"@types/node\": \"^25.5.2\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 76,
+        "end_line": 0
+      },
+      "finding": "\"@types/ws\": \"^8.18.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 77,
+        "end_line": 0
+      },
+      "finding": "\"@vitest/coverage-v8\": \"^4.1.4\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 78,
+        "end_line": 0
+      },
+      "finding": "\"fast-check\": \"^4.6.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 79,
+        "end_line": 0
+      },
+      "finding": "\"typescript\": \"^6.0.2\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 80,
+        "end_line": 0
+      },
+      "finding": "\"vitest\": \"^4.1.3\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "PERMISSIONS.md",
+        "start_line": 103,
+        "end_line": 0
+      },
+      "finding": "modify system config",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "README.md",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": "https://api.securityscorecards.dev/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "safeskill.manifest.json",
+        "start_line": 52,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "SECURITY.md",
+        "start_line": 76,
+        "end_line": 0
+      },
+      "finding": "keychain",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "YR4",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "server.json",
+        "start_line": 4,
+        "end_line": 0
+      },
+      "finding": "\"description\":; description\":; \"description\":; description\":; \"description\":; description\":; \"description\":; description\":; \"description\":; description\":; \"description\":; description\":; \"description\":",
+      "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/index.ts",
+        "start_line": 550,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "YR4",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/tools/stop-monitor.test.ts",
+        "start_line": 35,
+        "end_line": 0
+      },
+      "finding": "pSpy; pSpy; pSpy; pSpy; pSpy; pSpy",
+      "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/utils/config.test.ts",
+        "start_line": 6,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    }
+  ],
+  "analysis_completeness": {
+    "coverage_percent": 100,
+    "is_complete": false
+  }
+}
