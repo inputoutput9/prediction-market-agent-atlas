@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="240" viewBox="0 0 1200 240" role="img" aria-label="Prediction Market Agent Atlas">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#161b27"/>
+    </linearGradient>
+    <linearGradient id="yes" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22c55e"/>
+      <stop offset="1" stop-color="#16a34a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="240" fill="url(#bg)" rx="12"/>
+  <!-- probability tape motif -->
+  <g opacity="0.55">
+    <rect x="60" y="178" width="380" height="10" rx="5" fill="#1f2937"/>
+    <rect x="60" y="178" width="247" height="10" rx="5" fill="url(#yes)"/>
+    <text x="452" y="188" font-family="ui-monospace,Menlo,monospace" font-size="15" fill="#22c55e">YES 65¢</text>
+    <text x="530" y="188" font-family="ui-monospace,Menlo,monospace" font-size="15" fill="#64748b">/ NO 35¢</text>
+  </g>
+  <g opacity="0.35" font-family="ui-monospace,Menlo,monospace" font-size="13" fill="#475569">
+    <text x="62" y="212">mcp://kalshi · skill://polymarket · sdk · ws · clob</text>
+  </g>
+  <!-- title -->
+  <text x="60" y="92" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="46" font-weight="700" fill="#e6edf3">Prediction Market Agent Atlas</text>
+  <text x="60" y="132" font-family="-apple-system,'Segoe UI',Helvetica,Arial,sans-serif" font-size="20" fill="#8b949e">The safest routes from an LLM agent to Kalshi &amp; Polymarket — scored, evidence-dated, rescanned weekly</text>
+  <!-- tier chips -->
+  <g font-family="ui-monospace,Menlo,monospace" font-size="15" font-weight="600">
+    <rect x="880" y="60" width="46" height="28" rx="14" fill="#16311f"/><text x="896" y="79" fill="#22c55e">S</text>
+    <rect x="936" y="60" width="46" height="28" rx="14" fill="#332b12"/><text x="951" y="79" fill="#eab308">A</text>
+    <rect x="992" y="60" width="46" height="28" rx="14" fill="#12233b"/><text x="1006" y="79" fill="#3b82f6">B</text>
+    <rect x="1048" y="60" width="52" height="28" rx="14" fill="#3b1214"/><text x="1060" y="79" fill="#ef4444">🚩</text>
+  </g>
+</svg>
