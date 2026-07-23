@@ -112,11 +112,11 @@ flowchart TB
 |---|---|---|---|---|---|---|
 | 🟢 **S** | [`Polymarket/agent-skills`](https://github.com/Polymarket/agent-skills) | skill | 48/55<br><sub>P5 C5 S4 F5</sub> | 178 | pushed 2026-02-19 | The official agent-integration path. Apply a v1→v2 client substitution when following its samples: @polymarket/clob-client-v2 / py-clob-client-v2. |
 | 🟡 **A** | [`Polymarket/polymarket-cli`](https://github.com/Polymarket/polymarket-cli) | cli | 43/55<br><sub>P5 C4 S3 F4</sub> | 2823 | pushed 2026-05-26 | Agent harnesses can drive it via shell with zero MCP plumbing. |
-| 🟡 **A** | [`Polymarket/py-clob-client-v2`](https://github.com/Polymarket/py-clob-client-v2) | sdk-client | 43/55<br><sub>P5 C4 S3 F3</sub> | 163 | pushed 2026-07-17 | TS sibling: @polymarket/clob-client-v2; Rust: rs-clob-client-v2. |
+| 🟡 **A** | [`Polymarket/py-clob-client-v2`](https://github.com/Polymarket/py-clob-client-v2) | sdk-client | 43/55<br><sub>P5 C4 S3 F3</sub> | 163 | pushed 2026-07-17 · v1.1.0 | TS sibling: @polymarket/clob-client-v2; Rust: rs-clob-client-v2. |
 | 🟡 **A** | [`Polymarket/ts-sdk`](https://github.com/Polymarket/ts-sdk) | sdk-client | 43/55<br><sub>P5 C4 S3 F3</sub> | 25 | pushed 2026-07-22 | Python sibling: Polymarket/py-sdk. Check the registry for the actual published package name before adding a dependency. |
 | 🟡 **A** | [`caiovicentino/polymarket-mcp-server`](https://github.com/caiovicentino/polymarket-mcp-server) | mcp-server | 42/55<br><sub>P1 C5 S4 F4</sub> | 597 | pushed 2026-06-23 | Functional and safety-conscious in code, but treat as a reference implementation rather than a trust anchor until provenance concerns age out. |
 | 🟡 **A** | [`demwick/polymarket-agent-mcp`](https://github.com/demwick/polymarket-agent-mcp) | mcp-server | 42/55<br><sub>P2 C4 S4 F4</sub> | 12 | pushed 2026-07-09 | Best engineering posture among community Polymarket MCPs; depth of the advanced tools (copy-trading, backtest) not independently audited. |
-| 🟡 **A** | [`Polymarket/real-time-data-client`](https://github.com/Polymarket/real-time-data-client) | sdk-client | 38/55<br><sub>P5 C2 S4 F3</sub> | 225 | pushed 2026-03-05 | Pair with a CLOB client when you need writes. |
+| 🟡 **A** | [`Polymarket/real-time-data-client`](https://github.com/Polymarket/real-time-data-client) | sdk-client | 38/55<br><sub>P5 C2 S4 F3</sub> | 225 | pushed 2026-03-05 · v1.4.0 | Pair with a CLOB client when you need writes. |
 | 🟡 **A** | [`artvandelay/polymarket-agents`](https://github.com/artvandelay/polymarket-agents) | agent-framework | 37/55<br><sub>P2 C2 S5 F4</sub> | 3 | pushed 2026-02-12 | Narrow domain, honest scope — a good template for domain-specific paper agents. |
 | 🟡 **A** | [`mjunaidca/polymarket-skills`](https://github.com/mjunaidca/polymarket-skills) | skill | 36/55<br><sub>P2 C3 S4 F4</sub> | 77 | pushed 2026-02-26 | Community alternative to the official skill pack, paper-first. |
 | 🔵 **B** | [`ozgureyilmaz/polymarket-mcp`](https://github.com/ozgureyilmaz/polymarket-mcp) | mcp-server | 35/55<br><sub>P2 C2 S5 F4</sub> | 49 | pushed 2026-01-11 | Clean read-only research server. |
@@ -131,13 +131,13 @@ flowchart TB
 | Tier | Repo | Category | Score | Stars | Activity | Why / caveats |
 |---|---|---|---|---|---|---|
 | 🟡 **A** | [`machina-sports/sports-skills`](https://github.com/machina-sports/sports-skills) | skill | 43/55<br><sub>P3 C2 S5 F4</sub> | 196 | pushed 2026-07-20 | Cleanest pattern for a read-only skill safety contract. |
-| 🟡 **A** | [`agent-next/polymarket-paper-trader`](https://github.com/agent-next/polymarket-paper-trader) | data-backtesting | 41/55<br><sub>P2 C3 S5 F5</sub> | 364 | pushed 2026-03-02 | The dev harness: let agents trade risk-free against live books before any real key exists. |
-| 🟡 **A** | [`pmxt-dev/pmxt`](https://github.com/pmxt-dev/pmxt) | sdk-client | 41/55<br><sub>P3 C4 S3 F4</sub> | 2005 | pushed 2026-07-18 · v2.54.0 | The cross-venue abstraction layer. Self-host for anything involving real keys. |
+| 🟡 **A** | [`agent-next/polymarket-paper-trader`](https://github.com/agent-next/polymarket-paper-trader) | data-backtesting | 41/55<br><sub>P2 C3 S5 F5</sub> | 364 | pushed 2026-03-02 · v0.1.7 | The dev harness: let agents trade risk-free against live books before any real key exists. |
+| 🟡 **A** | [`pmxt-dev/pmxt`](https://github.com/pmxt-dev/pmxt) | sdk-client | 41/55<br><sub>P3 C4 S3 F4</sub> | 2006 | pushed 2026-07-18 · v2.54.0 | The cross-venue abstraction layer. Self-host for anything involving real keys. |
 | 🟡 **A** | [`braedonsaunders/homerun`](https://github.com/braedonsaunders/homerun) | agent-framework | 37/55<br><sub>P2 C4 S3 F3</sub> | 150 | pushed 2026-07-04 | Architecture reference for cross-venue strategy infra. AGPL — read it, don't vendor it into proprietary code. |
 | 🟡 **A** | [`guzus/dr-manhattan`](https://github.com/guzus/dr-manhattan) | sdk-client | 37/55<br><sub>P2 C4 S3 F3</sub> | 195 | pushed 2026-07-18 | ⚠️ no license · Fully self-hosted pmxt alternative. Resolve the license question before shipping it inside anything. |
 | 🟡 **A** | [`SpartanLabsXyz/simmer-sdk`](https://github.com/SpartanLabsXyz/simmer-sdk) | sdk-client | 37/55<br><sub>P2 C3 S3 F4</sub> | 48 | pushed 2026-07-22 | Young; watch. |
 | 🔵 **B** | [`Oddpool/PredictionMarketBench`](https://github.com/Oddpool/PredictionMarketBench) | data-backtesting | 35/55<br><sub>P2 C2 S5 F3</sub> | 26 | pushed 2026-01-26 | Unique replay dataset angle; small. |
-| 🔵 **B** | [`alsk1992/CloddsBot`](https://github.com/alsk1992/CloddsBot) | agent-framework | 34/55<br><sub>P2 C4 S2 F3</sub> | 528 | pushed 2026-06-26 | Ambitious scope = large key blast radius. Mine for patterns; run nothing with real keys without an audit. |
+| 🔵 **B** | [`alsk1992/CloddsBot`](https://github.com/alsk1992/CloddsBot) | agent-framework | 34/55<br><sub>P2 C4 S2 F3</sub> | 529 | pushed 2026-06-26 | Ambitious scope = large key blast radius. Mine for patterns; run nothing with real keys without an audit. |
 | 🔵 **B** | [`JamesANZ/prediction-market-mcp`](https://github.com/JamesANZ/prediction-market-mcp) | mcp-server | 32/55<br><sub>P2 C2 S4 F4</sub> | 36 | pushed 2026-01-16 | Multi-venue read-only scanner. |
 
 ### Deprecated / reference-only
@@ -156,7 +156,7 @@ Entries matching known scam-repo signatures (buying stars, README-only "bots", d
 |---|---|---|
 | `brodyautomates/polymarket-pipeline` | 🚩 flagged | 2026-07-23: matches signatures — 367★ four days after creation |
 | `casatrick/polymarket-arbitrage-bot-python` | 🚩 flagged | 2026-07-23: matches signatures — arbitrage-bot pitch, engagement pattern inconsistent with history |
-| `Cortex-AI-Network/polymarket-copy-trading-bot` | 🚩 flagged | 2026-07-23: matches signatures — copy-trading pitch, org pattern typical of drainer campaigns |
+| `Cortex-AI-Network/polymarket-copy-trading-bot` | 🪦 taken down since flagging | 2026-07-23: matches signatures — copy-trading pitch, org pattern typical of drainer campaigns |
 | `cryptomoonday/polymarket-arbitrage-bot` | 🚩 flagged | 2026-07-23: matches signatures — arbitrage-bot pitch, low-provenance account |
 | `hanshaze/Awesome-Prediction-Market-Trading-Tools` | 🚩 flagged | 2026-07-23: matches signatures — awesome-list wrapper funneling to flagged bot repos |
 | `HarrierOnChain/Prediction-Markets-Trading-Bot-Toolkits` | 🚩 flagged | 2026-07-23: matches signatures — new org, stars(359)≫watchers, forks≈stars, toolkit pitch without inspectable code provenance |
