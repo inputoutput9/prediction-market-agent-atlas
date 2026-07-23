@@ -85,7 +85,7 @@ Strongest safety model surveyed on either venue. Bus factor 1 (single human cont
 
 | Repo | Grade | Score |
 |---|---|---|
-| [kalshi-python-sync](https://pypi.org/project/kalshi-python-sync/) | 🟡 A-tier | 43/55 |
+| [kalshi-python-sync](https://pypi.org/project/kalshi-python-sync/) by Kalshi | 🟡 A-tier | 43/55 |
 
 Official REST ground truth (async variant: kalshi-python-async). The deprecated `kalshi-python` package is its predecessor — do not confuse them.
 
@@ -98,7 +98,7 @@ Official REST ground truth (async variant: kalshi-python-async). The deprecated 
 
 | Repo | Grade | Score |
 |---|---|---|
-| [kalshi-typescript](https://www.npmjs.com/package/kalshi-typescript) | 🟡 A-tier | 43/55 |
+| [kalshi-typescript](https://www.npmjs.com/package/kalshi-typescript) by Kalshi | 🟡 A-tier | 43/55 |
 
 Official TS ground truth.
 

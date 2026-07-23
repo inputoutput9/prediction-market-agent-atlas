@@ -91,12 +91,17 @@ const entryUrl = (e: RepoEntry): string | undefined =>
       ? `https://www.npmjs.com/package/${e.packages.npm}`
       : undefined);
 
-// Identity cell: `[repo-name](url) by [owner](gh)` for GitHub entries (id =
-// `owner/repo`); registry-only entries (no `/`) link the whole id, no owner.
+// Identity cell: `[repo-name](url) by [owner](gh)`. GitHub entries (id =
+// `owner/repo`) derive owner from the id and link it to the GitHub profile;
+// registry-only entries (no `/`) take owner from the curated `owner` field and
+// render it as plain text (no GitHub profile to link).
 function identityCell(e: RepoEntry): string {
   const url = entryUrl(e);
   const slash = e.id.indexOf("/");
-  if (slash === -1) return url ? `[${e.id}](${url})` : e.id;
+  if (slash === -1) {
+    const repo = url ? `[${e.id}](${url})` : e.id;
+    return e.owner ? `${repo} by ${e.owner}` : repo;
+  }
   const owner = e.id.slice(0, slash);
   const name = e.id.slice(slash + 1);
   const repo = url ? `[${name}](${url})` : name;

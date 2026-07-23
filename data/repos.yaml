@@ -33,6 +33,7 @@ entries:
   - id: kalshi-python-sync
     venue: kalshi
     category: sdk-client
+    owner: Kalshi
     packages: { pypi: kalshi-python-sync }
     scores: { provenance: 5, capability: 4, safety: 3, agent_fit: 3 }
     evidence:
@@ -43,6 +44,7 @@ entries:
   - id: kalshi-typescript
     venue: kalshi
     category: sdk-client
+    owner: Kalshi
     packages: { npm: kalshi-typescript }
     scores: { provenance: 5, capability: 4, safety: 3, agent_fit: 3 }
     evidence:

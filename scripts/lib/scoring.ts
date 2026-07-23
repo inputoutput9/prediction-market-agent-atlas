@@ -59,6 +59,9 @@ export interface RepoEntry {
   venue: Venue;
   category: Category;
   url?: string;
+  /** Publisher shown as "by <owner>". GitHub entries derive it from the id
+   * (`owner/repo`); registry-only entries (id has no `/`) set it here. */
+  owner?: string;
   packages?: { pypi?: string; npm?: string };
   scores?: { provenance: number; capability: number; safety: number; agent_fit: number };
   hard_flags?: HardFlag[];
