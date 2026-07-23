@@ -25,10 +25,14 @@ const README_PATH = `${ROOT}README.md`;
 const BEGIN = "<!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->";
 const END = "<!-- END GENERATED RANKINGS -->";
 
-// Fixed reference date = the last curated-review date, NOT wall-clock "now":
-// maintenance buckets must not silently reshuffle tiers between scans without
-// a data change. The weekly Action refreshes live.json AND this date together.
+// Two dates, deliberately separate (reflect finding — conflating them made
+// the bot falsify the human-review claim weekly):
+// - as-of.txt: liveness reference date — the decay clock. Bumped by the scan.
+// - curated-as-of.txt: when a human last reviewed the curated scores.
+//   ONLY humans touch this file.
+// Both pinned in files (not wall-clock) so the gate is deterministic.
 const AS_OF = readFileSync(`${ROOT}data/as-of.txt`, "utf-8").trim();
+const CURATED_AS_OF = readFileSync(`${ROOT}data/curated-as-of.txt`, "utf-8").trim();
 const NOW = new Date(`${AS_OF}T00:00:00Z`);
 
 const raw = parse(readFileSync(`${ROOT}data/repos.yaml`, "utf-8")) as {
@@ -94,8 +98,18 @@ function rankedTable(venue: RepoEntry["venue"]): string {
     const v = r.verdict as Extract<Verdict, { state: "ranked" }>;
     const s = r.entry.scores!;
     const scoreCell = `${v.score}/${MAX_SCORE}${v.capped ? " (idle-capped)" : ""}<br><sub>P${s.provenance} C${s.capability} S${s.safety} F${s.agent_fit}</sub>`;
+    const caveats: string[] = [];
+    if (r.entry.hard_flags?.includes("license_missing")) caveats.push("⚠️ no license");
+    if (
+      r.entry.reviewed_sha &&
+      r.live.head_sha &&
+      !r.live.head_sha.startsWith(r.entry.reviewed_sha.slice(0, 12))
+    ) {
+      caveats.push(`⚠️ commits since safety review (\`${r.entry.reviewed_sha.slice(0, 7)}\`)`);
+    }
+    const why = [...caveats, r.entry.notes ?? ""].filter(Boolean).join(" · ");
     lines.push(
-      `| ${tierBadge[v.tier]} | ${link(r.entry)} | ${r.entry.category} | ${scoreCell} | ${r.live.stars ?? "—"} | ${activity(r.live)} | ${r.entry.notes ?? ""} |`,
+      `| ${tierBadge[v.tier]} | ${link(r.entry)} | ${r.entry.category} | ${scoreCell} | ${r.live.stars ?? "—"} | ${activity(r.live)} | ${why} |`,
     );
   }
   return lines.join("\n");
@@ -106,9 +120,13 @@ function deprecatedTable(): string {
     .filter((r) => r.verdict.state === "deprecated")
     .sort((a, b) => a.entry.id.localeCompare(b.entry.id));
   if (dep.length === 0) return "_None currently._";
-  const lines = ["| Repo | Last activity | Why it's here |", "|---|---|---|"];
+  const lines = ["| Repo | Status | Last activity | Why it's here |", "|---|---|---|---|"];
   for (const r of dep) {
-    lines.push(`| ${link(r.entry)} | ${r.live.pushed_at ?? "—"} | ${r.entry.notes ?? ""} |`);
+    const v = r.verdict as Extract<Verdict, { state: "deprecated" }>;
+    const status = v.reason === "removed" ? "🪦 removed from GitHub" : "📦 archived";
+    lines.push(
+      `| ${link(r.entry)} | ${status} | ${r.live.pushed_at ?? "—"} | ${r.entry.notes ?? ""} |`,
+    );
   }
   return lines.join("\n");
 }
@@ -127,7 +145,7 @@ function flaggedTable(): string {
 
 const generated = `${BEGIN}
 
-> Curated scores last reviewed **${AS_OF}** · liveness data auto-refreshed weekly ([scan workflow](.github/workflows/scan.yml)); the scan date is in the [latest scan commit](../../commits/main/data/live.json). Score cell shows weighted total, then per-axis: **P**rovenance **C**apability **S**afety **F** agent-fit (each 0–5; maintenance is computed from activity, see [methodology](docs/methodology.md)).
+> Curated scores last human-reviewed **${CURATED_AS_OF}** · liveness data as of **${AS_OF}** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Score cell shows weighted total, then per-axis: **P**rovenance **C**apability **S**afety **F** agent-fit (each 0–5; maintenance is computed from activity, see [methodology](docs/methodology.md)).
 
 ### Kalshi
 
@@ -173,9 +191,11 @@ if (process.argv.includes("--check")) {
 }
 
 // Consistency guard: daysSinceActivity must be defined for every ranked entry,
-// or its maintenance score silently bottoms out.
+// or its maintenance score silently bottoms out. Fatal in --check (gate) so a
+// data hole can't ship green.
 for (const r of rows) {
   if (r.verdict.state === "ranked" && daysSinceActivity(r.live, NOW) === undefined) {
-    console.error(`WARN ${r.entry.id}: no activity date in live.json — maintenance scored 0`);
+    console.error(`${r.entry.id}: no activity date in live.json — maintenance scored 0`);
+    if (process.argv.includes("--check")) process.exitCode = 1;
   }
 }

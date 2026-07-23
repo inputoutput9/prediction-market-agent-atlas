@@ -91,4 +91,6 @@ Registry-only entries (no public source repo) use the release date alone — off
 - Every entry carries `evidence` strings prefixed with the verification date.
 - A score without evidence fails the schema gate (`bun test`).
 - Negative claims ("no official X exists") rot silently — they must be dated where they appear.
-- Re-verification updates the date; `data/as-of.txt` pins the review date the maintenance buckets are computed against, so tiers only move when data moves.
+- Two dates, never conflated: `data/as-of.txt` is the **liveness reference** (decay clock, bumped by the weekly scan); `data/curated-as-of.txt` is when a **human** last reviewed the curated scores — only humans touch it. The README renders both.
+- **Review-pinned SHA (drift detection):** an entry may record `reviewed_sha` — the default-branch HEAD at the time its safety review was done. The weekly scan records the current head in `live.json`; when they differ, the README flags "commits since safety review". This catches the attack liveness metrics can't: a good repo turning bad *after* its review. New/updated safety scores should set `reviewed_sha` from `live.json`'s `head_sha`.
+- `license_missing` renders a "⚠️ no license" caveat on the row — legal status of embedding is undefined until the author adds one.

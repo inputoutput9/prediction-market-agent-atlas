@@ -89,7 +89,7 @@ flowchart TB
 
 <!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->
 
-> Curated scores last reviewed **2026-07-23** · liveness data auto-refreshed weekly ([scan workflow](.github/workflows/scan.yml)); the scan date is in the [latest scan commit](../../commits/main/data/live.json). Score cell shows weighted total, then per-axis: **P**rovenance **C**apability **S**afety **F** agent-fit (each 0–5; maintenance is computed from activity, see [methodology](docs/methodology.md)).
+> Curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-07-23** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Score cell shows weighted total, then per-axis: **P**rovenance **C**apability **S**afety **F** agent-fit (each 0–5; maintenance is computed from activity, see [methodology](docs/methodology.md)).
 
 ### Kalshi
 
@@ -134,7 +134,7 @@ flowchart TB
 | 🟡 **A** | [`agent-next/polymarket-paper-trader`](https://github.com/agent-next/polymarket-paper-trader) | data-backtesting | 41/55<br><sub>P2 C3 S5 F5</sub> | 364 | pushed 2026-03-02 | The dev harness: let agents trade risk-free against live books before any real key exists. |
 | 🟡 **A** | [`pmxt-dev/pmxt`](https://github.com/pmxt-dev/pmxt) | sdk-client | 41/55<br><sub>P3 C4 S3 F4</sub> | 2005 | pushed 2026-07-18 · v2.54.0 | The cross-venue abstraction layer. Self-host for anything involving real keys. |
 | 🟡 **A** | [`braedonsaunders/homerun`](https://github.com/braedonsaunders/homerun) | agent-framework | 37/55<br><sub>P2 C4 S3 F3</sub> | 150 | pushed 2026-07-04 | Architecture reference for cross-venue strategy infra. AGPL — read it, don't vendor it into proprietary code. |
-| 🟡 **A** | [`guzus/dr-manhattan`](https://github.com/guzus/dr-manhattan) | sdk-client | 37/55<br><sub>P2 C4 S3 F3</sub> | 195 | pushed 2026-07-18 | Fully self-hosted pmxt alternative. Resolve the license question before shipping it inside anything. |
+| 🟡 **A** | [`guzus/dr-manhattan`](https://github.com/guzus/dr-manhattan) | sdk-client | 37/55<br><sub>P2 C4 S3 F3</sub> | 195 | pushed 2026-07-18 | ⚠️ no license · Fully self-hosted pmxt alternative. Resolve the license question before shipping it inside anything. |
 | 🟡 **A** | [`SpartanLabsXyz/simmer-sdk`](https://github.com/SpartanLabsXyz/simmer-sdk) | sdk-client | 37/55<br><sub>P2 C3 S3 F4</sub> | 48 | pushed 2026-07-22 | Young; watch. |
 | 🔵 **B** | [`Oddpool/PredictionMarketBench`](https://github.com/Oddpool/PredictionMarketBench) | data-backtesting | 35/55<br><sub>P2 C2 S5 F3</sub> | 26 | pushed 2026-01-26 | Unique replay dataset angle; small. |
 | 🔵 **B** | [`alsk1992/CloddsBot`](https://github.com/alsk1992/CloddsBot) | agent-framework | 34/55<br><sub>P2 C4 S2 F3</sub> | 528 | pushed 2026-06-26 | Ambitious scope = large key blast radius. Mine for patterns; run nothing with real keys without an audit. |
@@ -144,9 +144,9 @@ flowchart TB
 
 Dead or archived code that is still instructive to read — never a dependency.
 
-| Repo | Last activity | Why it's here |
-|---|---|---|
-| [`Polymarket/agents`](https://github.com/Polymarket/agents) | 2024-11-05 | Historically influential official agent framework — instructive to read, unsafe to build on. Third-party writeups still recommend it as active; they are wrong. |
+| Repo | Status | Last activity | Why it's here |
+|---|---|---|---|
+| [`Polymarket/agents`](https://github.com/Polymarket/agents) | 📦 archived | 2024-11-05 | Historically influential official agent framework — instructive to read, unsafe to build on. Third-party writeups still recommend it as active; they are wrong. |
 
 ### 🚩 Flagged — do not run
 
