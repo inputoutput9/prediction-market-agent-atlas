@@ -1,0 +1,181 @@
+/**
+ * Renders the ranking tables into README.md between BEGIN/END markers, purely
+ * from committed files (data/repos.yaml + data/live.json) — no network — so
+ * the drift gate (`--check`) runs offline and deterministically.
+ *
+ * Ordering is total and pinned: tier (S→A→B→C) → weighted score desc → id asc.
+ *
+ *   bun scripts/generate-readme.ts          # rewrite README section
+ *   bun scripts/generate-readme.ts --check  # exit 1 if README is out of date
+ */
+import { readFileSync, writeFileSync } from "node:fs";
+import { parse } from "yaml";
+import {
+  computeVerdict,
+  daysSinceActivity,
+  validateEntry,
+  MAX_SCORE,
+  type LiveEntry,
+  type RepoEntry,
+  type Verdict,
+} from "./lib/scoring";
+
+const ROOT = new URL("..", import.meta.url).pathname;
+const README_PATH = `${ROOT}README.md`;
+const BEGIN = "<!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->";
+const END = "<!-- END GENERATED RANKINGS -->";
+
+// Fixed reference date = the last curated-review date, NOT wall-clock "now":
+// maintenance buckets must not silently reshuffle tiers between scans without
+// a data change. The weekly Action refreshes live.json AND this date together.
+const AS_OF = readFileSync(`${ROOT}data/as-of.txt`, "utf-8").trim();
+const NOW = new Date(`${AS_OF}T00:00:00Z`);
+
+const raw = parse(readFileSync(`${ROOT}data/repos.yaml`, "utf-8")) as {
+  entries: Record<string, unknown>[];
+};
+const entries: RepoEntry[] = raw.entries.map(validateEntry);
+const ids = new Set(entries.map((e) => e.id));
+if (ids.size !== entries.length) throw new Error("duplicate entry ids in repos.yaml");
+const live = JSON.parse(readFileSync(`${ROOT}data/live.json`, "utf-8")) as Record<
+  string,
+  LiveEntry
+>;
+
+interface Row {
+  entry: RepoEntry;
+  live: LiveEntry;
+  verdict: Verdict;
+}
+const rows: Row[] = entries.map((entry) => ({
+  entry,
+  live: live[entry.id] ?? {},
+  verdict: computeVerdict(entry, live[entry.id] ?? {}, NOW),
+}));
+
+const tierOrder = { S: 0, A: 1, B: 2, C: 3 } as const;
+function sortRanked(a: Row, b: Row): number {
+  const va = a.verdict as Extract<Verdict, { state: "ranked" }>;
+  const vb = b.verdict as Extract<Verdict, { state: "ranked" }>;
+  return (
+    tierOrder[va.tier] - tierOrder[vb.tier] ||
+    vb.score - va.score ||
+    a.entry.id.localeCompare(b.entry.id)
+  );
+}
+
+const link = (e: RepoEntry): string => {
+  if (e.url) return `[\`${e.id}\`](${e.url})`;
+  if (e.packages?.pypi) return `[\`${e.id}\`](https://pypi.org/project/${e.packages.pypi}/)`;
+  if (e.packages?.npm) return `[\`${e.id}\`](https://www.npmjs.com/package/${e.packages.npm})`;
+  return `\`${e.id}\``;
+};
+
+const tierBadge = { S: "🟢 **S**", A: "🟡 **A**", B: "🔵 **B**", C: "⚪ **C**" } as const;
+
+function activity(l: LiveEntry): string {
+  if (l.removed) return "⚠️ removed";
+  const parts: string[] = [];
+  if (l.pushed_at) parts.push(`pushed ${l.pushed_at}`);
+  if (l.latest_version) parts.push(`v${l.latest_version}`);
+  if (l.stale) parts.push("(stale scan)");
+  return parts.join(" · ") || "—";
+}
+
+function rankedTable(venue: RepoEntry["venue"]): string {
+  const ranked = rows
+    .filter((r) => r.entry.venue === venue && r.verdict.state === "ranked")
+    .sort(sortRanked);
+  const lines = [
+    "| Tier | Repo | Category | Score | Stars | Activity | Why / caveats |",
+    "|---|---|---|---|---|---|---|",
+  ];
+  for (const r of ranked) {
+    const v = r.verdict as Extract<Verdict, { state: "ranked" }>;
+    const s = r.entry.scores!;
+    const scoreCell = `${v.score}/${MAX_SCORE}${v.capped ? " (idle-capped)" : ""}<br><sub>P${s.provenance} C${s.capability} S${s.safety} F${s.agent_fit}</sub>`;
+    lines.push(
+      `| ${tierBadge[v.tier]} | ${link(r.entry)} | ${r.entry.category} | ${scoreCell} | ${r.live.stars ?? "—"} | ${activity(r.live)} | ${r.entry.notes ?? ""} |`,
+    );
+  }
+  return lines.join("\n");
+}
+
+function deprecatedTable(): string {
+  const dep = rows
+    .filter((r) => r.verdict.state === "deprecated")
+    .sort((a, b) => a.entry.id.localeCompare(b.entry.id));
+  if (dep.length === 0) return "_None currently._";
+  const lines = ["| Repo | Last activity | Why it's here |", "|---|---|---|"];
+  for (const r of dep) {
+    lines.push(`| ${link(r.entry)} | ${r.live.pushed_at ?? "—"} | ${r.entry.notes ?? ""} |`);
+  }
+  return lines.join("\n");
+}
+
+function flaggedTable(): string {
+  const flagged = rows
+    .filter((r) => r.verdict.state === "blacklist")
+    .sort((a, b) => a.entry.id.localeCompare(b.entry.id));
+  const lines = ["| Repo | Status | Evidence |", "|---|---|---|"];
+  for (const r of flagged) {
+    const status = r.live.removed ? "🪦 taken down since flagging" : "🚩 flagged";
+    lines.push(`| \`${r.entry.id}\` | ${status} | ${r.entry.evidence.join("; ")} |`);
+  }
+  return lines.join("\n");
+}
+
+const generated = `${BEGIN}
+
+> Curated scores last reviewed **${AS_OF}** · liveness data auto-refreshed weekly ([scan workflow](.github/workflows/scan.yml)); the scan date is in the [latest scan commit](../../commits/main/data/live.json). Score cell shows weighted total, then per-axis: **P**rovenance **C**apability **S**afety **F** agent-fit (each 0–5; maintenance is computed from activity, see [methodology](docs/methodology.md)).
+
+### Kalshi
+
+${rankedTable("kalshi")}
+
+### Polymarket
+
+${rankedTable("polymarket")}
+
+### Cross-venue
+
+${rankedTable("cross-venue")}
+
+### Deprecated / reference-only
+
+Dead or archived code that is still instructive to read — never a dependency.
+
+${deprecatedTable()}
+
+### 🚩 Flagged — do not run
+
+Entries matching known scam-repo signatures (buying stars, README-only "bots", drainer patterns — the signature list is in [docs/safety.md](docs/safety.md)). Flags are evidence-dated claims, not verdicts on intent; corrections welcome via the [appeal path](CONTRIBUTING.md#corrections--appeals).
+
+${flaggedTable()}
+
+${END}`;
+
+const readme = readFileSync(README_PATH, "utf-8");
+const start = readme.indexOf(BEGIN);
+const end = readme.indexOf(END);
+if (start === -1 || end === -1) throw new Error("README markers missing");
+const next = readme.slice(0, start) + generated + readme.slice(end + END.length);
+
+if (process.argv.includes("--check")) {
+  if (next !== readme) {
+    console.error("README rankings out of date — run: bun scripts/generate-readme.ts");
+    process.exit(1);
+  }
+  console.log(`README in sync (${rows.length} entries, as of ${AS_OF})`);
+} else {
+  writeFileSync(README_PATH, next);
+  console.log(`README rankings regenerated (${rows.length} entries, as of ${AS_OF})`);
+}
+
+// Consistency guard: daysSinceActivity must be defined for every ranked entry,
+// or its maintenance score silently bottoms out.
+for (const r of rows) {
+  if (r.verdict.state === "ranked" && daysSinceActivity(r.live, NOW) === undefined) {
+    console.error(`WARN ${r.entry.id}: no activity date in live.json — maintenance scored 0`);
+  }
+}
