@@ -106,33 +106,39 @@ function healthBadges(e: RepoEntry, l: LiveEntry): string {
   return l.stale ? `${strip} ⚠️ stale scan` : strip || "—";
 }
 
-function rankedTable(venue: RepoEntry["venue"]): string {
+// Benchmark-style list (not a 6-column table): each entry leads with the
+// scannable tier + score + repo, gives the caveats full page width, and drops
+// the health badge strip onto its own line beneath — so nothing wraps into a
+// cramped column.
+function rankedList(venue: RepoEntry["venue"]): string {
   const ranked = rows
     .filter((r) => r.entry.venue === venue && r.verdict.state === "ranked")
     .sort(sortRanked);
-  const lines = [
-    "| Tier | Repo | Category | Score | Health | Why / caveats |",
-    "|---|---|---|---|---|---|",
-  ];
+  const entries: string[] = [];
   for (const r of ranked) {
     const v = r.verdict as Extract<Verdict, { state: "ranked" }>;
     const s = r.entry.scores!;
-    const scoreCell = `${v.score}/${MAX_SCORE}${v.capped ? " (idle-capped)" : ""}<br><sub>P${s.provenance} C${s.capability} S${s.safety} F${s.agent_fit}</sub>`;
     const caveats: string[] = [];
-    if (r.entry.hard_flags?.includes("license_missing")) caveats.push("⚠️ no license");
+    if (r.entry.hard_flags?.includes("license_missing")) caveats.push("**⚠️ no license.**");
     if (
       r.entry.reviewed_sha &&
       r.live.head_sha &&
       !r.live.head_sha.startsWith(r.entry.reviewed_sha.slice(0, 12))
     ) {
-      caveats.push(`⚠️ commits since safety review (\`${r.entry.reviewed_sha.slice(0, 7)}\`)`);
+      caveats.push(`**⚠️ commits since safety review (\`${r.entry.reviewed_sha.slice(0, 7)}\`).**`);
     }
-    const why = [...caveats, r.entry.notes ?? ""].filter(Boolean).join(" · ");
-    lines.push(
-      `| ${tierBadge[v.tier]} | ${link(r.entry)} | ${r.entry.category} | ${scoreCell} | ${healthBadges(r.entry, r.live)} | ${why} |`,
+    const why = [...caveats, r.entry.notes ?? ""].filter(Boolean).join(" ");
+    const axes = `<sub>provenance ${s.provenance} · capability ${s.capability} · safety ${s.safety} · agent-fit ${s.agent_fit}${v.capped ? " · ⚠️ idle-capped to B" : ""} · category: ${r.entry.category}</sub>`;
+    // Line 1: tier · score · repo (scannable). Line 2: caveats + why + axes.
+    // Line 3: health badge strip. Two trailing spaces = markdown line break;
+    // continuation lines indented 2 spaces so GitHub keeps them in the bullet.
+    entries.push(
+      `${tierBadge[v.tier]} · **${v.score} / ${MAX_SCORE}** · ${link(r.entry)}  \n` +
+        `  ${why} ${axes}  \n` +
+        `  ${healthBadges(r.entry, r.live)}`,
     );
   }
-  return lines.join("\n");
+  return entries.map((e) => `- ${e}`).join("\n\n");
 }
 
 function deprecatedTable(): string {
@@ -165,19 +171,19 @@ function flaggedTable(): string {
 
 const generated = `${BEGIN}
 
-> **${rows.length} entries** · curated scores last human-reviewed **${CURATED_AS_OF}** · liveness data as of **${AS_OF}** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Score cell shows weighted total, then per-axis: **P**rovenance **C**apability **S**afety **F** agent-fit (each 0–5; maintenance is computed from activity, see [methodology](docs/methodology.md)).
+> **${rows.length} entries** · curated scores last human-reviewed **${CURATED_AS_OF}** · liveness data as of **${AS_OF}** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry leads with **tier · weighted score / ${MAX_SCORE}**; the sub-line gives the per-axis breakdown (0–5 each; maintenance is computed from activity, see [methodology](docs/methodology.md)); the badge strip is live GitHub/registry health.
 
 ### Kalshi
 
-${rankedTable("kalshi")}
+${rankedList("kalshi")}
 
 ### Polymarket
 
-${rankedTable("polymarket")}
+${rankedList("polymarket")}
 
 ### Cross-venue
 
-${rankedTable("cross-venue")}
+${rankedList("cross-venue")}
 
 ### Deprecated / reference-only
 
