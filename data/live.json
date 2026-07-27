@@ -1,19 +1,19 @@
 {
   "cejor6/kalshi-mcp-server": {
-    "stars": 1,
-    "pushed_at": "2026-07-19",
+    "stars": 3,
+    "pushed_at": "2026-07-26",
     "archived": false,
     "latest_version": "0.1.12",
     "released_at": "2026-07-10",
     "head_sha": "fb1ee788d980"
   },
   "TexasCoding/kalshi-python-sdk": {
-    "stars": 3,
-    "pushed_at": "2026-07-22",
+    "stars": 4,
+    "pushed_at": "2026-07-26",
     "archived": false,
-    "latest_version": "7.2.0",
-    "released_at": "2026-07-22",
-    "head_sha": "0e1a08ed3e3a"
+    "latest_version": "7.4.0",
+    "released_at": "2026-07-26",
+    "head_sha": "3d55783727ed"
   },
   "kalshi-python-sync": {
     "latest_version": "3.25.0",
@@ -24,12 +24,12 @@
     "released_at": "2026-07-21"
   },
   "ArshKA/pykalshi": {
-    "stars": 117,
-    "pushed_at": "2026-07-18",
+    "stars": 118,
+    "pushed_at": "2026-07-27",
     "archived": false,
-    "latest_version": "1.0.6",
-    "released_at": "2026-05-02",
-    "head_sha": "18e1624b38cc"
+    "latest_version": "2.0.0",
+    "released_at": "2026-07-27",
+    "head_sha": "54b6ea7f1800"
   },
   "newyorkcompute/kalshi": {
     "stars": 7,
@@ -40,7 +40,7 @@
     "head_sha": "52371ce04d16"
   },
   "9crusher/mcp-server-kalshi": {
-    "stars": 22,
+    "stars": 23,
     "pushed_at": "2026-07-09",
     "archived": false,
     "head_sha": "9784bc265bc7"
@@ -64,25 +64,25 @@
     "head_sha": "08fd693c0ff0"
   },
   "Polymarket/agent-skills": {
-    "stars": 178,
+    "stars": 179,
     "pushed_at": "2026-02-19",
     "archived": false,
     "head_sha": "91ee44ae113e"
   },
   "Polymarket/polymarket-cli": {
-    "stars": 2823,
+    "stars": 2825,
     "pushed_at": "2026-05-26",
     "archived": false,
     "head_sha": "9b18b5faf549"
   },
   "Polymarket/ts-sdk": {
     "stars": 25,
-    "pushed_at": "2026-07-22",
+    "pushed_at": "2026-07-27",
     "archived": false,
-    "head_sha": "9cc7b6ea382d"
+    "head_sha": "0760f99f04e8"
   },
   "Polymarket/py-clob-client-v2": {
-    "stars": 163,
+    "stars": 161,
     "pushed_at": "2026-07-17",
     "archived": false,
     "head_sha": "215fc63a8fd6",
@@ -98,13 +98,13 @@
     "released_at": "2025-07-25"
   },
   "caiovicentino/polymarket-mcp-server": {
-    "stars": 597,
+    "stars": 609,
     "pushed_at": "2026-06-23",
     "archived": false,
     "head_sha": "b96412357750"
   },
   "demwick/polymarket-agent-mcp": {
-    "stars": 12,
+    "stars": 13,
     "pushed_at": "2026-07-09",
     "archived": false,
     "head_sha": "6057a0b1b498"
@@ -140,7 +140,7 @@
     "head_sha": "9d9b6a07d0dd"
   },
   "Polymarket/agents": {
-    "stars": 3747,
+    "stars": 3757,
     "pushed_at": "2024-11-05",
     "archived": true,
     "head_sha": "081f2b5594c3"
@@ -152,7 +152,7 @@
     "head_sha": "feeffc1f67f9"
   },
   "mjunaidca/polymarket-skills": {
-    "stars": 77,
+    "stars": 78,
     "pushed_at": "2026-02-26",
     "archived": false,
     "head_sha": "ffed17f13bc5"
@@ -164,7 +164,7 @@
     "head_sha": "63d805b879c0"
   },
   "pmxt-dev/pmxt": {
-    "stars": 2006,
+    "stars": 2031,
     "pushed_at": "2026-07-18",
     "archived": false,
     "latest_version": "2.54.0",
@@ -178,7 +178,7 @@
     "head_sha": "7c15fad9ab32"
   },
   "agent-next/polymarket-paper-trader": {
-    "stars": 364,
+    "stars": 367,
     "pushed_at": "2026-03-02",
     "archived": false,
     "head_sha": "ed601ed27b9a",
@@ -186,19 +186,19 @@
     "released_at": "2026-03-02"
   },
   "braedonsaunders/homerun": {
-    "stars": 150,
+    "stars": 156,
     "pushed_at": "2026-07-04",
     "archived": false,
     "head_sha": "389d24699479"
   },
   "machina-sports/sports-skills": {
-    "stars": 196,
-    "pushed_at": "2026-07-20",
+    "stars": 199,
+    "pushed_at": "2026-07-25",
     "archived": false,
-    "head_sha": "3759150e5dc5"
+    "head_sha": "c25ee37cdffd"
   },
   "alsk1992/CloddsBot": {
-    "stars": 529,
+    "stars": 558,
     "pushed_at": "2026-06-26",
     "archived": false,
     "head_sha": "e71a5f635d99"
@@ -217,30 +217,30 @@
   },
   "SpartanLabsXyz/simmer-sdk": {
     "stars": 48,
-    "pushed_at": "2026-07-22",
+    "pushed_at": "2026-07-24",
     "archived": false,
-    "head_sha": "b8148101c4db"
+    "head_sha": "f5046ffc6f0a"
   },
   "HarrierOnChain/Prediction-Markets-Trading-Bot-Toolkits": {
-    "stars": 359,
-    "pushed_at": "2026-07-22",
+    "stars": 377,
+    "pushed_at": "2026-07-23",
     "archived": false,
-    "head_sha": "b5f06cf25172"
+    "head_sha": "3f2b6c4457bf"
   },
   "casatrick/polymarket-arbitrage-bot-python": {
-    "stars": 453,
-    "pushed_at": "2026-07-21",
+    "stars": 450,
+    "pushed_at": "2026-07-25",
     "archived": false,
-    "head_sha": "1840513fe6ab"
+    "head_sha": "2d4157998fdc"
   },
   "cryptomoonday/polymarket-arbitrage-bot": {
     "stars": 164,
-    "pushed_at": "2026-07-23",
+    "pushed_at": "2026-07-24",
     "archived": false,
-    "head_sha": "e67900aeef20"
+    "head_sha": "28e175d97298"
   },
   "radioman/polymarket-arbitrage-trading-bot": {
-    "stars": 483,
+    "stars": 486,
     "pushed_at": "2026-06-19",
     "archived": false,
     "head_sha": "5de61adfe65f"
@@ -249,7 +249,7 @@
     "removed": true
   },
   "kaktusesquire6rmu/ai-polymarket-agent": {
-    "stars": 218,
+    "stars": 217,
     "pushed_at": "2026-04-20",
     "archived": false,
     "head_sha": "f035e47b21c2"
@@ -261,13 +261,13 @@
     "head_sha": "29865f4abeef"
   },
   "reunios2024/cortex-sentinel-trading-nexus": {
-    "stars": 152,
-    "pushed_at": "2026-07-23",
+    "stars": 154,
+    "pushed_at": "2026-07-27",
     "archived": false,
-    "head_sha": "77ced48b8c33"
+    "head_sha": "62292f5df2da"
   },
   "hanshaze/Awesome-Prediction-Market-Trading-Tools": {
-    "stars": 188,
+    "stars": 189,
     "pushed_at": "2026-05-28",
     "archived": false,
     "head_sha": "28325264e84e"
