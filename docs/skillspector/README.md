@@ -19,7 +19,7 @@ Scanned: category ∈ {`mcp-server`, `agent-framework`, `skill`}, no terminal ha
 | `demwick/polymarket-agent-mcp` | 🟠 needs-triage (untriaged) | 0/10/3/15 | 0 | no | [report](demwick__polymarket-agent-mcp.md) |
 | `guangxiangdebizi/PolyMarket-MCP` | 🟠 needs-triage (untriaged) | 0/5/0/7 | 0 | no | [report](guangxiangdebizi__PolyMarket-MCP.md) |
 | `JamesANZ/prediction-market-mcp` | 🟠 needs-triage (untriaged) | 0/3/3/7 | 0 | no | [report](JamesANZ__prediction-market-mcp.md) |
-| `machina-sports/sports-skills` | 🔴 flagged-critical (untriaged) | 1/21/49/5 | 0 | no | [report](machina-sports__sports-skills.md) |
+| `machina-sports/sports-skills` | 🔴 flagged-critical (untriaged) | 3/19/56/5 | 0 | no | [report](machina-sports__sports-skills.md) |
 | `mjunaidca/polymarket-skills` | 🟠 needs-triage (untriaged) | 0/23/12/0 | 0 | no | [report](mjunaidca__polymarket-skills.md) |
 | `newyorkcompute/kalshi` | 🔴 flagged-critical (untriaged) | 5/16/18/69 | 0 | no | [report](newyorkcompute__kalshi.md) |
 | `ozgureyilmaz/polymarket-mcp` | 🟠 needs-triage (untriaged) | 0/5/2/1 | 0 | no | [report](ozgureyilmaz__polymarket-mcp.md) |

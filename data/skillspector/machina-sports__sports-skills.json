@@ -1,16 +1,16 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "3759150e5dc5",
-  "skillspector_version": "2.3.7",
+  "head_sha": "c25ee37cdffd",
+  "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
     "severity": "CRITICAL",
     "recommendation": "DO_NOT_INSTALL"
   },
   "counts": {
-    "critical": 1,
-    "high": 21,
-    "medium": 49,
+    "critical": 3,
+    "high": 19,
+    "medium": 56,
     "low": 5
   },
   "suppressed_count": 0,
@@ -48,7 +48,7 @@
       "confidence": 0.9,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 21,
+        "start_line": 28,
         "end_line": 0
       },
       "finding": "curl | bash",
@@ -61,7 +61,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 152,
+        "start_line": 159,
         "end_line": 0
       },
       "finding": "skills/metadata/SKILL.md",
@@ -74,7 +74,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 155,
+        "start_line": 162,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",
@@ -148,6 +148,32 @@
     {
       "id": "SC4",
       "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 34,
+        "end_line": 0
+      },
+      "finding": "pyarrow",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 34,
+        "end_line": 0
+      },
+      "finding": "pyarrow",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
       "severity": "HIGH",
       "confidence": 0.8,
       "location": {
@@ -185,6 +211,32 @@
       "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 10,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 22,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
       "id": "EA2",
       "category": "Excessive Agency",
       "severity": "MEDIUM",
@@ -196,6 +248,19 @@
       },
       "finding": "Never ask user",
       "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 59,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
     },
     {
       "id": "E1",
@@ -276,17 +341,30 @@
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
     },
     {
-      "id": "OH1",
-      "category": "Output Handling",
-      "severity": "HIGH",
-      "confidence": 0.95,
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
       "location": {
-        "file": "scripts/nightly_improve.py",
-        "start_line": 77,
+        "file": "site/build.py",
+        "start_line": 352,
         "end_line": 0
       },
-      "finding": "subprocess.run(cmd, capture_output",
-      "explanation": "Model output is used without validation or sanitization. Unvalidated output injected into downstream contexts (SQL, shell, HTML) enables injection attacks and arbitrary code execution."
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "site/build.py",
+        "start_line": 468,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
     },
     {
       "id": "P2",
@@ -313,6 +391,32 @@
       },
       "finding": "<!-- HERO -->\n<section class=\"hero\">\n  <div class=\"container\">\n    <div class=\"fade-in\">\n      <pre class=\"ascii-art\">\n███████╗██████╗  ██████╗ ██████╗ ████████╗███████╗\n██╔════╝██╔══██╗██╔═══██╗██╔══",
       "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "site/templates/index.html",
+        "start_line": 69,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "site/templates/index.html",
+        "start_line": 146,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
     },
     {
       "id": "P2",
@@ -776,8 +880,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 814,
-        "end_line": 814
+        "start_line": 820,
+        "end_line": 820
       },
       "finding": "            func = getattr(module, cmd_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -789,8 +893,8 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 880,
-        "end_line": 883
+        "start_line": 884,
+        "end_line": 887
       },
       "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -802,8 +906,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 1081,
-        "end_line": 1081
+        "start_line": 1077,
+        "end_line": 1077
       },
       "finding": "    func = getattr(module, command_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -854,7 +958,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 1844,
+        "start_line": 1849,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -867,7 +971,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3074,
+        "start_line": 3079,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -880,7 +984,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3228,
+        "start_line": 3233,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -893,7 +997,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3581,
+        "start_line": 3586,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -976,19 +1080,6 @@
       },
       "finding": "    result = subprocess.run(\n        [sys.executable, \"-m\", \"sports_skills.cli\", \"--help\"],\n        capture_output=True,\n        text=True,\n        timeout=10,\n    )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
-    },
-    {
-      "id": "OH1",
-      "category": "Output Handling",
-      "severity": "HIGH",
-      "confidence": 0.95,
-      "location": {
-        "file": "tests/test_imports.py",
-        "start_line": 50,
-        "end_line": 0
-      },
-      "finding": "subprocess.run(\n        [sys.executable, \"-m\", \"sports_skills.cli\", \"--help\"],\n        capture_output",
-      "explanation": "Model output is used without validation or sanitization. Unvalidated output injected into downstream contexts (SQL, shell, HTML) enables injection attacks and arbitrary code execution."
     },
     {
       "id": "AST7",
