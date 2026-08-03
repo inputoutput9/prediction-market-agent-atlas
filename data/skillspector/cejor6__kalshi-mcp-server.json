@@ -1,20 +1,125 @@
 {
   "id": "cejor6/kalshi-mcp-server",
-  "head_sha": "fb1ee788d980",
-  "skillspector_version": "2.3.7",
+  "head_sha": "9441a80e56df",
+  "skillspector_version": "2.4.3",
   "risk_assessment": {
-    "score": 0,
+    "score": 13,
     "severity": "LOW",
     "recommendation": "SAFE"
   },
   "counts": {
     "critical": 0,
     "high": 0,
-    "medium": 0,
-    "low": 0
+    "medium": 4,
+    "low": 4
   },
-  "suppressed_count": 71,
-  "issues": [],
+  "suppressed_count": 65,
+  "issues": [
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": ".claude/settings.json",
+        "start_line": 48,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "Dockerfile",
+        "start_line": 68,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "mcpconform.config.json",
+        "start_line": 4,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 40,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "pip install without ==version installs the latest release, which could include malicious changes."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "README.md",
+        "start_line": 47,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "pip install without ==version installs the latest release, which could include malicious changes."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "README.md",
+        "start_line": 142,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "pip install without ==version installs the latest release, which could include malicious changes."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "README.md",
+        "start_line": 159,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/kalshi_mcp_server/safety_store.py",
+        "start_line": 106,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "pip install without ==version installs the latest release, which could include malicious changes."
+    }
+  ],
   "analysis_completeness": {
     "coverage_percent": 100,
     "is_complete": false
