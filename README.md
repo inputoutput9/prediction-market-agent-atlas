@@ -66,7 +66,7 @@ Weighted total → tier: **S** (≥80%) · **A** (≥65%) · **B** (≥45%) · *
 
 <!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->
 
-> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-07-27** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
+> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-08-03** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
 
 ### Kalshi
 
@@ -254,6 +254,19 @@ Python sibling: Polymarket/py-sdk. Check the registry for the actual published p
 
 | Repo | Grade | Score |
 |---|---|---|
+| [polymarket-mcp-server](https://github.com/caiovicentino/polymarket-mcp-server) by [caiovicentino](https://github.com/caiovicentino) | 🟡 A-tier | 42/55 |
+
+Functional and safety-conscious in code, but treat as a reference implementation rather than a trust anchor until provenance concerns age out.
+
+| provenance: 🔴 1/5 | capability: 🟢 5/5 | safety: 🟢 4/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/caiovicentino/polymarket-mcp-server?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/caiovicentino/polymarket-mcp-server?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/caiovicentino/polymarket-mcp-server?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
 | [polymarket-agent-mcp](https://github.com/demwick/polymarket-agent-mcp) by [demwick](https://github.com/demwick) | 🟡 A-tier | 42/55 |
 
 Best engineering posture among community Polymarket MCPs; depth of the advanced tools (copy-trading, backtest) not independently audited.
@@ -262,19 +275,6 @@ Best engineering posture among community Polymarket MCPs; depth of the advanced 
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/demwick/polymarket-agent-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/demwick/polymarket-agent-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/demwick/polymarket-agent-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
-| [polymarket-mcp-server](https://github.com/caiovicentino/polymarket-mcp-server) by [caiovicentino](https://github.com/caiovicentino) | 🟡 A-tier | 40/55 |
-
-Functional and safety-conscious in code, but treat as a reference implementation rather than a trust anchor until provenance concerns age out.
-
-| provenance: 🔴 1/5 | capability: 🟢 5/5 | safety: 🟢 4/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/caiovicentino/polymarket-mcp-server?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/caiovicentino/polymarket-mcp-server?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/caiovicentino/polymarket-mcp-server?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ---
 
@@ -345,19 +345,6 @@ Solid architecture to mine for backtesting patterns; not a maintained dependency
 
 | Repo | Grade | Score |
 |---|---|---|
-| [PolyMarket-MCP](https://github.com/guangxiangdebizi/PolyMarket-MCP) by [guangxiangdebizi](https://github.com/guangxiangdebizi) | 🔵 B-tier | 30/55 |
-
-Analytics niche (holders/positions). Hygiene tells; read-only limits the blast radius.
-
-| provenance: 🔴 1/5 | capability: 🟡 3/5 | safety: 🟢 4/5 | agent-fit: 🟡 3/5 | category: `mcp-server` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/guangxiangdebizi/PolyMarket-MCP?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/guangxiangdebizi/PolyMarket-MCP?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/guangxiangdebizi/PolyMarket-MCP?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
 | [polymarket-mcp](https://github.com/pab1it0/polymarket-mcp) by [pab1it0](https://github.com/pab1it0) | 🔵 B-tier | 29/55 |
 
 Simple self-host reference; data-only despite some directories' descriptions.
@@ -366,6 +353,19 @@ Simple self-host reference; data-only despite some directories' descriptions.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/pab1it0/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/pab1it0/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/pab1it0/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
+| [PolyMarket-MCP](https://github.com/guangxiangdebizi/PolyMarket-MCP) by [guangxiangdebizi](https://github.com/guangxiangdebizi) | 🔵 B-tier | 28/55 |
+
+Analytics niche (holders/positions). Hygiene tells; read-only limits the blast radius.
+
+| provenance: 🔴 1/5 | capability: 🟡 3/5 | safety: 🟢 4/5 | agent-fit: 🟡 3/5 | category: `mcp-server` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/guangxiangdebizi/PolyMarket-MCP?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/guangxiangdebizi/PolyMarket-MCP?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/guangxiangdebizi/PolyMarket-MCP?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ---
 
@@ -525,9 +525,9 @@ Entries matching known scam-repo signatures (buying stars, README-only "bots", d
 | Repo | Status | Evidence |
 |---|---|---|
 | `brodyautomates/polymarket-pipeline` | 🚩 flagged | 2026-07-23: matches signatures — 367★ four days after creation |
-| `casatrick/polymarket-arbitrage-bot-python` | 🚩 flagged | 2026-07-23: matches signatures — arbitrage-bot pitch, engagement pattern inconsistent with history |
+| `casatrick/polymarket-arbitrage-bot-python` | 🪦 taken down since flagging | 2026-07-23: matches signatures — arbitrage-bot pitch, engagement pattern inconsistent with history |
 | `Cortex-AI-Network/polymarket-copy-trading-bot` | 🪦 taken down since flagging | 2026-07-23: matches signatures — copy-trading pitch, org pattern typical of drainer campaigns |
-| `cryptomoonday/polymarket-arbitrage-bot` | 🚩 flagged | 2026-07-23: matches signatures — arbitrage-bot pitch, low-provenance account |
+| `cryptomoonday/polymarket-arbitrage-bot` | 🪦 taken down since flagging | 2026-07-23: matches signatures — arbitrage-bot pitch, low-provenance account |
 | `hanshaze/Awesome-Prediction-Market-Trading-Tools` | 🚩 flagged | 2026-07-23: matches signatures — awesome-list wrapper funneling to flagged bot repos |
 | `HarrierOnChain/Prediction-Markets-Trading-Bot-Toolkits` | 🚩 flagged | 2026-07-23: matches signatures — new org, stars(359)≫watchers, forks≈stars, toolkit pitch without inspectable code provenance |
 | `kaktusesquire6rmu/ai-polymarket-agent` | 🚩 flagged | 2026-07-23: matches signatures — 218★ with no detected code language (README/binary only) |
