@@ -1,6 +1,6 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "c25ee37cdffd",
+  "head_sha": "fcfc02943275",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -10,8 +10,8 @@
   "counts": {
     "critical": 3,
     "high": 19,
-    "medium": 56,
-    "low": 5
+    "medium": 61,
+    "low": 7
   },
   "suppressed_count": 0,
   "issues": [
@@ -48,7 +48,7 @@
       "confidence": 0.9,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 28,
+        "start_line": 163,
         "end_line": 0
       },
       "finding": "curl | bash",
@@ -61,7 +61,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 159,
+        "start_line": 294,
         "end_line": 0
       },
       "finding": "skills/metadata/SKILL.md",
@@ -74,7 +74,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 162,
+        "start_line": 297,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",
@@ -152,7 +152,7 @@
       "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 34,
+        "start_line": 37,
         "end_line": 0
       },
       "finding": "pyarrow",
@@ -165,7 +165,7 @@
       "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 34,
+        "start_line": 37,
         "end_line": 0
       },
       "finding": "pyarrow",
@@ -178,7 +178,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 45,
+        "start_line": 48,
         "end_line": 0
       },
       "finding": "pytest",
@@ -191,7 +191,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 46,
+        "start_line": 49,
         "end_line": 0
       },
       "finding": "jinja2",
@@ -204,7 +204,7 @@
       "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 46,
+        "start_line": 49,
         "end_line": 0
       },
       "finding": "pyyaml",
@@ -861,14 +861,27 @@
       "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer)."
     },
     {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/sports_skills/_ncaa.py",
+        "start_line": 44,
+        "end_line": 0
+      },
+      "finding": "https://data.ncaa.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
       "id": "AST4",
       "category": "Dangerous Code Execution",
       "severity": "MEDIUM",
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/_premium.py",
-        "start_line": 108,
-        "end_line": 111
+        "start_line": 142,
+        "end_line": 145
       },
       "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -880,8 +893,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 820,
-        "end_line": 820
+        "start_line": 880,
+        "end_line": 880
       },
       "finding": "            func = getattr(module, cmd_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -893,8 +906,8 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 884,
-        "end_line": 887
+        "start_line": 944,
+        "end_line": 947
       },
       "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -906,8 +919,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 1077,
-        "end_line": 1077
+        "start_line": 1137,
+        "end_line": 1137
       },
       "finding": "    func = getattr(module, command_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -945,7 +958,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 851,
+        "start_line": 868,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -958,7 +971,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 1849,
+        "start_line": 1883,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -971,7 +984,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3079,
+        "start_line": 3182,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -984,7 +997,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3233,
+        "start_line": 3336,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -997,7 +1010,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3586,
+        "start_line": 3691,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1010,7 +1023,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/kalshi/_connector.py",
-        "start_line": 19,
+        "start_line": 21,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
@@ -1022,8 +1035,34 @@
       "severity": "MEDIUM",
       "confidence": 0.8,
       "location": {
+        "file": "src/sports_skills/nba/_stats.py",
+        "start_line": 201,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/nba/_stats.py",
+        "start_line": 217,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
         "file": "src/sports_skills/nfl/_connector.py",
-        "start_line": 474,
+        "start_line": 491,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1049,11 +1088,37 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/volleyball/_nevobo.py",
-        "start_line": 301,
+        "start_line": 371,
         "end_line": 0
       },
       "finding": "Hydra / JSON-L",
       "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_betting_validation.py",
+        "start_line": 103,
+        "end_line": 103
+      },
+      "finding": "                fn = getattr(mod, cmd, None)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_betting_validation.py",
+        "start_line": 117,
+        "end_line": 117
+      },
+      "finding": "                f\"{mod_name}.{c}\" for c in cmds if not callable(getattr(mod, c, None))",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
     },
     {
       "id": "AST7",
@@ -1067,6 +1132,19 @@
       },
       "finding": "            assert callable(getattr(cricket, fn))",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST3",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_espn_transport.py",
+        "start_line": 281,
+        "end_line": 281
+      },
+      "finding": "        return __import__(f\"sports_skills.{sport}._connector\", fromlist=[\"_echo_season\"])",
+      "explanation": "Dynamic __import__() can load arbitrary modules at runtime, bypassing static analysis and potentially importing malicious code."
     },
     {
       "id": "AST4",
@@ -1093,6 +1171,19 @@
       },
       "finding": "            fn = getattr(mod, command_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_nba_stats.py",
+        "start_line": 352,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
     }
   ],
   "analysis_completeness": {

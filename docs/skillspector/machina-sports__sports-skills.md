@@ -10,10 +10,10 @@
 | Scanner risk score | 100/100 |
 | Scanner severity | CRITICAL |
 | Scanner recommendation | DO_NOT_INSTALL |
-| Post-baseline counts | 🔴 3 C · 🟠 19 H · 🟡 56 M · ⚪ 5 L |
+| Post-baseline counts | 🔴 3 C · 🟠 19 H · 🟡 61 M · ⚪ 7 L |
 | Suppressed by baseline | 0 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `c25ee37cdffd` |
+| Scanned head_sha | `fcfc02943275` |
 
 **Baseline:** none yet — counts are raw static signal, expect false positives. See [baselines](../../data/skillspector-baselines/README.md).
 
@@ -21,17 +21,17 @@
 
 | Severity | Location | Category | Confidence | Finding |
 |---|---|---|---|---|
-| 🔴 Critical | `pyproject.toml:34` | Supply Chain | 0.9 | pyarrow |
-| 🔴 Critical | `pyproject.toml:34` | Supply Chain | 0.9 | pyarrow |
-| 🔴 Critical | `pyproject.toml:46` | Supply Chain | 0.9 | pyyaml |
+| 🔴 Critical | `pyproject.toml:37` | Supply Chain | 0.9 | pyarrow |
+| 🔴 Critical | `pyproject.toml:37` | Supply Chain | 0.9 | pyarrow |
+| 🔴 Critical | `pyproject.toml:49` | Supply Chain | 0.9 | pyyaml |
 | 🟠 High | `AGENTS.md:22` | Supply Chain | 0.9 | curl \| bash |
-| 🟠 High | `CHANGELOG.md:28` | Supply Chain | 0.9 | curl \| bash |
+| 🟠 High | `CHANGELOG.md:163` | Supply Chain | 0.9 | curl \| bash |
 | 🟠 High | `pyproject.toml:29` | Supply Chain | 0.8 | feedparser |
 | 🟠 High | `pyproject.toml:33` | Supply Chain | 0.8 | pandas |
 | 🟠 High | `pyproject.toml:33` | Supply Chain | 0.8 | pandas |
 | 🟠 High | `pyproject.toml:33` | Supply Chain | 0.8 | pandas |
-| 🟠 High | `pyproject.toml:45` | Supply Chain | 0.8 | pytest |
-| 🟠 High | `pyproject.toml:46` | Supply Chain | 0.8 | jinja2 |
+| 🟠 High | `pyproject.toml:48` | Supply Chain | 0.8 | pytest |
+| 🟠 High | `pyproject.toml:49` | Supply Chain | 0.8 | jinja2 |
 | 🟠 High | `site/templates/base.html:28` | Prompt Injection | 0.7 | &lt;!-- NAV -->   &lt;nav>     &lt;a href="/" class="nav-brand" style="text-decoration:none;">       &lt;span class="dot |
 | 🟠 High | `site/templates/index.html:41` | Prompt Injection | 0.7 | &lt;!-- HERO --> &lt;section class="hero">   &lt;div class="container">     &lt;div class="fade-in">       &lt;pre class |
 | 🟠 High | `site/templates/skill.html:39` | Prompt Injection | 0.7 | &lt;!-- BREADCRUMB --> &lt;div class="breadcrumb">   &lt;div class="container">     &lt;a href="/">sports-skills.sh&lt;/ |
@@ -42,10 +42,10 @@
 | 🟠 High | `skills/volleyball-data/SKILL.md:26` | YARA Match | 0.425 | pip install git+https://; pip install git+https:// |
 | 🟠 High | `skills/xctf-data/SKILL.md:27` | YARA Match | 0.425 | pip install git+https:// |
 | 🟠 High | `src/sports_skills/polymarket/_cli.py:126` | Data Exfiltration | 0.7 | os.environ.get("POLYMARKET_PRIVATE_KEY |
-| 🟠 High | `src/sports_skills/volleyball/_nevobo.py:301` | YARA Match | 0.7 | Hydra / JSON-L |
+| 🟠 High | `src/sports_skills/volleyball/_nevobo.py:371` | YARA Match | 0.7 | Hydra / JSON-L |
 | 🟡 Medium | `AGENTS.md:8` | Excessive Agency | 0.8 | Never ask the user |
-| 🟡 Medium | `CHANGELOG.md:159` | Agent Snooping | 0.8 | skills/metadata/SKILL.md |
-| 🟡 Medium | `CHANGELOG.md:162` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
+| 🟡 Medium | `CHANGELOG.md:294` | Agent Snooping | 0.8 | skills/metadata/SKILL.md |
+| 🟡 Medium | `CHANGELOG.md:297` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
 | 🟡 Medium | `README.md:10` | MCP Rug Pull | 0.7 |  |
 | 🟡 Medium | `README.md:22` | MCP Rug Pull | 0.7 |  |
 | 🟡 Medium | `README.md:30` | Excessive Agency | 0.8 | Never ask user |
@@ -72,5 +72,5 @@
 | 🟡 Medium | `skills/catalog.json:122` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
 | 🟡 Medium | `skills/catalog.json:133` | Agent Snooping | 0.8 | skills/markets/SKILL.md |
 
-_…and 33 more finding(s) — see the artifact JSON._
+_…and 40 more finding(s) — see the artifact JSON._
 
