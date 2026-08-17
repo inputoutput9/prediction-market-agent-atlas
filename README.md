@@ -66,7 +66,7 @@ Weighted total → tier: **S** (≥80%) · **A** (≥65%) · **B** (≥45%) · *
 
 <!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->
 
-> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-08-10** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
+> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-08-17** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
 
 ### Kalshi
 
@@ -293,19 +293,6 @@ Pair with a CLOB client when you need writes.
 
 | Repo | Grade | Score |
 |---|---|---|
-| [polymarket-agents](https://github.com/artvandelay/polymarket-agents) by [artvandelay](https://github.com/artvandelay) | 🟡 A-tier | 37/55 |
-
-Narrow domain, honest scope — a good template for domain-specific paper agents.
-
-| provenance: 🔴 2/5 | capability: 🔴 2/5 | safety: 🟢 5/5 | agent-fit: 🟢 4/5 | category: `agent-framework` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/artvandelay/polymarket-agents?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/artvandelay/polymarket-agents?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/artvandelay/polymarket-agents?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
 | [polymarket-skills](https://github.com/mjunaidca/polymarket-skills) by [mjunaidca](https://github.com/mjunaidca) | 🟡 A-tier | 36/55 |
 
 Community alternative to the official skill pack, paper-first.
@@ -327,6 +314,19 @@ Clean read-only research server.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/ozgureyilmaz/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/ozgureyilmaz/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/ozgureyilmaz/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
+| [polymarket-agents](https://github.com/artvandelay/polymarket-agents) by [artvandelay](https://github.com/artvandelay) | 🔵 B-tier | 35/55 |
+
+Narrow domain, honest scope — a good template for domain-specific paper agents.
+
+| provenance: 🔴 2/5 | capability: 🔴 2/5 | safety: 🟢 5/5 | agent-fit: 🟢 4/5 | category: `agent-framework` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/artvandelay/polymarket-agents?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/artvandelay/polymarket-agents?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/artvandelay/polymarket-agents?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ---
 
@@ -397,6 +397,19 @@ Works, but the hardcoded RPC endpoint is disqualifying for real keys. If you mus
 
 | Repo | Grade | Score |
 |---|---|---|
+| [polymarket-paper-trader](https://github.com/agent-next/polymarket-paper-trader) by [agent-next](https://github.com/agent-next) | 🟢 S-tier | 45/55 |
+
+The dev harness: let agents trade risk-free against live books before any real key exists.
+
+| provenance: 🔴 2/5 | capability: 🟡 3/5 | safety: 🟢 5/5 | agent-fit: 🟢 5/5 | category: `data-backtesting` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/agent-next/polymarket-paper-trader?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/agent-next/polymarket-paper-trader?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/agent-next/polymarket-paper-trader?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/pypi/v/polymarket-paper-trader?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=pypi" alt="pypi">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
 | [sports-skills](https://github.com/machina-sports/sports-skills) by [machina-sports](https://github.com/machina-sports) | 🟡 A-tier | 43/55 |
 
 Cleanest pattern for a read-only skill safety contract.
@@ -423,19 +436,6 @@ The cross-venue abstraction layer. Self-host for anything involving real keys.
 
 | Repo | Grade | Score |
 |---|---|---|
-| [polymarket-paper-trader](https://github.com/agent-next/polymarket-paper-trader) by [agent-next](https://github.com/agent-next) | 🟡 A-tier | 41/55 |
-
-The dev harness: let agents trade risk-free against live books before any real key exists.
-
-| provenance: 🔴 2/5 | capability: 🟡 3/5 | safety: 🟢 5/5 | agent-fit: 🟢 5/5 | category: `data-backtesting` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/agent-next/polymarket-paper-trader?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/agent-next/polymarket-paper-trader?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/agent-next/polymarket-paper-trader?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/pypi/v/polymarket-paper-trader?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=pypi" alt="pypi">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
 | [dr-manhattan](https://github.com/guzus/dr-manhattan) by [guzus](https://github.com/guzus) | 🟡 A-tier | 37/55 |
 
 **⚠️ no license.** Fully self-hosted pmxt alternative. Resolve the license question before shipping it inside anything.
@@ -449,6 +449,19 @@ The dev harness: let agents trade risk-free against live books before any real k
 
 | Repo | Grade | Score |
 |---|---|---|
+| [homerun](https://github.com/braedonsaunders/homerun) by [braedonsaunders](https://github.com/braedonsaunders) | 🟡 A-tier | 37/55 |
+
+Architecture reference for cross-venue strategy infra. AGPL — read it, don't vendor it into proprietary code.
+
+| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🟡 3/5 | agent-fit: 🟡 3/5 | category: `agent-framework` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/braedonsaunders/homerun?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/braedonsaunders/homerun?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/braedonsaunders/homerun?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
 | [simmer-sdk](https://github.com/SpartanLabsXyz/simmer-sdk) by [SpartanLabsXyz](https://github.com/SpartanLabsXyz) | 🟡 A-tier | 37/55 |
 
 Young; watch.
@@ -457,19 +470,6 @@ Young; watch.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
-| [homerun](https://github.com/braedonsaunders/homerun) by [braedonsaunders](https://github.com/braedonsaunders) | 🔵 B-tier | 35/55 |
-
-Architecture reference for cross-venue strategy infra. AGPL — read it, don't vendor it into proprietary code.
-
-| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🟡 3/5 | agent-fit: 🟡 3/5 | category: `agent-framework` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/braedonsaunders/homerun?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/braedonsaunders/homerun?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/braedonsaunders/homerun?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ---
 
