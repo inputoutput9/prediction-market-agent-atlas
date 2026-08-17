@@ -13,13 +13,13 @@ Scanned: category ∈ {`mcp-server`, `agent-framework`, `skill`}, no terminal ha
 | `artvandelay/polymarket-agents` | 🔴 flagged-critical (untriaged) | 2/4/2/1 | 0 | no | [report](artvandelay__polymarket-agents.md) |
 | `austron24/kalshi-trader-plugin` | 🟠 needs-triage (untriaged) | 0/1/0/1 | 0 | no | [report](austron24__kalshi-trader-plugin.md) |
 | `berlinbra/polymarket-mcp` | 🔴 flagged-critical (untriaged) | 1/1/1/1 | 0 | no | [report](berlinbra__polymarket-mcp.md) |
-| `braedonsaunders/homerun` | 🔴 flagged-critical (untriaged) | 2/99/481/169 | 0 | no | [report](braedonsaunders__homerun.md) |
+| `braedonsaunders/homerun` | ⚪ scan-error | — | — | no | [report](braedonsaunders__homerun.md) |
 | `caiovicentino/polymarket-mcp-server` | 🔴 flagged-critical (untriaged) | 3/79/91/3 | 0 | no | [report](caiovicentino__polymarket-mcp-server.md) |
-| `cejor6/kalshi-mcp-server` | 🔴 flagged-critical | 2/16/8/4 | 46 | yes | [report](cejor6__kalshi-mcp-server.md) |
+| `cejor6/kalshi-mcp-server` | 🔴 flagged-critical | 2/20/29/11 | 29 | yes | [report](cejor6__kalshi-mcp-server.md) |
 | `demwick/polymarket-agent-mcp` | 🟠 needs-triage (untriaged) | 0/6/18/15 | 0 | no | [report](demwick__polymarket-agent-mcp.md) |
 | `guangxiangdebizi/PolyMarket-MCP` | 🟠 needs-triage (untriaged) | 0/5/0/7 | 0 | no | [report](guangxiangdebizi__PolyMarket-MCP.md) |
 | `JamesANZ/prediction-market-mcp` | 🟠 needs-triage (untriaged) | 0/3/3/7 | 0 | no | [report](JamesANZ__prediction-market-mcp.md) |
-| `machina-sports/sports-skills` | 🔴 flagged-critical (untriaged) | 3/19/61/7 | 0 | no | [report](machina-sports__sports-skills.md) |
+| `machina-sports/sports-skills` | 🔴 flagged-critical (untriaged) | 3/22/76/8 | 0 | no | [report](machina-sports__sports-skills.md) |
 | `mjunaidca/polymarket-skills` | 🟠 needs-triage (untriaged) | 0/23/12/0 | 0 | no | [report](mjunaidca__polymarket-skills.md) |
 | `newyorkcompute/kalshi` | 🔴 flagged-critical (untriaged) | 5/16/18/69 | 0 | no | [report](newyorkcompute__kalshi.md) |
 | `ozgureyilmaz/polymarket-mcp` | 🟠 needs-triage (untriaged) | 0/5/2/1 | 0 | no | [report](ozgureyilmaz__polymarket-mcp.md) |
