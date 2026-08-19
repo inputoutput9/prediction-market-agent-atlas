@@ -1,7 +1,7 @@
 {
   "id": "caiovicentino/polymarket-mcp-server",
-  "head_sha": "b96412357750",
-  "skillspector_version": "2.3.7",
+  "head_sha": "b30d643be16e",
+  "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
     "severity": "CRITICAL",
@@ -9,24 +9,76 @@
   },
   "counts": {
     "critical": 3,
-    "high": 107,
-    "medium": 84,
-    "low": 2
+    "high": 79,
+    "medium": 91,
+    "low": 3
   },
   "suppressed_count": 0,
   "issues": [
     {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
       "location": {
-        "file": "DASHBOARD_SUMMARY.md",
-        "start_line": 506,
+        "file": ".github/workflows/docker-publish.yml",
+        "start_line": 102,
         "end_line": 0
       },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": ".github/workflows/release.yml",
+        "start_line": 168,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "pip install without ==version installs the latest release, which could include malicious changes."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": ".github/workflows/release.yml",
+        "start_line": 175,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "uvx/uv tool run commands without ==version create a rug-pull risk."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": ".github/workflows/release.yml",
+        "start_line": 181,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": ".github/workflows/tests.yml",
+        "start_line": 383,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
     },
     {
       "id": "MP2",
@@ -86,19 +138,6 @@
       "severity": "HIGH",
       "confidence": 0.7,
       "location": {
-        "file": "DOCKER_FILES.txt",
-        "start_line": 25,
-        "end_line": 0
-      },
-      "finding": "secret.yaml",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.7,
-      "location": {
         "file": "DOCKER_INFRASTRUCTURE_COMPLETE.md",
         "start_line": 44,
         "end_line": 0
@@ -118,58 +157,6 @@
       },
       "finding": "                                          ",
       "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "DOCKER_SUMMARY.md",
-        "start_line": 32,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.7,
-      "location": {
-        "file": "DOCKER_SUMMARY.md",
-        "start_line": 69,
-        "end_line": 0
-      },
-      "finding": "secret.yaml",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.7,
-      "location": {
-        "file": "DOCKER_SUMMARY.md",
-        "start_line": 69,
-        "end_line": 0
-      },
-      "finding": "secret.yaml",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.7,
-      "location": {
-        "file": "DOCKER_SUMMARY.md",
-        "start_line": 324,
-        "end_line": 0
-      },
-      "finding": "secret.yaml",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
       "id": "MP2",
@@ -196,19 +183,6 @@
       },
       "finding": "                                                  ",
       "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "docker-start.sh",
-        "start_line": 58,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
       "id": "PE3",
@@ -276,19 +250,6 @@
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "DOCKER.md",
-        "start_line": 215,
-        "end_line": 0
-      },
-      "finding": ".env\"",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
       "id": "EA2",
       "category": "Excessive Agency",
       "severity": "MEDIUM",
@@ -313,19 +274,6 @@
       },
       "finding": ".env ",
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "TM1",
-      "category": "Tool Misuse",
-      "severity": "HIGH",
-      "confidence": 0.85,
-      "location": {
-        "file": "install.bat",
-        "start_line": 112,
-        "end_line": 0
-      },
-      "finding": "rmdir /s /",
-      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
     },
     {
       "id": "PE3",
@@ -477,19 +425,6 @@
       "confidence": 0.6,
       "location": {
         "file": "install.sh",
-        "start_line": 289,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "install.sh",
         "start_line": 290,
         "end_line": 0
       },
@@ -507,19 +442,6 @@
         "end_line": 0
       },
       "finding": ".env\"",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "install.sh",
-        "start_line": 345,
-        "end_line": 0
-      },
-      "finding": ".env ",
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
@@ -556,19 +478,6 @@
       "location": {
         "file": "install.sh",
         "start_line": 423,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "install.sh",
-        "start_line": 463,
         "end_line": 0
       },
       "finding": ".env ",
@@ -621,19 +530,6 @@
       "location": {
         "file": "INSTALLATION_COMPARISON.md",
         "start_line": 15,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "INSTALLATION_COMPARISON.md",
-        "start_line": 97,
         "end_line": 0
       },
       "finding": ".env ",
@@ -705,19 +601,6 @@
       "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
     },
     {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "INSTALLATION.md",
-        "start_line": 163,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
       "id": "PE2",
       "category": "Privilege Escalation",
       "severity": "MEDIUM",
@@ -783,6 +666,32 @@
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "Makefile",
+        "start_line": 144,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "Makefile",
+        "start_line": 155,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
       "id": "YR4",
       "category": "YARA Match",
       "severity": "HIGH",
@@ -796,26 +705,13 @@
       "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
     },
     {
-      "id": "P2",
-      "category": "Prompt Injection",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "PROJECT_COMPLETE.md",
-        "start_line": 380,
-        "end_line": 0
-      },
-      "finding": "‍",
-      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
-    },
-    {
       "id": "SC4",
       "category": "Supply Chain",
       "severity": "HIGH",
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 12,
+        "start_line": 15,
         "end_line": 0
       },
       "finding": "mcp",
@@ -828,7 +724,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 14,
+        "start_line": 17,
         "end_line": 0
       },
       "finding": "websockets",
@@ -841,62 +737,10 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 14,
+        "start_line": 17,
         "end_line": 0
       },
       "finding": "websockets",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "HIGH",
-      "confidence": 0.8,
-      "location": {
-        "file": "pyproject.toml",
-        "start_line": 15,
-        "end_line": 0
-      },
-      "finding": "eth-account",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "MEDIUM",
-      "confidence": 0.7,
-      "location": {
-        "file": "pyproject.toml",
-        "start_line": 16,
-        "end_line": 0
-      },
-      "finding": "python-dotenv",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "CRITICAL",
-      "confidence": 0.9,
-      "location": {
-        "file": "pyproject.toml",
-        "start_line": 17,
-        "end_line": 0
-      },
-      "finding": "httpx",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "CRITICAL",
-      "confidence": 0.9,
-      "location": {
-        "file": "pyproject.toml",
-        "start_line": 17,
-        "end_line": 0
-      },
-      "finding": "httpx",
       "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
@@ -909,6 +753,58 @@
         "start_line": 18,
         "end_line": 0
       },
+      "finding": "eth-account",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 19,
+        "end_line": 0
+      },
+      "finding": "python-dotenv",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 20,
+        "end_line": 0
+      },
+      "finding": "httpx",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 20,
+        "end_line": 0
+      },
+      "finding": "httpx",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 21,
+        "end_line": 0
+      },
       "finding": "pydantic",
       "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
@@ -919,7 +815,7 @@
       "confidence": 0.6,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 19,
+        "start_line": 22,
         "end_line": 0
       },
       "finding": "pydantic-settings",
@@ -932,7 +828,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 20,
+        "start_line": 23,
         "end_line": 0
       },
       "finding": "fastapi",
@@ -945,7 +841,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 21,
+        "start_line": 24,
         "end_line": 0
       },
       "finding": "uvicorn",
@@ -958,7 +854,7 @@
       "confidence": 0.7,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 21,
+        "start_line": 24,
         "end_line": 0
       },
       "finding": "uvicorn",
@@ -971,7 +867,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 22,
+        "start_line": 25,
         "end_line": 0
       },
       "finding": "jinja2",
@@ -984,7 +880,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 28,
+        "start_line": 31,
         "end_line": 0
       },
       "finding": "pytest",
@@ -997,7 +893,7 @@
       "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 36,
+        "start_line": 39,
         "end_line": 0
       },
       "finding": "black",
@@ -1010,7 +906,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 43,
+        "start_line": 46,
         "end_line": 0
       },
       "finding": "safety",
@@ -1023,7 +919,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 47,
+        "start_line": 50,
         "end_line": 0
       },
       "finding": "psutil",
@@ -1043,6 +939,19 @@
       "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
     },
     {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "QUICKSTART_DOCKER.md",
+        "start_line": 195,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
       "id": "TM2",
       "category": "Tool Misuse",
       "severity": "HIGH",
@@ -1056,26 +965,13 @@
       "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow."
     },
     {
-      "id": "P2",
-      "category": "Prompt Injection",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "README.md",
-        "start_line": 14,
-        "end_line": 0
-      },
-      "finding": "‍",
-      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
-    },
-    {
       "id": "MP2",
       "category": "Memory Poisoning",
       "severity": "MEDIUM",
       "confidence": 0.8,
       "location": {
         "file": "README.md",
-        "start_line": 316,
+        "start_line": 321,
         "end_line": 0
       },
       "finding": "                                              ",
@@ -1088,50 +984,11 @@
       "confidence": 0.8,
       "location": {
         "file": "README.md",
-        "start_line": 322,
+        "start_line": 327,
         "end_line": 0
       },
       "finding": "                                              ",
       "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "run_trading_tests.py",
-        "start_line": 189,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "SETUP_IMPROVEMENTS_SUMMARY.md",
-        "start_line": 407,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "setup_wizard.py",
-        "start_line": 766,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
       "id": "PE3",
@@ -1186,26 +1043,13 @@
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
-      "id": "EA2",
-      "category": "Excessive Agency",
-      "severity": "MEDIUM",
-      "confidence": 0.75,
-      "location": {
-        "file": "src/polymarket_mcp/config.py",
-        "start_line": 83,
-        "end_line": 0
-      },
-      "finding": "without confirmation",
-      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
-    },
-    {
       "id": "PE3",
       "category": "Privilege Escalation",
       "severity": "HIGH",
       "confidence": 0.6,
       "location": {
         "file": "src/polymarket_mcp/server.py",
-        "start_line": 367,
+        "start_line": 387,
         "end_line": 0
       },
       "finding": ".env ",
@@ -1218,7 +1062,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/polymarket_mcp/utils/websocket_manager.py",
-        "start_line": 757,
+        "start_line": 780,
         "end_line": 0
       },
       "finding": "Start background task",
@@ -1274,19 +1118,6 @@
         "end_line": 0
       },
       "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "src/polymarket_mcp/web/app.py",
-        "start_line": 390,
-        "end_line": 0
-      },
-      "finding": ".env\n",
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
@@ -1413,19 +1244,6 @@
       "confidence": 0.6,
       "location": {
         "file": "start_web_dashboard.sh",
-        "start_line": 31,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "start_web_dashboard.sh",
         "start_line": 32,
         "end_line": 0
       },
@@ -1503,32 +1321,6 @@
       "severity": "HIGH",
       "confidence": 0.6,
       "location": {
-        "file": "TEST_INSTALLATION.md",
-        "start_line": 152,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "TEST_INSTALLATION.md",
-        "start_line": 215,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
         "file": "test_mcp_connection.py",
         "start_line": 40,
         "end_line": 0
@@ -1550,17 +1342,17 @@
       "explanation": "Dynamic __import__() can load arbitrary modules at runtime, bypassing static analysis and potentially importing malicious code."
     },
     {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.7,
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
       "location": {
         "file": "test-docker.sh",
-        "start_line": 123,
+        "start_line": 101,
         "end_line": 0
       },
-      "finding": "secret.yaml",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
     },
     {
       "id": "PE3",
@@ -1576,17 +1368,17 @@
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
-      "id": "TM1",
-      "category": "Tool Misuse",
+      "id": "PE3",
+      "category": "Privilege Escalation",
       "severity": "HIGH",
-      "confidence": 0.95,
+      "confidence": 0.7,
       "location": {
         "file": "test-docker.sh",
-        "start_line": 161,
+        "start_line": 123,
         "end_line": 0
       },
-      "finding": "rmi polymarket-mcp:test > /dev/",
-      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
       "id": "PE3",
@@ -1621,7 +1413,20 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/conftest.py",
-        "start_line": 36,
+        "start_line": 42,
+        "end_line": 0
+      },
+      "finding": "os.environ.get(\"POLYGON_PRIVATE_KEY",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/conftest.py",
+        "start_line": 68,
         "end_line": 0
       },
       "finding": "os.environ.get(key",
@@ -1634,7 +1439,7 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/conftest.py",
-        "start_line": 39,
+        "start_line": 71,
         "end_line": 0
       },
       "finding": "os.environ.get(\"POLYGON_PRIVATE_KEY",
@@ -1647,7 +1452,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/conftest.py",
-        "start_line": 40,
+        "start_line": 72,
         "end_line": 0
       },
       "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
@@ -1660,7 +1465,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/test_e2e.py",
-        "start_line": 59,
+        "start_line": 62,
         "end_line": 0
       },
       "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
@@ -1673,7 +1478,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/test_e2e.py",
-        "start_line": 200,
+        "start_line": 202,
         "end_line": 0
       },
       "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
@@ -1686,7 +1491,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/test_e2e.py",
-        "start_line": 228,
+        "start_line": 230,
         "end_line": 0
       },
       "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
@@ -1699,7 +1504,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/test_e2e.py",
-        "start_line": 300,
+        "start_line": 302,
         "end_line": 0
       },
       "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
@@ -1712,7 +1517,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/test_e2e.py",
-        "start_line": 458,
+        "start_line": 463,
         "end_line": 0
       },
       "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
@@ -1725,7 +1530,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/test_integration.py",
-        "start_line": 293,
+        "start_line": 294,
         "end_line": 0
       },
       "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
@@ -1738,37 +1543,11 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_issue_fixes.py",
-        "start_line": 100,
-        "end_line": 106
+        "start_line": 107,
+        "end_line": 113
       },
       "finding": "        result = subprocess.run(\n            [sys.executable, \"-m\", \"pip\", \"install\", \"--dry-run\", \".\"],\n            cwd=project_root,\n            capture_output=True,\n            text=True,\n         ",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
-    },
-    {
-      "id": "OH1",
-      "category": "Output Handling",
-      "severity": "HIGH",
-      "confidence": 0.95,
-      "location": {
-        "file": "tests/test_issue_fixes.py",
-        "start_line": 100,
-        "end_line": 0
-      },
-      "finding": "subprocess.run(\n            [sys.executable, \"-m\", \"pip\", \"install\", \"--dry-run\", \".\"],\n            cwd=project_root,\n            capture_output",
-      "explanation": "Model output is used without validation or sanitization. Unvalidated output injected into downstream contexts (SQL, shell, HTML) enables injection attacks and arbitrary code execution."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "tests/test_trading_tools.py",
-        "start_line": 469,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
       "id": "RA2",
@@ -1777,7 +1556,7 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_websocket.py",
-        "start_line": 340,
+        "start_line": 343,
         "end_line": 0
       },
       "finding": "Start background task",
@@ -1790,7 +1569,7 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_websocket.py",
-        "start_line": 505,
+        "start_line": 508,
         "end_line": 0
       },
       "finding": "Start background task",
@@ -2115,19 +1894,6 @@
       "confidence": 0.6,
       "location": {
         "file": "uninstall.sh",
-        "start_line": 121,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "uninstall.sh",
         "start_line": 123,
         "end_line": 0
       },
@@ -2146,32 +1912,6 @@
       },
       "finding": ".env ",
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "TM1",
-      "category": "Tool Misuse",
-      "severity": "HIGH",
-      "confidence": 0.95,
-      "location": {
-        "file": "uninstall.sh",
-        "start_line": 173,
-        "end_line": 0
-      },
-      "finding": "rm -rf {} + 2>/dev/",
-      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
-    },
-    {
-      "id": "TM1",
-      "category": "Tool Misuse",
-      "severity": "HIGH",
-      "confidence": 0.95,
-      "location": {
-        "file": "uninstall.sh",
-        "start_line": 176,
-        "end_line": 0
-      },
-      "finding": "rm -rf {} + 2>/dev/",
-      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
     },
     {
       "id": "TM2",

@@ -1,7 +1,7 @@
 {
   "id": "9crusher/mcp-server-kalshi",
-  "head_sha": "9784bc265bc7",
-  "skillspector_version": "2.3.7",
+  "head_sha": "867d12c2f0a0",
+  "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
     "severity": "CRITICAL",
@@ -10,11 +10,50 @@
   "counts": {
     "critical": 3,
     "high": 4,
-    "medium": 4,
+    "medium": 11,
     "low": 2
   },
   "suppressed_count": 0,
   "issues": [
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": ".github/workflows/deploy.yml",
+        "start_line": 51,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "uvx/uv tool run commands without ==version create a rug-pull risk."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": ".github/workflows/deploy.yml",
+        "start_line": 66,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "uvx/uv tool run commands without ==version create a rug-pull risk."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": ".github/workflows/deploy.yml",
+        "start_line": 100,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "uvx/uv tool run commands without ==version create a rug-pull risk."
+    },
     {
       "id": "EA3",
       "category": "Excessive Agency",
@@ -118,6 +157,58 @@
       },
       "finding": "setuptools",
       "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 96,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": "scripts/smoke_test_uvx.py",
+        "start_line": 13,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "uvx/uv tool run commands without ==version create a rug-pull risk."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": "scripts/smoke_test_uvx.py",
+        "start_line": 15,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "uvx/uv tool run commands without ==version create a rug-pull risk."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": "scripts/smoke_test_uvx.py",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "uvx/uv tool run commands without ==version create a rug-pull risk."
     },
     {
       "id": "AST4",
