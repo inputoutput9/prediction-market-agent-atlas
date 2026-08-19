@@ -1,16 +1,8 @@
 # CLAUDE.md — Prediction Market Agent Atlas
 
-Data-driven knowledgebase ranking prediction-market LLM-integration repos. Bun + TypeScript.
+Data-driven knowledgebase ranking prediction-market LLM-integration repos.
 
-## Commands
-
-```bash
-bun install
-bun run gate               # bun test + README drift check — run before every commit
-bun run scan               # refresh data/live.json from GitHub/PyPI/npm (network)
-bun run generate           # regenerate README ranking tables
-bun run scan:skillspector  # static-scan in-scope repos → data/skillspector/ + docs/ (network, slow)
-```
+Stack + commands: see `package.json` (`scripts`, `devDependencies`/`peerDependencies`).
 
 ## Rules
 
