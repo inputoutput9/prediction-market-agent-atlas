@@ -76,10 +76,12 @@ function upToDate(entry: RepoEntry): boolean {
 // Per-repo wall-clock cap so one hung clone can't stall the whole sweep (and, in
 // CI, burn to the job timeout — a cancelled job skips the `!cancelled()` commit
 // step, losing every other repo's fresh artifact). The LLM pass makes API calls
-// so it gets a larger budget. ponytail: fixed ceiling; env-override if a legit
-// large clone ever needs more.
+// so it gets a larger budget. Sized to the largest in-scope repo, not the mean:
+// braedonsaunders/homerun (~1,150 files) statically scans in ~195s on an M-series
+// Mac, so the old 180s cap timed it out everywhere and CI runners need ~2-3x
+// that. ponytail: fixed ceiling; env-override if a legit large clone ever needs more.
 const scanTimeoutMs = (llm: boolean): number =>
-  Number(process.env.SKILLSPECTOR_TIMEOUT_MS) || (llm ? 600_000 : 180_000);
+  Number(process.env.SKILLSPECTOR_TIMEOUT_MS) || (llm ? 1_200_000 : 900_000);
 
 async function scan(entry: RepoEntry, llm = false): Promise<SkillspectorArtifact> {
   const headSha = live[entry.id]?.head_sha;

@@ -30,7 +30,7 @@ permissions:
   contents: write
 
 # Pin SkillSpector to a commit — the repo publishes no release tags, so a SHA is
-# the only reproducible ref (this is the v2.3.7-era HEAD of main).
+# the only reproducible ref (this is the "Sync OSS release snapshot 2.4.3" commit).
 env:
   SKILLSPECTOR_REF: a54947c307fe19a24a43db55f6148e181a987a67
   ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
