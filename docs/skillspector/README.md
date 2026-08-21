@@ -13,7 +13,7 @@ Scanned: category ∈ {`mcp-server`, `agent-framework`, `skill`}, no terminal ha
 | `artvandelay/polymarket-agents` | 🔴 flagged-critical (untriaged) | 2/4/2/1 | 0 | no | [report](artvandelay__polymarket-agents.md) |
 | `austron24/kalshi-trader-plugin` | 🟠 needs-triage (untriaged) | 0/1/0/1 | 0 | no | [report](austron24__kalshi-trader-plugin.md) |
 | `berlinbra/polymarket-mcp` | 🔴 flagged-critical (untriaged) | 1/1/1/1 | 0 | no | [report](berlinbra__polymarket-mcp.md) |
-| `braedonsaunders/homerun` | ⚪ scan-error | — | — | no | [report](braedonsaunders__homerun.md) |
+| `braedonsaunders/homerun` | 🔴 flagged-critical (untriaged) | 2/84/489/168 | 0 | no | [report](braedonsaunders__homerun.md) |
 | `caiovicentino/polymarket-mcp-server` | 🔴 flagged-critical (untriaged) | 3/79/91/3 | 0 | no | [report](caiovicentino__polymarket-mcp-server.md) |
 | `cejor6/kalshi-mcp-server` | 🔴 flagged-critical | 2/20/29/11 | 29 | yes | [report](cejor6__kalshi-mcp-server.md) |
 | `demwick/polymarket-agent-mcp` | 🟠 needs-triage (untriaged) | 0/6/18/15 | 0 | no | [report](demwick__polymarket-agent-mcp.md) |
