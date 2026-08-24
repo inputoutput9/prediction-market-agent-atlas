@@ -13,7 +13,7 @@
 | Post-baseline counts | 🔴 3 C · 🟠 4 H · 🟡 11 M · ⚪ 2 L |
 | Suppressed by baseline | 0 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `867d12c2f0a0` |
+| Scanned head_sha | `6aee7db18c44` |
 
 **Baseline:** none yet — counts are raw static signal, expect false positives. See [baselines](../../data/skillspector-baselines/README.md).
 

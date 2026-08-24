@@ -10,10 +10,10 @@
 | Scanner risk score | 100/100 |
 | Scanner severity | CRITICAL |
 | Scanner recommendation | DO_NOT_INSTALL |
-| Post-baseline counts | 🔴 2 C · 🟠 84 H · 🟡 489 M · ⚪ 168 L |
+| Post-baseline counts | 🔴 2 C · 🟠 85 H · 🟡 490 M · ⚪ 168 L |
 | Suppressed by baseline | 0 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `c8e647f29887` |
+| Scanned head_sha | `6cb8ea5614e7` |
 
 **Baseline:** none yet — counts are raw static signal, expect false positives. See [baselines](../../data/skillspector-baselines/README.md).
 
@@ -32,6 +32,7 @@
 | 🟠 High | `backend/api/websocket.py:227` | Prompt Injection | 0.9 | Send message to |
 | 🟠 High | `backend/main.py:43` | Data Exfiltration | 0.7 | os.environ.get("HF_TOKEN |
 | 🟠 High | `backend/requirements-trading.txt:7` | Supply Chain | 0.8 | web3==6.0.0 |
+| 🟠 High | `backend/requirements.txt:2` | Supply Chain | 0.7 | uvicorn |
 | 🟠 High | `backend/requirements.txt:7` | Supply Chain | 0.8 | mcp==1.27.0 |
 | 🟠 High | `backend/requirements.txt:9` | Supply Chain | 0.8 | python-multipart==0.0.27 |
 | 🟠 High | `backend/requirements.txt:35` | Supply Chain | 0.8 | cryptography==42.0.0 |
@@ -70,7 +71,6 @@
 | 🟠 High | `frontend/src/components/DataLab.tsx:2125` | Output Handling | 0.65 | dangerouslySetInnerHTML={ |
 | 🟠 High | `frontend/src/components/DataLab.tsx:2135` | Output Handling | 0.65 | dangerouslySetInnerHTML={ |
 | 🟠 High | `frontend/src/components/DataLab.tsx:2168` | Output Handling | 0.65 | dangerouslySetInnerHTML={ |
-| 🟠 High | `frontend/src/components/DataLabProviders.tsx:1141` | Output Handling | 0.65 | dangerouslySetInnerHTML={ |
 
-_…and 693 more finding(s) — see the artifact JSON._
+_…and 695 more finding(s) — see the artifact JSON._
 

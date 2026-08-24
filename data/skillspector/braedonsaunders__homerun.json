@@ -1,6 +1,6 @@
 {
   "id": "braedonsaunders/homerun",
-  "head_sha": "c8e647f29887",
+  "head_sha": "6cb8ea5614e7",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -9,8 +9,8 @@
   },
   "counts": {
     "critical": 2,
-    "high": 84,
-    "medium": 489,
+    "high": 85,
+    "medium": 490,
     "low": 168
   },
   "suppressed_count": 0,
@@ -898,6 +898,19 @@
       },
       "finding": "fastapi>=0.115.0",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC6",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "backend/requirements.txt",
+        "start_line": 2,
+        "end_line": 0
+      },
+      "finding": "uvicorn",
+      "explanation": "Package name closely resembles a popular package, suggesting possible typosquatting. Attackers publish malicious packages with similar names to trick developers into installing them."
     },
     {
       "id": "SC1",
@@ -4629,6 +4642,19 @@
       },
       "finding": "",
       "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "docs/examples/livetennis_feed.py",
+        "start_line": 151,
+        "end_line": 0
+      },
+      "finding": "https://api.livetennisapi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {
       "id": "PE3",
