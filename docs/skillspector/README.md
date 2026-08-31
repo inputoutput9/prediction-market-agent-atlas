@@ -9,7 +9,7 @@ Scanned: category ∈ {`mcp-server`, `agent-framework`, `skill`}, no terminal ha
 | Repo | Grade | Post-baseline C/H/M/L | Suppressed | Baseline? | Report |
 |---|---|---|---|---|---|
 | `9crusher/mcp-server-kalshi` | 🔴 flagged-critical (untriaged) | 3/4/11/2 | 0 | no | [report](9crusher__mcp-server-kalshi.md) |
-| `alsk1992/CloddsBot` | 🔴 flagged-critical (untriaged) | 3/219/352/97 | 0 | no | [report](alsk1992__CloddsBot.md) |
+| `alsk1992/CloddsBot` | 🔴 flagged-critical (untriaged) | 3/174/379/97 | 0 | no | [report](alsk1992__CloddsBot.md) |
 | `artvandelay/polymarket-agents` | 🔴 flagged-critical (untriaged) | 2/4/2/1 | 0 | no | [report](artvandelay__polymarket-agents.md) |
 | `austron24/kalshi-trader-plugin` | 🟠 needs-triage (untriaged) | 0/1/0/1 | 0 | no | [report](austron24__kalshi-trader-plugin.md) |
 | `berlinbra/polymarket-mcp` | 🔴 flagged-critical (untriaged) | 1/1/1/1 | 0 | no | [report](berlinbra__polymarket-mcp.md) |

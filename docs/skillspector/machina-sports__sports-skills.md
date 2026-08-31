@@ -13,7 +13,7 @@
 | Post-baseline counts | 🔴 3 C · 🟠 22 H · 🟡 77 M · ⚪ 8 L |
 | Suppressed by baseline | 0 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `bf4adb22895e` |
+| Scanned head_sha | `c25f0156d1b4` |
 
 **Baseline:** none yet — counts are raw static signal, expect false positives. See [baselines](../../data/skillspector-baselines/README.md).
 
@@ -38,7 +38,7 @@
 | 🟠 High | `site/templates/skill.html:92` | Prompt Injection | 0.7 | &lt;!-- COMMANDS --> &lt;section class="commands-section">   &lt;div class="container">     &lt;h2>Commands&lt;/h2>      |
 | 🟠 High | `skills/football-data/SKILL.md:26` | YARA Match | 0.425 | pip install git+https://; pip install git+https:// |
 | 🟠 High | `skills/nfl-data/SKILL.md:26` | YARA Match | 0.425 | pip install git+https://; pip install git+https:// |
-| 🟠 High | `skills/sports-reporter/SKILL.md:384` | YARA Match | 0.85 | pip install git+https:// |
+| 🟠 High | `skills/sports-reporter/SKILL.md:383` | YARA Match | 0.85 | pip install git+https:// |
 | 🟠 High | `skills/volleyball-data/SKILL.md:26` | YARA Match | 0.425 | pip install git+https://; pip install git+https:// |
 | 🟠 High | `skills/xctf-data/SKILL.md:27` | YARA Match | 0.425 | pip install git+https:// |
 | 🟠 High | `src/sports_skills/canonical/_vendored/adapters/sportradar_tennis.py:61` | Prompt Injection | 0.9 | silently record |

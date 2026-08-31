@@ -1,6 +1,6 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "bf4adb22895e",
+  "head_sha": "c25f0156d1b4",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -867,7 +867,7 @@
       "confidence": 0.85,
       "location": {
         "file": "skills/sports-reporter/SKILL.md",
-        "start_line": 384,
+        "start_line": 383,
         "end_line": 0
       },
       "finding": "pip install git+https://",
@@ -1062,7 +1062,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 1883,
+        "start_line": 1931,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1075,7 +1075,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3182,
+        "start_line": 3341,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -1088,7 +1088,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3336,
+        "start_line": 3495,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -1101,7 +1101,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3691,
+        "start_line": 3850,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1114,7 +1114,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/kalshi/_connector.py",
-        "start_line": 21,
+        "start_line": 22,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
