@@ -10,10 +10,10 @@
 | Scanner risk score | 100/100 |
 | Scanner severity | CRITICAL |
 | Scanner recommendation | DO_NOT_INSTALL |
-| Post-baseline counts | 🔴 3 C · 🟠 22 H · 🟡 77 M · ⚪ 8 L |
+| Post-baseline counts | 🔴 3 C · 🟠 22 H · 🟡 78 M · ⚪ 8 L |
 | Suppressed by baseline | 0 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `c25f0156d1b4` |
+| Scanned head_sha | `bf996fb9fb85` |
 
 **Baseline:** none yet — counts are raw static signal, expect false positives. See [baselines](../../data/skillspector-baselines/README.md).
 
@@ -72,5 +72,5 @@
 | 🟡 Medium | `skills/catalog.json:78` | Agent Snooping | 0.8 | skills/fastf1/SKILL.md |
 | 🟡 Medium | `skills/catalog.json:89` | Agent Snooping | 0.8 | skills/football-data/SKILL.md |
 
-_…and 60 more finding(s) — see the artifact JSON._
+_…and 61 more finding(s) — see the artifact JSON._
 

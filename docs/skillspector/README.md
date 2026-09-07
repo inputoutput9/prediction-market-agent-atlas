@@ -9,7 +9,7 @@ Scanned: category ∈ {`mcp-server`, `agent-framework`, `skill`}, no terminal ha
 | Repo | Grade | Post-baseline C/H/M/L | Suppressed | Baseline? | Report |
 |---|---|---|---|---|---|
 | `9crusher/mcp-server-kalshi` | 🔴 flagged-critical (untriaged) | 3/4/11/2 | 0 | no | [report](9crusher__mcp-server-kalshi.md) |
-| `alsk1992/CloddsBot` | 🔴 flagged-critical (untriaged) | 3/174/379/97 | 0 | no | [report](alsk1992__CloddsBot.md) |
+| `alsk1992/CloddsBot` | 🔴 flagged-critical (untriaged) | 3/175/382/101 | 0 | no | [report](alsk1992__CloddsBot.md) |
 | `artvandelay/polymarket-agents` | 🔴 flagged-critical (untriaged) | 2/4/2/1 | 0 | no | [report](artvandelay__polymarket-agents.md) |
 | `austron24/kalshi-trader-plugin` | 🟠 needs-triage (untriaged) | 0/1/0/1 | 0 | no | [report](austron24__kalshi-trader-plugin.md) |
 | `berlinbra/polymarket-mcp` | 🔴 flagged-critical (untriaged) | 1/1/1/1 | 0 | no | [report](berlinbra__polymarket-mcp.md) |
@@ -19,7 +19,7 @@ Scanned: category ∈ {`mcp-server`, `agent-framework`, `skill`}, no terminal ha
 | `demwick/polymarket-agent-mcp` | 🟠 needs-triage (untriaged) | 0/6/18/15 | 0 | no | [report](demwick__polymarket-agent-mcp.md) |
 | `guangxiangdebizi/PolyMarket-MCP` | 🟠 needs-triage (untriaged) | 0/5/0/7 | 0 | no | [report](guangxiangdebizi__PolyMarket-MCP.md) |
 | `JamesANZ/prediction-market-mcp` | 🟠 needs-triage (untriaged) | 0/3/3/7 | 0 | no | [report](JamesANZ__prediction-market-mcp.md) |
-| `machina-sports/sports-skills` | 🔴 flagged-critical (untriaged) | 3/22/77/8 | 0 | no | [report](machina-sports__sports-skills.md) |
+| `machina-sports/sports-skills` | 🔴 flagged-critical (untriaged) | 3/22/78/8 | 0 | no | [report](machina-sports__sports-skills.md) |
 | `mjunaidca/polymarket-skills` | 🟠 needs-triage (untriaged) | 0/23/12/0 | 0 | no | [report](mjunaidca__polymarket-skills.md) |
 | `newyorkcompute/kalshi` | 🔴 flagged-critical (untriaged) | 5/16/18/69 | 0 | no | [report](newyorkcompute__kalshi.md) |
 | `ozgureyilmaz/polymarket-mcp` | 🟠 needs-triage (untriaged) | 0/5/2/1 | 0 | no | [report](ozgureyilmaz__polymarket-mcp.md) |

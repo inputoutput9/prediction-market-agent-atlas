@@ -1,6 +1,6 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "c25f0156d1b4",
+  "head_sha": "bf996fb9fb85",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -10,7 +10,7 @@
   "counts": {
     "critical": 3,
     "high": 22,
-    "medium": 77,
+    "medium": 78,
     "low": 8
   },
   "suppressed_count": 0,
@@ -984,8 +984,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 908,
-        "end_line": 908
+        "start_line": 909,
+        "end_line": 909
       },
       "finding": "            func = getattr(module, cmd_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -997,8 +997,8 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 972,
-        "end_line": 975
+        "start_line": 973,
+        "end_line": 976
       },
       "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -1010,8 +1010,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 1247,
-        "end_line": 1247
+        "start_line": 1248,
+        "end_line": 1248
       },
       "finding": "    func = getattr(module, command_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -1444,6 +1444,19 @@
       },
       "finding": "    subprocess.run([str(python), \"-I\", \"-c\", probe], check=True, cwd=tmp_path)",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_skill_command_coverage.py",
+        "start_line": 7,
+        "end_line": 0
+      },
+      "finding": "skills/cbb-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     }
   ],
   "analysis_completeness": {

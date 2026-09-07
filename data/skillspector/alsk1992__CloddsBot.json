@@ -1,6 +1,6 @@
 {
   "id": "alsk1992/CloddsBot",
-  "head_sha": "53a5b145ee80",
+  "head_sha": "715fd4a6c06b",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -9,9 +9,9 @@
   },
   "counts": {
     "critical": 3,
-    "high": 174,
-    "medium": 379,
-    "low": 97
+    "high": 175,
+    "medium": 382,
+    "low": 101
   },
   "suppressed_count": 0,
   "issues": [
@@ -22,7 +22,20 @@
       "confidence": 0.7,
       "location": {
         "file": ".github/workflows/ci.yml",
-        "start_line": 41,
+        "start_line": 22,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": ".github/workflows/ci.yml",
+        "start_line": 39,
         "end_line": 0
       },
       "finding": "",
@@ -35,7 +48,7 @@
       "confidence": 0.7,
       "location": {
         "file": ".github/workflows/security.yml",
-        "start_line": 32,
+        "start_line": 29,
         "end_line": 0
       },
       "finding": "",
@@ -217,7 +230,7 @@
       "confidence": 0.7,
       "location": {
         "file": "package-lock.json",
-        "start_line": 5635,
+        "start_line": 5380,
         "end_line": 0
       },
       "finding": "keyring",
@@ -230,7 +243,7 @@
       "confidence": 0.7,
       "location": {
         "file": "package-lock.json",
-        "start_line": 5709,
+        "start_line": 5454,
         "end_line": 0
       },
       "finding": "keyring",
@@ -243,7 +256,7 @@
       "confidence": 0.7,
       "location": {
         "file": "package-lock.json",
-        "start_line": 5711,
+        "start_line": 5456,
         "end_line": 0
       },
       "finding": "keyring",
@@ -256,7 +269,7 @@
       "confidence": 0.7,
       "location": {
         "file": "package-lock.json",
-        "start_line": 5711,
+        "start_line": 5456,
         "end_line": 0
       },
       "finding": "keyring",
@@ -269,7 +282,7 @@
       "confidence": 0.7,
       "location": {
         "file": "package-lock.json",
-        "start_line": 5780,
+        "start_line": 5525,
         "end_line": 0
       },
       "finding": "keyring",
@@ -282,7 +295,7 @@
       "confidence": 0.7,
       "location": {
         "file": "package-lock.json",
-        "start_line": 5806,
+        "start_line": 5551,
         "end_line": 0
       },
       "finding": "keyring",
@@ -298,7 +311,7 @@
         "start_line": 19,
         "end_line": 0
       },
-      "finding": "\"postinstall\": \"node -e",
+      "finding": "\"postinstall\": \"node scripts/fix-native-bindings.js && node scripts/fix-anchor-bn-export.js && node -e",
       "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer)."
     },
     {
@@ -532,7 +545,7 @@
         "start_line": 90,
         "end_line": 0
       },
-      "finding": "\"@polkadot/api\": \"^14.3.1\"",
+      "finding": "\"@orca-so/whirlpools-client\": \"^6.0.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -545,7 +558,7 @@
         "start_line": 91,
         "end_line": 0
       },
-      "finding": "\"@predictdotfun/sdk\": \"^1.3.0\"",
+      "finding": "\"@orca-so/whirlpools-core\": \"^3.0.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -558,7 +571,20 @@
         "start_line": 92,
         "end_line": 0
       },
-      "finding": "\"@project-serum/anchor\": \"^0.26.0\"",
+      "finding": "\"@polkadot/api\": \"^14.3.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 93,
+        "end_line": 0
+      },
+      "finding": "\"@predictdotfun/sdk\": \"^1.3.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -571,46 +597,7 @@
         "start_line": 94,
         "end_line": 0
       },
-      "finding": "\"@slack/bolt\": \"^3.17.1\"",
-      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC1",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.4,
-      "location": {
-        "file": "package.json",
-        "start_line": 95,
-        "end_line": 0
-      },
-      "finding": "\"@solana/spl-token\": \"^0.4.14\"",
-      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC1",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.4,
-      "location": {
-        "file": "package.json",
-        "start_line": 96,
-        "end_line": 0
-      },
-      "finding": "\"@solana/web3.js\": \"^1.98.4\"",
-      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC1",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.4,
-      "location": {
-        "file": "package.json",
-        "start_line": 97,
-        "end_line": 0
-      },
-      "finding": "\"@types/better-sqlite3\": \"^7.6.13\"",
+      "finding": "\"@project-serum/anchor\": \"^0.26.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -623,7 +610,7 @@
         "start_line": 98,
         "end_line": 0
       },
-      "finding": "\"@types/bn.js\": \"^5.2.0\"",
+      "finding": "\"@slack/bolt\": \"^3.17.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -636,7 +623,7 @@
         "start_line": 99,
         "end_line": 0
       },
-      "finding": "\"@types/figlet\": \"^1.7.0\"",
+      "finding": "\"@solana/kit\": \"^5.0.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -649,7 +636,7 @@
         "start_line": 100,
         "end_line": 0
       },
-      "finding": "\"@types/pg\": \"^8.16.0\"",
+      "finding": "\"@solana/spl-token\": \"^0.4.14\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -662,33 +649,7 @@
         "start_line": 101,
         "end_line": 0
       },
-      "finding": "\"@whiskeysockets/baileys\": \"^6.7.0\"",
-      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "CRITICAL",
-      "confidence": 0.9,
-      "location": {
-        "file": "package.json",
-        "start_line": 101,
-        "end_line": 0
-      },
-      "finding": "@whiskeysockets/baileys==6.7.0",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
-    },
-    {
-      "id": "SC1",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.4,
-      "location": {
-        "file": "package.json",
-        "start_line": 102,
-        "end_line": 0
-      },
-      "finding": "\"@wormhole-foundation/sdk\": \"^4.11.0\"",
+      "finding": "\"@solana/web3.js\": \"^1.98.4\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -701,7 +662,7 @@
         "start_line": 103,
         "end_line": 0
       },
-      "finding": "\"@wormhole-foundation/sdk-evm\": \"^4.9.1\"",
+      "finding": "\"@types/better-sqlite3\": \"^7.6.13\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -714,7 +675,7 @@
         "start_line": 104,
         "end_line": 0
       },
-      "finding": "\"@wormhole-foundation/sdk-evm-cctp\": \"^4.9.1\"",
+      "finding": "\"@types/bn.js\": \"^5.2.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -727,7 +688,7 @@
         "start_line": 105,
         "end_line": 0
       },
-      "finding": "\"@wormhole-foundation/sdk-evm-tokenbridge\": \"^4.9.1\"",
+      "finding": "\"@types/figlet\": \"^1.7.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -740,7 +701,7 @@
         "start_line": 106,
         "end_line": 0
       },
-      "finding": "\"@wormhole-foundation/sdk-solana\": \"^4.9.1\"",
+      "finding": "\"@types/pg\": \"^8.16.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -753,8 +714,21 @@
         "start_line": 107,
         "end_line": 0
       },
-      "finding": "\"@wormhole-foundation/sdk-solana-cctp\": \"^4.9.1\"",
+      "finding": "\"@whiskeysockets/baileys\": \"^6.7.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "package.json",
+        "start_line": 107,
+        "end_line": 0
+      },
+      "finding": "@whiskeysockets/baileys==6.7.0",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -766,7 +740,7 @@
         "start_line": 108,
         "end_line": 0
       },
-      "finding": "\"@wormhole-foundation/sdk-solana-tokenbridge\": \"^4.9.1\"",
+      "finding": "\"@wormhole-foundation/sdk\": \"^4.11.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -779,7 +753,7 @@
         "start_line": 109,
         "end_line": 0
       },
-      "finding": "\"@xenova/transformers\": \"^2.17.2\"",
+      "finding": "\"@wormhole-foundation/sdk-evm\": \"^4.9.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -792,7 +766,7 @@
         "start_line": 110,
         "end_line": 0
       },
-      "finding": "\"better-sqlite3\": \"^12.6.2\"",
+      "finding": "\"@wormhole-foundation/sdk-evm-cctp\": \"^4.9.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -805,7 +779,7 @@
         "start_line": 111,
         "end_line": 0
       },
-      "finding": "\"binance\": \"^3.3.3\"",
+      "finding": "\"@wormhole-foundation/sdk-evm-tokenbridge\": \"^4.9.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -818,7 +792,7 @@
         "start_line": 112,
         "end_line": 0
       },
-      "finding": "\"bn.js\": \"^5.2.3\"",
+      "finding": "\"@wormhole-foundation/sdk-solana\": \"^4.9.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -831,7 +805,7 @@
         "start_line": 113,
         "end_line": 0
       },
-      "finding": "\"bs58\": \"^5.0.0\"",
+      "finding": "\"@wormhole-foundation/sdk-solana-cctp\": \"^4.9.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -844,7 +818,7 @@
         "start_line": 114,
         "end_line": 0
       },
-      "finding": "\"bullmq\": \"^5.69.3\"",
+      "finding": "\"@wormhole-foundation/sdk-solana-tokenbridge\": \"^4.9.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -857,7 +831,7 @@
         "start_line": 115,
         "end_line": 0
       },
-      "finding": "\"bybit-api\": \"^4.6.0\"",
+      "finding": "\"@xenova/transformers\": \"^2.17.2\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -870,7 +844,7 @@
         "start_line": 116,
         "end_line": 0
       },
-      "finding": "\"chalk\": \"^5.3.0\"",
+      "finding": "\"better-sqlite3\": \"^12.6.2\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -883,7 +857,7 @@
         "start_line": 117,
         "end_line": 0
       },
-      "finding": "\"chokidar\": \"^3.5.3\"",
+      "finding": "\"binance\": \"^3.3.3\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -896,7 +870,7 @@
         "start_line": 118,
         "end_line": 0
       },
-      "finding": "\"commander\": \"^12.0.0\"",
+      "finding": "\"bn.js\": \"^5.2.3\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -909,7 +883,7 @@
         "start_line": 119,
         "end_line": 0
       },
-      "finding": "\"discord.js\": \"^14.14.1\"",
+      "finding": "\"bs58\": \"^5.0.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -922,7 +896,7 @@
         "start_line": 120,
         "end_line": 0
       },
-      "finding": "\"docx\": \"^9.5.3\"",
+      "finding": "\"bullmq\": \"^5.69.3\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -935,7 +909,7 @@
         "start_line": 121,
         "end_line": 0
       },
-      "finding": "\"dotenv\": \"^16.6.1\"",
+      "finding": "\"bybit-api\": \"^4.6.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -948,7 +922,7 @@
         "start_line": 122,
         "end_line": 0
       },
-      "finding": "\"ethers\": \"^6.16.0\"",
+      "finding": "\"chalk\": \"^5.3.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -961,7 +935,7 @@
         "start_line": 123,
         "end_line": 0
       },
-      "finding": "\"eventemitter3\": \"^5.0.1\"",
+      "finding": "\"chokidar\": \"^3.5.3\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -974,21 +948,8 @@
         "start_line": 124,
         "end_line": 0
       },
-      "finding": "\"express\": \"^4.18.2\"",
+      "finding": "\"commander\": \"^12.0.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.6,
-      "location": {
-        "file": "package.json",
-        "start_line": 124,
-        "end_line": 0
-      },
-      "finding": "express==4.18.2",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1000,21 +961,8 @@
         "start_line": 125,
         "end_line": 0
       },
-      "finding": "\"fast-xml-parser\": \"^5.3.7\"",
+      "finding": "\"discord.js\": \"^14.14.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "HIGH",
-      "confidence": 0.8,
-      "location": {
-        "file": "package.json",
-        "start_line": 125,
-        "end_line": 0
-      },
-      "finding": "fast-xml-parser==5.3.7",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1026,7 +974,7 @@
         "start_line": 126,
         "end_line": 0
       },
-      "finding": "\"figlet\": \"^1.10.0\"",
+      "finding": "\"docx\": \"^9.5.3\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1039,21 +987,8 @@
         "start_line": 127,
         "end_line": 0
       },
-      "finding": "\"glob\": \"^10.3.10\"",
+      "finding": "\"dotenv\": \"^16.6.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "HIGH",
-      "confidence": 0.8,
-      "location": {
-        "file": "package.json",
-        "start_line": 127,
-        "end_line": 0
-      },
-      "finding": "glob==10.3.10",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1065,7 +1000,7 @@
         "start_line": 128,
         "end_line": 0
       },
-      "finding": "\"grammy\": \"^1.40.0\"",
+      "finding": "\"ethers\": \"^6.16.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1078,7 +1013,7 @@
         "start_line": 129,
         "end_line": 0
       },
-      "finding": "\"hyperliquid\": \"^1.7.7\"",
+      "finding": "\"eventemitter3\": \"^5.0.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1091,8 +1026,21 @@
         "start_line": 130,
         "end_line": 0
       },
-      "finding": "\"inquirer\": \"^9.2.14\"",
+      "finding": "\"express\": \"^4.18.2\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "package.json",
+        "start_line": 130,
+        "end_line": 0
+      },
+      "finding": "express==4.18.2",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1104,8 +1052,21 @@
         "start_line": 131,
         "end_line": 0
       },
-      "finding": "\"ioredis\": \"^5.9.3\"",
+      "finding": "\"fast-xml-parser\": \"^5.3.7\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "package.json",
+        "start_line": 131,
+        "end_line": 0
+      },
+      "finding": "fast-xml-parser==5.3.7",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1117,7 +1078,7 @@
         "start_line": 132,
         "end_line": 0
       },
-      "finding": "\"json5\": \"^2.2.3\"",
+      "finding": "\"figlet\": \"^1.10.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1130,8 +1091,21 @@
         "start_line": 133,
         "end_line": 0
       },
-      "finding": "\"mammoth\": \"^1.11.0\"",
+      "finding": "\"glob\": \"^10.3.10\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "package.json",
+        "start_line": 133,
+        "end_line": 0
+      },
+      "finding": "glob==10.3.10",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1143,7 +1117,7 @@
         "start_line": 134,
         "end_line": 0
       },
-      "finding": "\"node-cron\": \"^3.0.3\"",
+      "finding": "\"grammy\": \"^1.40.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1156,21 +1130,8 @@
         "start_line": 135,
         "end_line": 0
       },
-      "finding": "\"nodemailer\": \"^7.0.13\"",
+      "finding": "\"hyperliquid\": \"^1.7.7\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "HIGH",
-      "confidence": 0.8,
-      "location": {
-        "file": "package.json",
-        "start_line": 135,
-        "end_line": 0
-      },
-      "finding": "nodemailer==7.0.13",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1182,7 +1143,7 @@
         "start_line": 136,
         "end_line": 0
       },
-      "finding": "\"pg\": \"^8.17.2\"",
+      "finding": "\"inquirer\": \"^9.2.14\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1195,7 +1156,7 @@
         "start_line": 137,
         "end_line": 0
       },
-      "finding": "\"pino\": \"^8.18.0\"",
+      "finding": "\"ioredis\": \"^5.9.3\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1208,7 +1169,7 @@
         "start_line": 138,
         "end_line": 0
       },
-      "finding": "\"pino-pretty\": \"^10.3.1\"",
+      "finding": "\"json5\": \"^2.2.3\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1221,21 +1182,8 @@
         "start_line": 139,
         "end_line": 0
       },
-      "finding": "\"sharp\": \"^0.34.5\"",
+      "finding": "\"mammoth\": \"^1.11.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "HIGH",
-      "confidence": 0.8,
-      "location": {
-        "file": "package.json",
-        "start_line": 139,
-        "end_line": 0
-      },
-      "finding": "sharp==0.34.5",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1247,7 +1195,7 @@
         "start_line": 140,
         "end_line": 0
       },
-      "finding": "\"sql.js\": \"^1.14.0\"",
+      "finding": "\"node-cron\": \"^3.0.3\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1260,7 +1208,7 @@
         "start_line": 141,
         "end_line": 0
       },
-      "finding": "\"tiktoken\": \"^1.0.22\"",
+      "finding": "\"nodemailer\": \"^9.0.6\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1273,7 +1221,7 @@
         "start_line": 142,
         "end_line": 0
       },
-      "finding": "\"tmi.js\": \"^1.8.5\"",
+      "finding": "\"pg\": \"^8.17.2\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1286,7 +1234,7 @@
         "start_line": 143,
         "end_line": 0
       },
-      "finding": "\"unofficial-opinion-clob-sdk\": \"^0.1.10\"",
+      "finding": "\"pino\": \"^8.18.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1299,21 +1247,8 @@
         "start_line": 144,
         "end_line": 0
       },
-      "finding": "\"ws\": \"^8.16.0\"",
+      "finding": "\"pino-pretty\": \"^10.3.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "HIGH",
-      "confidence": 0.8,
-      "location": {
-        "file": "package.json",
-        "start_line": 144,
-        "end_line": 0
-      },
-      "finding": "ws==8.16.0",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1325,21 +1260,8 @@
         "start_line": 145,
         "end_line": 0
       },
-      "finding": "\"yaml\": \"^2.3.4\"",
+      "finding": "\"sharp\": \"^0.35.4\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.6,
-      "location": {
-        "file": "package.json",
-        "start_line": 145,
-        "end_line": 0
-      },
-      "finding": "yaml==2.3.4",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1351,7 +1273,33 @@
         "start_line": 146,
         "end_line": 0
       },
-      "finding": "\"zod\": \"^3.22.4\"",
+      "finding": "\"sql.js\": \"^1.14.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 147,
+        "end_line": 0
+      },
+      "finding": "\"tiktoken\": \"^1.0.22\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 148,
+        "end_line": 0
+      },
+      "finding": "\"tmi.js\": \"^1.8.5\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1364,7 +1312,7 @@
         "start_line": 149,
         "end_line": 0
       },
-      "finding": "\"axios\": \"^1.13.5\"",
+      "finding": "\"unofficial-opinion-clob-sdk\": \"^0.1.10\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1377,8 +1325,21 @@
         "start_line": 150,
         "end_line": 0
       },
-      "finding": "\"undici\": \"^6.23.0\"",
+      "finding": "\"ws\": \"^8.16.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "package.json",
+        "start_line": 150,
+        "end_line": 0
+      },
+      "finding": "ws==8.16.0",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1390,8 +1351,21 @@
         "start_line": 151,
         "end_line": 0
       },
-      "finding": "\"nanoid\": \"^3.3.8\"",
+      "finding": "\"yaml\": \"^2.3.4\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "package.json",
+        "start_line": 151,
+        "end_line": 0
+      },
+      "finding": "yaml==2.3.4",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "SC1",
@@ -1400,23 +1374,10 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 153,
+        "start_line": 152,
         "end_line": 0
       },
-      "finding": "\"ajv\": \"^8.18.0\"",
-      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC1",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.4,
-      "location": {
-        "file": "package.json",
-        "start_line": 154,
-        "end_line": 0
-      },
-      "finding": "\"minimatch\": \"^10.2.1\"",
+      "finding": "\"zod\": \"^3.22.4\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1429,7 +1390,7 @@
         "start_line": 155,
         "end_line": 0
       },
-      "finding": "\"qs\": \"^6.15.0\"",
+      "finding": "\"axios\": \"^1.13.5\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1442,7 +1403,7 @@
         "start_line": 156,
         "end_line": 0
       },
-      "finding": "\"@cosmjs/crypto\": \"^0.38.1\"",
+      "finding": "\"undici\": \"^6.23.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1455,20 +1416,7 @@
         "start_line": 157,
         "end_line": 0
       },
-      "finding": "\"@cosmjs/amino\": \"^0.38.1\"",
-      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC1",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.4,
-      "location": {
-        "file": "package.json",
-        "start_line": 158,
-        "end_line": 0
-      },
-      "finding": "\"@cosmjs/proto-signing\": \"^0.38.1\"",
+      "finding": "\"nanoid\": \"^3.3.8\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1481,7 +1429,7 @@
         "start_line": 159,
         "end_line": 0
       },
-      "finding": "\"@cosmjs/stargate\": \"^0.38.1\"",
+      "finding": "\"ajv\": \"^8.18.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1494,7 +1442,7 @@
         "start_line": 160,
         "end_line": 0
       },
-      "finding": "\"@cosmjs/tendermint-rpc\": \"^0.38.1\"",
+      "finding": "\"minimatch\": \"^10.2.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1507,7 +1455,33 @@
         "start_line": 161,
         "end_line": 0
       },
-      "finding": "\"@cosmjs/cosmwasm-stargate\": \"^0.38.1\"",
+      "finding": "\"qs\": \"^6.15.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 162,
+        "end_line": 0
+      },
+      "finding": "\"@cosmjs/crypto\": \"^0.38.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 163,
+        "end_line": 0
+      },
+      "finding": "\"@cosmjs/amino\": \"^0.38.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1520,7 +1494,7 @@
         "start_line": 164,
         "end_line": 0
       },
-      "finding": "\"@types/express\": \"^4.17.21\"",
+      "finding": "\"@cosmjs/proto-signing\": \"^0.38.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1533,7 +1507,7 @@
         "start_line": 165,
         "end_line": 0
       },
-      "finding": "\"@types/hapi__boom\": \"^9.0.1\"",
+      "finding": "\"@cosmjs/stargate\": \"^0.38.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1546,7 +1520,7 @@
         "start_line": 166,
         "end_line": 0
       },
-      "finding": "\"@types/node\": \"^20.19.33\"",
+      "finding": "\"@cosmjs/tendermint-rpc\": \"^0.38.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1559,7 +1533,7 @@
         "start_line": 167,
         "end_line": 0
       },
-      "finding": "\"@types/nodemailer\": \"^6.4.22\"",
+      "finding": "\"@cosmjs/cosmwasm-stargate\": \"^0.38.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1572,33 +1546,7 @@
         "start_line": 168,
         "end_line": 0
       },
-      "finding": "\"@types/sql.js\": \"^1.4.9\"",
-      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC1",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.4,
-      "location": {
-        "file": "package.json",
-        "start_line": 169,
-        "end_line": 0
-      },
-      "finding": "\"@types/ws\": \"^8.5.10\"",
-      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
-    },
-    {
-      "id": "SC1",
-      "category": "Supply Chain",
-      "severity": "LOW",
-      "confidence": 0.4,
-      "location": {
-        "file": "package.json",
-        "start_line": 170,
-        "end_line": 0
-      },
-      "finding": "\"puppeteer\": \"^24.37.5\"",
+      "finding": "\"@solana/kit\": \"^5.0.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1611,7 +1559,7 @@
         "start_line": 171,
         "end_line": 0
       },
-      "finding": "\"tsx\": \"^4.7.0\"",
+      "finding": "\"@types/express\": \"^4.17.21\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1622,6 +1570,97 @@
       "location": {
         "file": "package.json",
         "start_line": 172,
+        "end_line": 0
+      },
+      "finding": "\"@types/hapi__boom\": \"^9.0.1\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 173,
+        "end_line": 0
+      },
+      "finding": "\"@types/node\": \"^20.19.33\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 174,
+        "end_line": 0
+      },
+      "finding": "\"@types/nodemailer\": \"^6.4.22\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 175,
+        "end_line": 0
+      },
+      "finding": "\"@types/sql.js\": \"^1.4.9\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 176,
+        "end_line": 0
+      },
+      "finding": "\"@types/ws\": \"^8.5.10\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 177,
+        "end_line": 0
+      },
+      "finding": "\"puppeteer\": \"^24.37.5\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 178,
+        "end_line": 0
+      },
+      "finding": "\"tsx\": \"^4.7.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 179,
         "end_line": 0
       },
       "finding": "\"typescript\": \"^5.3.3\"",
@@ -1823,6 +1862,32 @@
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "rust/fast-broadcast/tests/broadcast_race_test.rs",
+        "start_line": 4,
+        "end_line": 0
+      },
+      "finding": "pList",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "rust/fast-broadcast/tests/broadcast_race_test.rs",
+        "start_line": 21,
+        "end_line": 0
+      },
+      "finding": "pList",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
       "id": "SC2",
       "category": "Supply Chain",
       "severity": "HIGH",
@@ -1847,6 +1912,19 @@
       },
       "finding": "| bash",
       "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "scripts/lighter-bridge/bridge.py",
+        "start_line": 98,
+        "end_line": 108
+      },
+      "finding": "        subprocess.run(\n            [\n                sys.executable, \"-m\", \"pip\", \"install\",\n                \"--target\", _VENDOR_DIR,\n                \"--quiet\",\n                \"--disable-pip-version",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
     },
     {
       "id": "EA2",
@@ -2180,7 +2258,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/handlers/solana.ts",
-        "start_line": 543,
+        "start_line": 632,
         "end_line": 0
       },
       "finding": "fetch('https://pump.fun/api/ipfs', {\n      method: 'POST'",
@@ -2219,7 +2297,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 7666,
+        "start_line": 7688,
         "end_line": 0
       },
       "finding": "reset context",
@@ -2232,7 +2310,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 7776,
+        "start_line": 7798,
         "end_line": 0
       },
       "finding": "tools:; tools:; Tools =; tools:; Tools\n    :; Tools:; Tools:; Tools:; TOOLS =; Tools =; Tools =; Tools =; Tools =; Tools =; tools:; tools:; Tools =; tools:; description:; description:; description:; d",
@@ -2245,7 +2323,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 8380,
+        "start_line": 8402,
         "end_line": 0
       },
       "finding": ".env ",
@@ -2258,7 +2336,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 8957,
+        "start_line": 8979,
         "end_line": 0
       },
       "finding": "https://api.manifold.markets/",
@@ -2271,7 +2349,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 9074,
+        "start_line": 9096,
         "end_line": 0
       },
       "finding": "https://api.manifold.markets/",
@@ -2284,7 +2362,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 9199,
+        "start_line": 9221,
         "end_line": 0
       },
       "finding": "https://api.manifold.markets/",
@@ -2297,7 +2375,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 9266,
+        "start_line": 9288,
         "end_line": 0
       },
       "finding": "https://api.manifold.markets/",
@@ -2310,7 +2388,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12286,
+        "start_line": 12308,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2323,7 +2401,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12305,
+        "start_line": 12327,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2336,7 +2414,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12316,
+        "start_line": 12338,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2349,7 +2427,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12370,
+        "start_line": 12392,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2362,7 +2440,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12386,
+        "start_line": 12408,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2375,7 +2453,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12405,
+        "start_line": 12427,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2388,7 +2466,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12433,
+        "start_line": 12455,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2401,7 +2479,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12454,
+        "start_line": 12476,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2414,7 +2492,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 13113,
+        "start_line": 13135,
         "end_line": 0
       },
       "finding": "https://api.opinion.trade/",
@@ -2427,23 +2505,10 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 13140,
+        "start_line": 13162,
         "end_line": 0
       },
       "finding": "https://api.opinion.trade/",
-      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
-    },
-    {
-      "id": "E1",
-      "category": "Data Exfiltration",
-      "severity": "MEDIUM",
-      "confidence": 0.6,
-      "location": {
-        "file": "src/agents/index.ts",
-        "start_line": 15609,
-        "end_line": 0
-      },
-      "finding": "fetch('https://www.metaculus.com/api2/questions/bulk-predict/', {\n            method: 'POST'",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {
@@ -2456,6 +2521,19 @@
         "start_line": 15687,
         "end_line": 0
       },
+      "finding": "fetch('https://www.metaculus.com/api2/questions/bulk-predict/', {\n            method: 'POST'",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/agents/index.ts",
+        "start_line": 15765,
+        "end_line": 0
+      },
       "finding": "fetch('https://www.metaculus.com/api2/comments/', {\n            method: 'POST'",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
@@ -2466,7 +2544,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 15787,
+        "start_line": 15865,
         "end_line": 0
       },
       "finding": "fetch('https://www.metaculus.com/api2/notifications/mark_read/', {\n            method: 'POST'",
@@ -2479,7 +2557,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 15843,
+        "start_line": 15921,
         "end_line": 0
       },
       "finding": "fetch('https://www.metaculus.com/api2/questions/', {\n            method: 'POST'",
@@ -2492,7 +2570,7 @@
       "confidence": 0.9,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 16058,
+        "start_line": 16136,
         "end_line": 0
       },
       "finding": "rm -rf /",
@@ -2505,7 +2583,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 16058,
+        "start_line": 16136,
         "end_line": 0
       },
       "finding": "rm -rf /',",
@@ -2518,7 +2596,7 @@
       "confidence": 0.75,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 16691,
+        "start_line": 16769,
         "end_line": 0
       },
       "finding": "",
@@ -2531,7 +2609,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 17216,
+        "start_line": 17294,
         "end_line": 0
       },
       "finding": "clear conversation",
@@ -3701,7 +3779,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/commands/registry.ts",
-        "start_line": 3307,
+        "start_line": 3497,
         "end_line": 0
       },
       "finding": "create [name]     - Generate new wallet',\n            '/wallet list              - List saved wallets',\n            '/wallet balance [address] - Check balances across chains',\n            '',\n        ",
@@ -4195,7 +4273,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/evm/multichain.ts",
-        "start_line": 80,
+        "start_line": 117,
         "end_line": 0
       },
       "finding": "https://api.avax.network/",
@@ -4208,10 +4286,10 @@
       "confidence": 0.5,
       "location": {
         "file": "src/evm/oneinch.ts",
-        "start_line": 72,
+        "start_line": 80,
         "end_line": 0
       },
-      "finding": "https://api.1inch.dev/",
+      "finding": "https://api.1inch.com/",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {
@@ -4221,7 +4299,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/evm/virtuals.ts",
-        "start_line": 733,
+        "start_line": 810,
         "end_line": 0
       },
       "finding": "https://api.virtuals.io/",
@@ -4260,7 +4338,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 647,
+        "start_line": 658,
         "end_line": 0
       },
       "finding": "fetch('https://polygon-rpc.com/', {\n      method: 'POST'",
@@ -4273,7 +4351,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 975,
+        "start_line": 986,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
@@ -4286,7 +4364,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 1397,
+        "start_line": 1410,
         "end_line": 0
       },
       "finding": "DELETE /orders)",
@@ -4299,7 +4377,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 1493,
+        "start_line": 1506,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
@@ -4312,10 +4390,10 @@
       "confidence": 0.8,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 1843,
+        "start_line": 1899,
         "end_line": 0
       },
-      "finding": "DELETE /portfolio/orders/batched.",
+      "finding": "DELETE /portfolio/events/orders/batched",
       "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
     },
     {
@@ -5274,7 +5352,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/media/index.ts",
-        "start_line": 802,
+        "start_line": 817,
         "end_line": 0
       },
       "finding": "fetch('https://api.anthropic.com/v1/messages', {\n      method: 'POST'",
@@ -5287,7 +5365,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/media/index.ts",
-        "start_line": 802,
+        "start_line": 817,
         "end_line": 0
       },
       "finding": "https://api.anthropic.com/",
@@ -7250,7 +7328,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/skills/bundled/pumpfun/index.ts",
-        "start_line": 477,
+        "start_line": 476,
         "end_line": 0
       },
       "finding": "https://api.dexscreener.com/",
@@ -7263,24 +7341,24 @@
       "confidence": 0.6,
       "location": {
         "file": "src/skills/bundled/pumpfun/index.ts",
-        "start_line": 1361,
+        "start_line": 1372,
         "end_line": 0
       },
       "finding": "fetch('https://pump.fun/api/ipfs', {\n      method: 'POST'",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {
-      "id": "E1",
-      "category": "Data Exfiltration",
+      "id": "EA2",
+      "category": "Excessive Agency",
       "severity": "MEDIUM",
-      "confidence": 0.6,
+      "confidence": 0.85,
       "location": {
         "file": "src/skills/bundled/pumpfun/index.ts",
-        "start_line": 1494,
+        "start_line": 1696,
         "end_line": 0
       },
-      "finding": "fetch('https://pump.fun/api/ipfs', {\n      method: 'POST'",
-      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+      "finding": "auto-execute",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
     },
     {
       "id": "EA1",
@@ -7289,7 +7367,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/skills/bundled/pumpfun/index.ts",
-        "start_line": 1804,
+        "start_line": 1844,
         "end_line": 0
       },
       "finding": "Tools:*",
@@ -7835,7 +7913,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/skills/executor.ts",
-        "start_line": 558,
+        "start_line": 561,
         "end_line": 0
       },
       "finding": ".env ",
@@ -7848,7 +7926,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/skills/executor.ts",
-        "start_line": 949,
+        "start_line": 952,
         "end_line": 0
       },
       "finding": "patch skill",
@@ -7861,7 +7939,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/skills/executor.ts",
-        "start_line": 953,
+        "start_line": 956,
         "end_line": 0
       },
       "finding": "patch skill",
@@ -7939,7 +8017,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/solana/jupiter.ts",
-        "start_line": 407,
+        "start_line": 418,
         "end_line": 0
       },
       "finding": "Automatically execute",
@@ -7952,7 +8030,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/solana/jupiter.ts",
-        "start_line": 787,
+        "start_line": 810,
         "end_line": 0
       },
       "finding": "Swap Instructions",
@@ -7965,24 +8043,24 @@
       "confidence": 0.85,
       "location": {
         "file": "src/solana/jupiter.ts",
-        "start_line": 800,
+        "start_line": 823,
         "end_line": 0
       },
       "finding": "swap instructions",
       "explanation": "Skill manipulates agent memory, state, or stored context. Memory corruption can alter personality, override safety rules, or cause unpredictable behavior."
     },
     {
-      "id": "E1",
-      "category": "Data Exfiltration",
-      "severity": "MEDIUM",
-      "confidence": 0.5,
+      "id": "MP3",
+      "category": "Memory Poisoning",
+      "severity": "HIGH",
+      "confidence": 0.85,
       "location": {
-        "file": "src/solana/raydium.ts",
-        "start_line": 229,
+        "file": "src/solana/pumpswap.ts",
+        "start_line": 122,
         "end_line": 0
       },
-      "finding": "https://api.raydium.io/",
-      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+      "finding": "swap state",
+      "explanation": "Skill manipulates agent memory, state, or stored context. Memory corruption can alter personality, override safety rules, or cause unpredictable behavior."
     },
     {
       "id": "E1",
@@ -8245,6 +8323,19 @@
       "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
     },
     {
+      "id": "P6",
+      "category": "System Prompt Leakage",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "src/trading/multi-hop-arbitrage.ts",
+        "start_line": 201,
+        "end_line": 0
+      },
+      "finding": "return instruction",
+      "explanation": "Skill contains instructions that could directly expose system prompts, internal rules, or hidden instructions to users or external parties."
+    },
+    {
       "id": "E1",
       "category": "Data Exfiltration",
       "severity": "MEDIUM",
@@ -8290,7 +8381,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/types.ts",
-        "start_line": 1219,
+        "start_line": 1274,
         "end_line": 0
       },
       "finding": "Auto-approve",
@@ -8303,7 +8394,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/types.ts",
-        "start_line": 1220,
+        "start_line": 1275,
         "end_line": 0
       },
       "finding": "autoApprove",
@@ -8503,6 +8594,19 @@
       },
       "finding": "fetch('https://post.test/resource', { method: 'POST'",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/unit/multichain-race-urls.test.ts",
+        "start_line": 18,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     }
   ],
   "analysis_completeness": {
