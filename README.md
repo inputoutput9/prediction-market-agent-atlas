@@ -66,7 +66,7 @@ Weighted total → tier: **S** (≥80%) · **A** (≥65%) · **B** (≥45%) · *
 
 <!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->
 
-> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-08-31** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
+> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-09-07** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
 
 ### Kalshi
 
@@ -98,6 +98,19 @@ Official REST ground truth (async variant: kalshi-python-async). The deprecated 
 
 | Repo | Grade | Score |
 |---|---|---|
+| [kalshi-typescript](https://www.npmjs.com/package/kalshi-typescript) by Kalshi | 🟡 A-tier | 43/55 |
+
+Official TS ground truth.
+
+| provenance: 🟢 5/5 | capability: 🟢 4/5 | safety: 🟡 3/5 | agent-fit: 🟡 3/5 | category: `sdk-client` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/npm/v/kalshi-typescript?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=npm" alt="npm">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
 | [kalshi-python-sdk](https://github.com/TexasCoding/kalshi-python-sdk) by [TexasCoding](https://github.com/TexasCoding) | 🟡 A-tier | 42/55 |
 
 Most complete Kalshi client surveyed. Pin the version; budget upgrade time per major.
@@ -106,19 +119,6 @@ Most complete Kalshi client surveyed. Pin the version; budget upgrade time per m
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/TexasCoding/kalshi-python-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/TexasCoding/kalshi-python-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/TexasCoding/kalshi-python-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/pypi/v/kalshi-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=pypi" alt="pypi">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
-| [kalshi-typescript](https://www.npmjs.com/package/kalshi-typescript) by Kalshi | 🟡 A-tier | 41/55 |
-
-Official TS ground truth.
-
-| provenance: 🟢 5/5 | capability: 🟢 4/5 | safety: 🟡 3/5 | agent-fit: 🟡 3/5 | category: `sdk-client` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/npm/v/kalshi-typescript?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=npm" alt="npm">
 
 ---
 
@@ -280,9 +280,9 @@ Functional and safety-conscious in code, but treat as a reference implementation
 
 | Repo | Grade | Score |
 |---|---|---|
-| [real-time-data-client](https://github.com/Polymarket/real-time-data-client) by [Polymarket](https://github.com/Polymarket) | 🟡 A-tier | 38/55 |
+| [real-time-data-client](https://github.com/Polymarket/real-time-data-client) by [Polymarket](https://github.com/Polymarket) | 🔵 B-tier | 36/55 |
 
-Pair with a CLOB client when you need writes.
+**⚠️ idle-capped to B.** Pair with a CLOB client when you need writes.
 
 | provenance: 🟢 5/5 | capability: 🔴 2/5 | safety: 🟢 4/5 | agent-fit: 🟡 3/5 | category: `sdk-client` |
 |---|---|---|---|---|
@@ -345,19 +345,6 @@ Solid architecture to mine for backtesting patterns; not a maintained dependency
 
 | Repo | Grade | Score |
 |---|---|---|
-| [polymarket-mcp](https://github.com/pab1it0/polymarket-mcp) by [pab1it0](https://github.com/pab1it0) | 🔵 B-tier | 29/55 |
-
-Simple self-host reference; data-only despite some directories' descriptions.
-
-| provenance: 🔴 2/5 | capability: 🔴 2/5 | safety: 🟡 3/5 | agent-fit: 🟡 3/5 | category: `mcp-server` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/pab1it0/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/pab1it0/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/pab1it0/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
 | [PolyMarket-MCP](https://github.com/guangxiangdebizi/PolyMarket-MCP) by [guangxiangdebizi](https://github.com/guangxiangdebizi) | 🔵 B-tier | 28/55 |
 
 Analytics niche (holders/positions). Hygiene tells; read-only limits the blast radius.
@@ -366,6 +353,19 @@ Analytics niche (holders/positions). Hygiene tells; read-only limits the blast r
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/guangxiangdebizi/PolyMarket-MCP?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/guangxiangdebizi/PolyMarket-MCP?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/guangxiangdebizi/PolyMarket-MCP?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
+| [polymarket-mcp](https://github.com/pab1it0/polymarket-mcp) by [pab1it0](https://github.com/pab1it0) | 🔵 B-tier | 27/55 |
+
+Simple self-host reference; data-only despite some directories' descriptions.
+
+| provenance: 🔴 2/5 | capability: 🔴 2/5 | safety: 🟡 3/5 | agent-fit: 🟡 3/5 | category: `mcp-server` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/pab1it0/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/pab1it0/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/pab1it0/polymarket-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ---
 
