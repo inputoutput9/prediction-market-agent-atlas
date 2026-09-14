@@ -1,6 +1,6 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "bf996fb9fb85",
+  "head_sha": "cde36d0d5d92",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -48,7 +48,7 @@
       "confidence": 0.9,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 198,
+        "start_line": 210,
         "end_line": 0
       },
       "finding": "curl | bash",
@@ -61,7 +61,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 329,
+        "start_line": 341,
         "end_line": 0
       },
       "finding": "skills/metadata/SKILL.md",
@@ -74,7 +74,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 332,
+        "start_line": 344,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",
@@ -984,8 +984,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 909,
-        "end_line": 909
+        "start_line": 910,
+        "end_line": 910
       },
       "finding": "            func = getattr(module, cmd_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -997,8 +997,8 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 973,
-        "end_line": 976
+        "start_line": 974,
+        "end_line": 977
       },
       "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -1010,8 +1010,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 1248,
-        "end_line": 1248
+        "start_line": 1249,
+        "end_line": 1249
       },
       "finding": "    func = getattr(module, command_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -1062,7 +1062,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 1931,
+        "start_line": 1987,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1075,7 +1075,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3341,
+        "start_line": 3640,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -1088,7 +1088,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3495,
+        "start_line": 3898,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -1101,7 +1101,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3850,
+        "start_line": 4253,
         "end_line": 0
       },
       "finding": "max_retries=0",

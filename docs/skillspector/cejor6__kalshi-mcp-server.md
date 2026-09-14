@@ -13,7 +13,7 @@
 | Post-baseline counts | 🔴 2 C · 🟠 20 H · 🟡 29 M · ⚪ 11 L |
 | Suppressed by baseline | 29 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `cc3478f9b1b9` |
+| Scanned head_sha | `d8d33e32cda1` |
 
 **Baseline:** 29 finding(s) suppressed by a reviewed baseline.
 

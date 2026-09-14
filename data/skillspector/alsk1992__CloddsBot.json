@@ -1,6 +1,6 @@
 {
   "id": "alsk1992/CloddsBot",
-  "head_sha": "715fd4a6c06b",
+  "head_sha": "c930628c47a4",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -11,7 +11,7 @@
     "critical": 3,
     "high": 175,
     "medium": 382,
-    "low": 101
+    "low": 102
   },
   "suppressed_count": 0,
   "issues": [
@@ -22,7 +22,7 @@
       "confidence": 0.7,
       "location": {
         "file": ".github/workflows/ci.yml",
-        "start_line": 22,
+        "start_line": 24,
         "end_line": 0
       },
       "finding": "",
@@ -74,7 +74,7 @@
       "confidence": 0.7,
       "location": {
         "file": "Dockerfile",
-        "start_line": 32,
+        "start_line": 36,
         "end_line": 0
       },
       "finding": "fetch('http://localhost",
@@ -321,7 +321,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 73,
+        "start_line": 71,
         "end_line": 0
       },
       "finding": "\"@anthropic-ai/sdk\": \"^0.78.0\"",
@@ -334,7 +334,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 74,
+        "start_line": 72,
         "end_line": 0
       },
       "finding": "\"@anthropic-ai/tokenizer\": \"^0.0.4\"",
@@ -347,7 +347,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 75,
+        "start_line": 73,
         "end_line": 0
       },
       "finding": "\"@coral-xyz/anchor\": \"^0.32.1\"",
@@ -360,7 +360,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 76,
+        "start_line": 74,
         "end_line": 0
       },
       "finding": "\"@drift-labs/sdk\": \"^2.156.0\"",
@@ -373,7 +373,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 77,
+        "start_line": 75,
         "end_line": 0
       },
       "finding": "\"@hapi/boom\": \"^10.0.1\"",
@@ -386,7 +386,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 78,
+        "start_line": 76,
         "end_line": 0
       },
       "finding": "\"@jup-ag/api\": \"^6.0.48\"",
@@ -399,7 +399,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 79,
+        "start_line": 77,
         "end_line": 0
       },
       "finding": "\"@jup-ag/dca-sdk\": \"^3.0.1\"",
@@ -412,7 +412,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 80,
+        "start_line": 78,
         "end_line": 0
       },
       "finding": "\"@jup-ag/limit-order-sdk\": \"^0.1.10\"",
@@ -425,7 +425,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 81,
+        "start_line": 79,
         "end_line": 0
       },
       "finding": "\"@kamino-finance/klend-sdk\": \"^2.13.10\"",
@@ -438,7 +438,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 82,
+        "start_line": 80,
         "end_line": 0
       },
       "finding": "\"@kamino-finance/kliquidity-sdk\": \"^6.5.1\"",
@@ -451,7 +451,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 83,
+        "start_line": 81,
         "end_line": 0
       },
       "finding": "\"@meteora-ag/dlmm\": \"^1.9.3\"",
@@ -464,7 +464,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 84,
+        "start_line": 82,
         "end_line": 0
       },
       "finding": "\"@meteora-ag/dynamic-bonding-curve-sdk\": \"^1.5.3\"",
@@ -477,7 +477,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 85,
+        "start_line": 83,
         "end_line": 0
       },
       "finding": "\"@noble/ed25519\": \"^2.3.0\"",
@@ -490,7 +490,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 86,
+        "start_line": 84,
         "end_line": 0
       },
       "finding": "\"@noble/hashes\": \"^1.8.0\"",
@@ -503,7 +503,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 87,
+        "start_line": 85,
         "end_line": 0
       },
       "finding": "\"@noble/secp256k1\": \"^3.0.0\"",
@@ -516,7 +516,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 88,
+        "start_line": 86,
         "end_line": 0
       },
       "finding": "\"@orca-so/whirlpool-sdk\": \"^0.4.2\"",
@@ -529,7 +529,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 89,
+        "start_line": 87,
         "end_line": 0
       },
       "finding": "\"@orca-so/whirlpools\": \"^6.0.0\"",
@@ -542,7 +542,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 90,
+        "start_line": 88,
         "end_line": 0
       },
       "finding": "\"@orca-so/whirlpools-client\": \"^6.0.0\"",
@@ -555,7 +555,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 91,
+        "start_line": 89,
         "end_line": 0
       },
       "finding": "\"@orca-so/whirlpools-core\": \"^3.0.0\"",
@@ -568,7 +568,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 92,
+        "start_line": 90,
         "end_line": 0
       },
       "finding": "\"@polkadot/api\": \"^14.3.1\"",
@@ -581,7 +581,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 93,
+        "start_line": 91,
         "end_line": 0
       },
       "finding": "\"@predictdotfun/sdk\": \"^1.3.0\"",
@@ -594,7 +594,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 94,
+        "start_line": 92,
         "end_line": 0
       },
       "finding": "\"@project-serum/anchor\": \"^0.26.0\"",
@@ -607,7 +607,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 98,
+        "start_line": 96,
         "end_line": 0
       },
       "finding": "\"@slack/bolt\": \"^3.17.1\"",
@@ -620,7 +620,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 99,
+        "start_line": 97,
         "end_line": 0
       },
       "finding": "\"@solana/kit\": \"^5.0.0\"",
@@ -633,7 +633,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 100,
+        "start_line": 98,
         "end_line": 0
       },
       "finding": "\"@solana/spl-token\": \"^0.4.14\"",
@@ -646,7 +646,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 101,
+        "start_line": 99,
         "end_line": 0
       },
       "finding": "\"@solana/web3.js\": \"^1.98.4\"",
@@ -659,7 +659,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 103,
+        "start_line": 101,
         "end_line": 0
       },
       "finding": "\"@types/better-sqlite3\": \"^7.6.13\"",
@@ -672,7 +672,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 104,
+        "start_line": 102,
         "end_line": 0
       },
       "finding": "\"@types/bn.js\": \"^5.2.0\"",
@@ -685,7 +685,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 105,
+        "start_line": 103,
         "end_line": 0
       },
       "finding": "\"@types/figlet\": \"^1.7.0\"",
@@ -698,7 +698,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 106,
+        "start_line": 104,
         "end_line": 0
       },
       "finding": "\"@types/pg\": \"^8.16.0\"",
@@ -711,7 +711,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 107,
+        "start_line": 105,
         "end_line": 0
       },
       "finding": "\"@whiskeysockets/baileys\": \"^6.7.0\"",
@@ -724,7 +724,7 @@
       "confidence": 0.9,
       "location": {
         "file": "package.json",
-        "start_line": 107,
+        "start_line": 105,
         "end_line": 0
       },
       "finding": "@whiskeysockets/baileys==6.7.0",
@@ -737,7 +737,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 108,
+        "start_line": 106,
         "end_line": 0
       },
       "finding": "\"@wormhole-foundation/sdk\": \"^4.11.0\"",
@@ -750,7 +750,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 109,
+        "start_line": 107,
         "end_line": 0
       },
       "finding": "\"@wormhole-foundation/sdk-evm\": \"^4.9.1\"",
@@ -763,7 +763,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 110,
+        "start_line": 108,
         "end_line": 0
       },
       "finding": "\"@wormhole-foundation/sdk-evm-cctp\": \"^4.9.1\"",
@@ -776,7 +776,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 111,
+        "start_line": 109,
         "end_line": 0
       },
       "finding": "\"@wormhole-foundation/sdk-evm-tokenbridge\": \"^4.9.1\"",
@@ -789,7 +789,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 112,
+        "start_line": 110,
         "end_line": 0
       },
       "finding": "\"@wormhole-foundation/sdk-solana\": \"^4.9.1\"",
@@ -802,7 +802,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 113,
+        "start_line": 111,
         "end_line": 0
       },
       "finding": "\"@wormhole-foundation/sdk-solana-cctp\": \"^4.9.1\"",
@@ -815,7 +815,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 114,
+        "start_line": 112,
         "end_line": 0
       },
       "finding": "\"@wormhole-foundation/sdk-solana-tokenbridge\": \"^4.9.1\"",
@@ -828,7 +828,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 115,
+        "start_line": 113,
         "end_line": 0
       },
       "finding": "\"@xenova/transformers\": \"^2.17.2\"",
@@ -841,7 +841,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 116,
+        "start_line": 114,
         "end_line": 0
       },
       "finding": "\"better-sqlite3\": \"^12.6.2\"",
@@ -854,7 +854,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 117,
+        "start_line": 115,
         "end_line": 0
       },
       "finding": "\"binance\": \"^3.3.3\"",
@@ -867,7 +867,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 118,
+        "start_line": 116,
         "end_line": 0
       },
       "finding": "\"bn.js\": \"^5.2.3\"",
@@ -880,7 +880,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 119,
+        "start_line": 117,
         "end_line": 0
       },
       "finding": "\"bs58\": \"^5.0.0\"",
@@ -893,7 +893,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 120,
+        "start_line": 118,
         "end_line": 0
       },
       "finding": "\"bullmq\": \"^5.69.3\"",
@@ -906,7 +906,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 121,
+        "start_line": 119,
         "end_line": 0
       },
       "finding": "\"bybit-api\": \"^4.6.0\"",
@@ -919,7 +919,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 122,
+        "start_line": 120,
         "end_line": 0
       },
       "finding": "\"chalk\": \"^5.3.0\"",
@@ -932,7 +932,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 123,
+        "start_line": 121,
         "end_line": 0
       },
       "finding": "\"chokidar\": \"^3.5.3\"",
@@ -945,7 +945,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 124,
+        "start_line": 122,
         "end_line": 0
       },
       "finding": "\"commander\": \"^12.0.0\"",
@@ -958,7 +958,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 125,
+        "start_line": 123,
         "end_line": 0
       },
       "finding": "\"discord.js\": \"^14.14.1\"",
@@ -971,7 +971,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 126,
+        "start_line": 124,
         "end_line": 0
       },
       "finding": "\"docx\": \"^9.5.3\"",
@@ -984,7 +984,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 127,
+        "start_line": 125,
         "end_line": 0
       },
       "finding": "\"dotenv\": \"^16.6.1\"",
@@ -997,7 +997,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 128,
+        "start_line": 126,
         "end_line": 0
       },
       "finding": "\"ethers\": \"^6.16.0\"",
@@ -1010,7 +1010,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 129,
+        "start_line": 127,
         "end_line": 0
       },
       "finding": "\"eventemitter3\": \"^5.0.1\"",
@@ -1023,7 +1023,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 130,
+        "start_line": 128,
         "end_line": 0
       },
       "finding": "\"express\": \"^4.18.2\"",
@@ -1036,7 +1036,7 @@
       "confidence": 0.6,
       "location": {
         "file": "package.json",
-        "start_line": 130,
+        "start_line": 128,
         "end_line": 0
       },
       "finding": "express==4.18.2",
@@ -1049,7 +1049,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 131,
+        "start_line": 129,
         "end_line": 0
       },
       "finding": "\"fast-xml-parser\": \"^5.3.7\"",
@@ -1062,7 +1062,7 @@
       "confidence": 0.8,
       "location": {
         "file": "package.json",
-        "start_line": 131,
+        "start_line": 129,
         "end_line": 0
       },
       "finding": "fast-xml-parser==5.3.7",
@@ -1075,7 +1075,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 132,
+        "start_line": 130,
         "end_line": 0
       },
       "finding": "\"figlet\": \"^1.10.0\"",
@@ -1088,7 +1088,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 133,
+        "start_line": 131,
         "end_line": 0
       },
       "finding": "\"glob\": \"^10.3.10\"",
@@ -1101,7 +1101,7 @@
       "confidence": 0.8,
       "location": {
         "file": "package.json",
-        "start_line": 133,
+        "start_line": 131,
         "end_line": 0
       },
       "finding": "glob==10.3.10",
@@ -1114,7 +1114,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 134,
+        "start_line": 132,
         "end_line": 0
       },
       "finding": "\"grammy\": \"^1.40.0\"",
@@ -1127,7 +1127,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 135,
+        "start_line": 133,
         "end_line": 0
       },
       "finding": "\"hyperliquid\": \"^1.7.7\"",
@@ -1140,7 +1140,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 136,
+        "start_line": 134,
         "end_line": 0
       },
       "finding": "\"inquirer\": \"^9.2.14\"",
@@ -1153,7 +1153,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 137,
+        "start_line": 135,
         "end_line": 0
       },
       "finding": "\"ioredis\": \"^5.9.3\"",
@@ -1166,7 +1166,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 138,
+        "start_line": 136,
         "end_line": 0
       },
       "finding": "\"json5\": \"^2.2.3\"",
@@ -1179,7 +1179,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 139,
+        "start_line": 137,
         "end_line": 0
       },
       "finding": "\"mammoth\": \"^1.11.0\"",
@@ -1192,7 +1192,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 140,
+        "start_line": 138,
         "end_line": 0
       },
       "finding": "\"node-cron\": \"^3.0.3\"",
@@ -1205,10 +1205,10 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 141,
+        "start_line": 139,
         "end_line": 0
       },
-      "finding": "\"nodemailer\": \"^9.0.6\"",
+      "finding": "\"nodemailer\": \"^9.1.1\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1218,7 +1218,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 142,
+        "start_line": 140,
         "end_line": 0
       },
       "finding": "\"pg\": \"^8.17.2\"",
@@ -1231,7 +1231,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 143,
+        "start_line": 141,
         "end_line": 0
       },
       "finding": "\"pino\": \"^8.18.0\"",
@@ -1244,7 +1244,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 144,
+        "start_line": 142,
         "end_line": 0
       },
       "finding": "\"pino-pretty\": \"^10.3.1\"",
@@ -1257,7 +1257,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 145,
+        "start_line": 143,
         "end_line": 0
       },
       "finding": "\"sharp\": \"^0.35.4\"",
@@ -1270,7 +1270,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 146,
+        "start_line": 144,
         "end_line": 0
       },
       "finding": "\"sql.js\": \"^1.14.0\"",
@@ -1283,7 +1283,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 147,
+        "start_line": 145,
         "end_line": 0
       },
       "finding": "\"tiktoken\": \"^1.0.22\"",
@@ -1296,7 +1296,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 148,
+        "start_line": 146,
         "end_line": 0
       },
       "finding": "\"tmi.js\": \"^1.8.5\"",
@@ -1309,7 +1309,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 149,
+        "start_line": 147,
         "end_line": 0
       },
       "finding": "\"unofficial-opinion-clob-sdk\": \"^0.1.10\"",
@@ -1322,7 +1322,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 150,
+        "start_line": 148,
         "end_line": 0
       },
       "finding": "\"ws\": \"^8.16.0\"",
@@ -1335,7 +1335,7 @@
       "confidence": 0.8,
       "location": {
         "file": "package.json",
-        "start_line": 150,
+        "start_line": 148,
         "end_line": 0
       },
       "finding": "ws==8.16.0",
@@ -1348,7 +1348,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 151,
+        "start_line": 149,
         "end_line": 0
       },
       "finding": "\"yaml\": \"^2.3.4\"",
@@ -1361,7 +1361,7 @@
       "confidence": 0.6,
       "location": {
         "file": "package.json",
-        "start_line": 151,
+        "start_line": 149,
         "end_line": 0
       },
       "finding": "yaml==2.3.4",
@@ -1374,7 +1374,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 152,
+        "start_line": 150,
         "end_line": 0
       },
       "finding": "\"zod\": \"^3.22.4\"",
@@ -1387,7 +1387,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 155,
+        "start_line": 153,
         "end_line": 0
       },
       "finding": "\"axios\": \"^1.13.5\"",
@@ -1400,7 +1400,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 156,
+        "start_line": 154,
         "end_line": 0
       },
       "finding": "\"undici\": \"^6.23.0\"",
@@ -1413,7 +1413,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 157,
+        "start_line": 155,
         "end_line": 0
       },
       "finding": "\"nanoid\": \"^3.3.8\"",
@@ -1426,7 +1426,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 159,
+        "start_line": 157,
         "end_line": 0
       },
       "finding": "\"ajv\": \"^8.18.0\"",
@@ -1439,7 +1439,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 160,
+        "start_line": 158,
         "end_line": 0
       },
       "finding": "\"minimatch\": \"^10.2.1\"",
@@ -1452,7 +1452,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 161,
+        "start_line": 159,
         "end_line": 0
       },
       "finding": "\"qs\": \"^6.15.0\"",
@@ -1465,7 +1465,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 162,
+        "start_line": 160,
         "end_line": 0
       },
       "finding": "\"@cosmjs/crypto\": \"^0.38.1\"",
@@ -1478,7 +1478,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 163,
+        "start_line": 161,
         "end_line": 0
       },
       "finding": "\"@cosmjs/amino\": \"^0.38.1\"",
@@ -1491,7 +1491,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 164,
+        "start_line": 162,
         "end_line": 0
       },
       "finding": "\"@cosmjs/proto-signing\": \"^0.38.1\"",
@@ -1504,7 +1504,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 165,
+        "start_line": 163,
         "end_line": 0
       },
       "finding": "\"@cosmjs/stargate\": \"^0.38.1\"",
@@ -1517,7 +1517,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 166,
+        "start_line": 164,
         "end_line": 0
       },
       "finding": "\"@cosmjs/tendermint-rpc\": \"^0.38.1\"",
@@ -1530,7 +1530,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 167,
+        "start_line": 165,
         "end_line": 0
       },
       "finding": "\"@cosmjs/cosmwasm-stargate\": \"^0.38.1\"",
@@ -1543,10 +1543,23 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 168,
+        "start_line": 166,
         "end_line": 0
       },
       "finding": "\"@solana/kit\": \"^5.0.0\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 168,
+        "end_line": 0
+      },
+      "finding": "\"toml\": \"^4.2.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1637,7 +1650,7 @@
         "start_line": 177,
         "end_line": 0
       },
-      "finding": "\"puppeteer\": \"^24.37.5\"",
+      "finding": "\"puppeteer\": \"^25.10.0\"",
       "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
     },
     {
@@ -1777,7 +1790,7 @@
       "confidence": 0.8,
       "location": {
         "file": "README.md",
-        "start_line": 112,
+        "start_line": 117,
         "end_line": 0
       },
       "finding": "delete conversation",
@@ -1790,7 +1803,7 @@
       "confidence": 0.85,
       "location": {
         "file": "README.md",
-        "start_line": 256,
+        "start_line": 261,
         "end_line": 0
       },
       "finding": "tools:*",
@@ -1803,7 +1816,7 @@
       "confidence": 0.8,
       "location": {
         "file": "README.md",
-        "start_line": 368,
+        "start_line": 373,
         "end_line": 0
       },
       "finding": "                                          ",
@@ -1816,7 +1829,7 @@
       "confidence": 0.8,
       "location": {
         "file": "README.md",
-        "start_line": 374,
+        "start_line": 379,
         "end_line": 0
       },
       "finding": "                                          ",
@@ -1829,7 +1842,7 @@
       "confidence": 0.8,
       "location": {
         "file": "README.md",
-        "start_line": 381,
+        "start_line": 386,
         "end_line": 0
       },
       "finding": "                                          ",
@@ -1842,7 +1855,7 @@
       "confidence": 0.5,
       "location": {
         "file": "README.md",
-        "start_line": 466,
+        "start_line": 471,
         "end_line": 0
       },
       "finding": "https://api.cloddsbot.com/",
@@ -1855,7 +1868,7 @@
       "confidence": 0.5,
       "location": {
         "file": "README.md",
-        "start_line": 490,
+        "start_line": 495,
         "end_line": 0
       },
       "finding": "https://api.cloddsbot.com/",
@@ -1933,7 +1946,7 @@
       "confidence": 0.75,
       "location": {
         "file": "SECURITY.md",
-        "start_line": 70,
+        "start_line": 71,
         "end_line": 0
       },
       "finding": "without verification",
@@ -2258,7 +2271,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/handlers/solana.ts",
-        "start_line": 632,
+        "start_line": 745,
         "end_line": 0
       },
       "finding": "fetch('https://pump.fun/api/ipfs', {\n      method: 'POST'",
@@ -2271,7 +2284,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 205,
+        "start_line": 202,
         "end_line": 0
       },
       "finding": "Clear conversation",
@@ -2284,7 +2297,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 346,
+        "start_line": 343,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
@@ -2297,7 +2310,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 7688,
+        "start_line": 7685,
         "end_line": 0
       },
       "finding": "reset context",
@@ -2310,7 +2323,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 7798,
+        "start_line": 7795,
         "end_line": 0
       },
       "finding": "tools:; tools:; Tools =; tools:; Tools\n    :; Tools:; Tools:; Tools:; TOOLS =; Tools =; Tools =; Tools =; Tools =; Tools =; tools:; tools:; Tools =; tools:; description:; description:; description:; d",
@@ -2323,7 +2336,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 8402,
+        "start_line": 8399,
         "end_line": 0
       },
       "finding": ".env ",
@@ -2336,7 +2349,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 8979,
+        "start_line": 8976,
         "end_line": 0
       },
       "finding": "https://api.manifold.markets/",
@@ -2349,7 +2362,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 9096,
+        "start_line": 9093,
         "end_line": 0
       },
       "finding": "https://api.manifold.markets/",
@@ -2362,7 +2375,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 9221,
+        "start_line": 9218,
         "end_line": 0
       },
       "finding": "https://api.manifold.markets/",
@@ -2375,7 +2388,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 9288,
+        "start_line": 9285,
         "end_line": 0
       },
       "finding": "https://api.manifold.markets/",
@@ -2388,7 +2401,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12308,
+        "start_line": 12305,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2401,7 +2414,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12327,
+        "start_line": 12324,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2414,7 +2427,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12338,
+        "start_line": 12335,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2427,7 +2440,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12392,
+        "start_line": 12389,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2440,7 +2453,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12408,
+        "start_line": 12405,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2453,7 +2466,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12427,
+        "start_line": 12424,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2466,7 +2479,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12455,
+        "start_line": 12452,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2479,7 +2492,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 12476,
+        "start_line": 12473,
         "end_line": 0
       },
       "finding": "https://api.coingecko.com/",
@@ -2492,7 +2505,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 13135,
+        "start_line": 13132,
         "end_line": 0
       },
       "finding": "https://api.opinion.trade/",
@@ -2505,7 +2518,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 13162,
+        "start_line": 13159,
         "end_line": 0
       },
       "finding": "https://api.opinion.trade/",
@@ -2518,7 +2531,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 15687,
+        "start_line": 15560,
         "end_line": 0
       },
       "finding": "fetch('https://www.metaculus.com/api2/questions/bulk-predict/', {\n            method: 'POST'",
@@ -2531,7 +2544,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 15765,
+        "start_line": 15638,
         "end_line": 0
       },
       "finding": "fetch('https://www.metaculus.com/api2/comments/', {\n            method: 'POST'",
@@ -2544,7 +2557,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 15865,
+        "start_line": 15738,
         "end_line": 0
       },
       "finding": "fetch('https://www.metaculus.com/api2/notifications/mark_read/', {\n            method: 'POST'",
@@ -2557,7 +2570,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 15921,
+        "start_line": 15794,
         "end_line": 0
       },
       "finding": "fetch('https://www.metaculus.com/api2/questions/', {\n            method: 'POST'",
@@ -2570,7 +2583,7 @@
       "confidence": 0.9,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 16136,
+        "start_line": 16009,
         "end_line": 0
       },
       "finding": "rm -rf /",
@@ -2583,7 +2596,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 16136,
+        "start_line": 16009,
         "end_line": 0
       },
       "finding": "rm -rf /',",
@@ -2596,7 +2609,7 @@
       "confidence": 0.75,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 16769,
+        "start_line": 16642,
         "end_line": 0
       },
       "finding": "",
@@ -2609,7 +2622,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/agents/index.ts",
-        "start_line": 17294,
+        "start_line": 17167,
         "end_line": 0
       },
       "finding": "clear conversation",
@@ -3142,7 +3155,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 424,
+        "start_line": 422,
         "end_line": 0
       },
       "finding": ".env ",
@@ -3155,7 +3168,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 424,
+        "start_line": 422,
         "end_line": 0
       },
       "finding": "process.env ; process.env.; process.env.; process.env.; process.env.; process.env.; process.env.; process.env.; process.env.; process.env.; process.env.; process.env.; process.env.; process.env.; proc",
@@ -3168,7 +3181,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 896,
+        "start_line": 894,
         "end_line": 0
       },
       "finding": "Skip confirmation",
@@ -3181,7 +3194,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 1342,
+        "start_line": 1340,
         "end_line": 0
       },
       "finding": ".env ",
@@ -3194,7 +3207,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 1433,
+        "start_line": 1431,
         "end_line": 0
       },
       "finding": ".env ",
@@ -3207,7 +3220,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2025,
+        "start_line": 2023,
         "end_line": 0
       },
       "finding": "Overwrite existing config",
@@ -3220,7 +3233,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2184,
+        "start_line": 2181,
         "end_line": 0
       },
       "finding": "Get key from",
@@ -3233,7 +3246,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2196,
+        "start_line": 2193,
         "end_line": 0
       },
       "finding": "fetch('https://api.anthropic.com/v1/messages', {\n              method: 'POST'",
@@ -3246,7 +3259,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2196,
+        "start_line": 2193,
         "end_line": 0
       },
       "finding": "https://api.anthropic.com/",
@@ -3259,7 +3272,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2259,
+        "start_line": 2256,
         "end_line": 0
       },
       "finding": "Get keys from",
@@ -3272,7 +3285,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2322,
+        "start_line": 2319,
         "end_line": 0
       },
       "finding": "Get keys from",
@@ -3285,7 +3298,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2359,
+        "start_line": 2356,
         "end_line": 0
       },
       "finding": "https://api.telegram.org/",
@@ -3298,7 +3311,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2439,
+        "start_line": 2436,
         "end_line": 0
       },
       "finding": "Get key from",
@@ -3311,7 +3324,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2443,
+        "start_line": 2440,
         "end_line": 0
       },
       "finding": "https://api.openai.com/",
@@ -3324,7 +3337,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2467,
+        "start_line": 2464,
         "end_line": 0
       },
       "finding": "https://api.slack.com/",
@@ -3337,7 +3350,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2721,
+        "start_line": 2718,
         "end_line": 0
       },
       "finding": "Skip confirmation",
@@ -3350,7 +3363,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 2942,
+        "start_line": 2939,
         "end_line": 0
       },
       "finding": "sudo ",
@@ -3363,7 +3376,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3410,
+        "start_line": 3407,
         "end_line": 0
       },
       "finding": ".env'",
@@ -3376,7 +3389,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3412,
+        "start_line": 3409,
         "end_line": 0
       },
       "finding": ".env ",
@@ -3389,7 +3402,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3414,
+        "start_line": 3411,
         "end_line": 0
       },
       "finding": ".env ",
@@ -3402,7 +3415,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3434,
+        "start_line": 3431,
         "end_line": 0
       },
       "finding": "fetch('https://api.anthropic.com/v1/messages', {\n            method: 'POST'",
@@ -3415,7 +3428,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3434,
+        "start_line": 3431,
         "end_line": 0
       },
       "finding": "https://api.anthropic.com/",
@@ -3428,7 +3441,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3452,
+        "start_line": 3449,
         "end_line": 0
       },
       "finding": "https://api.openai.com/",
@@ -3441,7 +3454,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3475,
+        "start_line": 3472,
         "end_line": 0
       },
       "finding": "https://api.telegram.org/",
@@ -3454,7 +3467,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3691,
+        "start_line": 3688,
         "end_line": 0
       },
       "finding": "skip prompt",
@@ -3467,7 +3480,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3711,
+        "start_line": 3708,
         "end_line": 0
       },
       "finding": ".env'",
@@ -3480,7 +3493,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3777,
+        "start_line": 3774,
         "end_line": 0
       },
       "finding": ".env'",
@@ -3493,7 +3506,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3796,
+        "start_line": 3793,
         "end_line": 0
       },
       "finding": "fetch('https://api.anthropic.com/v1/messages', {\n          method: 'POST'",
@@ -3506,7 +3519,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3796,
+        "start_line": 3793,
         "end_line": 0
       },
       "finding": "https://api.anthropic.com/",
@@ -3519,7 +3532,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3863,
+        "start_line": 3860,
         "end_line": 0
       },
       "finding": "https://api.telegram.org/",
@@ -3532,7 +3545,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3874,
+        "start_line": 3871,
         "end_line": 0
       },
       "finding": ".env'",
@@ -3545,7 +3558,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3899,
+        "start_line": 3896,
         "end_line": 0
       },
       "finding": ".env'",
@@ -3558,7 +3571,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3904,
+        "start_line": 3901,
         "end_line": 0
       },
       "finding": "https://api.slack.com/",
@@ -3571,7 +3584,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/cli/commands/index.ts",
-        "start_line": 3922,
+        "start_line": 3919,
         "end_line": 0
       },
       "finding": ".env'",
@@ -4338,7 +4351,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 658,
+        "start_line": 666,
         "end_line": 0
       },
       "finding": "fetch('https://polygon-rpc.com/', {\n      method: 'POST'",
@@ -4351,7 +4364,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 986,
+        "start_line": 994,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
@@ -4364,7 +4377,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 1410,
+        "start_line": 1418,
         "end_line": 0
       },
       "finding": "DELETE /orders)",
@@ -4377,7 +4390,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 1506,
+        "start_line": 1514,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
@@ -4390,7 +4403,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/execution/index.ts",
-        "start_line": 1899,
+        "start_line": 1907,
         "end_line": 0
       },
       "finding": "DELETE /portfolio/events/orders/batched",
@@ -4858,7 +4871,7 @@
       "confidence": 0.9,
       "location": {
         "file": "src/gateway/index.ts",
-        "start_line": 226,
+        "start_line": 227,
         "end_line": 0
       },
       "finding": "Send message to",
@@ -4871,7 +4884,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/gateway/index.ts",
-        "start_line": 1168,
+        "start_line": 1176,
         "end_line": 0
       },
       "finding": "autoApprove",
@@ -4884,7 +4897,7 @@
       "confidence": 0.85,
       "location": {
         "file": "src/gateway/index.ts",
-        "start_line": 1168,
+        "start_line": 1176,
         "end_line": 0
       },
       "finding": "autoApprove",
@@ -5807,7 +5820,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/providers/discovery.ts",
-        "start_line": 442,
+        "start_line": 474,
         "end_line": 0
       },
       "finding": "https://api.groq.com/",
@@ -5820,7 +5833,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/providers/discovery.ts",
-        "start_line": 570,
+        "start_line": 602,
         "end_line": 0
       },
       "finding": "https://api.together.xyz/",
@@ -5833,7 +5846,7 @@
       "confidence": 0.5,
       "location": {
         "file": "src/providers/discovery.ts",
-        "start_line": 703,
+        "start_line": 735,
         "end_line": 0
       },
       "finding": "https://api.fireworks.ai/",

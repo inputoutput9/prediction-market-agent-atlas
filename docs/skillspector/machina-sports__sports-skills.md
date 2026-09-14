@@ -13,7 +13,7 @@
 | Post-baseline counts | 🔴 3 C · 🟠 22 H · 🟡 78 M · ⚪ 8 L |
 | Suppressed by baseline | 0 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `bf996fb9fb85` |
+| Scanned head_sha | `cde36d0d5d92` |
 
 **Baseline:** none yet — counts are raw static signal, expect false positives. See [baselines](../../data/skillspector-baselines/README.md).
 
@@ -25,7 +25,7 @@
 | 🔴 Critical | `pyproject.toml:42` | Supply Chain | 0.9 | pyarrow |
 | 🔴 Critical | `pyproject.toml:54` | Supply Chain | 0.9 | pyyaml |
 | 🟠 High | `AGENTS.md:22` | Supply Chain | 0.9 | curl \| bash |
-| 🟠 High | `CHANGELOG.md:198` | Supply Chain | 0.9 | curl \| bash |
+| 🟠 High | `CHANGELOG.md:210` | Supply Chain | 0.9 | curl \| bash |
 | 🟠 High | `pyproject.toml:31` | Supply Chain | 0.8 | feedparser |
 | 🟠 High | `pyproject.toml:38` | Supply Chain | 0.8 | pandas |
 | 🟠 High | `pyproject.toml:38` | Supply Chain | 0.8 | pandas |
@@ -47,8 +47,8 @@
 | 🟠 High | `tests/test_imports.py:83` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟠 High | `tests/test_release_033.py:47` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟡 Medium | `AGENTS.md:8` | Excessive Agency | 0.8 | Never ask the user |
-| 🟡 Medium | `CHANGELOG.md:329` | Agent Snooping | 0.8 | skills/metadata/SKILL.md |
-| 🟡 Medium | `CHANGELOG.md:332` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
+| 🟡 Medium | `CHANGELOG.md:341` | Agent Snooping | 0.8 | skills/metadata/SKILL.md |
+| 🟡 Medium | `CHANGELOG.md:344` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
 | 🟡 Medium | `packaging/release.py:56` | Dangerous Code Execution | 0.7 | subprocess.run(             [sys.executable, "-m", "build", "--no-isolation", "--outdir", str(staging), str(root)],      |
 | 🟡 Medium | `README.md:10` | MCP Rug Pull | 0.7 |  |
 | 🟡 Medium | `README.md:37` | MCP Rug Pull | 0.7 |  |
