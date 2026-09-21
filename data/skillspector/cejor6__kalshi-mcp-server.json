@@ -1,6 +1,6 @@
 {
   "id": "cejor6/kalshi-mcp-server",
-  "head_sha": "d8d33e32cda1",
+  "head_sha": "54ca5cbd2165",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -9,8 +9,8 @@
   },
   "counts": {
     "critical": 2,
-    "high": 20,
-    "medium": 29,
+    "high": 23,
+    "medium": 32,
     "low": 11
   },
   "suppressed_count": 29,
@@ -282,7 +282,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/kalshi_mcp_server/config.py",
-        "start_line": 118,
+        "start_line": 127,
         "end_line": 0
       },
       "finding": "os.environ.get(\"KALSHI_API_KEY",
@@ -295,7 +295,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/kalshi_mcp_server/config.py",
-        "start_line": 126,
+        "start_line": 135,
         "end_line": 0
       },
       "finding": "os.environ.get(\"KALSHI_PRIVATE_KEY",
@@ -308,7 +308,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/kalshi_mcp_server/config.py",
-        "start_line": 127,
+        "start_line": 136,
         "end_line": 0
       },
       "finding": "os.environ.get(\"KALSHI_PRIVATE_KEY",
@@ -468,6 +468,45 @@
         "end_line": 0
       },
       "finding": "access token",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/kalshi_mcp_server/tools/scoring.py",
+        "start_line": 85,
+        "end_line": 0
+      },
+      "finding": "https://api.typesafe.ai/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "src/kalshi_mcp_server/tools/scoring.py",
+        "start_line": 181,
+        "end_line": 0
+      },
+      "finding": "os.environ.get(\"TYPESAFE_API_KEY",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/kalshi_mcp_server/tools/scoring.py",
+        "start_line": 662,
+        "end_line": 0
+      },
+      "finding": ".netrc",
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
@@ -741,6 +780,45 @@
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_scoring.py",
+        "start_line": 163,
+        "end_line": 0
+      },
+      "finding": "os.environ[\"TYPESAFE_API_KEY\"]",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_scoring.py",
+        "start_line": 617,
+        "end_line": 0
+      },
+      "finding": "https://api.typesafe.ai/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_scoring.py",
+        "start_line": 619,
+        "end_line": 0
+      },
+      "finding": "http://api.typesafe.ai/",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {

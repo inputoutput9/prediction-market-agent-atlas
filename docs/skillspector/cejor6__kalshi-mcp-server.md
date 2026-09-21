@@ -10,10 +10,10 @@
 | Scanner risk score | 100/100 |
 | Scanner severity | CRITICAL |
 | Scanner recommendation | DO_NOT_INSTALL |
-| Post-baseline counts | 🔴 2 C · 🟠 20 H · 🟡 29 M · ⚪ 11 L |
+| Post-baseline counts | 🔴 2 C · 🟠 23 H · 🟡 32 M · ⚪ 11 L |
 | Suppressed by baseline | 29 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `d8d33e32cda1` |
+| Scanned head_sha | `54ca5cbd2165` |
 
 **Baseline:** 29 finding(s) suppressed by a reviewed baseline.
 
@@ -30,13 +30,16 @@
 | 🟠 High | `pyproject.toml:49` | Supply Chain | 0.8 | redis |
 | 🟠 High | `pyproject.toml:49` | Supply Chain | 0.8 | redis |
 | 🟠 High | `pyproject.toml:54` | Supply Chain | 0.8 | pytest |
-| 🟠 High | `src/kalshi_mcp_server/config.py:118` | Data Exfiltration | 0.7 | os.environ.get("KALSHI_API_KEY |
-| 🟠 High | `src/kalshi_mcp_server/config.py:126` | Data Exfiltration | 0.7 | os.environ.get("KALSHI_PRIVATE_KEY |
-| 🟠 High | `src/kalshi_mcp_server/config.py:127` | Data Exfiltration | 0.7 | os.environ.get("KALSHI_PRIVATE_KEY |
+| 🟠 High | `src/kalshi_mcp_server/config.py:127` | Data Exfiltration | 0.7 | os.environ.get("KALSHI_API_KEY |
+| 🟠 High | `src/kalshi_mcp_server/config.py:135` | Data Exfiltration | 0.7 | os.environ.get("KALSHI_PRIVATE_KEY |
+| 🟠 High | `src/kalshi_mcp_server/config.py:136` | Data Exfiltration | 0.7 | os.environ.get("KALSHI_PRIVATE_KEY |
 | 🟠 High | `src/kalshi_mcp_server/oauth.py:280` | Data Exfiltration | 0.7 | os.environ.get("MCP_JWT_SIGNING_KEY |
 | 🟠 High | `src/kalshi_mcp_server/oauth.py:379` | Data Exfiltration | 0.7 | os.environ.get("GITHUB_CLIENT_SECRET |
 | 🟠 High | `src/kalshi_mcp_server/oauth.py:394` | Data Exfiltration | 0.7 | os.environ.get("MCP_JWT_SIGNING_KEY |
 | 🟠 High | `src/kalshi_mcp_server/tools/exchange.py:76` | Privilege Escalation | 0.7 | access token |
+| 🟠 High | `src/kalshi_mcp_server/tools/scoring.py:181` | Data Exfiltration | 0.7 | os.environ.get("TYPESAFE_API_KEY |
+| 🟠 High | `src/kalshi_mcp_server/tools/scoring.py:662` | Privilege Escalation | 0.8 | .netrc |
+| 🟠 High | `tests/test_scoring.py:163` | Data Exfiltration | 0.8 | os.environ["TYPESAFE_API_KEY"] |
 | 🟠 High | `uv.lock:602` | Privilege Escalation | 0.7 | keyring |
 | 🟠 High | `uv.lock:616` | Privilege Escalation | 0.7 | keyring |
 | 🟠 High | `uv.lock:890` | Privilege Escalation | 0.7 | keyring |
@@ -51,6 +54,7 @@
 | 🟡 Medium | `pyproject.toml:35` | Supply Chain | 0.7 | python-dotenv |
 | 🟡 Medium | `README.md:159` | MCP Rug Pull | 0.75 |  |
 | 🟡 Medium | `src/kalshi_mcp_server/oauth.py:224` | Excessive Agency | 0.75 | without checking |
+| 🟡 Medium | `src/kalshi_mcp_server/tools/scoring.py:85` | Data Exfiltration | 0.6 | https://api.typesafe.ai/ |
 | 🟡 Medium | `tests/test_discovery.py:661` | Excessive Agency | 0.75 | loop forever |
 | 🟡 Medium | `tests/test_external_data.py:186` | Data Exfiltration | 0.6 | https://api.open-meteo.com/ |
 | 🟡 Medium | `tests/test_external_data.py:204` | Data Exfiltration | 0.6 | https://api.open-meteo.com/ |
@@ -67,10 +71,6 @@
 | 🟡 Medium | `tests/test_external_data.py:391` | Data Exfiltration | 0.6 | https://api.weather.gov/ |
 | 🟡 Medium | `tests/test_external_data.py:394` | Data Exfiltration | 0.6 | https://api.weather.gov/ |
 | 🟡 Medium | `tests/test_external_data.py:403` | Data Exfiltration | 0.6 | https://api.weather.gov/ |
-| 🟡 Medium | `tests/test_external_data.py:406` | Data Exfiltration | 0.6 | https://api.weather.gov/ |
-| 🟡 Medium | `tests/test_external_data.py:408` | Data Exfiltration | 0.6 | https://api.weather.gov/ |
-| 🟡 Medium | `tests/test_external_data.py:420` | Data Exfiltration | 0.6 | https://api.weather.gov/ |
-| 🟡 Medium | `tests/test_external_data.py:438` | Data Exfiltration | 0.6 | https://api.weather.gov/ |
 
-_…and 12 more finding(s) — see the artifact JSON._
+_…and 18 more finding(s) — see the artifact JSON._
 

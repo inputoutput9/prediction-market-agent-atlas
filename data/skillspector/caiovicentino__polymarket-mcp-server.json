@@ -1,6 +1,6 @@
 {
   "id": "caiovicentino/polymarket-mcp-server",
-  "head_sha": "b30d643be16e",
+  "head_sha": "21f65f319ff0",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -8,10 +8,10 @@
     "recommendation": "DO_NOT_INSTALL"
   },
   "counts": {
-    "critical": 3,
-    "high": 79,
-    "medium": 91,
-    "low": 3
+    "critical": 4,
+    "high": 315,
+    "medium": 170,
+    "low": 9
   },
   "suppressed_count": 0,
   "issues": [
@@ -22,7 +22,7 @@
       "confidence": 0.75,
       "location": {
         "file": ".github/workflows/docker-publish.yml",
-        "start_line": 102,
+        "start_line": 103,
         "end_line": 0
       },
       "finding": "",
@@ -74,24 +74,11 @@
       "confidence": 0.75,
       "location": {
         "file": ".github/workflows/tests.yml",
-        "start_line": 383,
+        "start_line": 399,
         "end_line": 0
       },
       "finding": "",
       "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
-    },
-    {
-      "id": "MP2",
-      "category": "Memory Poisoning",
-      "severity": "MEDIUM",
-      "confidence": 0.8,
-      "location": {
-        "file": "demo_mcp_tools.py",
-        "start_line": 242,
-        "end_line": 0
-      },
-      "finding": "                                                                      ",
-      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
     },
     {
       "id": "MP2",
@@ -120,13 +107,26 @@
       "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
     },
     {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "demo_mcp_tools.py",
+        "start_line": 248,
+        "end_line": 0
+      },
+      "finding": "                                                                      ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
       "id": "PE3",
       "category": "Privilege Escalation",
       "severity": "HIGH",
       "confidence": 0.6,
       "location": {
         "file": "demo_mcp_tools.py",
-        "start_line": 266,
+        "start_line": 268,
         "end_line": 0
       },
       "finding": ".env\n",
@@ -139,7 +139,7 @@
       "confidence": 0.7,
       "location": {
         "file": "DOCKER_INFRASTRUCTURE_COMPLETE.md",
-        "start_line": 44,
+        "start_line": 43,
         "end_line": 0
       },
       "finding": "secret.yaml",
@@ -152,11 +152,24 @@
       "confidence": 0.8,
       "location": {
         "file": "DOCKER_INFRASTRUCTURE_COMPLETE.md",
-        "start_line": 225,
+        "start_line": 222,
         "end_line": 0
       },
       "finding": "                                          ",
       "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "docker-compose.prod.yml",
+        "start_line": 10,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
       "id": "MP2",
@@ -217,7 +230,7 @@
       "confidence": 0.6,
       "location": {
         "file": "docker-start.sh",
-        "start_line": 90,
+        "start_line": 180,
         "end_line": 0
       },
       "finding": ".env ",
@@ -230,7 +243,7 @@
       "confidence": 0.6,
       "location": {
         "file": "docker-start.sh",
-        "start_line": 93,
+        "start_line": 183,
         "end_line": 0
       },
       "finding": ".env ",
@@ -243,7 +256,7 @@
       "confidence": 0.6,
       "location": {
         "file": "docker-start.sh",
-        "start_line": 94,
+        "start_line": 184,
         "end_line": 0
       },
       "finding": ".env ",
@@ -399,7 +412,7 @@
       "confidence": 0.7,
       "location": {
         "file": "install.sh",
-        "start_line": 118,
+        "start_line": 122,
         "end_line": 0
       },
       "finding": "sudo ",
@@ -412,33 +425,7 @@
       "confidence": 0.6,
       "location": {
         "file": "install.sh",
-        "start_line": 203,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "install.sh",
-        "start_line": 290,
-        "end_line": 0
-      },
-      "finding": ".env ",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.6,
-      "location": {
-        "file": "install.sh",
-        "start_line": 312,
+        "start_line": 210,
         "end_line": 0
       },
       "finding": ".env\"",
@@ -451,7 +438,7 @@
       "confidence": 0.6,
       "location": {
         "file": "install.sh",
-        "start_line": 346,
+        "start_line": 212,
         "end_line": 0
       },
       "finding": ".env ",
@@ -464,7 +451,7 @@
       "confidence": 0.6,
       "location": {
         "file": "install.sh",
-        "start_line": 347,
+        "start_line": 225,
         "end_line": 0
       },
       "finding": ".env ",
@@ -477,7 +464,7 @@
       "confidence": 0.6,
       "location": {
         "file": "install.sh",
-        "start_line": 423,
+        "start_line": 319,
         "end_line": 0
       },
       "finding": ".env ",
@@ -490,7 +477,7 @@
       "confidence": 0.6,
       "location": {
         "file": "install.sh",
-        "start_line": 464,
+        "start_line": 341,
         "end_line": 0
       },
       "finding": ".env\"",
@@ -503,7 +490,46 @@
       "confidence": 0.6,
       "location": {
         "file": "install.sh",
-        "start_line": 465,
+        "start_line": 379,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 380,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 488,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 533,
         "end_line": 0
       },
       "finding": ".env\n",
@@ -516,7 +542,72 @@
       "confidence": 0.6,
       "location": {
         "file": "install.sh",
-        "start_line": 466,
+        "start_line": 534,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 535,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 536,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 537,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 538,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "install.sh",
+        "start_line": 539,
         "end_line": 0
       },
       "finding": ".env ",
@@ -586,6 +677,19 @@
       },
       "finding": "                                                ",
       "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "INSTALLATION_COMPARISON.md",
+        "start_line": 292,
+        "end_line": 0
+      },
+      "finding": "sudo ",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
     },
     {
       "id": "RA2",
@@ -659,7 +763,7 @@
       "confidence": 0.6,
       "location": {
         "file": "Makefile",
-        "start_line": 127,
+        "start_line": 129,
         "end_line": 0
       },
       "finding": ".env ",
@@ -672,7 +776,7 @@
       "confidence": 0.75,
       "location": {
         "file": "Makefile",
-        "start_line": 144,
+        "start_line": 152,
         "end_line": 0
       },
       "finding": "",
@@ -685,7 +789,7 @@
       "confidence": 0.75,
       "location": {
         "file": "Makefile",
-        "start_line": 155,
+        "start_line": 168,
         "end_line": 0
       },
       "finding": "",
@@ -848,19 +952,6 @@
       "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
-      "id": "SC6",
-      "category": "Supply Chain",
-      "severity": "HIGH",
-      "confidence": 0.7,
-      "location": {
-        "file": "pyproject.toml",
-        "start_line": 24,
-        "end_line": 0
-      },
-      "finding": "uvicorn",
-      "explanation": "Package name closely resembles a popular package, suggesting possible typosquatting. Attackers publish malicious packages with similar names to trick developers into installing them."
-    },
-    {
       "id": "SC4",
       "category": "Supply Chain",
       "severity": "HIGH",
@@ -926,6 +1017,19 @@
       "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 54,
+        "end_line": 0
+      },
+      "finding": "pyyaml",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
       "id": "EA2",
       "category": "Excessive Agency",
       "severity": "MEDIUM",
@@ -952,6 +1056,19 @@
       "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
     },
     {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "QUICKSTART_GUIDE.md",
+        "start_line": 124,
+        "end_line": 0
+      },
+      "finding": "sudo ",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
       "id": "TM2",
       "category": "Tool Misuse",
       "severity": "HIGH",
@@ -965,13 +1082,39 @@
       "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow."
     },
     {
+      "id": "SC2",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "location": {
+        "file": "quickstart.sh",
+        "start_line": 28,
+        "end_line": 0
+      },
+      "finding": "curl ... | bash",
+      "explanation": "Remote code is downloaded and executed. This bypasses code review and could introduce malicious code."
+    },
+    {
+      "id": "TM2",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "quickstart.sh",
+        "start_line": 34,
+        "end_line": 0
+      },
+      "finding": "|bash",
+      "explanation": "Tool calls are chained to bypass individual safety checks or escalate capabilities beyond what any single tool call would allow."
+    },
+    {
       "id": "MP2",
       "category": "Memory Poisoning",
       "severity": "MEDIUM",
       "confidence": 0.8,
       "location": {
         "file": "README.md",
-        "start_line": 321,
+        "start_line": 322,
         "end_line": 0
       },
       "finding": "                                              ",
@@ -984,11 +1127,24 @@
       "confidence": 0.8,
       "location": {
         "file": "README.md",
-        "start_line": 327,
+        "start_line": 328,
         "end_line": 0
       },
       "finding": "                                              ",
       "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "requirements-frozen.txt",
+        "start_line": 58,
+        "end_line": 0
+      },
+      "finding": "nltk==3.10.3",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
     },
     {
       "id": "PE3",
@@ -1023,11 +1179,24 @@
       "confidence": 0.8,
       "location": {
         "file": "smoke_test.py",
-        "start_line": 124,
+        "start_line": 121,
         "end_line": 0
       },
       "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
       "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "src/polymarket_mcp/auth/client.py",
+        "start_line": 325,
+        "end_line": 325
+      },
+      "finding": "                signed, orderType=getattr(OrderType, order_type)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
     },
     {
       "id": "PE3",
@@ -1049,7 +1218,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/polymarket_mcp/server.py",
-        "start_line": 387,
+        "start_line": 692,
         "end_line": 0
       },
       "finding": ".env ",
@@ -1062,7 +1231,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/polymarket_mcp/utils/websocket_manager.py",
-        "start_line": 780,
+        "start_line": 820,
         "end_line": 0
       },
       "finding": "Start background task",
@@ -1075,7 +1244,7 @@
       "confidence": 0.9,
       "location": {
         "file": "src/polymarket_mcp/web/app.py",
-        "start_line": 98,
+        "start_line": 100,
         "end_line": 0
       },
       "finding": "Load MCP configuration",
@@ -1088,7 +1257,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/polymarket_mcp/web/app.py",
-        "start_line": 379,
+        "start_line": 487,
         "end_line": 0
       },
       "finding": ".env ",
@@ -1101,7 +1270,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/polymarket_mcp/web/app.py",
-        "start_line": 384,
+        "start_line": 492,
         "end_line": 0
       },
       "finding": ".env\"",
@@ -1114,7 +1283,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/polymarket_mcp/web/app.py",
-        "start_line": 388,
+        "start_line": 496,
         "end_line": 0
       },
       "finding": ".env ",
@@ -1153,7 +1322,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/polymarket_mcp/web/templates/markets.html",
-        "start_line": 201,
+        "start_line": 278,
         "end_line": 0
       },
       "finding": "                                            ",
@@ -1166,7 +1335,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/polymarket_mcp/web/templates/markets.html",
-        "start_line": 202,
+        "start_line": 279,
         "end_line": 0
       },
       "finding": "                                                ",
@@ -1179,7 +1348,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/polymarket_mcp/web/templates/markets.html",
-        "start_line": 203,
+        "start_line": 280,
         "end_line": 0
       },
       "finding": "                                            ",
@@ -1192,7 +1361,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/polymarket_mcp/web/templates/markets.html",
-        "start_line": 204,
+        "start_line": 281,
         "end_line": 0
       },
       "finding": "                                            ",
@@ -1205,7 +1374,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/polymarket_mcp/web/templates/markets.html",
-        "start_line": 205,
+        "start_line": 282,
         "end_line": 0
       },
       "finding": "                                                ",
@@ -1218,7 +1387,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/polymarket_mcp/web/templates/markets.html",
-        "start_line": 206,
+        "start_line": 283,
         "end_line": 0
       },
       "finding": "                                            ",
@@ -1244,7 +1413,7 @@
       "confidence": 0.6,
       "location": {
         "file": "start_web_dashboard.sh",
-        "start_line": 32,
+        "start_line": 33,
         "end_line": 0
       },
       "finding": ".env\"",
@@ -1257,7 +1426,7 @@
       "confidence": 0.6,
       "location": {
         "file": "start_web_dashboard.sh",
-        "start_line": 33,
+        "start_line": 34,
         "end_line": 0
       },
       "finding": ".env ",
@@ -1270,7 +1439,7 @@
       "confidence": 0.6,
       "location": {
         "file": "start_web_dashboard.sh",
-        "start_line": 34,
+        "start_line": 35,
         "end_line": 0
       },
       "finding": ".env ",
@@ -1322,7 +1491,7 @@
       "confidence": 0.6,
       "location": {
         "file": "test_mcp_connection.py",
-        "start_line": 40,
+        "start_line": 47,
         "end_line": 0
       },
       "finding": ".env ",
@@ -1335,8 +1504,8 @@
       "confidence": 0.75,
       "location": {
         "file": "test_web_dashboard.py",
-        "start_line": 99,
-        "end_line": 99
+        "start_line": 105,
+        "end_line": 105
       },
       "finding": "            __import__(module)",
       "explanation": "Dynamic __import__() can load arbitrary modules at runtime, bypassing static analysis and potentially importing malicious code."
@@ -1348,7 +1517,7 @@
       "confidence": 0.75,
       "location": {
         "file": "test-docker.sh",
-        "start_line": 101,
+        "start_line": 114,
         "end_line": 0
       },
       "finding": "",
@@ -1361,7 +1530,7 @@
       "confidence": 0.7,
       "location": {
         "file": "test-docker.sh",
-        "start_line": 123,
+        "start_line": 136,
         "end_line": 0
       },
       "finding": "secret.yaml",
@@ -1374,7 +1543,7 @@
       "confidence": 0.7,
       "location": {
         "file": "test-docker.sh",
-        "start_line": 123,
+        "start_line": 136,
         "end_line": 0
       },
       "finding": "secret.yaml",
@@ -1387,24 +1556,11 @@
       "confidence": 0.6,
       "location": {
         "file": "test-docker.sh",
-        "start_line": 176,
+        "start_line": 188,
         "end_line": 0
       },
       "finding": ".env ",
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "E1",
-      "category": "Data Exfiltration",
-      "severity": "MEDIUM",
-      "confidence": 0.5,
-      "location": {
-        "file": "TESTING.md",
-        "start_line": 297,
-        "end_line": 0
-      },
-      "finding": "https://api.polymarket.com/",
-      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {
       "id": "E2",
@@ -1457,6 +1613,1306 @@
       },
       "finding": "os.environ[\"POLYGON_PRIVATE_KEY\"]",
       "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_analysis_input_schemas_offline.py",
+        "start_line": 29,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "location": {
+        "file": "tests/test_analysis_input_schemas_offline.py",
+        "start_line": 49,
+        "end_line": 0
+      },
+      "finding": "DELETE /cancel-all,",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_analysis_input_schemas_offline.py",
+        "start_line": 185,
+        "end_line": 0
+      },
+      "finding": "for key, value in os.environ.items()",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_analysis_input_schemas_offline.py",
+        "start_line": 201,
+        "end_line": 211
+      },
+      "finding": "    return subprocess.Popen(\n        [sys.executable, \"-m\", \"polymarket_mcp.server\"],\n        stdin=subprocess.PIPE,\n        stdout=subprocess.PIPE,\n        stderr=subprocess.PIPE,\n        text=True,\n",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_api_url_config_contract.py",
+        "start_line": 9,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_api_url_config_contract.py",
+        "start_line": 14,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_api_url_config_contract.py",
+        "start_line": 91,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_ascii_read_targets_offline.py",
+        "start_line": 19,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_ascii_read_targets_offline.py",
+        "start_line": 44,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_changelog_followup_r7_offline.py",
+        "start_line": 106,
+        "end_line": 117
+      },
+      "finding": "    out = subprocess.run(\n        [sys.executable, \"-c\", (\n            \"import subprocess,sys\\n\"\n            f\"d=subprocess.run(['git','diff','{base}..HEAD','--','CHANGELOG.md'],\"\n            \"capture",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_changelog_followup_r8_offline.py",
+        "start_line": 117,
+        "end_line": 128
+      },
+      "finding": "    out = subprocess.run(\n        [sys.executable, \"-c\", (\n            \"import subprocess,sys\\n\"\n            f\"d=subprocess.run(['git','diff','{FORK_BASE}..HEAD','--','CHANGELOG.md'],\"\n            \"ca",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_changelog_followup_r9_offline.py",
+        "start_line": 121,
+        "end_line": 132
+      },
+      "finding": "    out = subprocess.run(\n        [sys.executable, \"-c\", (\n            \"import subprocess,sys\\n\"\n            f\"d=subprocess.run(['git','diff','{FORK_BASE}..HEAD','--','CHANGELOG.md'],\"\n            \"ca",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_ci_doc_claims_offline.py",
+        "start_line": 156,
+        "end_line": 161
+      },
+      "finding": "    diff = subprocess.run(\n        [\"git\", \"diff\", f\"{FORK_POINT}..HEAD\", \"--\", \"CONTRIBUTING.md\", \"WEB_DASHBOARD.md\"],\n        cwd=ROOT,\n        stdout=subprocess.PIPE,\n        stderr=subprocess.PIPE",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_compose_env_parity_offline.py",
+        "start_line": 3,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_compose_env_parity_offline.py",
+        "start_line": 7,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_compose_env_parity_offline.py",
+        "start_line": 25,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_compose_env_parity_offline.py",
+        "start_line": 145,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_compose_env_parity_offline.py",
+        "start_line": 148,
+        "end_line": 154
+      },
+      "finding": "    proc = subprocess.run(\n        [\"docker\", \"compose\", \"-f\", \"docker-compose.yml\", \"config\", \"-q\"],\n        cwd=REPO_ROOT,\n        capture_output=True,\n        text=True,\n        timeout=60,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_config_security.py",
+        "start_line": 32,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_config_security.py",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_config_security.py",
+        "start_line": 84,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_config_security.py",
+        "start_line": 236,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_config_security.py",
+        "start_line": 251,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_console_entry_offline.py",
+        "start_line": 80,
+        "end_line": 0
+      },
+      "finding": "for key, value in os.environ.items()",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_console_entry_offline.py",
+        "start_line": 155,
+        "end_line": 163
+      },
+      "finding": "    proc = subprocess.run(\n        [sys.executable, \"-c\", wrapper],\n        stdin=subprocess.DEVNULL,\n        cwd=str(tmp_path),\n        env=_clean_env(),\n        capture_output=True,\n        text=Tru",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_data_api_contract.py",
+        "start_line": 184,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_data_api_date_params_contract.py",
+        "start_line": 97,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_data_api_pagination_offline.py",
+        "start_line": 107,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_data_api_pagination_offline.py",
+        "start_line": 246,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_data_api_pagination_offline.py",
+        "start_line": 268,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_data_api_passthrough_offline.py",
+        "start_line": 127,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_demo_mode_env_injection_offline.py",
+        "start_line": 42,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_demo_mode_env_injection_offline.py",
+        "start_line": 109,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_demo_mode_env_injection_offline.py",
+        "start_line": 113,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_demo_mode_env_injection_offline.py",
+        "start_line": 116,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_demo_mode_env_injection_offline.py",
+        "start_line": 117,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_demo_mode_env_injection_offline.py",
+        "start_line": 128,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_demo_mode_env_injection_offline.py",
+        "start_line": 147,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 14,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 15,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 23,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 26,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 87,
+        "end_line": 92
+      },
+      "finding": "        probe = subprocess.run(\n            [\"docker\", \"compose\", \"version\"],\n            capture_output=True,\n            text=True,\n            timeout=30,\n        )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 126,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 128,
+        "end_line": 0
+      },
+      "finding": "for k, v in os.environ.items()",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 153,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 157,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 178,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 184,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 185,
+        "end_line": 192
+      },
+      "finding": "    out = subprocess.run(\n        [\"docker\", \"compose\", \"-f\", \"docker-compose.yml\", \"config\"],\n        cwd=tmp_path,\n        capture_output=True,\n        text=True,\n        timeout=120,\n        env=_c",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 193,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 210,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 212,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 215,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 215,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_compose_env_offline.py",
+        "start_line": 216,
+        "end_line": 223
+      },
+      "finding": "    out = subprocess.run(\n        [\"docker\", \"compose\", \"-f\", \"docker-compose.yml\", \"config\", \"-q\"],\n        cwd=tmp_path,\n        capture_output=True,\n        text=True,\n        timeout=120,\n        ",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_compose_offline.py",
+        "start_line": 23,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_compose_offline.py",
+        "start_line": 66,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_compose_offline.py",
+        "start_line": 68,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_compose_offline.py",
+        "start_line": 72,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_prod_compose_offline.py",
+        "start_line": 79,
+        "end_line": 85
+      },
+      "finding": "    return subprocess.run(\n        [\"docker\", \"compose\", *args],\n        cwd=REPO_ROOT,\n        capture_output=True,\n        text=True,\n        timeout=120,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 16,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 23,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 28,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 36,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 140,
+        "end_line": 145
+      },
+      "finding": "        probe = subprocess.run(\n            [\"docker\", \"compose\", \"version\"],\n            capture_output=True,\n            text=True,\n            timeout=30,\n        )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 168,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 170,
+        "end_line": 0
+      },
+      "finding": "for k, v in os.environ.items()",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 175,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 181,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 214,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 223,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 224,
+        "end_line": 231
+      },
+      "finding": "    out = subprocess.run(\n        [\"docker\", \"compose\", \"-f\", \"docker-compose.yml\", \"-f\", \"prod.yml\", \"config\"],\n        cwd=tmp_path,\n        capture_output=True,\n        text=True,\n        timeout=1",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 232,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 250,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 253,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 257,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 257,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_prod_doc_offline.py",
+        "start_line": 258,
+        "end_line": 265
+      },
+      "finding": "    out = subprocess.run(\n        [\"docker\", \"compose\", \"-f\", \"docker-compose.yml\", \"-f\", \"prod.yml\", \"config\", \"-q\"],\n        cwd=tmp_path,\n        capture_output=True,\n        text=True,\n        tim",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "SC2",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 12,
+        "end_line": 0
+      },
+      "finding": "curl | bash",
+      "explanation": "Remote code is downloaded and executed. This bypasses code review and could introduce malicious code."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 35,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 80,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 83,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 86,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 87,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 88,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 117,
+        "end_line": 126
+      },
+      "finding": "    return subprocess.run(\n        [BASH, \"docker-start.sh\"],\n        cwd=sandbox,\n        stdin=subprocess.DEVNULL,\n        stdout=subprocess.PIPE,\n        stderr=subprocess.STDOUT,\n        env={\"PAT",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "TT1",
+      "category": "Data Flow",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 117,
+        "end_line": 126
+      },
+      "finding": "    return subprocess.run(\n        [BASH, \"docker-start.sh\"],\n        cwd=sandbox,\n        stdin=subprocess.DEVNULL,\n        stdout=subprocess.PIPE,\n        stderr=subprocess.STDOUT,\n        env={\"PAT",
+      "explanation": "Data flows directly from a source (env vars, files, network) to a sink (network output, exec, file write) without intermediate validation."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 131,
+        "end_line": 137
+      },
+      "finding": "    proc = subprocess.run(\n        [BASH, \"-n\", str(SCRIPT)],\n        capture_output=True,\n        env={\"PATH\": os.environ.get(\"PATH\", \"/usr/bin:/bin\")},\n        timeout=30,\n        check=False,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "TT1",
+      "category": "Data Flow",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 131,
+        "end_line": 137
+      },
+      "finding": "    proc = subprocess.run(\n        [BASH, \"-n\", str(SCRIPT)],\n        capture_output=True,\n        env={\"PATH\": os.environ.get(\"PATH\", \"/usr/bin:/bin\")},\n        timeout=30,\n        check=False,\n    )",
+      "explanation": "Data flows directly from a source (env vars, files, network) to a sink (network output, exec, file write) without intermediate validation."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 160,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 200,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 200,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 212,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_docker_start_offline.py",
+        "start_line": 212,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_test_script_offline.py",
+        "start_line": 132,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_docker_test_script_offline.py",
+        "start_line": 182,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_test_script_offline.py",
+        "start_line": 256,
+        "end_line": 263
+      },
+      "finding": "        proc = subprocess.run(\n            [BASH, str(script)],\n            cwd=str(sandbox),\n            env=_sandbox_env(sandbox, rc_overrides or {}),\n            capture_output=True,\n            en",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_docker_test_script_offline.py",
+        "start_line": 270,
+        "end_line": 270
+      },
+      "finding": "    return subprocess.run([BASH, \"-n\", str(script)], capture_output=True, encoding=\"utf-8\", timeout=RUN_TIMEOUT_S)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
     },
     {
       "id": "E2",
@@ -1524,6 +2980,643 @@
       "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
     },
     {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_error_log_sanitization_r2_offline.py",
+        "start_line": 339,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_eth_account_signer_canary_offline.py",
+        "start_line": 14,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "pip install without ==version installs the latest release, which could include malicious changes."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_gitattributes_offline.py",
+        "start_line": 8,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_gitattributes_offline.py",
+        "start_line": 58,
+        "end_line": 64
+      },
+      "finding": "    proc = subprocess.run(\n        [\"git\", \"show\", f\"HEAD:{path}\"],\n        cwd=str(ROOT),\n        capture_output=True,\n        env=_git_env(),\n        check=False,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_gitattributes_offline.py",
+        "start_line": 114,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_gitattributes_offline.py",
+        "start_line": 140,
+        "end_line": 146
+      },
+      "finding": "    proc = subprocess.run(\n        [\"git\", \"ls-files\", \"tests\", \"src\"],\n        cwd=str(ROOT),\n        capture_output=True,\n        env=_git_env(),\n        check=False,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_install_claude_config_offline.py",
+        "start_line": 356,
+        "end_line": 362
+      },
+      "finding": "    return subprocess.run(\n        [_bash_exe(), \"-n\", str(script)],\n        capture_output=True,\n        text=True,\n        env=_probe_env(),\n        timeout=60,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_install_claude_config_offline.py",
+        "start_line": 407,
+        "end_line": 414
+      },
+      "finding": "    return subprocess.run(\n        [_bash_exe(), str(sb / \"driver.sh\")],\n        capture_output=True,\n        text=True,\n        cwd=str(sb),\n        env=_run_env(sb / \"home\", sb / \"bin\"),\n        tim",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_install_claude_config_offline.py",
+        "start_line": 470,
+        "end_line": 477
+      },
+      "finding": "    proc = subprocess.run(\n        [_bash_exe(), \"install.sh\", \"--help\"],\n        capture_output=True,\n        text=True,\n        cwd=str(sb),\n        env=_probe_env(),\n        timeout=60,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_claude_config_offline.py",
+        "start_line": 479,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_claude_config_offline.py",
+        "start_line": 536,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_claude_config_offline.py",
+        "start_line": 539,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 2,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 25,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 29,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 30,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 322,
+        "end_line": 328
+      },
+      "finding": "    return subprocess.run(\n        [_bash_exe(), \"-n\", str(script)],\n        capture_output=True,\n        text=True,\n        env=_probe_env(),\n        timeout=60,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 373,
+        "end_line": 380
+      },
+      "finding": "    return subprocess.run(\n        [_bash_exe(), str(sb / \"driver.sh\")],\n        capture_output=True,\n        text=True,\n        cwd=str(sb),\n        env=_run_env(sb / \"home\", sb / \"bin\"),\n        tim",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 398,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 398,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 401,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 406,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 408,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 410,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 417,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 429,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 432,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 436,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 437,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 439,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 444,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 457,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 457,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_env_safety_offline.py",
+        "start_line": 459,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 29,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 266,
+        "end_line": 272
+      },
+      "finding": "    return subprocess.run(\n        [_bash_exe(), \"-n\", str(script)],\n        capture_output=True,\n        text=True,\n        env=_probe_env(),\n        timeout=60,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 308,
+        "end_line": 320
+      },
+      "finding": "        return subprocess.run(\n            [_bash_exe(), \"-c\", script],\n            capture_output=True,\n            # [ci-unblock-r3 2026-09-19, canal do dono] stdin em BYTES: com text=True o\n       ",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 339,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 340,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 341,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 342,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 351,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 352,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 368,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 388,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_install_eof_guard_offline.py",
+        "start_line": 435,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE2",
+      "category": "Privilege Escalation",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_install_remedy_docs_offline.py",
+        "start_line": 31,
+        "end_line": 0
+      },
+      "finding": "sudo ",
+      "explanation": "Commands invoke sudo or root privileges. Verify this elevated access is necessary and justified."
+    },
+    {
       "id": "E2",
       "category": "Data Exfiltration",
       "severity": "HIGH",
@@ -1550,6 +3643,2086 @@
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
     },
     {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_k8s_manifests_offline.py",
+        "start_line": 6,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_k8s_manifests_offline.py",
+        "start_line": 66,
+        "end_line": 0
+      },
+      "finding": "secret.yaml",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_makefile_backup_offline.py",
+        "start_line": 14,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_makefile_backup_offline.py",
+        "start_line": 104,
+        "end_line": 113
+      },
+      "finding": "    return subprocess.run(\n        [\"make\", target],\n        cwd=tmp_path,\n        env=env,\n        capture_output=True,\n        text=True,\n        encoding=\"utf-8\",\n        errors=\"replace\",\n        ",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_makefile_backup_offline.py",
+        "start_line": 141,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_makefile_backup_offline.py",
+        "start_line": 191,
+        "end_line": 199
+      },
+      "finding": "    proc = subprocess.run(\n        [\"docker\", \"compose\", \"config\", \"--format\", \"json\"],\n        cwd=tmp_path,\n        capture_output=True,\n        text=True,\n        encoding=\"utf-8\",\n        errors=\"",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_makefile_hygiene_offline.py",
+        "start_line": 132,
+        "end_line": 141
+      },
+      "finding": "    return subprocess.run(\n        cmd,\n        cwd=tmp_path,\n        env=env,\n        capture_output=True,\n        text=True,\n        encoding=\"utf-8\",\n        errors=\"replace\",\n        timeout=60,\n ",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_mcp_conformance_e2e_offline.py",
+        "start_line": 62,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_mcp_conformance_e2e_offline.py",
+        "start_line": 201,
+        "end_line": 210
+      },
+      "finding": "        self.proc = subprocess.Popen(\n            [sys.executable, \"-m\", \"polymarket_mcp.server\"],\n            stdin=subprocess.PIPE,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_mcp_conformance_e2e_offline.py",
+        "start_line": 304,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_mcp_stdio_e2e_offline.py",
+        "start_line": 57,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_mcp_stdio_e2e_offline.py",
+        "start_line": 210,
+        "end_line": 219
+      },
+      "finding": "        self.proc = subprocess.Popen(\n            [sys.executable, \"-m\", \"polymarket_mcp.server\"],\n            stdin=subprocess.PIPE,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_mcp_stdio_e2e_offline.py",
+        "start_line": 338,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_mcp_stdio_robustness_offline.py",
+        "start_line": 85,
+        "end_line": 91
+      },
+      "finding": "        self.proc = subprocess.Popen(\n            [sys.executable, \"-m\", \"polymarket_mcp.server\"],\n            stdin=subprocess.PIPE,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_monitor_surfaces_contract_offline.py",
+        "start_line": 143,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_monitor_surfaces_contract_offline.py",
+        "start_line": 145,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_monitor_surfaces_contract_offline.py",
+        "start_line": 146,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_monitor_surfaces_contract_offline.py",
+        "start_line": 147,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_monitor_surfaces_contract_offline.py",
+        "start_line": 149,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_monitor_surfaces_contract_offline.py",
+        "start_line": 150,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_portfolio_analysis_offline.py",
+        "start_line": 103,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_portfolio_gaps_offline.py",
+        "start_line": 152,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_portfolio_positions_offline.py",
+        "start_line": 118,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_position_details_market_filter_offline.py",
+        "start_line": 96,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_pytyped_wheel_offline.py",
+        "start_line": 7,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "pip install without ==version installs the latest release, which could include malicious changes."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "LOW",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_pytyped_wheel_offline.py",
+        "start_line": 75,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "pip install without ==version installs the latest release, which could include malicious changes."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_pytyped_wheel_offline.py",
+        "start_line": 100,
+        "end_line": 102
+      },
+      "finding": "        proc = subprocess.run(\n            cmd, cwd=str(build_dir), capture_output=True, text=True, timeout=180\n        )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "SC2",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 3,
+        "end_line": 0
+      },
+      "finding": "curl -sSL ... | bash",
+      "explanation": "Remote code is downloaded and executed. This bypasses code review and could introduce malicious code."
+    },
+    {
+      "id": "TM1",
+      "category": "Tool Misuse",
+      "severity": "HIGH",
+      "confidence": 0.95,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 52,
+        "end_line": 0
+      },
+      "finding": "rm -rf \"$HOME/polymarket-mcp-server\"",
+      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
+    },
+    {
+      "id": "AST5",
+      "category": "Dangerous Code Execution",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 242,
+        "end_line": 242
+      },
+      "finding": "                os.execve(BASH, [BASH], env)",
+      "explanation": "os.system() and os exec-family calls run shell commands with the process's full privileges, enabling arbitrary command execution."
+    },
+    {
+      "id": "AST5",
+      "category": "Dangerous Code Execution",
+      "severity": "HIGH",
+      "confidence": 0.85,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 245,
+        "end_line": 245
+      },
+      "finding": "                os.execve(BASH, [BASH, str(QUICKSTART)], env)",
+      "explanation": "os.system() and os exec-family calls run shell commands with the process's full privileges, enabling arbitrary command execution."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 283,
+        "end_line": 291
+      },
+      "finding": "        p = subprocess.Popen(\n            [BASH, str(QUICKSTART)],\n            cwd=str(sb[\"root\"]),\n            stdin=extra_fd if stdin_pipe else stdin_obj,\n            stdout=subprocess.PIPE,\n       ",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "TT2",
+      "category": "Data Flow",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 283,
+        "end_line": 291
+      },
+      "finding": "        p = subprocess.Popen(\n            [BASH, str(QUICKSTART)],\n            cwd=str(sb[\"root\"]),\n            stdin=extra_fd if stdin_pipe else stdin_obj,\n            stdout=subprocess.PIPE,\n       ",
+      "explanation": "Data from a source is assigned to a variable that is later passed to a sink, creating a variable-mediated taint flow."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 326,
+        "end_line": 332
+      },
+      "finding": "    before = subprocess.run(\n        [\"git\", \"status\", \"--porcelain\"],\n        cwd=str(REPO_ROOT),\n        capture_output=True,\n        text=True,\n        check=False,\n    ).stdout",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 334,
+        "end_line": 340
+      },
+      "finding": "    after = subprocess.run(\n        [\"git\", \"status\", \"--porcelain\"],\n        cwd=str(REPO_ROOT),\n        capture_output=True,\n        text=True,\n        check=False,\n    ).stdout",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 346,
+        "end_line": 346
+      },
+      "finding": "    rc = subprocess.run([BASH, \"-n\", str(QUICKSTART)], capture_output=True, text=True)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": "tests/test_quickstart_non_tty_offline.py",
+        "start_line": 358,
+        "end_line": 0
+      },
+      "finding": "setsid ",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_rate_limit_429_analysis_offline.py",
+        "start_line": 78,
+        "end_line": 0
+      },
+      "finding": "                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_rate_limit_429_analysis_offline.py",
+        "start_line": 123,
+        "end_line": 0
+      },
+      "finding": "                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_rate_limit_429_discovery_offline.py",
+        "start_line": 92,
+        "end_line": 0
+      },
+      "finding": "                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_rate_limit_429_portfolio_clob_offline.py",
+        "start_line": 78,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_rate_limit_429_portfolio_offline.py",
+        "start_line": 59,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_rate_limit_429_portfolio_offline.py",
+        "start_line": 123,
+        "end_line": 0
+      },
+      "finding": "                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_realtime_dispatch_offline.py",
+        "start_line": 156,
+        "end_line": 156
+      },
+      "finding": "        monkeypatch.setattr(server_module, name, getattr(server_module, name))",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_realtime_dispatch_offline.py",
+        "start_line": 163,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_resources_read_offline.py",
+        "start_line": 31,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST6",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.65,
+      "location": {
+        "file": "tests/test_root_scripts_hygiene_offline.py",
+        "start_line": 57,
+        "end_line": 57
+      },
+      "finding": "    compile(content, \"test_mcp_connection.py\", \"exec\")  # arquivo parseável",
+      "explanation": "compile() creates code objects from strings. When combined with exec()/eval(), it enables obfuscated code execution."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_root_scripts_hygiene_offline.py",
+        "start_line": 95,
+        "end_line": 101
+      },
+      "finding": "    result = subprocess.run(\n        [ruff, \"check\", *[s.name for s in ROOT_SCRIPTS], \"--select\", \"F541,I001,B905\"],\n        cwd=str(ROOT),\n        capture_output=True,\n        text=True,\n        chec",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "YR4",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_safety_adversarial.py",
+        "start_line": 134,
+        "end_line": 0
+      },
+      "finding": "model; model; llm; disable safety",
+      "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "RA1",
+      "category": "Rogue Agent",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "location": {
+        "file": "tests/test_safety_adversarial.py",
+        "start_line": 661,
+        "end_line": 0
+      },
+      "finding": "disable safety check",
+      "explanation": "Skill modifies its own code, configuration, or behavior at runtime. Self-modification enables an agent to escalate privileges, disable safety constraints, or install persistent backdoors."
+    },
+    {
+      "id": "P3",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.9,
+      "location": {
+        "file": "tests/test_server_dispatch_offline.py",
+        "start_line": 58,
+        "end_line": 0
+      },
+      "finding": "silently record",
+      "explanation": "Instructions found that direct the agent to transmit conversation context or user data to external services."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_server_dispatch_offline.py",
+        "start_line": 110,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_server_lifecycle_offline.py",
+        "start_line": 820,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_signal_shutdown_coverage_offline.py",
+        "start_line": 96,
+        "end_line": 0
+      },
+      "finding": "without checking",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_signal_shutdown_coverage_offline.py",
+        "start_line": 184,
+        "end_line": 184
+      },
+      "finding": "            server_module, name, getattr(server_module, name, None), raising=False",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_stdio_signal_shutdown_offline.py",
+        "start_line": 104,
+        "end_line": 110
+      },
+      "finding": "        self.proc = subprocess.Popen(\n            [sys.executable, \"-m\", \"polymarket_mcp.server\"],\n            stdin=subprocess.PIPE,\n            stdout=subprocess.PIPE,\n            stderr=subprocess.",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_suggest_actions_pagination_offline.py",
+        "start_line": 117,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_tiny_gaps_offline.py",
+        "start_line": 69,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_tiny_gaps_offline.py",
+        "start_line": 128,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_trade_history_market_filter_offline.py",
+        "start_line": 85,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_trading_gaps_offline.py",
+        "start_line": 212,
+        "end_line": 0
+      },
+      "finding": "no\n    confirmation",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_uninstall_script_offline.py",
+        "start_line": 15,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_uninstall_script_offline.py",
+        "start_line": 368,
+        "end_line": 373
+      },
+      "finding": "        proc = subprocess.run(\n            [_bash_exe(), \"-n\", str(script)],\n            capture_output=True,\n            env=_probe_env(),\n            timeout=30,\n        )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_uninstall_script_offline.py",
+        "start_line": 395,
+        "end_line": 401
+      },
+      "finding": "        proc = subprocess.run(\n            [_bash_exe(), str(script), \"--force\"],\n            cwd=str(cwd),\n            env=_run_env(home, shim_dir=shim_dir),\n            capture_output=True,\n        ",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_uninstall_script_offline.py",
+        "start_line": 475,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_uninstall_script_offline.py",
+        "start_line": 485,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_uninstall_script_offline.py",
+        "start_line": 493,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_uninstall_script_offline.py",
+        "start_line": 493,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_uninstall_script_offline.py",
+        "start_line": 532,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_api_contracts_offline.py",
+        "start_line": 40,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AR1",
+      "category": "Anti-Refusal",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_web_api_contracts_offline.py",
+        "start_line": 116,
+        "end_line": 0
+      },
+      "finding": "must answer every",
+      "explanation": "Skill instructs the agent to never refuse or to always comply. Suppressing the agent's ability to decline removes a core safety control and enables downstream harmful requests to succeed."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_api_contracts_offline.py",
+        "start_line": 158,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_api_contracts_offline.py",
+        "start_line": 160,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_api_contracts_offline.py",
+        "start_line": 161,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_api_contracts_offline.py",
+        "start_line": 163,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 42,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 43,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AR2",
+      "category": "Anti-Refusal",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 51,
+        "end_line": 0
+      },
+      "finding": "NO warning",
+      "explanation": "Skill instructs the agent to omit warnings, disclaimers, or ethical commentary. Stripping safety caveats hides risk from the user and is a common jailbreak preamble."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 74,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 76,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AR1",
+      "category": "Anti-Refusal",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 190,
+        "end_line": 0
+      },
+      "finding": "must answer every",
+      "explanation": "Skill instructs the agent to never refuse or to always comply. Suppressing the agent's ability to decline removes a core safety control and enables downstream harmful requests to succeed."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 272,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 274,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 275,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 277,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 279,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 280,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 792,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 795,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 796,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 799,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 803,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 830,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 850,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 862,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 866,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 885,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 893,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 895,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 929,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 933,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 938,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AR2",
+      "category": "Anti-Refusal",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_web_app_offline.py",
+        "start_line": 1058,
+        "end_line": 0
+      },
+      "finding": "NO warning",
+      "explanation": "Skill instructs the agent to omit warnings, disclaimers, or ethical commentary. Stripping safety caveats hides risk from the user and is a common jailbreak preamble."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_ux_offline.py",
+        "start_line": 19,
+        "end_line": 0
+      },
+      "finding": ".env\n",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_ux_offline.py",
+        "start_line": 40,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_web_config_ux_offline.py",
+        "start_line": 173,
+        "end_line": 178
+      },
+      "finding": "    proc = subprocess.run(\n        [\"node\", str(probe)],\n        capture_output=True,\n        text=True,\n        timeout=30,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 53,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 53,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 141,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 142,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 143,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 182,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 188,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 192,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 194,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 204,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 204,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 211,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 213,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 215,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 223,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 224,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 230,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 232,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 234,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 242,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 243,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 249,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 253,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 269,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 277,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 285,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 291,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 297,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_config_validation_offline.py",
+        "start_line": 306,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_dashboard_launcher_offline.py",
+        "start_line": 188,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_web_dashboard_launcher_offline.py",
+        "start_line": 203,
+        "end_line": 210
+      },
+      "finding": "    return subprocess.run(\n        [_bash_exe(), str(sb / LAUNCHER_NAME)],\n        capture_output=True,\n        text=True,\n        cwd=str(sb),\n        env=env,\n        timeout=60,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_web_dashboard_launcher_offline.py",
+        "start_line": 223,
+        "end_line": 225
+      },
+      "finding": "    proc = subprocess.run(\n        [_bash_exe(), \"-n\", str(sb / LAUNCHER_NAME)], capture_output=True, text=True\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_dashboard_wiring_offline.py",
+        "start_line": 89,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_dashboard_wiring_offline.py",
+        "start_line": 90,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_dashboard_wiring_offline.py",
+        "start_line": 91,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_web_dashboard_wiring_offline.py",
+        "start_line": 216,
+        "end_line": 216
+      },
+      "finding": "    return subprocess.run([node, *argv], capture_output=True, text=True, env=env, timeout=30)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_empty_envelope_offline.py",
+        "start_line": 42,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_empty_envelope_offline.py",
+        "start_line": 43,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_empty_envelope_offline.py",
+        "start_line": 44,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_market_arrays_offline.py",
+        "start_line": 38,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_market_arrays_offline.py",
+        "start_line": 39,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AR1",
+      "category": "Anti-Refusal",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_web_market_arrays_offline.py",
+        "start_line": 120,
+        "end_line": 0
+      },
+      "finding": "must answer every",
+      "explanation": "Skill instructs the agent to never refuse or to always comply. Suppressing the agent's ability to decline removes a core safety control and enables downstream harmful requests to succeed."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_market_arrays_offline.py",
+        "start_line": 129,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_market_arrays_offline.py",
+        "start_line": 132,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_market_arrays_offline.py",
+        "start_line": 133,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_market_arrays_offline.py",
+        "start_line": 136,
+        "end_line": 0
+      },
+      "finding": ".env\"",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_web_market_arrays_offline.py",
+        "start_line": 137,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_web_xss_offline.py",
+        "start_line": 149,
+        "end_line": 155
+      },
+      "finding": "    proc = subprocess.run(\n        [node, \"-e\", _NODE_PROBE],\n        capture_output=True,\n        text=True,\n        timeout=60,\n        env=env,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_websocket_lifecycle_offline.py",
+        "start_line": 67,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_websocket_lifecycle_offline.py",
+        "start_line": 73,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_websocket_supervision_offline.py",
+        "start_line": 73,
+        "end_line": 0
+      },
+      "finding": "loop forever",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_websocket_supervision_offline.py",
+        "start_line": 164,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_websocket_supervision_offline.py",
+        "start_line": 201,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_websocket_supervision_offline.py",
+        "start_line": 515,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
       "id": "RA2",
       "category": "Rogue Agent",
       "severity": "MEDIUM",
@@ -1569,11 +5742,24 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_websocket.py",
-        "start_line": 508,
+        "start_line": 515,
         "end_line": 0
       },
       "finding": "Start background task",
       "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_ws_message_error_paths_offline.py",
+        "start_line": 93,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
       "id": "MP2",
@@ -2245,32 +6431,6 @@
       "confidence": 0.8,
       "location": {
         "file": "WEB_DASHBOARD.md",
-        "start_line": 503,
-        "end_line": 0
-      },
-      "finding": "                                                              ",
-      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
-    },
-    {
-      "id": "MP2",
-      "category": "Memory Poisoning",
-      "severity": "MEDIUM",
-      "confidence": 0.8,
-      "location": {
-        "file": "WEB_DASHBOARD.md",
-        "start_line": 509,
-        "end_line": 0
-      },
-      "finding": "                                                              ",
-      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
-    },
-    {
-      "id": "MP2",
-      "category": "Memory Poisoning",
-      "severity": "MEDIUM",
-      "confidence": 0.8,
-      "location": {
-        "file": "WEB_DASHBOARD.md",
         "start_line": 511,
         "end_line": 0
       },
@@ -2284,7 +6444,33 @@
       "confidence": 0.8,
       "location": {
         "file": "WEB_DASHBOARD.md",
-        "start_line": 512,
+        "start_line": 517,
+        "end_line": 0
+      },
+      "finding": "                                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "WEB_DASHBOARD.md",
+        "start_line": 519,
+        "end_line": 0
+      },
+      "finding": "                                                              ",
+      "explanation": "Skill attempts to fill the context window with filler content, displacing legitimate instructions and safety constraints. This can degrade agent performance or bypass safety boundaries."
+    },
+    {
+      "id": "MP2",
+      "category": "Memory Poisoning",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "WEB_DASHBOARD.md",
+        "start_line": 520,
         "end_line": 0
       },
       "finding": "                                          ",
