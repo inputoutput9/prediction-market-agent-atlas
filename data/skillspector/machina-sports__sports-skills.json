@@ -1,6 +1,6 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "cde36d0d5d92",
+  "head_sha": "3be362423607",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -8,10 +8,10 @@
     "recommendation": "DO_NOT_INSTALL"
   },
   "counts": {
-    "critical": 3,
-    "high": 22,
-    "medium": 78,
-    "low": 8
+    "critical": 4,
+    "high": 23,
+    "medium": 86,
+    "low": 10
   },
   "suppressed_count": 0,
   "issues": [
@@ -48,7 +48,7 @@
       "confidence": 0.9,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 210,
+        "start_line": 233,
         "end_line": 0
       },
       "finding": "curl | bash",
@@ -61,7 +61,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 341,
+        "start_line": 364,
         "end_line": 0
       },
       "finding": "skills/metadata/SKILL.md",
@@ -74,7 +74,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 344,
+        "start_line": 367,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",
@@ -139,7 +139,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 38,
+        "start_line": 39,
         "end_line": 0
       },
       "finding": "pandas",
@@ -152,7 +152,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 38,
+        "start_line": 39,
         "end_line": 0
       },
       "finding": "pandas",
@@ -165,7 +165,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 38,
+        "start_line": 39,
         "end_line": 0
       },
       "finding": "pandas",
@@ -178,20 +178,7 @@
       "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 42,
-        "end_line": 0
-      },
-      "finding": "pyarrow",
-      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
-    },
-    {
-      "id": "SC4",
-      "category": "Supply Chain",
-      "severity": "CRITICAL",
-      "confidence": 0.9,
-      "location": {
-        "file": "pyproject.toml",
-        "start_line": 42,
+        "start_line": 45,
         "end_line": 0
       },
       "finding": "pyarrow",
@@ -204,7 +191,46 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 53,
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": "pandas",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": "pyarrow",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "CRITICAL",
+      "confidence": 0.9,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 45,
+        "end_line": 0
+      },
+      "finding": "pyarrow",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 57,
         "end_line": 0
       },
       "finding": "pytest",
@@ -217,7 +243,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 54,
+        "start_line": 58,
         "end_line": 0
       },
       "finding": "jinja2",
@@ -230,7 +256,7 @@
       "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 54,
+        "start_line": 58,
         "end_line": 0
       },
       "finding": "pyyaml",
@@ -984,8 +1010,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 910,
-        "end_line": 910
+        "start_line": 916,
+        "end_line": 916
       },
       "finding": "            func = getattr(module, cmd_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -997,8 +1023,8 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 974,
-        "end_line": 977
+        "start_line": 980,
+        "end_line": 983
       },
       "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -1010,8 +1036,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 1249,
-        "end_line": 1249
+        "start_line": 1255,
+        "end_line": 1255
       },
       "finding": "    func = getattr(module, command_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -1036,7 +1062,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/esports/_connector.py",
-        "start_line": 24,
+        "start_line": 26,
         "end_line": 0
       },
       "finding": "https://api.opendota.com/",
@@ -1049,7 +1075,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 868,
+        "start_line": 897,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1062,7 +1088,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 1987,
+        "start_line": 2072,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1075,7 +1101,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3640,
+        "start_line": 3756,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -1088,7 +1114,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3898,
+        "start_line": 4014,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -1101,7 +1127,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 4253,
+        "start_line": 4369,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1114,7 +1140,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/kalshi/_connector.py",
-        "start_line": 22,
+        "start_line": 23,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
@@ -1126,8 +1152,21 @@
       "severity": "MEDIUM",
       "confidence": 0.8,
       "location": {
-        "file": "src/sports_skills/nba/_stats.py",
-        "start_line": 201,
+        "file": "src/sports_skills/mlb/_connector.py",
+        "start_line": 372,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/nba/_connector.py",
+        "start_line": 417,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1140,7 +1179,20 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/nba/_stats.py",
-        "start_line": 217,
+        "start_line": 235,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/nba/_stats.py",
+        "start_line": 251,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1153,7 +1205,33 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/nfl/_connector.py",
-        "start_line": 491,
+        "start_line": 447,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/nfl/_connector.py",
+        "start_line": 536,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/nhl/_connector.py",
+        "start_line": 373,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1179,7 +1257,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/volleyball/_nevobo.py",
-        "start_line": 371,
+        "start_line": 403,
         "end_line": 0
       },
       "finding": "Hydra / JSON-L",
@@ -1296,8 +1374,8 @@
       "confidence": 0.5,
       "location": {
         "file": "tests/test_cricket.py",
-        "start_line": 616,
-        "end_line": 616
+        "start_line": 651,
+        "end_line": 651
       },
       "finding": "            assert callable(getattr(cricket, fn))",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -1374,7 +1452,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/test_nba_stats.py",
-        "start_line": 352,
+        "start_line": 385,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1444,6 +1522,84 @@
       },
       "finding": "    subprocess.run([str(python), \"-I\", \"-c\", probe], check=True, cwd=tmp_path)",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_replay_providers.py",
+        "start_line": 89,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_replay_providers.py",
+        "start_line": 100,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_replay_providers.py",
+        "start_line": 549,
+        "end_line": 549
+      },
+      "finding": "    fn = getattr(f1_api, name)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_replay_providers.py",
+        "start_line": 567,
+        "end_line": 567
+      },
+      "finding": "    fn = getattr(f1_api, name)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_replay.py",
+        "start_line": 38,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_replay.py",
+        "start_line": 49,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
     },
     {
       "id": "AS3",
