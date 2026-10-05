@@ -66,7 +66,7 @@ Weighted total → tier: **S** (≥80%) · **A** (≥65%) · **B** (≥45%) · *
 
 <!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->
 
-> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-09-28** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
+> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-10-05** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
 
 ### Kalshi
 
@@ -137,6 +137,19 @@ Lighter fallback MCP — fewer tools, sane defaults.
 
 | Repo | Grade | Score |
 |---|---|---|
+| [kalshi](https://github.com/newyorkcompute/kalshi) by [newyorkcompute](https://github.com/newyorkcompute) | 🟡 A-tier | 39/55 |
+
+Both MCP and skill in one TS stack. Prefer running from source over the stale npm publishes.
+
+| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🟡 3/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/npm/v/%40newyorkcompute%2Fkalshi-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=npm" alt="npm">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
 | [pykalshi](https://github.com/ArshKA/pykalshi) by [ArshKA](https://github.com/ArshKA) | 🟡 A-tier | 37/55 |
 
 Ergonomics layer — pairs well with a spec-first SDK as source of truth.
@@ -145,19 +158,6 @@ Ergonomics layer — pairs well with a spec-first SDK as source of truth.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/ArshKA/pykalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/ArshKA/pykalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/ArshKA/pykalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/pypi/v/pykalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=pypi" alt="pypi">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
-| [kalshi](https://github.com/newyorkcompute/kalshi) by [newyorkcompute](https://github.com/newyorkcompute) | 🟡 A-tier | 37/55 |
-
-Both MCP and skill in one TS stack. Prefer running from source over the stale npm publishes.
-
-| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🟡 3/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/npm/v/%40newyorkcompute%2Fkalshi-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=npm" alt="npm">
 
 ---
 
@@ -423,7 +423,7 @@ Cleanest pattern for a read-only skill safety contract.
 
 | Repo | Grade | Score |
 |---|---|---|
-| [pmxt](https://github.com/pmxt-dev/pmxt) by [pmxt-dev](https://github.com/pmxt-dev) | 🟡 A-tier | 39/55 |
+| [pmxt](https://github.com/pmxt-dev/pmxt) by [pmxt-dev](https://github.com/pmxt-dev) | 🟡 A-tier | 41/55 |
 
 The cross-venue abstraction layer. Self-host for anything involving real keys.
 
@@ -431,6 +431,19 @@ The cross-venue abstraction layer. Self-host for anything involving real keys.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/pmxt-dev/pmxt?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/pmxt-dev/pmxt?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/pmxt-dev/pmxt?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/npm/v/%40pmxt%2Fmcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=npm" alt="npm">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
+| [prediction-market-mcp](https://github.com/JamesANZ/prediction-market-mcp) by [JamesANZ](https://github.com/JamesANZ) | 🟡 A-tier | 38/55 |
+
+Multi-venue read-only scanner.
+
+| provenance: 🔴 2/5 | capability: 🔴 2/5 | safety: 🟢 4/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ---
 
@@ -496,19 +509,6 @@ Unique replay dataset angle; small.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/Oddpool/PredictionMarketBench?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/Oddpool/PredictionMarketBench?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/Oddpool/PredictionMarketBench?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
-| [prediction-market-mcp](https://github.com/JamesANZ/prediction-market-mcp) by [JamesANZ](https://github.com/JamesANZ) | 🔵 B-tier | 32/55 |
-
-Multi-venue read-only scanner.
-
-| provenance: 🔴 2/5 | capability: 🔴 2/5 | safety: 🟢 4/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ### Deprecated / reference-only
 
