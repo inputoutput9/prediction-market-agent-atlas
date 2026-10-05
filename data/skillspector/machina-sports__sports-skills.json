@@ -1,6 +1,6 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "3be362423607",
+  "head_sha": "c5a487da25a8",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -9,8 +9,8 @@
   },
   "counts": {
     "critical": 4,
-    "high": 23,
-    "medium": 86,
+    "high": 25,
+    "medium": 117,
     "low": 10
   },
   "suppressed_count": 0,
@@ -48,7 +48,7 @@
       "confidence": 0.9,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 233,
+        "start_line": 309,
         "end_line": 0
       },
       "finding": "curl | bash",
@@ -61,7 +61,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 364,
+        "start_line": 440,
         "end_line": 0
       },
       "finding": "skills/metadata/SKILL.md",
@@ -74,7 +74,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 367,
+        "start_line": 443,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",
@@ -315,6 +315,19 @@
       "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
     },
     {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 166,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
       "id": "E1",
       "category": "Data Exfiltration",
       "severity": "MEDIUM",
@@ -399,7 +412,7 @@
       "confidence": 0.7,
       "location": {
         "file": "site/build.py",
-        "start_line": 352,
+        "start_line": 381,
         "end_line": 0
       },
       "finding": "",
@@ -412,7 +425,7 @@
       "confidence": 0.7,
       "location": {
         "file": "site/build.py",
-        "start_line": 468,
+        "start_line": 500,
         "end_line": 0
       },
       "finding": "",
@@ -464,7 +477,20 @@
       "confidence": 0.7,
       "location": {
         "file": "site/templates/index.html",
-        "start_line": 146,
+        "start_line": 168,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "site/templates/index.html",
+        "start_line": 180,
         "end_line": 0
       },
       "finding": "",
@@ -493,7 +519,20 @@
         "start_line": 92,
         "end_line": 0
       },
-      "finding": "<!-- COMMANDS -->\n<section class=\"commands-section\">\n  <div class=\"container\">\n    <h2>Commands</h2>\n    <table class=\"commands-table\">\n      <thead>\n        <tr>\n          <th>Command</th>\n          ",
+      "finding": "<!-- COVERAGE -->\n<section class=\"description-section\" id=\"coverage\">\n  <div class=\"container\">\n    <p class=\"skill-description\">\n      Reference coverage: {{ espn_inventory.leagues }} documented leag",
+      "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
+    },
+    {
+      "id": "P2",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "site/templates/skill.html",
+        "start_line": 133,
+        "end_line": 0
+      },
+      "finding": "<!-- EXAMPLES -->\n<section class=\"examples-section\">\n  <div class=\"container\">\n    <h2>Example Prompts</h2>\n    <ul class=\"examples-list\">\n      {% for ex in skill.examples %}\n      <li>{{ ex }}</li>\n",
       "explanation": "Hidden instructions were detected in comments or invisible text. These could contain malicious directives. Manual review is recommended."
     },
     {
@@ -558,7 +597,7 @@
         "start_line": 67,
         "end_line": 0
       },
-      "finding": "skills/esports/SKILL.md",
+      "finding": "skills/espn-api/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -571,7 +610,7 @@
         "start_line": 78,
         "end_line": 0
       },
-      "finding": "skills/fastf1/SKILL.md",
+      "finding": "skills/esports/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -584,7 +623,7 @@
         "start_line": 89,
         "end_line": 0
       },
-      "finding": "skills/football-data/SKILL.md",
+      "finding": "skills/fastf1/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -597,7 +636,7 @@
         "start_line": 100,
         "end_line": 0
       },
-      "finding": "skills/golf-data/SKILL.md",
+      "finding": "skills/football-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -610,7 +649,7 @@
         "start_line": 111,
         "end_line": 0
       },
-      "finding": "skills/kalshi/SKILL.md",
+      "finding": "skills/golf-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -623,7 +662,7 @@
         "start_line": 122,
         "end_line": 0
       },
-      "finding": "skills/machina/SKILL.md",
+      "finding": "skills/kalshi/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -636,7 +675,7 @@
         "start_line": 133,
         "end_line": 0
       },
-      "finding": "skills/markets/SKILL.md",
+      "finding": "skills/machina/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -649,7 +688,7 @@
         "start_line": 144,
         "end_line": 0
       },
-      "finding": "skills/metadata/SKILL.md",
+      "finding": "skills/markets/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -662,7 +701,7 @@
         "start_line": 155,
         "end_line": 0
       },
-      "finding": "skills/mlb-data/SKILL.md",
+      "finding": "skills/metadata/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -675,7 +714,7 @@
         "start_line": 166,
         "end_line": 0
       },
-      "finding": "skills/nba-data/SKILL.md",
+      "finding": "skills/mlb-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -688,7 +727,7 @@
         "start_line": 177,
         "end_line": 0
       },
-      "finding": "skills/nfl-data/SKILL.md",
+      "finding": "skills/nba-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -701,7 +740,7 @@
         "start_line": 188,
         "end_line": 0
       },
-      "finding": "skills/nhl-data/SKILL.md",
+      "finding": "skills/nfl-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -714,7 +753,7 @@
         "start_line": 199,
         "end_line": 0
       },
-      "finding": "skills/polymarket/SKILL.md",
+      "finding": "skills/nhl-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -727,7 +766,7 @@
         "start_line": 210,
         "end_line": 0
       },
-      "finding": "skills/polymarket-trading/SKILL.md",
+      "finding": "skills/polymarket/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -740,7 +779,7 @@
         "start_line": 221,
         "end_line": 0
       },
-      "finding": "skills/prophetx/SKILL.md",
+      "finding": "skills/polymarket-trading/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -753,7 +792,7 @@
         "start_line": 232,
         "end_line": 0
       },
-      "finding": "skills/sports-news/SKILL.md",
+      "finding": "skills/prophetx/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -766,7 +805,7 @@
         "start_line": 243,
         "end_line": 0
       },
-      "finding": "skills/sports-reporter/SKILL.md",
+      "finding": "skills/sports-news/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -779,7 +818,7 @@
         "start_line": 254,
         "end_line": 0
       },
-      "finding": "skills/tennis-data/SKILL.md",
+      "finding": "skills/sports-reporter/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -792,7 +831,7 @@
         "start_line": 265,
         "end_line": 0
       },
-      "finding": "skills/volleyball-data/SKILL.md",
+      "finding": "skills/tennis-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -805,7 +844,7 @@
         "start_line": 276,
         "end_line": 0
       },
-      "finding": "skills/wnba-data/SKILL.md",
+      "finding": "skills/volleyball-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -818,7 +857,7 @@
         "start_line": 287,
         "end_line": 0
       },
-      "finding": "skills/world-cup/SKILL.md",
+      "finding": "skills/wnba-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
     },
     {
@@ -831,8 +870,34 @@
         "start_line": 298,
         "end_line": 0
       },
+      "finding": "skills/world-cup/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 309,
+        "end_line": 0
+      },
       "finding": "skills/xctf-data/SKILL.md",
       "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "skills/espn-api/scripts/espn_fetch.sh",
+        "start_line": 42,
+        "end_line": 0
+      },
+      "finding": "curl -sS -f --connect-timeout 10 --max-time 30 \\\n        -H \"User-Agent: espn-api/1.0\" -H \"Accept: application/json\" \"$@\"\n}\n\nusage() {\n    echo \"Usage: $0 <command> [args...]\"\n    echo \"\"\n    echo \"Co",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {
       "id": "YR1",
@@ -926,19 +991,6 @@
       "explanation": "YARA rule matched a known malware signature (reverse shell, backdoor, ransomware, C2 framework, or info stealer)."
     },
     {
-      "id": "E1",
-      "category": "Data Exfiltration",
-      "severity": "MEDIUM",
-      "confidence": 0.6,
-      "location": {
-        "file": "src/sports_skills/_ncaa.py",
-        "start_line": 44,
-        "end_line": 0
-      },
-      "finding": "https://data.ncaa.com/",
-      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
-    },
-    {
       "id": "AST4",
       "category": "Dangerous Code Execution",
       "severity": "MEDIUM",
@@ -1010,8 +1062,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 916,
-        "end_line": 916
+        "start_line": 921,
+        "end_line": 921
       },
       "finding": "            func = getattr(module, cmd_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -1023,8 +1075,8 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 980,
-        "end_line": 983
+        "start_line": 985,
+        "end_line": 988
       },
       "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -1036,8 +1088,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 1255,
-        "end_line": 1255
+        "start_line": 1260,
+        "end_line": 1260
       },
       "finding": "    func = getattr(module, command_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -1062,7 +1114,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/esports/_connector.py",
-        "start_line": 26,
+        "start_line": 27,
         "end_line": 0
       },
       "finding": "https://api.opendota.com/",
@@ -1088,7 +1140,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 2072,
+        "start_line": 2085,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1101,7 +1153,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 3756,
+        "start_line": 3769,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -1114,7 +1166,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 4014,
+        "start_line": 4027,
         "end_line": 0
       },
       "finding": "http://api.clubelo.com/",
@@ -1127,7 +1179,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/football/_connector.py",
-        "start_line": 4369,
+        "start_line": 4382,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1153,7 +1205,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/mlb/_connector.py",
-        "start_line": 372,
+        "start_line": 385,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1166,7 +1218,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/nba/_connector.py",
-        "start_line": 417,
+        "start_line": 453,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1179,7 +1231,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/nba/_stats.py",
-        "start_line": 235,
+        "start_line": 240,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1192,7 +1244,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/nba/_stats.py",
-        "start_line": 251,
+        "start_line": 256,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1205,7 +1257,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/nfl/_connector.py",
-        "start_line": 447,
+        "start_line": 462,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1218,7 +1270,20 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/nfl/_connector.py",
-        "start_line": 536,
+        "start_line": 482,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/nfl/_connector.py",
+        "start_line": 563,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1231,7 +1296,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/nhl/_connector.py",
-        "start_line": 373,
+        "start_line": 384,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1257,11 +1322,245 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/volleyball/_nevobo.py",
-        "start_line": 403,
+        "start_line": 446,
         "end_line": 0
       },
       "finding": "Hydra / JSON-L",
       "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 5,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 8,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 11,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 12,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 18,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 19,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 25,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 26,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 32,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 33,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 39,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/club_resultaten_dupes.rss",
+        "start_line": 40,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/poule_programma_undated.rss",
+        "start_line": 5,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/poule_programma_undated.rss",
+        "start_line": 8,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/poule_programma_undated.rss",
+        "start_line": 11,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/poule_programma_undated.rss",
+        "start_line": 12,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/poule_programma_undated.rss",
+        "start_line": 18,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/fixtures/nevobo/poule_programma_undated.rss",
+        "start_line": 19,
+        "end_line": 0
+      },
+      "finding": "https://api.nevobo.nl/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {
       "id": "AST7",
@@ -1374,11 +1673,63 @@
       "confidence": 0.5,
       "location": {
         "file": "tests/test_cricket.py",
-        "start_line": 651,
-        "end_line": 651
+        "start_line": 731,
+        "end_line": 731
       },
       "finding": "            assert callable(getattr(cricket, fn))",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_espn_api_skill.py",
+        "start_line": 76,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_espn_api_skill.py",
+        "start_line": 152,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_espn_api_skill.py",
+        "start_line": 212,
+        "end_line": 0
+      },
+      "finding": "for k, v in os.environ.items()",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_espn_api_skill.py",
+        "start_line": 219,
+        "end_line": 226
+      },
+      "finding": "    result = subprocess.run(\n        [\"bash\", str(SH_HELPER), *args],\n        env=env,\n        cwd=tmp_path,\n        capture_output=True,\n        text=True,\n        timeout=30,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
     },
     {
       "id": "AST3",
@@ -1392,6 +1743,19 @@
       },
       "finding": "        return __import__(f\"sports_skills.{sport}._connector\", fromlist=[\"_echo_season\"])",
       "explanation": "Dynamic __import__() can load arbitrary modules at runtime, bypassing static analysis and potentially importing malicious code."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_esports.py",
+        "start_line": 303,
+        "end_line": 0
+      },
+      "finding": "https://api.opendota.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
     },
     {
       "id": "E2",
@@ -1449,10 +1813,23 @@
       "id": "EA4",
       "category": "Excessive Agency",
       "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_metadata.py",
+        "start_line": 83,
+        "end_line": 0
+      },
+      "finding": "timeout=None",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
       "confidence": 0.8,
       "location": {
         "file": "tests/test_nba_stats.py",
-        "start_line": 385,
+        "start_line": 509,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -1464,7 +1841,7 @@
       "severity": "HIGH",
       "confidence": 0.6,
       "location": {
-        "file": "tests/test_release_033.py",
+        "file": "tests/test_release_035.py",
         "start_line": 47,
         "end_line": 0
       },
@@ -1477,7 +1854,7 @@
       "severity": "MEDIUM",
       "confidence": 0.7,
       "location": {
-        "file": "tests/test_release_033.py",
+        "file": "tests/test_release_035.py",
         "start_line": 49,
         "end_line": 54
       },
@@ -1490,7 +1867,7 @@
       "severity": "MEDIUM",
       "confidence": 0.7,
       "location": {
-        "file": "tests/test_release_033.py",
+        "file": "tests/test_release_035.py",
         "start_line": 187,
         "end_line": 187
       },
@@ -1503,7 +1880,7 @@
       "severity": "MEDIUM",
       "confidence": 0.7,
       "location": {
-        "file": "tests/test_release_033.py",
+        "file": "tests/test_release_035.py",
         "start_line": 189,
         "end_line": 193
       },
@@ -1516,7 +1893,7 @@
       "severity": "MEDIUM",
       "confidence": 0.7,
       "location": {
-        "file": "tests/test_release_033.py",
+        "file": "tests/test_release_035.py",
         "start_line": 238,
         "end_line": 238
       },
@@ -1600,6 +1977,58 @@
       },
       "finding": "timeout=None",
       "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_site_coverage.py",
+        "start_line": 21,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_site_prompt_only.py",
+        "start_line": 61,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_site_prompt_only.py",
+        "start_line": 73,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_site_prompt_only.py",
+        "start_line": 103,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
     },
     {
       "id": "AS3",

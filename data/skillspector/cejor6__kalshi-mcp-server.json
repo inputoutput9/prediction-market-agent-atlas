@@ -1,6 +1,6 @@
 {
   "id": "cejor6/kalshi-mcp-server",
-  "head_sha": "8ed99e902fbb",
+  "head_sha": "f330f55672ec",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -8,8 +8,8 @@
     "recommendation": "DO_NOT_INSTALL"
   },
   "counts": {
-    "critical": 2,
-    "high": 23,
+    "critical": 3,
+    "high": 22,
     "medium": 32,
     "low": 11
   },
@@ -174,8 +174,8 @@
     {
       "id": "SC4",
       "category": "Supply Chain",
-      "severity": "HIGH",
-      "confidence": 0.8,
+      "severity": "CRITICAL",
+      "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
         "start_line": 40,

@@ -10,10 +10,10 @@
 | Scanner risk score | 100/100 |
 | Scanner severity | CRITICAL |
 | Scanner recommendation | DO_NOT_INSTALL |
-| Post-baseline counts | 🔴 2 C · 🟠 23 H · 🟡 32 M · ⚪ 11 L |
+| Post-baseline counts | 🔴 3 C · 🟠 22 H · 🟡 32 M · ⚪ 11 L |
 | Suppressed by baseline | 29 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `8ed99e902fbb` |
+| Scanned head_sha | `f330f55672ec` |
 
 **Baseline:** 29 finding(s) suppressed by a reviewed baseline.
 
@@ -23,10 +23,10 @@
 |---|---|---|---|---|
 | 🔴 Critical | `pyproject.toml:30` | Supply Chain | 0.9 | fastmcp |
 | 🔴 Critical | `pyproject.toml:32` | Supply Chain | 0.9 | httpx |
+| 🔴 Critical | `pyproject.toml:40` | Supply Chain | 0.9 | pyjwt |
 | 🟠 High | `pyproject.toml:31` | Supply Chain | 0.8 | cryptography |
 | 🟠 High | `pyproject.toml:33` | Supply Chain | 0.8 | websockets |
 | 🟠 High | `pyproject.toml:34` | Supply Chain | 0.8 | pydantic |
-| 🟠 High | `pyproject.toml:40` | Supply Chain | 0.8 | pyjwt |
 | 🟠 High | `pyproject.toml:49` | Supply Chain | 0.8 | redis |
 | 🟠 High | `pyproject.toml:49` | Supply Chain | 0.8 | redis |
 | 🟠 High | `pyproject.toml:54` | Supply Chain | 0.8 | pytest |

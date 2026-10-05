@@ -10,10 +10,10 @@
 | Scanner risk score | 100/100 |
 | Scanner severity | CRITICAL |
 | Scanner recommendation | DO_NOT_INSTALL |
-| Post-baseline counts | 🔴 4 C · 🟠 23 H · 🟡 86 M · ⚪ 10 L |
+| Post-baseline counts | 🔴 4 C · 🟠 25 H · 🟡 117 M · ⚪ 10 L |
 | Suppressed by baseline | 0 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `3be362423607` |
+| Scanned head_sha | `c5a487da25a8` |
 
 **Baseline:** none yet — counts are raw static signal, expect false positives. See [baselines](../../data/skillspector-baselines/README.md).
 
@@ -26,7 +26,7 @@
 | 🔴 Critical | `pyproject.toml:45` | Supply Chain | 0.9 | pyarrow |
 | 🔴 Critical | `pyproject.toml:58` | Supply Chain | 0.9 | pyyaml |
 | 🟠 High | `AGENTS.md:22` | Supply Chain | 0.9 | curl \| bash |
-| 🟠 High | `CHANGELOG.md:233` | Supply Chain | 0.9 | curl \| bash |
+| 🟠 High | `CHANGELOG.md:309` | Supply Chain | 0.9 | curl \| bash |
 | 🟠 High | `pyproject.toml:31` | Supply Chain | 0.8 | feedparser |
 | 🟠 High | `pyproject.toml:39` | Supply Chain | 0.8 | pandas |
 | 🟠 High | `pyproject.toml:39` | Supply Chain | 0.8 | pandas |
@@ -37,7 +37,8 @@
 | 🟠 High | `site/templates/base.html:28` | Prompt Injection | 0.7 | &lt;!-- NAV -->   &lt;nav>     &lt;a href="/" class="nav-brand" style="text-decoration:none;">       &lt;span class="dot |
 | 🟠 High | `site/templates/index.html:41` | Prompt Injection | 0.7 | &lt;!-- HERO --> &lt;section class="hero">   &lt;div class="container">     &lt;div class="fade-in">       &lt;pre class |
 | 🟠 High | `site/templates/skill.html:39` | Prompt Injection | 0.7 | &lt;!-- BREADCRUMB --> &lt;div class="breadcrumb">   &lt;div class="container">     &lt;a href="/">sports-skills.sh&lt;/ |
-| 🟠 High | `site/templates/skill.html:92` | Prompt Injection | 0.7 | &lt;!-- COMMANDS --> &lt;section class="commands-section">   &lt;div class="container">     &lt;h2>Commands&lt;/h2>      |
+| 🟠 High | `site/templates/skill.html:92` | Prompt Injection | 0.7 | &lt;!-- COVERAGE --> &lt;section class="description-section" id="coverage">   &lt;div class="container">     &lt;p class |
+| 🟠 High | `site/templates/skill.html:133` | Prompt Injection | 0.7 | &lt;!-- EXAMPLES --> &lt;section class="examples-section">   &lt;div class="container">     &lt;h2>Example Prompts&lt;/h |
 | 🟠 High | `skills/football-data/SKILL.md:26` | YARA Match | 0.425 | pip install git+https://; pip install git+https:// |
 | 🟠 High | `skills/nfl-data/SKILL.md:26` | YARA Match | 0.425 | pip install git+https://; pip install git+https:// |
 | 🟠 High | `skills/sports-reporter/SKILL.md:383` | YARA Match | 0.85 | pip install git+https:// |
@@ -45,32 +46,31 @@
 | 🟠 High | `skills/xctf-data/SKILL.md:27` | YARA Match | 0.425 | pip install git+https:// |
 | 🟠 High | `src/sports_skills/canonical/_vendored/adapters/sportradar_tennis.py:61` | Prompt Injection | 0.9 | silently record |
 | 🟠 High | `src/sports_skills/polymarket/_cli.py:126` | Data Exfiltration | 0.7 | os.environ.get("POLYMARKET_PRIVATE_KEY |
-| 🟠 High | `src/sports_skills/volleyball/_nevobo.py:403` | YARA Match | 0.7 | Hydra / JSON-L |
+| 🟠 High | `src/sports_skills/volleyball/_nevobo.py:446` | YARA Match | 0.7 | Hydra / JSON-L |
+| 🟠 High | `tests/test_espn_api_skill.py:212` | Data Exfiltration | 0.7 | for k, v in os.environ.items() |
 | 🟠 High | `tests/test_imports.py:83` | Data Exfiltration | 0.6 | os.environ.copy() |
-| 🟠 High | `tests/test_release_033.py:47` | Data Exfiltration | 0.6 | os.environ.copy() |
+| 🟠 High | `tests/test_release_035.py:47` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟡 Medium | `AGENTS.md:8` | Excessive Agency | 0.8 | Never ask the user |
-| 🟡 Medium | `CHANGELOG.md:364` | Agent Snooping | 0.8 | skills/metadata/SKILL.md |
-| 🟡 Medium | `CHANGELOG.md:367` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
+| 🟡 Medium | `CHANGELOG.md:440` | Agent Snooping | 0.8 | skills/metadata/SKILL.md |
+| 🟡 Medium | `CHANGELOG.md:443` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
 | 🟡 Medium | `packaging/release.py:56` | Dangerous Code Execution | 0.7 | subprocess.run(             [sys.executable, "-m", "build", "--no-isolation", "--outdir", str(staging), str(root)],      |
 | 🟡 Medium | `README.md:10` | MCP Rug Pull | 0.7 |  |
 | 🟡 Medium | `README.md:37` | MCP Rug Pull | 0.7 |  |
 | 🟡 Medium | `README.md:45` | Excessive Agency | 0.8 | Never ask user |
 | 🟡 Medium | `README.md:74` | MCP Rug Pull | 0.7 |  |
+| 🟡 Medium | `README.md:166` | MCP Rug Pull | 0.7 |  |
 | 🟡 Medium | `reports/health/2026-02-18.json:204` | Data Exfiltration | 0.5 | https://api.elections.kalshi.com/ |
 | 🟡 Medium | `reports/health/2026-02-19.json:249` | Data Exfiltration | 0.5 | https://api.elections.kalshi.com/ |
 | 🟡 Medium | `reports/health/2026-02-20.json:303` | Data Exfiltration | 0.5 | https://api.elections.kalshi.com/ |
 | 🟡 Medium | `scripts/nightly_health_check.py:66` | Data Exfiltration | 0.6 | https://api.elections.kalshi.com/ |
 | 🟡 Medium | `scripts/nightly_improve.py:48` | Data Exfiltration | 0.6 | https://api.elections.kalshi.com/ |
 | 🟡 Medium | `scripts/nightly_improve.py:77` | Dangerous Code Execution | 0.7 | result = subprocess.run(cmd, capture_output=True, text=True, cwd=cwd or REPO_ROOT) |
-| 🟡 Medium | `site/build.py:352` | MCP Rug Pull | 0.7 |  |
-| 🟡 Medium | `site/build.py:468` | MCP Rug Pull | 0.7 |  |
+| 🟡 Medium | `site/build.py:381` | MCP Rug Pull | 0.7 |  |
+| 🟡 Medium | `site/build.py:500` | MCP Rug Pull | 0.7 |  |
 | 🟡 Medium | `site/templates/index.html:69` | MCP Rug Pull | 0.7 |  |
-| 🟡 Medium | `site/templates/index.html:146` | MCP Rug Pull | 0.7 |  |
+| 🟡 Medium | `site/templates/index.html:168` | MCP Rug Pull | 0.7 |  |
+| 🟡 Medium | `site/templates/index.html:180` | MCP Rug Pull | 0.7 |  |
 | 🟡 Medium | `skills/catalog.json:23` | Agent Snooping | 0.8 | skills/betting/SKILL.md |
-| 🟡 Medium | `skills/catalog.json:34` | Agent Snooping | 0.8 | skills/cbb-data/SKILL.md |
-| 🟡 Medium | `skills/catalog.json:45` | Agent Snooping | 0.8 | skills/cfb-data/SKILL.md |
-| 🟡 Medium | `skills/catalog.json:56` | Agent Snooping | 0.8 | skills/cricket-data/SKILL.md |
-| 🟡 Medium | `skills/catalog.json:67` | Agent Snooping | 0.8 | skills/esports/SKILL.md |
 
-_…and 73 more finding(s) — see the artifact JSON._
+_…and 106 more finding(s) — see the artifact JSON._
 
