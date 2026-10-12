@@ -1,7 +1,7 @@
 {
   "id": "JamesANZ/prediction-market-mcp",
-  "head_sha": "b534ffa621b4",
-  "skillspector_version": "2.3.7",
+  "head_sha": "e25160be15d9",
+  "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
     "severity": "CRITICAL",
@@ -9,9 +9,9 @@
   },
   "counts": {
     "critical": 0,
-    "high": 3,
-    "medium": 3,
-    "low": 7
+    "high": 9,
+    "medium": 6,
+    "low": 8
   },
   "suppressed_count": 0,
   "issues": [
@@ -27,19 +27,6 @@
       },
       "finding": "NOT LIMITED TO",
       "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
-    },
-    {
-      "id": "TM1",
-      "category": "Tool Misuse",
-      "severity": "HIGH",
-      "confidence": 0.85,
-      "location": {
-        "file": "package-lock.json",
-        "start_line": 999,
-        "end_line": 0
-      },
-      "finding": "RmkhL8CAyCRPXCE28MMH0z2PNWQBNk2Q09ZdxM9IOOXwxwZbN+qbWaatPkdkWIKL2ZVDImrN/",
-      "explanation": "Tool parameters are crafted to achieve unintended or unsafe behavior. Parameter abuse can bypass intended safety checks (e.g. shell=True, --force, dangerous glob patterns)."
     },
     {
       "id": "PE2",
@@ -61,7 +48,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 45,
+        "start_line": 46,
         "end_line": 0
       },
       "finding": "\"@modelcontextprotocol/sdk\": \"^1.15.0\"",
@@ -74,7 +61,7 @@
       "confidence": 0.8,
       "location": {
         "file": "package.json",
-        "start_line": 45,
+        "start_line": 46,
         "end_line": 0
       },
       "finding": "@modelcontextprotocol/sdk==1.15.0",
@@ -87,7 +74,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 46,
+        "start_line": 47,
         "end_line": 0
       },
       "finding": "\"superagent\": \"^10.2.2\"",
@@ -100,7 +87,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 47,
+        "start_line": 48,
         "end_line": 0
       },
       "finding": "\"zod\": \"^3.25.75\"",
@@ -113,7 +100,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 50,
+        "start_line": 51,
         "end_line": 0
       },
       "finding": "\"@types/node\": \"^24.0.10\"",
@@ -126,7 +113,7 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 51,
+        "start_line": 52,
         "end_line": 0
       },
       "finding": "\"@types/superagent\": \"^8.1.9\"",
@@ -139,7 +126,20 @@
       "confidence": 0.4,
       "location": {
         "file": "package.json",
-        "start_line": 52,
+        "start_line": 53,
+        "end_line": 0
+      },
+      "finding": "\"tsx\": \"^4.23.15\"",
+      "explanation": "Dependencies lack version pinning, allowing potential malicious package updates. Consider pinning versions."
+    },
+    {
+      "id": "SC1",
+      "category": "Supply Chain",
+      "severity": "LOW",
+      "confidence": 0.4,
+      "location": {
+        "file": "package.json",
+        "start_line": 54,
         "end_line": 0
       },
       "finding": "\"typescript\": \"^5.8.3\"",
@@ -155,17 +155,43 @@
         "start_line": 46,
         "end_line": 0
       },
-      "finding": "Parameters:; lnbc1pjhhsqepp5mjgwnvg0z53shm22hfe9us289lnaqkwv8rn2s0rtekg5vvj56xnqdqqcqzzsxqyz5vqsp5gu6vh9hyp94c7t3tkpqrp2r059t4vrw7ps78a4n0a2u52678c7yq9qyyssq7zcferywka50wcy75skjfrdrk930cuyx24rg55cwfuz",
+      "finding": "Parameters:; Parameters:; lnbc1pjhhsqepp5mjgwnvg0z53shm22hfe9us289lnaqkwv8rn2s0rtekg5vvj56xnqdqqcqzzsxqyz5vqsp5gu6vh9hyp94c7t3tkpqrp2r059t4vrw7ps78a4n0a2u52678c7yq9qyyssq7zcferywka50wcy75skjfrdrk930cu",
       "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
     },
     {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "src/evidence/normalize.ts",
+        "start_line": 195,
+        "end_line": 0
+      },
+      "finding": "pList",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "src/evidence/normalize.ts",
+        "start_line": 199,
+        "end_line": 0
+      },
+      "finding": "pList",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
+    },
+    {
       "id": "E1",
       "category": "Data Exfiltration",
       "severity": "MEDIUM",
       "confidence": 0.5,
       "location": {
-        "file": "src/utils/utils.ts",
-        "start_line": 16,
+        "file": "src/markets/kalshi.ts",
+        "start_line": 12,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
@@ -177,12 +203,116 @@
       "severity": "MEDIUM",
       "confidence": 0.5,
       "location": {
-        "file": "src/utils/utils.ts",
-        "start_line": 18,
+        "file": "src/markets/kalshi.ts",
+        "start_line": 13,
         "end_line": 0
       },
       "finding": "https://api.elections.kalshi.com/",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "src/markets/kalshi.ts",
+        "start_line": 14,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/providers/agent-reach.ts",
+        "start_line": 166,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/providers/agent-reach.ts",
+        "start_line": 197,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/providers/agent-reach.ts",
+        "start_line": 237,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/providers/command.ts",
+        "start_line": 39,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "P1",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "test/provider.test.ts",
+        "start_line": 70,
+        "end_line": 0
+      },
+      "finding": "Ignore previous instructions",
+      "explanation": "This pattern attempts to override system instructions or ignore safety constraints. Without LLM analysis, manual review is recommended."
+    },
+    {
+      "id": "P1",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "test/provider.test.ts",
+        "start_line": 80,
+        "end_line": 0
+      },
+      "finding": "Ignore previous instructions",
+      "explanation": "This pattern attempts to override system instructions or ignore safety constraints. Without LLM analysis, manual review is recommended."
+    },
+    {
+      "id": "P1",
+      "category": "Prompt Injection",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "test/tool.test.ts",
+        "start_line": 83,
+        "end_line": 0
+      },
+      "finding": "Ignore previous instructions",
+      "explanation": "This pattern attempts to override system instructions or ignore safety constraints. Without LLM analysis, manual review is recommended."
     }
   ],
   "analysis_completeness": {
