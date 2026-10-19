@@ -1,6 +1,6 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "39092bbb6f14",
+  "head_sha": "bdb972c0625f",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -48,7 +48,7 @@
       "confidence": 0.9,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 347,
+        "start_line": 353,
         "end_line": 0
       },
       "finding": "curl | bash",
@@ -61,7 +61,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 478,
+        "start_line": 484,
         "end_line": 0
       },
       "finding": "skills/metadata/SKILL.md",
@@ -74,7 +74,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 481,
+        "start_line": 487,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",

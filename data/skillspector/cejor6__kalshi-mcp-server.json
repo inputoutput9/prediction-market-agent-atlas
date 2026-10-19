@@ -1,6 +1,6 @@
 {
   "id": "cejor6/kalshi-mcp-server",
-  "head_sha": "d60fa9620201",
+  "head_sha": "01f3d34545c4",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -9,11 +9,11 @@
   },
   "counts": {
     "critical": 3,
-    "high": 22,
-    "medium": 32,
-    "low": 11
+    "high": 27,
+    "medium": 53,
+    "low": 13
   },
-  "suppressed_count": 29,
+  "suppressed_count": 20,
   "issues": [
     {
       "id": "RP1",
@@ -35,7 +35,7 @@
       "confidence": 0.75,
       "location": {
         "file": "AGENTS.md",
-        "start_line": 297,
+        "start_line": 433,
         "end_line": 0
       },
       "finding": "without checking",
@@ -48,11 +48,37 @@
       "confidence": 0.7,
       "location": {
         "file": "AGENTS.md",
-        "start_line": 505,
+        "start_line": 655,
         "end_line": 0
       },
       "finding": "not limited to",
       "explanation": "Skill's behavior or capabilities extend beyond its stated purpose. Scope creep allows an agent to perform actions unrelated to its documented functionality, increasing the attack surface."
+    },
+    {
+      "id": "EA2",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.85,
+      "location": {
+        "file": "DEPLOY.md",
+        "start_line": 83,
+        "end_line": 0
+      },
+      "finding": "auto-deploy",
+      "explanation": "Skill enables autonomous high-impact decisions without human-in-the-loop verification. Critical operations (destructive commands, financial transactions, data deletion) should require explicit user confirmation."
+    },
+    {
+      "id": "RA2",
+      "category": "Rogue Agent",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "DEPLOY.md",
+        "start_line": 99,
+        "end_line": 0
+      },
+      "finding": "write access can tag any commit (even one on an\n  unmerged branch) and ship it.\n- **The `release` environment** gates the publishing jobs. Add yourself as\n  a required reviewer under Settings → Enviro",
+      "explanation": "Skill establishes unauthorized persistence across sessions via cron jobs, startup scripts, or state files. Session persistence allows an attacker to maintain access beyond the current interaction."
     },
     {
       "id": "E1",
@@ -61,7 +87,20 @@
       "confidence": 0.5,
       "location": {
         "file": "DEPLOY.md",
-        "start_line": 631,
+        "start_line": 372,
+        "end_line": 0
+      },
+      "finding": "https://api.github.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.5,
+      "location": {
+        "file": "DEPLOY.md",
+        "start_line": 675,
         "end_line": 0
       },
       "finding": "https://api.render.com/",
@@ -74,7 +113,7 @@
       "confidence": 0.75,
       "location": {
         "file": "Dockerfile",
-        "start_line": 68,
+        "start_line": 107,
         "end_line": 0
       },
       "finding": "",
@@ -100,7 +139,7 @@
       "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 30,
+        "start_line": 43,
         "end_line": 0
       },
       "finding": "fastmcp",
@@ -113,7 +152,20 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 31,
+        "start_line": 47,
+        "end_line": 0
+      },
+      "finding": "mcp",
+      "explanation": "Dependency has known vulnerabilities (CVEs). Using packages with unpatched security flaws exposes the environment to known exploits."
+    },
+    {
+      "id": "SC4",
+      "category": "Supply Chain",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "pyproject.toml",
+        "start_line": 48,
         "end_line": 0
       },
       "finding": "cryptography",
@@ -126,7 +178,7 @@
       "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 32,
+        "start_line": 49,
         "end_line": 0
       },
       "finding": "httpx",
@@ -139,7 +191,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 33,
+        "start_line": 50,
         "end_line": 0
       },
       "finding": "websockets",
@@ -152,7 +204,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 34,
+        "start_line": 51,
         "end_line": 0
       },
       "finding": "pydantic",
@@ -165,7 +217,7 @@
       "confidence": 0.7,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 35,
+        "start_line": 52,
         "end_line": 0
       },
       "finding": "python-dotenv",
@@ -178,7 +230,7 @@
       "confidence": 0.9,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 40,
+        "start_line": 57,
         "end_line": 0
       },
       "finding": "pyjwt",
@@ -191,7 +243,7 @@
       "confidence": 0.6,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 47,
+        "start_line": 64,
         "end_line": 0
       },
       "finding": "",
@@ -204,7 +256,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 49,
+        "start_line": 66,
         "end_line": 0
       },
       "finding": "redis",
@@ -217,7 +269,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 49,
+        "start_line": 66,
         "end_line": 0
       },
       "finding": "redis",
@@ -230,7 +282,7 @@
       "confidence": 0.8,
       "location": {
         "file": "pyproject.toml",
-        "start_line": 54,
+        "start_line": 71,
         "end_line": 0
       },
       "finding": "pytest",
@@ -276,13 +328,26 @@
       "explanation": "Docker image references without a specific tag (:latest is implicit) or digest (@sha256:...) can be silently replaced by a malicious image."
     },
     {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/kalshi_mcp_server/config.py",
+        "start_line": 31,
+        "end_line": 0
+      },
+      "finding": "https://api.elections.kalshi.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
       "id": "E2",
       "category": "Data Exfiltration",
       "severity": "HIGH",
       "confidence": 0.7,
       "location": {
         "file": "src/kalshi_mcp_server/config.py",
-        "start_line": 127,
+        "start_line": 138,
         "end_line": 0
       },
       "finding": "os.environ.get(\"KALSHI_API_KEY",
@@ -295,7 +360,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/kalshi_mcp_server/config.py",
-        "start_line": 135,
+        "start_line": 146,
         "end_line": 0
       },
       "finding": "os.environ.get(\"KALSHI_PRIVATE_KEY",
@@ -308,7 +373,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/kalshi_mcp_server/config.py",
-        "start_line": 136,
+        "start_line": 147,
         "end_line": 0
       },
       "finding": "os.environ.get(\"KALSHI_PRIVATE_KEY",
@@ -321,7 +386,7 @@
       "confidence": 0.75,
       "location": {
         "file": "src/kalshi_mcp_server/oauth.py",
-        "start_line": 224,
+        "start_line": 200,
         "end_line": 0
       },
       "finding": "without checking",
@@ -334,7 +399,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/kalshi_mcp_server/oauth.py",
-        "start_line": 280,
+        "start_line": 248,
         "end_line": 0
       },
       "finding": "os.environ.get(\"MCP_JWT_SIGNING_KEY",
@@ -344,13 +409,13 @@
       "id": "E2",
       "category": "Data Exfiltration",
       "severity": "HIGH",
-      "confidence": 0.7,
+      "confidence": 0.8,
       "location": {
         "file": "src/kalshi_mcp_server/oauth.py",
-        "start_line": 379,
+        "start_line": 386,
         "end_line": 0
       },
-      "finding": "os.environ.get(\"GITHUB_CLIENT_SECRET",
+      "finding": "os.environ[\"GITHUB_CLIENT_SECRET\"]",
       "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
     },
     {
@@ -360,11 +425,37 @@
       "confidence": 0.7,
       "location": {
         "file": "src/kalshi_mcp_server/oauth.py",
-        "start_line": 394,
+        "start_line": 399,
         "end_line": 0
       },
       "finding": "os.environ.get(\"MCP_JWT_SIGNING_KEY",
       "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "src/kalshi_mcp_server/oauth.py",
+        "start_line": 431,
+        "end_line": 0
+      },
+      "finding": "https://api.github.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "src/kalshi_mcp_server/oauth.py",
+        "start_line": 463,
+        "end_line": 0
+      },
+      "finding": "access token",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
       "id": "RP1",
@@ -373,7 +464,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/kalshi_mcp_server/safety_store.py",
-        "start_line": 115,
+        "start_line": 200,
         "end_line": 0
       },
       "finding": "",
@@ -386,8 +477,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/kalshi_mcp_server/safety.py",
-        "start_line": 70,
-        "end_line": 70
+        "start_line": 78,
+        "end_line": 78
       },
       "finding": "        return {field_name: getattr(self, field_name) for field_name in _ALL_LIMIT_FIELDS}",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -399,8 +490,21 @@
       "confidence": 0.5,
       "location": {
         "file": "src/kalshi_mcp_server/safety.py",
-        "start_line": 329,
-        "end_line": 329
+        "start_line": 400,
+        "end_line": 400
+      },
+      "finding": "                    self._validate_not_looser_than_current(name, value, getattr(previous, name))",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "src/kalshi_mcp_server/safety.py",
+        "start_line": 442,
+        "end_line": 442
       },
       "finding": "        ceiling = getattr(self._ceilings, name)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -412,8 +516,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/kalshi_mcp_server/safety.py",
-        "start_line": 349,
-        "end_line": 349
+        "start_line": 478,
+        "end_line": 478
       },
       "finding": "            name: getattr(effective, name)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -425,8 +529,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/kalshi_mcp_server/safety.py",
-        "start_line": 351,
-        "end_line": 351
+        "start_line": 480,
+        "end_line": 480
       },
       "finding": "            if getattr(effective, name) != getattr(self._ceilings, name)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -438,8 +542,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/kalshi_mcp_server/safety.py",
-        "start_line": 351,
-        "end_line": 351
+        "start_line": 480,
+        "end_line": 480
       },
       "finding": "            if getattr(effective, name) != getattr(self._ceilings, name)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -451,8 +555,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/kalshi_mcp_server/safety.py",
-        "start_line": 368,
-        "end_line": 368
+        "start_line": 497,
+        "end_line": 497
       },
       "finding": "            merged[name] = self._clamp(name, value, getattr(self._ceilings, name))",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -477,7 +581,7 @@
       "confidence": 0.6,
       "location": {
         "file": "src/kalshi_mcp_server/tools/scoring.py",
-        "start_line": 85,
+        "start_line": 93,
         "end_line": 0
       },
       "finding": "https://api.typesafe.ai/",
@@ -490,7 +594,7 @@
       "confidence": 0.7,
       "location": {
         "file": "src/kalshi_mcp_server/tools/scoring.py",
-        "start_line": 181,
+        "start_line": 195,
         "end_line": 0
       },
       "finding": "os.environ.get(\"TYPESAFE_API_KEY",
@@ -503,10 +607,36 @@
       "confidence": 0.8,
       "location": {
         "file": "src/kalshi_mcp_server/tools/scoring.py",
-        "start_line": 662,
+        "start_line": 698,
         "end_line": 0
       },
       "finding": ".netrc",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_auth_perimeter.py",
+        "start_line": 304,
+        "end_line": 0
+      },
+      "finding": ".env ",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_auth_perimeter.py",
+        "start_line": 469,
+        "end_line": 0
+      },
+      "finding": ".env ",
       "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
@@ -529,7 +659,98 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 186,
+        "start_line": 73,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 78,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 78,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 83,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov./",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 89,
+        "end_line": 0
+      },
+      "finding": "http://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 100,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov.evil.example/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "YR4",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 144,
+        "end_line": 0
+      },
+      "finding": "LLM; ignore prior instructions; ignore prior instructions",
+      "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 192,
         "end_line": 0
       },
       "finding": "https://api.open-meteo.com/",
@@ -542,7 +763,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 204,
+        "start_line": 218,
         "end_line": 0
       },
       "finding": "https://api.open-meteo.com/",
@@ -555,7 +776,20 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 219,
+        "start_line": 236,
+        "end_line": 0
+      },
+      "finding": "https://api.open-meteo.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 251,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -568,7 +802,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 225,
+        "start_line": 257,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -581,7 +815,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 289,
+        "start_line": 331,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -594,7 +828,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 299,
+        "start_line": 372,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -607,7 +841,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 340,
+        "start_line": 378,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -620,7 +854,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 346,
+        "start_line": 381,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -633,20 +867,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 349,
-        "end_line": 0
-      },
-      "finding": "https://api.weather.gov/",
-      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
-    },
-    {
-      "id": "E1",
-      "category": "Data Exfiltration",
-      "severity": "MEDIUM",
-      "confidence": 0.6,
-      "location": {
-        "file": "tests/test_external_data.py",
-        "start_line": 360,
+        "start_line": 392,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -659,7 +880,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 372,
+        "start_line": 404,
         "end_line": 0
       },
       "finding": "unbounded call",
@@ -672,7 +893,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 380,
+        "start_line": 412,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -685,7 +906,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 391,
+        "start_line": 423,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -698,7 +919,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 394,
+        "start_line": 426,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -711,46 +932,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 403,
-        "end_line": 0
-      },
-      "finding": "https://api.weather.gov/",
-      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
-    },
-    {
-      "id": "E1",
-      "category": "Data Exfiltration",
-      "severity": "MEDIUM",
-      "confidence": 0.6,
-      "location": {
-        "file": "tests/test_external_data.py",
-        "start_line": 406,
-        "end_line": 0
-      },
-      "finding": "https://api.weather.gov/",
-      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
-    },
-    {
-      "id": "E1",
-      "category": "Data Exfiltration",
-      "severity": "MEDIUM",
-      "confidence": 0.6,
-      "location": {
-        "file": "tests/test_external_data.py",
-        "start_line": 408,
-        "end_line": 0
-      },
-      "finding": "https://api.weather.gov/",
-      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
-    },
-    {
-      "id": "E1",
-      "category": "Data Exfiltration",
-      "severity": "MEDIUM",
-      "confidence": 0.6,
-      "location": {
-        "file": "tests/test_external_data.py",
-        "start_line": 420,
+        "start_line": 435,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
@@ -776,11 +958,193 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_external_data.py",
-        "start_line": 455,
+        "start_line": 440,
         "end_line": 0
       },
       "finding": "https://api.weather.gov/",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 452,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 470,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 487,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 540,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 575,
+        "end_line": 0
+      },
+      "finding": "https://api.open-meteo.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 591,
+        "end_line": 0
+      },
+      "finding": "https://api.open-meteo.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 615,
+        "end_line": 0
+      },
+      "finding": "https://api.open-meteo.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 629,
+        "end_line": 0
+      },
+      "finding": "https://api.open-meteo.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 653,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 667,
+        "end_line": 0
+      },
+      "finding": "https://api.open-meteo.com/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 799,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "E1",
+      "category": "Data Exfiltration",
+      "severity": "MEDIUM",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_external_data.py",
+        "start_line": 805,
+        "end_line": 0
+      },
+      "finding": "https://api.weather.gov/",
+      "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.75,
+      "location": {
+        "file": "tests/test_order_safety.py",
+        "start_line": 476,
+        "end_line": 0
+      },
+      "finding": "timeout=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_safety_limits.py",
+        "start_line": 498,
+        "end_line": 498
+      },
+      "finding": "    assert getattr(ctrl.effective_limits(), field) == tight",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
     },
     {
       "id": "E2",
@@ -789,7 +1153,7 @@
       "confidence": 0.8,
       "location": {
         "file": "tests/test_scoring.py",
-        "start_line": 163,
+        "start_line": 165,
         "end_line": 0
       },
       "finding": "os.environ[\"TYPESAFE_API_KEY\"]",
@@ -802,7 +1166,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_scoring.py",
-        "start_line": 617,
+        "start_line": 706,
         "end_line": 0
       },
       "finding": "https://api.typesafe.ai/",
@@ -815,7 +1179,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_scoring.py",
-        "start_line": 619,
+        "start_line": 708,
         "end_line": 0
       },
       "finding": "http://api.typesafe.ai/",
@@ -854,20 +1218,7 @@
       "confidence": 0.7,
       "location": {
         "file": "uv.lock",
-        "start_line": 890,
-        "end_line": 0
-      },
-      "finding": "keyring",
-      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
-    },
-    {
-      "id": "PE3",
-      "category": "Privilege Escalation",
-      "severity": "HIGH",
-      "confidence": 0.7,
-      "location": {
-        "file": "uv.lock",
-        "start_line": 902,
+        "start_line": 892,
         "end_line": 0
       },
       "finding": "keyring",
@@ -893,7 +1244,20 @@
       "confidence": 0.7,
       "location": {
         "file": "uv.lock",
-        "start_line": 1065,
+        "start_line": 906,
+        "end_line": 0
+      },
+      "finding": "keyring",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "uv.lock",
+        "start_line": 1068,
         "end_line": 0
       },
       "finding": "keyring",
