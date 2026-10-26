@@ -1,6 +1,6 @@
 {
   "id": "cejor6/kalshi-mcp-server",
-  "head_sha": "01f3d34545c4",
+  "head_sha": "10cfc67fa6ff",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -9,11 +9,11 @@
   },
   "counts": {
     "critical": 3,
-    "high": 27,
+    "high": 28,
     "medium": 53,
     "low": 13
   },
-  "suppressed_count": 20,
+  "suppressed_count": 19,
   "issues": [
     {
       "id": "RP1",
@@ -1205,7 +1205,7 @@
       "confidence": 0.7,
       "location": {
         "file": "uv.lock",
-        "start_line": 616,
+        "start_line": 618,
         "end_line": 0
       },
       "finding": "keyring",
@@ -1218,7 +1218,7 @@
       "confidence": 0.7,
       "location": {
         "file": "uv.lock",
-        "start_line": 892,
+        "start_line": 895,
         "end_line": 0
       },
       "finding": "keyring",
@@ -1231,7 +1231,7 @@
       "confidence": 0.7,
       "location": {
         "file": "uv.lock",
-        "start_line": 904,
+        "start_line": 907,
         "end_line": 0
       },
       "finding": "keyring",
@@ -1244,7 +1244,7 @@
       "confidence": 0.7,
       "location": {
         "file": "uv.lock",
-        "start_line": 906,
+        "start_line": 909,
         "end_line": 0
       },
       "finding": "keyring",
@@ -1257,7 +1257,20 @@
       "confidence": 0.7,
       "location": {
         "file": "uv.lock",
-        "start_line": 1068,
+        "start_line": 1070,
+        "end_line": 0
+      },
+      "finding": "keyring",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.7,
+      "location": {
+        "file": "uv.lock",
+        "start_line": 1071,
         "end_line": 0
       },
       "finding": "keyring",

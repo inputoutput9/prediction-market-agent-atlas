@@ -10,12 +10,12 @@
 | Scanner risk score | 100/100 |
 | Scanner severity | CRITICAL |
 | Scanner recommendation | DO_NOT_INSTALL |
-| Post-baseline counts | 🔴 3 C · 🟠 27 H · 🟡 53 M · ⚪ 13 L |
-| Suppressed by baseline | 20 |
+| Post-baseline counts | 🔴 3 C · 🟠 28 H · 🟡 53 M · ⚪ 13 L |
+| Suppressed by baseline | 19 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `01f3d34545c4` |
+| Scanned head_sha | `10cfc67fa6ff` |
 
-**Baseline:** 20 finding(s) suppressed by a reviewed baseline.
+**Baseline:** 19 finding(s) suppressed by a reviewed baseline.
 
 ## Findings
 
@@ -46,11 +46,12 @@
 | 🟠 High | `tests/test_external_data.py:144` | YARA Match | 0.8 | LLM; ignore prior instructions; ignore prior instructions |
 | 🟠 High | `tests/test_scoring.py:165` | Data Exfiltration | 0.8 | os.environ["TYPESAFE_API_KEY"] |
 | 🟠 High | `uv.lock:602` | Privilege Escalation | 0.7 | keyring |
-| 🟠 High | `uv.lock:616` | Privilege Escalation | 0.7 | keyring |
-| 🟠 High | `uv.lock:892` | Privilege Escalation | 0.7 | keyring |
-| 🟠 High | `uv.lock:904` | Privilege Escalation | 0.7 | keyring |
-| 🟠 High | `uv.lock:906` | Privilege Escalation | 0.7 | keyring |
-| 🟠 High | `uv.lock:1068` | Privilege Escalation | 0.7 | keyring |
+| 🟠 High | `uv.lock:618` | Privilege Escalation | 0.7 | keyring |
+| 🟠 High | `uv.lock:895` | Privilege Escalation | 0.7 | keyring |
+| 🟠 High | `uv.lock:907` | Privilege Escalation | 0.7 | keyring |
+| 🟠 High | `uv.lock:909` | Privilege Escalation | 0.7 | keyring |
+| 🟠 High | `uv.lock:1070` | Privilege Escalation | 0.7 | keyring |
+| 🟠 High | `uv.lock:1071` | Privilege Escalation | 0.7 | keyring |
 | 🟡 Medium | `.claude/settings.json:48` | MCP Rug Pull | 0.75 |  |
 | 🟡 Medium | `AGENTS.md:433` | Excessive Agency | 0.75 | without checking |
 | 🟡 Medium | `DEPLOY.md:83` | Excessive Agency | 0.85 | auto-deploy |
@@ -70,7 +71,6 @@
 | 🟡 Medium | `tests/test_external_data.py:78` | Data Exfiltration | 0.6 | https://api.weather.gov/ |
 | 🟡 Medium | `tests/test_external_data.py:78` | Data Exfiltration | 0.6 | https://api.weather.gov/ |
 | 🟡 Medium | `tests/test_external_data.py:83` | Data Exfiltration | 0.6 | https://api.weather.gov./ |
-| 🟡 Medium | `tests/test_external_data.py:89` | Data Exfiltration | 0.6 | http://api.weather.gov/ |
 
-_…and 46 more finding(s) — see the artifact JSON._
+_…and 47 more finding(s) — see the artifact JSON._
 
