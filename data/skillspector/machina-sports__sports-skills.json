@@ -1,6 +1,6 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "0784ab06b04f",
+  "head_sha": "ad39ffc60241",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -9,9 +9,9 @@
   },
   "counts": {
     "critical": 4,
-    "high": 32,
-    "medium": 176,
-    "low": 12
+    "high": 38,
+    "medium": 198,
+    "low": 23
   },
   "suppressed_count": 0,
   "issues": [
@@ -48,7 +48,7 @@
       "confidence": 0.9,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 373,
+        "start_line": 398,
         "end_line": 0
       },
       "finding": "curl | bash",
@@ -61,7 +61,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 504,
+        "start_line": 529,
         "end_line": 0
       },
       "finding": "skills/metadata/SKILL.md",
@@ -74,7 +74,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 507,
+        "start_line": 532,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",
@@ -113,8 +113,8 @@
       "confidence": 0.5,
       "location": {
         "file": "packaging/probe_installed.py",
-        "start_line": 39,
-        "end_line": 39
+        "start_line": 142,
+        "end_line": 142
       },
       "finding": "    if str(inspect.signature(getattr(canonical, name))) != expected:",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -294,6 +294,19 @@
       "severity": "MEDIUM",
       "confidence": 0.7,
       "location": {
+        "file": "README_PYPI.md",
+        "start_line": 143,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
         "file": "README.md",
         "start_line": 10,
         "end_line": 0
@@ -347,7 +360,20 @@
       "confidence": 0.7,
       "location": {
         "file": "README.md",
-        "start_line": 167,
+        "start_line": 170,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "README.md",
+        "start_line": 341,
         "end_line": 0
       },
       "finding": "",
@@ -438,7 +464,7 @@
       "confidence": 0.6,
       "location": {
         "file": "site/build.py",
-        "start_line": 110,
+        "start_line": 111,
         "end_line": 0
       },
       "finding": "https://api.github.com/",
@@ -451,7 +477,7 @@
       "confidence": 0.7,
       "location": {
         "file": "site/build.py",
-        "start_line": 616,
+        "start_line": 621,
         "end_line": 0
       },
       "finding": "",
@@ -464,7 +490,7 @@
       "confidence": 0.7,
       "location": {
         "file": "site/build.py",
-        "start_line": 674,
+        "start_line": 679,
         "end_line": 0
       },
       "finding": "os.environ.get(\"GITHUB_TOKEN",
@@ -477,7 +503,7 @@
       "confidence": 0.6,
       "location": {
         "file": "site/build.py",
-        "start_line": 675,
+        "start_line": 680,
         "end_line": 0
       },
       "finding": "https://api.github.com/",
@@ -490,7 +516,7 @@
       "confidence": 0.7,
       "location": {
         "file": "site/build.py",
-        "start_line": 736,
+        "start_line": 741,
         "end_line": 0
       },
       "finding": "",
@@ -503,7 +529,7 @@
       "confidence": 0.7,
       "location": {
         "file": "site/build.py",
-        "start_line": 861,
+        "start_line": 866,
         "end_line": 0
       },
       "finding": "",
@@ -672,7 +698,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 23,
+        "start_line": 30,
         "end_line": 0
       },
       "finding": "skills/betting/SKILL.md",
@@ -685,7 +711,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 34,
+        "start_line": 41,
         "end_line": 0
       },
       "finding": "skills/cbb-data/SKILL.md",
@@ -698,7 +724,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 45,
+        "start_line": 52,
         "end_line": 0
       },
       "finding": "skills/cfb-data/SKILL.md",
@@ -711,7 +737,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 56,
+        "start_line": 63,
         "end_line": 0
       },
       "finding": "skills/cricket-data/SKILL.md",
@@ -724,7 +750,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 67,
+        "start_line": 74,
         "end_line": 0
       },
       "finding": "skills/espn-api/SKILL.md",
@@ -737,7 +763,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 78,
+        "start_line": 85,
         "end_line": 0
       },
       "finding": "skills/esports/SKILL.md",
@@ -750,7 +776,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 89,
+        "start_line": 96,
         "end_line": 0
       },
       "finding": "skills/fastf1/SKILL.md",
@@ -763,7 +789,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 100,
+        "start_line": 107,
         "end_line": 0
       },
       "finding": "skills/football-data/SKILL.md",
@@ -776,7 +802,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 111,
+        "start_line": 118,
         "end_line": 0
       },
       "finding": "skills/gemini/SKILL.md",
@@ -789,7 +815,20 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 122,
+        "start_line": 129,
+        "end_line": 0
+      },
+      "finding": "skills/gleague-data/SKILL.md",
+      "explanation": "Skill enumerates or reads other installed skills. Access to other skills' SKILL.md files or the skills directory reveals prompt instructions, capabilities, and secrets that should be invisible to peer skills."
+    },
+    {
+      "id": "AS3",
+      "category": "Agent Snooping",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "skills/catalog.json",
+        "start_line": 140,
         "end_line": 0
       },
       "finding": "skills/golf-data/SKILL.md",
@@ -802,7 +841,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 133,
+        "start_line": 151,
         "end_line": 0
       },
       "finding": "skills/kalshi/SKILL.md",
@@ -815,7 +854,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 144,
+        "start_line": 162,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",
@@ -828,7 +867,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 155,
+        "start_line": 173,
         "end_line": 0
       },
       "finding": "skills/markets/SKILL.md",
@@ -841,7 +880,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 166,
+        "start_line": 184,
         "end_line": 0
       },
       "finding": "skills/metadata/SKILL.md",
@@ -854,7 +893,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 177,
+        "start_line": 195,
         "end_line": 0
       },
       "finding": "skills/mlb-data/SKILL.md",
@@ -867,7 +906,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 188,
+        "start_line": 206,
         "end_line": 0
       },
       "finding": "skills/nba-data/SKILL.md",
@@ -880,7 +919,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 199,
+        "start_line": 217,
         "end_line": 0
       },
       "finding": "skills/nfl-data/SKILL.md",
@@ -893,7 +932,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 210,
+        "start_line": 228,
         "end_line": 0
       },
       "finding": "skills/nhl-data/SKILL.md",
@@ -906,7 +945,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 221,
+        "start_line": 239,
         "end_line": 0
       },
       "finding": "skills/novig/SKILL.md",
@@ -919,7 +958,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 232,
+        "start_line": 250,
         "end_line": 0
       },
       "finding": "skills/polymarket/SKILL.md",
@@ -932,7 +971,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 243,
+        "start_line": 261,
         "end_line": 0
       },
       "finding": "skills/polymarket-trading/SKILL.md",
@@ -945,7 +984,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 254,
+        "start_line": 272,
         "end_line": 0
       },
       "finding": "skills/prophetx/SKILL.md",
@@ -958,7 +997,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 265,
+        "start_line": 283,
         "end_line": 0
       },
       "finding": "skills/sports-news/SKILL.md",
@@ -971,7 +1010,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 276,
+        "start_line": 294,
         "end_line": 0
       },
       "finding": "skills/sports-reporter/SKILL.md",
@@ -984,7 +1023,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 287,
+        "start_line": 305,
         "end_line": 0
       },
       "finding": "skills/tennis-data/SKILL.md",
@@ -997,7 +1036,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 298,
+        "start_line": 316,
         "end_line": 0
       },
       "finding": "skills/volleyball-data/SKILL.md",
@@ -1010,7 +1049,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 309,
+        "start_line": 327,
         "end_line": 0
       },
       "finding": "skills/wnba-data/SKILL.md",
@@ -1023,7 +1062,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 320,
+        "start_line": 338,
         "end_line": 0
       },
       "finding": "skills/world-cup/SKILL.md",
@@ -1036,7 +1075,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/catalog.json",
-        "start_line": 331,
+        "start_line": 349,
         "end_line": 0
       },
       "finding": "skills/xctf-data/SKILL.md",
@@ -1111,10 +1150,10 @@
       "id": "YR1",
       "category": "YARA Match",
       "severity": "HIGH",
-      "confidence": 0.85,
+      "confidence": 0.425,
       "location": {
         "file": "skills/sports-reporter/SKILL.md",
-        "start_line": 383,
+        "start_line": 386,
         "end_line": 0
       },
       "finding": "pip install git+https://",
@@ -1244,7 +1283,7 @@
       "confidence": 0.8,
       "location": {
         "file": "skills/world-cup/SKILL.md",
-        "start_line": 133,
+        "start_line": 128,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",
@@ -1257,7 +1296,7 @@
       "confidence": 0.7,
       "location": {
         "file": "skills/world-cup/SKILL.md",
-        "start_line": 135,
+        "start_line": 130,
         "end_line": 0
       },
       "finding": "",
@@ -1283,11 +1322,24 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/_premium.py",
-        "start_line": 142,
-        "end_line": 145
+        "start_line": 153,
+        "end_line": 156
       },
       "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/_storefront.py",
+        "start_line": 259,
+        "end_line": 0
+      },
+      "finding": "~/.netrc",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
     },
     {
       "id": "P3",
@@ -1348,8 +1400,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 949,
-        "end_line": 949
+        "start_line": 976,
+        "end_line": 976
       },
       "finding": "            func = getattr(module, cmd_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -1361,8 +1413,8 @@
       "confidence": 0.7,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 1013,
-        "end_line": 1016
+        "start_line": 1040,
+        "end_line": 1043
       },
       "finding": "            subprocess.run(\n                [sys.executable, \"-m\", \"pip\", \"install\", \"-q\", \"machina-cli\"],\n                check=True,\n            )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -1374,8 +1426,8 @@
       "confidence": 0.5,
       "location": {
         "file": "src/sports_skills/cli.py",
-        "start_line": 1287,
-        "end_line": 1287
+        "start_line": 1347,
+        "end_line": 1347
       },
       "finding": "    func = getattr(module, command_name, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -1509,6 +1561,19 @@
       },
       "finding": "https://api.gemini.com/",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "EA4",
+      "category": "Excessive Agency",
+      "severity": "MEDIUM",
+      "confidence": 0.8,
+      "location": {
+        "file": "src/sports_skills/gleague/_cdn.py",
+        "start_line": 72,
+        "end_line": 0
+      },
+      "finding": "max_retries=0",
+      "explanation": "Skill allows unbounded resource consumption (API calls, storage, compute). Without rate limits or quotas, a compromised or misbehaving agent can cause denial-of-service or cost overruns."
     },
     {
       "id": "E1",
@@ -2213,6 +2278,97 @@
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
     },
     {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_gleague_official.py",
+        "start_line": 84,
+        "end_line": 84
+      },
+      "finding": "    return getattr(gl, name)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_gleague_official.py",
+        "start_line": 196,
+        "end_line": 196
+      },
+      "finding": "    assert shape(_fn(command)) == shape(getattr(nba, command))",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_gleague.py",
+        "start_line": 347,
+        "end_line": 347
+      },
+      "finding": "        params = inspect.signature(getattr(gl, command)).parameters",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_gleague.py",
+        "start_line": 753,
+        "end_line": 753
+      },
+      "finding": "    result = getattr(_gleague(), command)(**kwargs)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_gleague.py",
+        "start_line": 770,
+        "end_line": 770
+      },
+      "finding": "    result = getattr(_gleague(), command)(**{param: bad_id})",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_gleague.py",
+        "start_line": 798,
+        "end_line": 798
+      },
+      "finding": "    result = getattr(_gleague(), command)(event_id=\"401867657\")",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_gleague.py",
+        "start_line": 805,
+        "end_line": 805
+      },
+      "finding": "    result = getattr(_gleague(), command)(date=date)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
       "id": "E2",
       "category": "Data Exfiltration",
       "severity": "HIGH",
@@ -2314,6 +2470,19 @@
         "end_line": 232
       },
       "finding": "        assert callable(getattr(nv, name, None)), name",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_polymarket.py",
+        "start_line": 508,
+        "end_line": 508
+      },
+      "finding": "    result = getattr(poly_connector, reader)({\"params\": {\"sport\": \"nba\", \"date\": \"2026-10-29\"}})",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
     },
     {
@@ -2518,7 +2687,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_release_039.py",
-        "start_line": 47,
+        "start_line": 55,
         "end_line": 0
       },
       "finding": "os.environ.copy()",
@@ -2531,10 +2700,10 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_release_039.py",
-        "start_line": 49,
-        "end_line": 54
+        "start_line": 57,
+        "end_line": 62
       },
-      "finding": "    subprocess.run(\n        [sys.executable, str(ROOT / \"packaging/release.py\"), str(ROOT), str(output)],\n        check=True,\n        cwd=ROOT,\n        env=env,\n    )",
+      "finding": "    subprocess.run(\n        [sys.executable, str(source_root / \"packaging/release.py\"), str(source_root), str(output)],\n        check=True,\n        cwd=source_root,\n        env=env,\n    )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
     },
     {
@@ -2544,8 +2713,21 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_release_039.py",
-        "start_line": 227,
-        "end_line": 227
+        "start_line": 107,
+        "end_line": 111
+      },
+      "finding": "    payload = subprocess.run(\n        [\"git\", \"-C\", str(ROOT), \"archive\", \"--format=tar\", PUBLISHED_SOURCE_COMMIT, \"--\", *BUILD_INPUTS],\n        check=True,\n        capture_output=True,\n    ).stdout",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_039.py",
+        "start_line": 296,
+        "end_line": 296
       },
       "finding": "    subprocess.run([sys.executable, \"-m\", \"venv\", str(environment)], check=True)",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -2557,8 +2739,8 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_release_039.py",
-        "start_line": 229,
-        "end_line": 233
+        "start_line": 298,
+        "end_line": 302
       },
       "finding": "    subprocess.run(\n        [str(python), \"-m\", \"pip\", \"install\", \"--no-deps\", \"--no-index\", str(wheel)],\n        check=True,\n        cwd=tmp_path,\n    )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -2570,10 +2752,244 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_release_039.py",
-        "start_line": 278,
-        "end_line": 278
+        "start_line": 347,
+        "end_line": 347
       },
       "finding": "    subprocess.run([str(python), \"-I\", \"-c\", probe], check=True, cwd=tmp_path)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_release_040.py",
+        "start_line": 74,
+        "end_line": 0
+      },
+      "finding": "os.environ.copy()",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_040.py",
+        "start_line": 76,
+        "end_line": 81
+      },
+      "finding": "    subprocess.run(\n        [sys.executable, str(ROOT / \"packaging/release.py\"), str(ROOT), str(output)],\n        check=True,\n        cwd=ROOT,\n        env=env,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_040.py",
+        "start_line": 274,
+        "end_line": 274
+      },
+      "finding": "    subprocess.run([sys.executable, \"-m\", \"venv\", str(environment)], check=True)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_040.py",
+        "start_line": 276,
+        "end_line": 280
+      },
+      "finding": "    subprocess.run(\n        [str(python), \"-m\", \"pip\", \"install\", \"--no-deps\", \"--no-index\", str(wheel)],\n        check=True,\n        cwd=tmp_path,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_040.py",
+        "start_line": 325,
+        "end_line": 325
+      },
+      "finding": "    subprocess.run([str(python), \"-I\", \"-c\", probe], check=True, cwd=tmp_path)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_040.py",
+        "start_line": 327,
+        "end_line": 327
+      },
+      "finding": "    subprocess.run([str(python), \"-I\", str(ROOT / \"packaging/probe_installed.py\")], check=True, cwd=tmp_path)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_release_0401.py",
+        "start_line": 76,
+        "end_line": 0
+      },
+      "finding": "os.environ.copy()",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0401.py",
+        "start_line": 78,
+        "end_line": 83
+      },
+      "finding": "    subprocess.run(\n        [sys.executable, str(ROOT / \"packaging/release.py\"), str(ROOT), str(output)],\n        check=True,\n        cwd=ROOT,\n        env=env,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0401.py",
+        "start_line": 315,
+        "end_line": 315
+      },
+      "finding": "    subprocess.run([sys.executable, \"-m\", \"venv\", str(environment)], check=True)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0401.py",
+        "start_line": 317,
+        "end_line": 321
+      },
+      "finding": "    subprocess.run(\n        [str(python), \"-m\", \"pip\", \"install\", \"--no-deps\", \"--no-index\", str(wheel)],\n        check=True,\n        cwd=tmp_path,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0401.py",
+        "start_line": 366,
+        "end_line": 366
+      },
+      "finding": "    subprocess.run([str(python), \"-I\", \"-c\", probe], check=True, cwd=tmp_path)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0401.py",
+        "start_line": 368,
+        "end_line": 368
+      },
+      "finding": "    subprocess.run([str(python), \"-I\", str(ROOT / \"packaging/probe_installed.py\")], check=True, cwd=tmp_path)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_release_0402.py",
+        "start_line": 78,
+        "end_line": 0
+      },
+      "finding": "os.environ.copy()",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0402.py",
+        "start_line": 80,
+        "end_line": 85
+      },
+      "finding": "    subprocess.run(\n        [sys.executable, str(ROOT / \"packaging/release.py\"), str(ROOT), str(output)],\n        check=True,\n        cwd=ROOT,\n        env=env,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0402.py",
+        "start_line": 354,
+        "end_line": 354
+      },
+      "finding": "    subprocess.run([sys.executable, \"-m\", \"venv\", str(environment)], check=True)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0402.py",
+        "start_line": 356,
+        "end_line": 360
+      },
+      "finding": "    subprocess.run(\n        [str(python), \"-m\", \"pip\", \"install\", \"--no-deps\", \"--no-index\", str(wheel)],\n        check=True,\n        cwd=tmp_path,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0402.py",
+        "start_line": 435,
+        "end_line": 435
+      },
+      "finding": "    subprocess.run([str(python), \"-I\", \"-c\", probe], check=True, cwd=tmp_path)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0402.py",
+        "start_line": 438,
+        "end_line": 438
+      },
+      "finding": "    subprocess.run([str(python), \"-I\", str(ROOT / \"packaging/probe_installed.py\")], check=True, cwd=tmp_path)",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
     },
     {
@@ -2609,8 +3025,8 @@
       "confidence": 0.5,
       "location": {
         "file": "tests/test_replay_providers.py",
-        "start_line": 549,
-        "end_line": 549
+        "start_line": 560,
+        "end_line": 560
       },
       "finding": "    fn = getattr(f1_api, name)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -2622,8 +3038,8 @@
       "confidence": 0.5,
       "location": {
         "file": "tests/test_replay_providers.py",
-        "start_line": 567,
-        "end_line": 567
+        "start_line": 578,
+        "end_line": 578
       },
       "finding": "    fn = getattr(f1_api, name)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -2822,6 +3238,97 @@
       },
       "finding": "https://api.sleeper.app/",
       "explanation": "Data is being sent to an external URL. This could be legitimate telemetry or data exfiltration. Manual review is recommended."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_storefront_surfaces.py",
+        "start_line": 99,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "RP1",
+      "category": "MCP Rug Pull",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_storefront_surfaces.py",
+        "start_line": 167,
+        "end_line": 0
+      },
+      "finding": "",
+      "explanation": "npx commands without a version suffix (e.g. @1.0.0) create a rug-pull risk if the upstream server is compromised and publishes a malicious update."
+    },
+    {
+      "id": "YR4",
+      "category": "YARA Match",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_storefront.py",
+        "start_line": 79,
+        "end_line": 0
+      },
+      "finding": "\"description\":; description\":; \"description\":; description\":; \"description\":; description\":; ‮; ‮",
+      "explanation": "YARA rule matched a hack tool or exploit indicator (offensive tools, reconnaissance, privilege escalation, or exploit frameworks)."
+    },
+    {
+      "id": "PE3",
+      "category": "Privilege Escalation",
+      "severity": "HIGH",
+      "confidence": 0.8,
+      "location": {
+        "file": "tests/test_storefront.py",
+        "start_line": 588,
+        "end_line": 0
+      },
+      "finding": ".netrc",
+      "explanation": "Code accesses credential files (SSH keys, AWS credentials, etc.). This could indicate credential theft attempts."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_tennis.py",
+        "start_line": 64,
+        "end_line": 64
+      },
+      "finding": "        assert inspect.signature(getattr(tennis, cmd)).parameters[\"tour\"].default is inspect.Parameter.empty, cmd",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_tennis.py",
+        "start_line": 66,
+        "end_line": 66
+      },
+      "finding": "        assert \"tour\" not in inspect.signature(getattr(tennis, cmd)).parameters, cmd",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
+    },
+    {
+      "id": "AST7",
+      "category": "Dangerous Code Execution",
+      "severity": "LOW",
+      "confidence": 0.5,
+      "location": {
+        "file": "tests/test_tennis.py",
+        "start_line": 126,
+        "end_line": 126
+      },
+      "finding": "    result = getattr(tennis, cmd)(tour=None)",
+      "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
     },
     {
       "id": "AS3",
