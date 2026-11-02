@@ -66,7 +66,7 @@ Weighted total → tier: **S** (≥80%) · **A** (≥65%) · **B** (≥45%) · *
 
 <!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->
 
-> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-10-26** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
+> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-11-02** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
 
 ### Kalshi
 
@@ -150,7 +150,7 @@ Lighter fallback MCP — fewer tools, sane defaults.
 
 | Repo | Grade | Score |
 |---|---|---|
-| [pykalshi](https://github.com/ArshKA/pykalshi) by [ArshKA](https://github.com/ArshKA) | 🟡 A-tier | 37/55 |
+| [pykalshi](https://github.com/ArshKA/pykalshi) by [ArshKA](https://github.com/ArshKA) | 🔵 B-tier | 35/55 |
 
 Ergonomics layer — pairs well with a spec-first SDK as source of truth.
 
@@ -423,7 +423,7 @@ Cleanest pattern for a read-only skill safety contract.
 
 | Repo | Grade | Score |
 |---|---|---|
-| [pmxt](https://github.com/pmxt-dev/pmxt) by [pmxt-dev](https://github.com/pmxt-dev) | 🟡 A-tier | 41/55 |
+| [pmxt](https://github.com/pmxt-dev/pmxt) by [pmxt-dev](https://github.com/pmxt-dev) | 🟡 A-tier | 39/55 |
 
 The cross-venue abstraction layer. Self-host for anything involving real keys.
 
@@ -449,20 +449,7 @@ Multi-venue read-only scanner.
 
 | Repo | Grade | Score |
 |---|---|---|
-| [simmer-sdk](https://github.com/SpartanLabsXyz/simmer-sdk) by [SpartanLabsXyz](https://github.com/SpartanLabsXyz) | 🟡 A-tier | 37/55 |
-
-Young; watch.
-
-| provenance: 🔴 2/5 | capability: 🟡 3/5 | safety: 🟡 3/5 | agent-fit: 🟢 4/5 | category: `sdk-client` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
-| [homerun](https://github.com/braedonsaunders/homerun) by [braedonsaunders](https://github.com/braedonsaunders) | 🔵 B-tier | 35/55 |
+| [homerun](https://github.com/braedonsaunders/homerun) by [braedonsaunders](https://github.com/braedonsaunders) | 🟡 A-tier | 37/55 |
 
 Architecture reference for cross-venue strategy infra. AGPL — read it, don't vendor it into proprietary code.
 
@@ -475,14 +462,14 @@ Architecture reference for cross-venue strategy infra. AGPL — read it, don't v
 
 | Repo | Grade | Score |
 |---|---|---|
-| [CloddsBot](https://github.com/alsk1992/CloddsBot) by [alsk1992](https://github.com/alsk1992) | 🔵 B-tier | 34/55 |
+| [simmer-sdk](https://github.com/SpartanLabsXyz/simmer-sdk) by [SpartanLabsXyz](https://github.com/SpartanLabsXyz) | 🟡 A-tier | 37/55 |
 
-Ambitious scope = large key blast radius. Mine for patterns; run nothing with real keys without an audit.
+Young; watch.
 
-| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🔴 2/5 | agent-fit: 🟡 3/5 | category: `agent-framework` |
+| provenance: 🔴 2/5 | capability: 🟡 3/5 | safety: 🟡 3/5 | agent-fit: 🟢 4/5 | category: `sdk-client` |
 |---|---|---|---|---|
 
-<img src="https://img.shields.io/github/last-commit/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+<img src="https://img.shields.io/github/last-commit/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ---
 
@@ -509,6 +496,19 @@ Unique replay dataset angle; small.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/Oddpool/PredictionMarketBench?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/Oddpool/PredictionMarketBench?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/Oddpool/PredictionMarketBench?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
+| [CloddsBot](https://github.com/alsk1992/CloddsBot) by [alsk1992](https://github.com/alsk1992) | 🔵 B-tier | 32/55 |
+
+Ambitious scope = large key blast radius. Mine for patterns; run nothing with real keys without an audit.
+
+| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🔴 2/5 | agent-fit: 🟡 3/5 | category: `agent-framework` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ### Deprecated / reference-only
 
