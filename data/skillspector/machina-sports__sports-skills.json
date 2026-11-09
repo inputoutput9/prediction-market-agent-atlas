@@ -1,6 +1,6 @@
 {
   "id": "machina-sports/sports-skills",
-  "head_sha": "ad39ffc60241",
+  "head_sha": "48e17c0acdc0",
   "skillspector_version": "2.4.3",
   "risk_assessment": {
     "score": 100,
@@ -9,8 +9,8 @@
   },
   "counts": {
     "critical": 4,
-    "high": 38,
-    "medium": 198,
+    "high": 39,
+    "medium": 204,
     "low": 23
   },
   "suppressed_count": 0,
@@ -48,7 +48,7 @@
       "confidence": 0.9,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 398,
+        "start_line": 407,
         "end_line": 0
       },
       "finding": "curl | bash",
@@ -61,7 +61,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 529,
+        "start_line": 538,
         "end_line": 0
       },
       "finding": "skills/metadata/SKILL.md",
@@ -74,7 +74,7 @@
       "confidence": 0.8,
       "location": {
         "file": "CHANGELOG.md",
-        "start_line": 532,
+        "start_line": 541,
         "end_line": 0
       },
       "finding": "skills/machina/SKILL.md",
@@ -113,8 +113,8 @@
       "confidence": 0.5,
       "location": {
         "file": "packaging/probe_installed.py",
-        "start_line": 142,
-        "end_line": 142
+        "start_line": 179,
+        "end_line": 179
       },
       "finding": "    if str(inspect.signature(getattr(canonical, name))) != expected:",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -1608,7 +1608,7 @@
       "confidence": 0.8,
       "location": {
         "file": "src/sports_skills/nba/_connector.py",
-        "start_line": 453,
+        "start_line": 468,
         "end_line": 0
       },
       "finding": "max_retries=0",
@@ -2037,8 +2037,8 @@
       "confidence": 0.5,
       "location": {
         "file": "tests/test_betting_validation.py",
-        "start_line": 103,
-        "end_line": 103
+        "start_line": 274,
+        "end_line": 274
       },
       "finding": "                fn = getattr(mod, cmd, None)",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -2050,8 +2050,8 @@
       "confidence": 0.5,
       "location": {
         "file": "tests/test_betting_validation.py",
-        "start_line": 117,
-        "end_line": 117
+        "start_line": 288,
+        "end_line": 288
       },
       "finding": "                f\"{mod_name}.{c}\" for c in cmds if not callable(getattr(mod, c, None))",
       "explanation": "Dynamic getattr() with a non-literal attribute name can access arbitrary object attributes, potentially bypassing access controls."
@@ -2921,7 +2921,7 @@
       "confidence": 0.6,
       "location": {
         "file": "tests/test_release_0402.py",
-        "start_line": 78,
+        "start_line": 83,
         "end_line": 0
       },
       "finding": "os.environ.copy()",
@@ -2934,10 +2934,10 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_release_0402.py",
-        "start_line": 80,
-        "end_line": 85
+        "start_line": 85,
+        "end_line": 90
       },
-      "finding": "    subprocess.run(\n        [sys.executable, str(ROOT / \"packaging/release.py\"), str(ROOT), str(output)],\n        check=True,\n        cwd=ROOT,\n        env=env,\n    )",
+      "finding": "    subprocess.run(\n        [sys.executable, str(root / \"packaging/release.py\"), str(root), str(output)],\n        check=True,\n        cwd=root,\n        env=env,\n    )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
     },
     {
@@ -2947,8 +2947,21 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_release_0402.py",
-        "start_line": 354,
-        "end_line": 354
+        "start_line": 96,
+        "end_line": 100
+      },
+      "finding": "    return subprocess.run(\n        [\"git\", \"-C\", str(ROOT), \"archive\", \"--format=zip\", PUBLISHED_SOURCE_COMMIT],\n        check=True,\n        capture_output=True,\n    ).stdout",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0402.py",
+        "start_line": 398,
+        "end_line": 398
       },
       "finding": "    subprocess.run([sys.executable, \"-m\", \"venv\", str(environment)], check=True)",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -2960,8 +2973,8 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_release_0402.py",
-        "start_line": 356,
-        "end_line": 360
+        "start_line": 400,
+        "end_line": 404
       },
       "finding": "    subprocess.run(\n        [str(python), \"-m\", \"pip\", \"install\", \"--no-deps\", \"--no-index\", str(wheel)],\n        check=True,\n        cwd=tmp_path,\n    )",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -2973,8 +2986,8 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_release_0402.py",
-        "start_line": 435,
-        "end_line": 435
+        "start_line": 479,
+        "end_line": 479
       },
       "finding": "    subprocess.run([str(python), \"-I\", \"-c\", probe], check=True, cwd=tmp_path)",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
@@ -2986,8 +2999,86 @@
       "confidence": 0.7,
       "location": {
         "file": "tests/test_release_0402.py",
-        "start_line": 438,
-        "end_line": 438
+        "start_line": 482,
+        "end_line": 482
+      },
+      "finding": "    subprocess.run([str(python), \"-I\", str(ROOT / \"packaging/probe_installed.py\")], check=True, cwd=tmp_path)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "E2",
+      "category": "Data Exfiltration",
+      "severity": "HIGH",
+      "confidence": 0.6,
+      "location": {
+        "file": "tests/test_release_0403.py",
+        "start_line": 79,
+        "end_line": 0
+      },
+      "finding": "os.environ.copy()",
+      "explanation": "Code accesses environment variables that may contain secrets (API keys, tokens). This is a common pattern for credential theft."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0403.py",
+        "start_line": 81,
+        "end_line": 86
+      },
+      "finding": "    subprocess.run(\n        [sys.executable, str(ROOT / \"packaging/release.py\"), str(ROOT), str(output)],\n        check=True,\n        cwd=ROOT,\n        env=env,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0403.py",
+        "start_line": 372,
+        "end_line": 372
+      },
+      "finding": "    subprocess.run([sys.executable, \"-m\", \"venv\", str(environment)], check=True)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0403.py",
+        "start_line": 374,
+        "end_line": 378
+      },
+      "finding": "    subprocess.run(\n        [str(python), \"-m\", \"pip\", \"install\", \"--no-deps\", \"--no-index\", str(wheel)],\n        check=True,\n        cwd=tmp_path,\n    )",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0403.py",
+        "start_line": 453,
+        "end_line": 453
+      },
+      "finding": "    subprocess.run([str(python), \"-I\", \"-c\", probe], check=True, cwd=tmp_path)",
+      "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
+    },
+    {
+      "id": "AST4",
+      "category": "Dangerous Code Execution",
+      "severity": "MEDIUM",
+      "confidence": 0.7,
+      "location": {
+        "file": "tests/test_release_0403.py",
+        "start_line": 456,
+        "end_line": 456
       },
       "finding": "    subprocess.run([str(python), \"-I\", str(ROOT / \"packaging/probe_installed.py\")], check=True, cwd=tmp_path)",
       "explanation": "subprocess module calls execute external commands. Without careful input validation, this enables command injection."
