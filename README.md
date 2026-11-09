@@ -66,7 +66,7 @@ Weighted total → tier: **S** (≥80%) · **A** (≥65%) · **B** (≥45%) · *
 
 <!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->
 
-> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-11-02** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
+> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-11-09** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
 
 ### Kalshi
 
@@ -124,19 +124,6 @@ Most complete Kalshi client surveyed. Pin the version; budget upgrade time per m
 
 | Repo | Grade | Score |
 |---|---|---|
-| [kalshi](https://github.com/newyorkcompute/kalshi) by [newyorkcompute](https://github.com/newyorkcompute) | 🟡 A-tier | 39/55 |
-
-Both MCP and skill in one TS stack. Prefer running from source over the stale npm publishes.
-
-| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🟡 3/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/npm/v/%40newyorkcompute%2Fkalshi-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=npm" alt="npm">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
 | [mcp-server-kalshi](https://github.com/9crusher/mcp-server-kalshi) by [9crusher](https://github.com/9crusher) | 🟡 A-tier | 38/55 |
 
 Lighter fallback MCP — fewer tools, sane defaults.
@@ -145,6 +132,19 @@ Lighter fallback MCP — fewer tools, sane defaults.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/9crusher/mcp-server-kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/9crusher/mcp-server-kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/9crusher/mcp-server-kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
+| [kalshi](https://github.com/newyorkcompute/kalshi) by [newyorkcompute](https://github.com/newyorkcompute) | 🟡 A-tier | 37/55 |
+
+Both MCP and skill in one TS stack. Prefer running from source over the stale npm publishes.
+
+| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🟡 3/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/newyorkcompute/kalshi?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/npm/v/%40newyorkcompute%2Fkalshi-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=npm" alt="npm">
 
 ---
 
@@ -241,19 +241,6 @@ Python sibling: Polymarket/py-sdk. Check the registry for the actual published p
 
 | Repo | Grade | Score |
 |---|---|---|
-| [real-time-data-client](https://github.com/Polymarket/real-time-data-client) by [Polymarket](https://github.com/Polymarket) | 🟡 A-tier | 42/55 |
-
-Pair with a CLOB client when you need writes.
-
-| provenance: 🟢 5/5 | capability: 🔴 2/5 | safety: 🟢 4/5 | agent-fit: 🟡 3/5 | category: `sdk-client` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/Polymarket/real-time-data-client?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/Polymarket/real-time-data-client?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/Polymarket/real-time-data-client?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/npm/v/%40polymarket%2Freal-time-data-client?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=npm" alt="npm">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
 | [polymarket-agent-mcp](https://github.com/demwick/polymarket-agent-mcp) by [demwick](https://github.com/demwick) | 🟡 A-tier | 42/55 |
 
 Best engineering posture among community Polymarket MCPs; depth of the advanced tools (copy-trading, backtest) not independently audited.
@@ -288,6 +275,19 @@ Functional and safety-conscious in code, but treat as a reference implementation
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/caiovicentino/polymarket-mcp-server?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/caiovicentino/polymarket-mcp-server?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/caiovicentino/polymarket-mcp-server?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
+| [real-time-data-client](https://github.com/Polymarket/real-time-data-client) by [Polymarket](https://github.com/Polymarket) | 🟡 A-tier | 40/55 |
+
+Pair with a CLOB client when you need writes.
+
+| provenance: 🟢 5/5 | capability: 🔴 2/5 | safety: 🟢 4/5 | agent-fit: 🟡 3/5 | category: `sdk-client` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/Polymarket/real-time-data-client?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/Polymarket/real-time-data-client?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/Polymarket/real-time-data-client?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license"> <img src="https://img.shields.io/npm/v/%40polymarket%2Freal-time-data-client?style=flat-square&labelColor=2b2b2b&color=6b6b6b&label=npm" alt="npm">
 
 ---
 
@@ -475,6 +475,19 @@ Young; watch.
 
 | Repo | Grade | Score |
 |---|---|---|
+| [CloddsBot](https://github.com/alsk1992/CloddsBot) by [alsk1992](https://github.com/alsk1992) | 🔵 B-tier | 34/55 |
+
+Ambitious scope = large key blast radius. Mine for patterns; run nothing with real keys without an audit.
+
+| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🔴 2/5 | agent-fit: 🟡 3/5 | category: `agent-framework` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
 | [dr-manhattan](https://github.com/guzus/dr-manhattan) by [guzus](https://github.com/guzus) | 🔵 B-tier | 33/55 |
 
 **⚠️ no license.** Fully self-hosted pmxt alternative. Resolve the license question before shipping it inside anything.
@@ -496,19 +509,6 @@ Unique replay dataset angle; small.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/Oddpool/PredictionMarketBench?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/Oddpool/PredictionMarketBench?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/Oddpool/PredictionMarketBench?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
-| [CloddsBot](https://github.com/alsk1992/CloddsBot) by [alsk1992](https://github.com/alsk1992) | 🔵 B-tier | 32/55 |
-
-Ambitious scope = large key blast radius. Mine for patterns; run nothing with real keys without an audit.
-
-| provenance: 🔴 2/5 | capability: 🟢 4/5 | safety: 🔴 2/5 | agent-fit: 🟡 3/5 | category: `agent-framework` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/alsk1992/CloddsBot?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ### Deprecated / reference-only
 
