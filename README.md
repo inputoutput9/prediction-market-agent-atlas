@@ -66,7 +66,7 @@ Weighted total → tier: **S** (≥80%) · **A** (≥65%) · **B** (≥45%) · *
 
 <!-- BEGIN GENERATED RANKINGS (bun scripts/generate-readme.ts) -->
 
-> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-11-09** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
+> **44 entries** · curated scores last human-reviewed **2026-07-23** · liveness data as of **2026-11-16** (auto-refreshed weekly by the [scan workflow](.github/workflows/scan.yml)). Each entry shows an **identity row** (repo · grade · weighted score / 55), a short description, then a **per-axis row** — provenance/capability/safety/agent-fit, 0–5 each with a colored marker (🟢 ≥4 · 🟡 3 · 🔴 ≤2); maintenance is computed from activity, see [methodology](docs/methodology.md). The badge strip is live GitHub/registry health. Automated static security scans per agent-facing repo live in [docs/skillspector/](docs/skillspector/README.md).
 
 ### Kalshi
 
@@ -436,19 +436,6 @@ The cross-venue abstraction layer. Self-host for anything involving real keys.
 
 | Repo | Grade | Score |
 |---|---|---|
-| [prediction-market-mcp](https://github.com/JamesANZ/prediction-market-mcp) by [JamesANZ](https://github.com/JamesANZ) | 🟡 A-tier | 38/55 |
-
-Multi-venue read-only scanner.
-
-| provenance: 🔴 2/5 | capability: 🔴 2/5 | safety: 🟢 4/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
-|---|---|---|---|---|
-
-<img src="https://img.shields.io/github/last-commit/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
-
----
-
-| Repo | Grade | Score |
-|---|---|---|
 | [homerun](https://github.com/braedonsaunders/homerun) by [braedonsaunders](https://github.com/braedonsaunders) | 🟡 A-tier | 37/55 |
 
 Architecture reference for cross-venue strategy infra. AGPL — read it, don't vendor it into proprietary code.
@@ -470,6 +457,19 @@ Young; watch.
 |---|---|---|---|---|
 
 <img src="https://img.shields.io/github/last-commit/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/SpartanLabsXyz/simmer-sdk?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
+
+---
+
+| Repo | Grade | Score |
+|---|---|---|
+| [prediction-market-mcp](https://github.com/JamesANZ/prediction-market-mcp) by [JamesANZ](https://github.com/JamesANZ) | 🟡 A-tier | 36/55 |
+
+Multi-venue read-only scanner.
+
+| provenance: 🔴 2/5 | capability: 🔴 2/5 | safety: 🟢 4/5 | agent-fit: 🟢 4/5 | category: `mcp-server` |
+|---|---|---|---|---|
+
+<img src="https://img.shields.io/github/last-commit/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="last-commit"> <img src="https://img.shields.io/github/stars/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="stars"> <img src="https://img.shields.io/github/license/JamesANZ/prediction-market-mcp?style=flat-square&labelColor=2b2b2b&color=6b6b6b" alt="license">
 
 ---
 
