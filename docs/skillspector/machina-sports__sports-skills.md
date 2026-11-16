@@ -10,10 +10,10 @@
 | Scanner risk score | 100/100 |
 | Scanner severity | CRITICAL |
 | Scanner recommendation | DO_NOT_INSTALL |
-| Post-baseline counts | 🔴 4 C · 🟠 39 H · 🟡 204 M · ⚪ 23 L |
+| Post-baseline counts | 🔴 5 C · 🟠 42 H · 🟡 215 M · ⚪ 23 L |
 | Suppressed by baseline | 0 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `48e17c0acdc0` |
+| Scanned head_sha | `d9510dfce493` |
 
 **Baseline:** none yet — counts are raw static signal, expect false positives. See [baselines](../../data/skillspector-baselines/README.md).
 
@@ -21,12 +21,14 @@
 
 | Severity | Location | Category | Confidence | Finding |
 |---|---|---|---|---|
+| 🔴 Critical | `packaging/probe_installed.py:235` | Dangerous Code Execution | 0.95 | exec(compile(ast.Module(body=slicer, type_ignores=[]), str(football_path), "exec"), liga_mx) |
 | 🔴 Critical | `pyproject.toml:46` | Supply Chain | 0.9 | pyarrow |
 | 🔴 Critical | `pyproject.toml:46` | Supply Chain | 0.9 | pyarrow |
 | 🔴 Critical | `pyproject.toml:46` | Supply Chain | 0.9 | pyarrow |
 | 🔴 Critical | `pyproject.toml:59` | Supply Chain | 0.9 | pyyaml |
 | 🟠 High | `AGENTS.md:22` | Supply Chain | 0.9 | curl \| bash |
-| 🟠 High | `CHANGELOG.md:407` | Supply Chain | 0.9 | curl \| bash |
+| 🟠 High | `CHANGELOG.md:429` | Supply Chain | 0.9 | curl \| bash |
+| 🟠 High | `packaging/probe_installed.py:235` | Dangerous Code Execution | 0.85 | exec(compile(ast.Module(body=slicer, type_ignores=[]), str(football_path), "exec"), liga_mx) |
 | 🟠 High | `pyproject.toml:31` | Supply Chain | 0.8 | feedparser |
 | 🟠 High | `pyproject.toml:32` | Supply Chain | 0.8 | requests |
 | 🟠 High | `pyproject.toml:40` | Supply Chain | 0.8 | pandas |
@@ -62,15 +64,13 @@
 | 🟠 High | `tests/test_release_0401.py:76` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟠 High | `tests/test_release_0402.py:83` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟠 High | `tests/test_release_0403.py:79` | Data Exfiltration | 0.6 | os.environ.copy() |
+| 🟠 High | `tests/test_release_0404.py:81` | Data Exfiltration | 0.6 | os.environ.copy() |
+| 🟠 High | `tests/test_release_0405.py:83` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟠 High | `tests/test_storefront.py:79` | YARA Match | 0.8 | "description":; description":; "description":; description":; "description":; description":; ‮; ‮ |
 | 🟠 High | `tests/test_storefront.py:588` | Privilege Escalation | 0.8 | .netrc |
 | 🟡 Medium | `AGENTS.md:8` | Excessive Agency | 0.8 | Never ask the user |
-| 🟡 Medium | `CHANGELOG.md:538` | Agent Snooping | 0.8 | skills/metadata/SKILL.md |
-| 🟡 Medium | `CHANGELOG.md:541` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
-| 🟡 Medium | `docs/zeroclick-funnel.md:25` | MCP Rug Pull | 0.7 |  |
-| 🟡 Medium | `packaging/release.py:56` | Dangerous Code Execution | 0.7 | subprocess.run(             [sys.executable, "-m", "build", "--no-isolation", "--outdir", str(staging), str(root)],      |
-| 🟡 Medium | `README_PYPI.md:143` | MCP Rug Pull | 0.7 |  |
-| 🟡 Medium | `README.md:10` | MCP Rug Pull | 0.7 |  |
+| 🟡 Medium | `CHANGELOG.md:560` | Agent Snooping | 0.8 | skills/metadata/SKILL.md |
+| 🟡 Medium | `CHANGELOG.md:563` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
 
-_…and 220 more finding(s) — see the artifact JSON._
+_…and 235 more finding(s) — see the artifact JSON._
 
