@@ -10,10 +10,10 @@
 | Scanner risk score | 100/100 |
 | Scanner severity | CRITICAL |
 | Scanner recommendation | DO_NOT_INSTALL |
-| Post-baseline counts | 🔴 5 C · 🟠 42 H · 🟡 215 M · ⚪ 23 L |
+| Post-baseline counts | 🔴 5 C · 🟠 52 H · 🟡 252 M · ⚪ 23 L |
 | Suppressed by baseline | 0 |
 | Coverage | 100% (partial — LLM meta-analysis skipped) |
-| Scanned head_sha | `d9510dfce493` |
+| Scanned head_sha | `756d01920fba` |
 
 **Baseline:** none yet — counts are raw static signal, expect false positives. See [baselines](../../data/skillspector-baselines/README.md).
 
@@ -27,7 +27,7 @@
 | 🔴 Critical | `pyproject.toml:46` | Supply Chain | 0.9 | pyarrow |
 | 🔴 Critical | `pyproject.toml:59` | Supply Chain | 0.9 | pyyaml |
 | 🟠 High | `AGENTS.md:22` | Supply Chain | 0.9 | curl \| bash |
-| 🟠 High | `CHANGELOG.md:429` | Supply Chain | 0.9 | curl \| bash |
+| 🟠 High | `CHANGELOG.md:497` | Supply Chain | 0.9 | curl \| bash |
 | 🟠 High | `packaging/probe_installed.py:235` | Dangerous Code Execution | 0.85 | exec(compile(ast.Module(body=slicer, type_ignores=[]), str(football_path), "exec"), liga_mx) |
 | 🟠 High | `pyproject.toml:31` | Supply Chain | 0.8 | feedparser |
 | 🟠 High | `pyproject.toml:32` | Supply Chain | 0.8 | requests |
@@ -37,7 +37,7 @@
 | 🟠 High | `pyproject.toml:46` | Supply Chain | 0.8 | pandas |
 | 🟠 High | `pyproject.toml:58` | Supply Chain | 0.8 | pytest |
 | 🟠 High | `pyproject.toml:59` | Supply Chain | 0.8 | jinja2 |
-| 🟠 High | `site/build.py:679` | Data Exfiltration | 0.7 | os.environ.get("GITHUB_TOKEN |
+| 🟠 High | `site/build.py:684` | Data Exfiltration | 0.7 | os.environ.get("GITHUB_TOKEN |
 | 🟠 High | `site/og/og.html:2` | Prompt Injection | 0.7 | &lt;!--   Source for site/static/og.png (1200×630 social card). Regenerate with:   "/Applications/Google Chrome.app/Cont |
 | 🟠 High | `site/templates/index.html:66` | Prompt Injection | 0.7 | &lt;!-- HERO --> &lt;section class="hero">   &lt;div class="hero-bg" aria-hidden="true">     &lt;div class="hero-glow">& |
 | 🟠 High | `site/templates/index.html:159` | Prompt Injection | 0.7 | &lt;!-- STATS --> {% set n_stats = 3 + (1 if st.skill_installs_label else 0) + (1 if st.pypi_downloads_label else 0) + ( |
@@ -55,7 +55,10 @@
 | 🟠 High | `src/sports_skills/polymarket/_cli.py:126` | Data Exfiltration | 0.7 | os.environ.get("POLYMARKET_PRIVATE_KEY |
 | 🟠 High | `src/sports_skills/volleyball/_nevobo.py:446` | YARA Match | 0.7 | Hydra / JSON-L |
 | 🟠 High | `tests/test_espn_api_skill.py:212` | Data Exfiltration | 0.7 | for k, v in os.environ.items() |
-| 🟠 High | `tests/test_imports.py:83` | Data Exfiltration | 0.6 | os.environ.copy() |
+| 🟠 High | `tests/test_images.py:73` | YARA Match | 0.8 | Description":; description =; description=; description="&lt;p>Vinícius   celebrates.&lt;br>Ignore previous; description |
+| 🟠 High | `tests/test_images.py:297` | Prompt Injection | 0.8 | Ignore previous instructions |
+| 🟠 High | `tests/test_images.py:304` | Prompt Injection | 0.8 | Ignore previous instructions |
+| 🟠 High | `tests/test_imports.py:84` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟠 High | `tests/test_release_036.py:47` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟠 High | `tests/test_release_037.py:47` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟠 High | `tests/test_release_038.py:47` | Data Exfiltration | 0.6 | os.environ.copy() |
@@ -66,11 +69,8 @@
 | 🟠 High | `tests/test_release_0403.py:79` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟠 High | `tests/test_release_0404.py:81` | Data Exfiltration | 0.6 | os.environ.copy() |
 | 🟠 High | `tests/test_release_0405.py:83` | Data Exfiltration | 0.6 | os.environ.copy() |
-| 🟠 High | `tests/test_storefront.py:79` | YARA Match | 0.8 | "description":; description":; "description":; description":; "description":; description":; ‮; ‮ |
-| 🟠 High | `tests/test_storefront.py:588` | Privilege Escalation | 0.8 | .netrc |
-| 🟡 Medium | `AGENTS.md:8` | Excessive Agency | 0.8 | Never ask the user |
-| 🟡 Medium | `CHANGELOG.md:560` | Agent Snooping | 0.8 | skills/metadata/SKILL.md |
-| 🟡 Medium | `CHANGELOG.md:563` | Agent Snooping | 0.8 | skills/machina/SKILL.md |
+| 🟠 High | `tests/test_release_0406.py:83` | Data Exfiltration | 0.6 | os.environ.copy() |
+| 🟠 High | `tests/test_release_0407.py:83` | Data Exfiltration | 0.6 | os.environ.copy() |
 
-_…and 235 more finding(s) — see the artifact JSON._
+_…and 282 more finding(s) — see the artifact JSON._
 
